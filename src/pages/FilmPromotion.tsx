@@ -2,9 +2,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-import filmPromotionImage from "@/assets/fil-promotion-image.jpg";
-import filmPromotionCenter from "@/assets/film-promotion-center.jpg";
 
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const filmPromotionImage = asset("fil-promotion-image.jpg");
+const filmPromotionCenter = asset("film-promotion-center.jpg");
 const FilmPromotion = () => {
   const leftServices = [
     "Strategic Promotion Planning",

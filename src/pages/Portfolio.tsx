@@ -4,11 +4,10 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Play } from "lucide-react";
-import aboutHero from "@/assets/Portfolio.mp4";
 
+import { asset, logoAsset } from "@/assets/placeholder";
 
-
-
+const aboutHero = asset("Portfolio.mp4");
 const videoFiles = [
   "00 PorscheGolf_2025Day1HighlightReel.MP4",
   "Customer Testimonials.MP4",

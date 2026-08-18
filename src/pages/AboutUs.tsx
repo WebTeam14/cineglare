@@ -1,9 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import aboutHero from "@/assets/AboutHero.png";
-import teamworkStructure from "@/assets/teamwork.jpg";
 import {
+
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const aboutHero = asset("AboutHero.png");
+const teamworkStructure = asset("teamwork.jpg");
+const csrCommunity = asset("communitygrowth.jpg");
+const csrPeople = asset("growth.jfif");
+const csrGreen = asset("growth1.jfif");
+const csrWomen = asset("women.jfif");
   Monitor,
   Lightbulb,
   Globe,
@@ -20,11 +27,6 @@ import {
   ShieldCheck,
   Play,
 } from "lucide-react";
-import csrCommunity from "@/assets/communitygrowth.jpg";
-import csrPeople from "@/assets/growth.jfif";
-import csrGreen from "@/assets/growth1.jfif";
-import csrWomen from "@/assets/women.jfif";
-
 /* -------------------------------------------------------------------------- */
 /* Helpers                                                                    */
 /* -------------------------------------------------------------------------- */

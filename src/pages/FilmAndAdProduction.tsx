@@ -2,10 +2,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-// import digitalMarketingHero from "@/assets/digital-marketing-hero.jpg";
-import filAndAdproductionImage from "@/assets/film-and-ad-production-image.jpg";
-import filmAdProductionCenter from "@/assets/film-and-ad-production-center.jpg";
 
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const filAndAdproductionImage = asset("film-and-ad-production-image.jpg");
+const filmAdProductionCenter = asset("film-and-ad-production-center.jpg");
+// import digitalMarketingHero from "@/assets/digital-marketing-hero.jpg";
 const FilmAndAdProduction = () => {
   const leftServices = [
     "Concept & Script Development",

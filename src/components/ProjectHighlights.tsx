@@ -1,7 +1,9 @@
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
 
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const project1 = asset("project-1.jpg");
+const project2 = asset("project-2.jpg");
+const project3 = asset("project-3.jpg");
 const ProjectHighlights = () => {
   return (
     <section id="portfolio" className="py-20 bg-black">

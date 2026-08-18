@@ -3,8 +3,11 @@ import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
 // import digitalMarketingHero from "@/assets/digital-marketing-hero.jpg";
-import digitalMarketingImage from "@/assets/digital-marketing-image.jpg";
 import digitalMarketingCenter from "@/assets/digital-marketing-center.jpg"
+
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const digitalMarketingImage = asset("digital-marketing-image.jpg");
 
 const DigitalMarketing = () => {
   const leftServices = [

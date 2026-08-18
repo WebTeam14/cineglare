@@ -2,10 +2,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-import productBrandingImage from "@/assets/product-branding-image.jpg";
-// import servicesCenterOne from "@/assets/services-center-1.png";
-import productBrandingCenter from "@/assets/product-branding-center.jpg";
 
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const productBrandingImage = asset("product-branding-image.jpg");
+const productBrandingCenter = asset("product-branding-center.jpg");
+// import servicesCenterOne from "@/assets/services-center-1.png";
 const ProductBranding = () => {
   const leftServices = [
     "Brand Naming & Tagline",

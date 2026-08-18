@@ -2,10 +2,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-// import digitalMarketingHero from "@/assets/digital-marketing-hero.jpg";
-import celebrityManagementImage from "@/assets/celebrity-management-image.jpg";
-import celebrityManagementCenter from "@/assets/celebrity-management-center.jpg";
 
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const celebrityManagementImage = asset("celebrity-management-image.jpg");
+const celebrityManagementCenter = asset("celebrity-management-center.jpg");
+// import digitalMarketingHero from "@/assets/digital-marketing-hero.jpg";
 const CelebrityManagement = () => {
   const leftServices = [
     "Celebrity Endorsements",
