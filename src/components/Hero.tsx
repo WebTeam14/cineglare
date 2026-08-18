@@ -83,7 +83,7 @@ const Hero = () => {
         <video
           ref={videoRef}
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-            videoReady ? "opacity-100" : "opacity-0"
+            videoReady ? "opacity-100" : "opacity-40"
           }`}
           poster={heroPoster}
           autoPlay
@@ -97,16 +97,17 @@ const Hero = () => {
           ))}
         </video>
 
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
+        {/* Light scrims — keep type readable without hiding the video */}
+        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
         <div
           aria-hidden
-          className="absolute -right-24 top-24 h-80 w-80 rounded-full bg-[#800000]/25 blur-[110px]"
+          className="absolute -right-24 top-24 h-80 w-80 rounded-full bg-[#800000]/18 blur-[110px]"
         />
         <div
           aria-hidden
-          className="absolute bottom-0 left-1/4 h-64 w-64 rounded-full bg-[#800000]/15 blur-[100px]"
+          className="absolute bottom-0 left-1/4 h-64 w-64 rounded-full bg-[#800000]/12 blur-[100px]"
         />
       </div>
 
