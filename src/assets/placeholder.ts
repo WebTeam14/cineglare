@@ -3,7 +3,7 @@
  *
  * Original photography / logos / showreels are not in the repo yet.
  * Every `asset()` / `logoAsset()` call resolves to a free stock image or video
- * (Unsplash + Google sample videos). Swap these URLs for real assets when media lands.
+ * (Unsplash + public sample videos). Swap these URLs for real assets when media lands.
  */
 
 function hash(input: string): number {
@@ -20,7 +20,6 @@ function unsplash(photoId: string, w = 1600, h = 1000): string {
   return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
 }
 
-// Curated stock photo IDs by theme (cinema / events / marketing / corporate)
 const STOCK = {
   cinema: [
     "photo-1489599849927-2ee91cede3ba",
@@ -130,29 +129,19 @@ function themeFor(path: string): StockKey {
   return "cinema";
 }
 
-/** Free sample / stock video URLs (publicly accessible, CORS-friendly) */
+/** Working public stock / sample video URLs */
 const STOCK_VIDEOS = [
-  "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-  "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-  "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-  "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
-  "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-  "https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-  "https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
-  "https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
-  "https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-  "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-  "https://storage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
-  "https://storage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+  "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
+  "https://media.w3.org/2010/05/sintel/trailer.mp4",
+  "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+  "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
+  "https://filesamples.com/samples/video/mp4/sample_640x360.mp4",
 ];
 
 function isVideo(path: string): boolean {
   return /\.(mp4|webm|mov)$/i.test(path);
 }
 
-/**
- * Returns a stock image or video URL for the given original asset path.
- */
 export function asset(path: string, _label?: string): string {
   if (isVideo(path)) {
     return STOCK_VIDEOS[hash(path) % STOCK_VIDEOS.length]!;
@@ -173,9 +162,6 @@ export function asset(path: string, _label?: string): string {
   return pick(themeFor(path), path, 1400, 900);
 }
 
-/**
- * Partner / sponsor logo strip.
- */
 export function logoAsset(path: string): string {
   const logoPhotos = [
     "photo-1611162617474-5b21e55e1137",
@@ -193,7 +179,6 @@ export function logoAsset(path: string): string {
   return unsplash(id, 320, 160);
 }
 
-/** Map portfolio clip filenames → stock videos */
 export function portfolioVideo(filename: string): string {
   return STOCK_VIDEOS[hash(filename) % STOCK_VIDEOS.length]!;
 }
