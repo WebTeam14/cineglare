@@ -13,10 +13,6 @@ import Different from "@/components/Different";
 import Slider from "@/components/Slider";
 import { Reveal } from "@/components/motion/Reveal";
 
-/**
- * About-Us style section shell:
- * solid premium surfaces + one soft maroon corner orb (not a full-page wash).
- */
 function Section({
   children,
   tone = "black",
@@ -26,28 +22,31 @@ function Section({
   tone?: "black" | "elevated" | "deep";
   orb?: "none" | "top" | "left" | "right";
 }) {
-  const bg =
+  const surface =
     tone === "elevated"
-      ? "bg-[#070707]"
+      ? "premium-section-elevated"
       : tone === "deep"
-        ? "bg-[#080808]"
-        : "bg-black";
+        ? "premium-section-deep"
+        : "premium-section";
 
   const orbClass =
     orb === "top"
-      ? "absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-[#800000]/15 blur-[120px]"
+      ? "absolute left-1/2 top-0 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[#800000]/12 blur-[100px]"
       : orb === "left"
-        ? "absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#800000]/18 blur-[120px]"
+        ? "absolute -left-24 top-16 h-[20rem] w-[20rem] rounded-full bg-[#800000]/10 blur-[100px]"
         : orb === "right"
-          ? "absolute -right-32 top-0 h-96 w-96 rounded-full bg-[#800000]/14 blur-[110px]"
+          ? "absolute -right-20 top-8 h-[20rem] w-[20rem] rounded-full bg-[#800000]/10 blur-[100px]"
           : "";
 
   return (
-    <section className={`relative overflow-hidden ${bg}`}>
+    <section className={`relative overflow-hidden ${surface}`}>
+      <div aria-hidden className="premium-noise" />
       {orb !== "none" && <div aria-hidden className={orbClass} />}
-      <Reveal variant="fade" duration={800}>
-        {children}
-      </Reveal>
+      <div className="relative z-[1]">
+        <Reveal variant="fade" duration={800}>
+          {children}
+        </Reveal>
+      </div>
     </section>
   );
 }
@@ -55,8 +54,13 @@ function Section({
 const Index = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-black text-white">
+      <div
+        aria-hidden
+        className="premium-noise pointer-events-none fixed inset-0 z-[1] opacity-[0.03]"
+      />
+
       <Header />
-      <main>
+      <main className="relative z-[2]">
         <Hero />
 
         <Section tone="elevated" orb="top">
