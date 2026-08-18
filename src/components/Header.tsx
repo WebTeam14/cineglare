@@ -8,10 +8,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { asset } from "@/assets/placeholder";
 import { cn } from "@/lib/utils";
-
-const logo = asset("logoMain.png");
+import logo from "@/assets/logo/Cineglare.svg";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -70,7 +68,6 @@ const Header = () => {
           : "shadow-none",
       )}
     >
-      {/* subtle top crimson accent line */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#800000]/70 to-transparent"
