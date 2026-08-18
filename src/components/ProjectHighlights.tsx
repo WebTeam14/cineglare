@@ -1,6 +1,8 @@
 
 import { asset, logoAsset } from "@/assets/placeholder";
 
+import { Reveal, Stagger } from "@/components/motion/Reveal";
+
 const project1 = asset("project-1.jpg");
 const project2 = asset("project-2.jpg");
 const project3 = asset("project-3.jpg");
@@ -8,15 +10,15 @@ const ProjectHighlights = () => {
   return (
     <section id="portfolio" className="py-20 bg-black">
       <div className="container-custom">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
+        <Reveal as="h2" className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
           Project Highlights
-        </h2>
+        </Reveal>
         <p className="text-center text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed">
           We bring bold ideas to life through standout projects crafted with creative brilliance and flawless execution. Each highlight reflects our passion for storytelling, our strategic approach, and our global entertainment expertise. From star-led brand campaigns to cinematic productions and unforgettable event experiences.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="relative overflow-hidden rounded-lg group cursor-pointer">
+        <Stagger step={120} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="relative overflow-hidden rounded-lg group cursor-pointer hover-lift">
             <img
               src={project1}
               alt="Concert event with dramatic stage lighting"
@@ -25,7 +27,7 @@ const ProjectHighlights = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
-          <div className="relative overflow-hidden rounded-lg group cursor-pointer 
+          <div className="relative overflow-hidden rounded-lg group cursor-pointer hover-lift 
           shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 animate-fade-in" 
           style={{ animationDelay: '150ms' }} >
             <img
@@ -36,7 +38,7 @@ const ProjectHighlights = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
-          <div className="relative overflow-hidden rounded-lg group cursor-pointer 
+          <div className="relative overflow-hidden rounded-lg group cursor-pointer hover-lift 
           shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 animate-fade-in" 
           style={{ animationDelay: '300ms' }} >
             <img
@@ -46,7 +48,7 @@ const ProjectHighlights = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
-        </div>
+        </Stagger>
       </div>
     </section>
   );
