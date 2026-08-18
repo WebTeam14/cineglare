@@ -62,7 +62,7 @@
 }
 
 :root {
-  --radius: 0.5rem;
+  --radius: 1rem;
 
   /* Client palette — near-black surfaces, crimson accent */
   --background: oklch(0.16 0 0);
