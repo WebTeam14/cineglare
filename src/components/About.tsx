@@ -1,3 +1,4 @@
+import { Reveal, Stagger } from "@/components/motion/Reveal";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -26,7 +27,7 @@ const About = () => {
         {/* Image */}
         <div className="relative flex justify-center">
           {/* <div className="relative rounded-lg overflow-hidden max-w-[550px] w-full"> */}
-          <div className="relative rounded-lg overflow-hidden w-full">
+          <div className="relative rounded-lg overflow-hidden w-full media-zoom hover-lift">
             <img
               src={aboutUsImage}
               alt="Cineglare team celebrating"
@@ -53,15 +54,15 @@ const About = () => {
           </p>
 
           {/* Highlights Grid */}
-          <div className="grid grid-cols-2 gap-4 mb-8">
+          <Stagger step={70} className="grid grid-cols-2 gap-4 mb-8">
             {highlights.map((highlight, index) => (
-              <div key={index} className="flex items-start space-x-2 animate-fade-in hover:translate-x-2 transition-transform duration-300"
+              <div key={index} className="flex items-start space-x-2 hover:translate-x-2 transition-transform duration-300"
                 style={{ animationDelay: `${index * 100}ms` }} >
                 <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-foreground">{highlight}</span>
               </div>
             ))}
-          </div>
+          </Stagger>
 
           <div className="grid grid-cols-2 gap-4 mb-8">
             <div className="mt-8">

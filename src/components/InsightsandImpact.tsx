@@ -6,6 +6,8 @@ const insightsMain = asset("insights-main.jpg");
 const insightBranding = asset("insight-branding.jpg");
 const insightFilms = asset("insight-films.jpg");
 const insightDigital = asset("insight-digital.jpg");
+import { Reveal, Stagger } from "@/components/motion/Reveal";
+
 const insights = [
   {
     image: insightBranding,
@@ -25,13 +27,13 @@ const Impact = () => {
   return (
     <section id="impact" className="py-20 bg-black">
       <div className="container-custom">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
+        <Reveal as="h2" className="text-3xl md:text-4xl font-bold text-foreground mb-12">
           Insights & Impact
-        </h2>
+        </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left Side - Large Featured Insight */}
-          <div className="relative group cursor-pointer rounded-lg overflow-hidden h-[600px]">
+          <div className="relative group cursor-pointer rounded-lg overflow-hidden h-[600px] hover-lift media-zoom">
             <img
               src={insightsMain}
               alt="Event celebration with sparklers"
@@ -49,11 +51,11 @@ const Impact = () => {
           </div>
 
           {/* Right Side - Three Insight Cards */}
-          <div className="flex flex-col gap-6">
+          <Stagger step={120} className="flex flex-col gap-6">
             {insights.map((insight, index) => (
               <div
                 key={index}
-                className="relative group cursor-pointer rounded-lg overflow-hidden h-[192px]"
+                className="relative group cursor-pointer rounded-lg overflow-hidden h-[192px] hover-lift media-zoom"
               >
                 <img
                   src={insight.image}
@@ -68,7 +70,7 @@ const Impact = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </Stagger>
         </div>
       </div>
     </section>

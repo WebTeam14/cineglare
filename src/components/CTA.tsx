@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 
 import { asset, logoAsset } from "@/assets/placeholder";
 
+import { Reveal } from "@/components/motion/Reveal";
+
 const ctaBackground = asset("cta-bg.jpg");
 const CTA = () => {
   return (
@@ -16,10 +18,12 @@ const CTA = () => {
         }}
       >
         <div className="absolute inset-0 bg-black/75" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-background to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="container-custom relative z-10 text-center">
+      <Reveal className="container-custom relative z-10 text-center" duration={900}>
         <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 bg-none pt-8 pb-8 rounded-full">
           Partner With Us to Make Your Vision Real
         </h2>
@@ -29,7 +33,7 @@ const CTA = () => {
         <Button variant="default" size="lg" className="px-8">
           Let's Talk
         </Button>
-      </div>
+      </Reveal>
     </section>
   );
 };
