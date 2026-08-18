@@ -1,8 +1,10 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-// import aboutImage from "@/assets/about-image.jpg";
-import aboutUsImage from "@/assets/Cineglare Trans Logo.jpg";
 
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const aboutUsImage = asset("Cineglare Trans Logo.jpg");
+// import aboutImage from "@/assets/about-image.jpg";
 const highlights = [
   "Star Influence",
   "Global Reach",

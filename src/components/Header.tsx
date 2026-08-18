@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 // import logo from "@/assets/logo.jpeg";
-import logo from "@/assets/logoMain.png";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import {
+
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const logo = asset("logoMain.png");
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,

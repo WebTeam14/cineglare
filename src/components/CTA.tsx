@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
-import ctaBackground from "@/assets/cta-bg.jpg";
 
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const ctaBackground = asset("cta-bg.jpg");
 const CTA = () => {
   return (
     <section className="relative py-32 overflow-hidden">
