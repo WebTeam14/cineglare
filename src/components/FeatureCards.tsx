@@ -34,7 +34,7 @@ const FeatureCards = () => {
             </p>
           </div>
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
-            Crafting vision into reality
+            What sets us apart
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/65">
             Creative strategy, star power, and flawless execution — the pillars

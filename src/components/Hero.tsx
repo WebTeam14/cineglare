@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { asset } from "@/assets/placeholder";
-
-const heroPoster = asset("hero-poster.jpg");
 
 /**
  * Prefer same-origin asset if present; otherwise public CDNs known to allow
@@ -73,19 +70,11 @@ const Hero = () => {
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-black"
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <img
-          src={heroPoster}
-          alt=""
-          aria-hidden
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-
         <video
           ref={videoRef}
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
             videoReady ? "opacity-100" : "opacity-40"
           }`}
-          poster={heroPoster}
           autoPlay
           muted
           loop
