@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
-import insightsMain from "@/assets/insights-main.jpg";
-import insightBranding from "@/assets/insight-branding.jpg";
-import insightFilms from "@/assets/insight-films.jpg";
-import insightDigital from "@/assets/insight-digital.jpg";
 
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const insightsMain = asset("insights-main.jpg");
+const insightBranding = asset("insight-branding.jpg");
+const insightFilms = asset("insight-films.jpg");
+const insightDigital = asset("insight-digital.jpg");
 const insights = [
   {
     image: insightBranding,

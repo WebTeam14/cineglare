@@ -1,11 +1,13 @@
 import { Calendar, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import blogFeatured from "@/assets/blog-featured.jpg";
-import blog1 from "@/assets/blog-1.jpg";
-import blog2 from "@/assets/blog-2.jpg";
-import blog3 from "@/assets/blog-3.jpg";
-import ctaBackground from "@/assets/cta-bg.jpg";
 
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const blogFeatured = asset("blog-featured.jpg");
+const blog1 = asset("blog-1.jpg");
+const blog2 = asset("blog-2.jpg");
+const blog3 = asset("blog-3.jpg");
+const ctaBackground = asset("cta-bg.jpg");
 interface InsightsInnovationsProps {
     sectionTwoTitle: string;
     sectionThreeTitle: string;

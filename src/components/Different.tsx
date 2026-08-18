@@ -1,5 +1,8 @@
-import differentiatorsBg from "@/assets/differentiators-bg.jpg";
 import StatsCounter from "./StatsCounter";
+
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const differentiatorsBg = asset("differentiators-bg.jpg");
 
 const Different = () => {
   return (

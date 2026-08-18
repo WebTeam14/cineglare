@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
-import heroBackground from "@/assets/HomeVid-2.mp4";
 
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const heroBackground = asset("HomeVid-2.mp4");
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
