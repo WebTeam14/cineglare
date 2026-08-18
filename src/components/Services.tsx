@@ -35,7 +35,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 bg-black w-full">
+    <section id="services" className="py-20 bg-transparent w-full">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center px-2 md:px-2 lg:px-0 mb-10">
           <div className="relative flex text-left">

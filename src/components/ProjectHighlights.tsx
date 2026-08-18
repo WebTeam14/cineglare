@@ -8,7 +8,7 @@ const project2 = asset("project-2.jpg");
 const project3 = asset("project-3.jpg");
 const ProjectHighlights = () => {
   return (
-    <section id="portfolio" className="py-20 bg-black">
+    <section id="portfolio" className="py-20 bg-transparent">
       <div className="container-custom">
         <Reveal as="h2" className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
           Project Highlights
