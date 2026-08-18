@@ -138,25 +138,23 @@ const Hero = () => {
             film, and live events.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4" style={step(3)}>
+          <div className="flex flex-wrap items-center gap-4 sm:gap-5" style={step(3)}>
             <Button
               asChild
-              size="lg"
-              className="rounded-full bg-[#800000] px-7 font-semibold text-white shadow-[0_12px_35px_rgba(128,0,0,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000]"
+              className="h-14 rounded-full bg-[#800000] px-8 text-base font-semibold text-white shadow-[0_12px_35px_rgba(128,0,0,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] sm:h-16 sm:px-10 sm:text-lg"
             >
-              <a href="#contact" className="inline-flex items-center gap-2">
+              <a href="#contact" className="inline-flex items-center gap-2.5">
                 Free Quote
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
               </a>
             </Button>
             <Button
               asChild
               variant="outline"
-              size="lg"
-              className="rounded-full border-white/20 bg-white/5 px-7 font-semibold text-white backdrop-blur-sm hover:bg-white/10 hover:text-white"
+              className="h-14 rounded-full border-white/25 bg-white/5 px-8 text-base font-semibold text-white backdrop-blur-sm hover:bg-white/10 hover:text-white sm:h-16 sm:px-10 sm:text-lg"
             >
-              <a href="#portfolio" className="inline-flex items-center gap-2">
-                <Play className="h-4 w-4 fill-current" />
+              <a href="#portfolio" className="inline-flex items-center gap-2.5">
+                <Play className="h-5 w-5 fill-current sm:h-6 sm:w-6" />
                 View Work
               </a>
             </Button>
