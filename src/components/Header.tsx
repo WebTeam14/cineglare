@@ -64,13 +64,18 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+        "fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-black/95 backdrop-blur-xl transition-shadow duration-500",
         scrolled
-          ? "border-b border-white/10 bg-black/80 shadow-[0_10px_40px_rgba(0,0,0,.45)] backdrop-blur-xl"
-          : "border-b border-transparent bg-gradient-to-b from-black/70 to-transparent backdrop-blur-md",
+          ? "shadow-[0_12px_40px_rgba(0,0,0,.55)]"
+          : "shadow-none",
       )}
     >
-      <nav className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between px-5 md:h-[4.75rem] md:px-8 lg:px-10">
+      {/* subtle top crimson accent line */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#800000]/70 to-transparent"
+      />
+      <nav className="relative mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-5 md:h-[5rem] md:px-8 lg:px-10">
         <Link to="/" className="group flex shrink-0 items-center gap-3">
           <img
             src={logo}
