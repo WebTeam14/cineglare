@@ -2,15 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import {
-
-import { asset, logoAsset } from "@/assets/placeholder";
-
-const aboutHero = asset("AboutHero.png");
-const teamworkStructure = asset("teamwork.jpg");
-const csrCommunity = asset("communitygrowth.jpg");
-const csrPeople = asset("growth.jfif");
-const csrGreen = asset("growth1.jfif");
-const csrWomen = asset("women.jfif");
   Monitor,
   Lightbulb,
   Globe,
@@ -27,6 +18,14 @@ const csrWomen = asset("women.jfif");
   ShieldCheck,
   Play,
 } from "lucide-react";
+import { asset } from "@/assets/placeholder";
+
+const aboutHero = asset("AboutHero.png");
+const teamworkStructure = asset("teamwork.jpg");
+const csrCommunity = asset("communitygrowth.jpg");
+const csrPeople = asset("growth.jfif");
+const csrGreen = asset("growth1.jfif");
+const csrWomen = asset("women.jfif");
 /* -------------------------------------------------------------------------- */
 /* Helpers                                                                    */
 /* -------------------------------------------------------------------------- */
