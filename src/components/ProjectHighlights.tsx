@@ -1,56 +1,54 @@
-
-import { asset, logoAsset } from "@/assets/placeholder";
-
+import { asset } from "@/assets/placeholder";
 import { Reveal, Stagger } from "@/components/motion/Reveal";
 
 const project1 = asset("project-1.jpg");
 const project2 = asset("project-2.jpg");
 const project3 = asset("project-3.jpg");
+
 const ProjectHighlights = () => {
   return (
-    <section id="portfolio" className="py-20 bg-transparent">
+    <div id="portfolio" className="py-20 sm:py-24 lg:py-28">
       <div className="container-custom">
-        <Reveal as="h2" className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
+        <div className="mb-4 flex items-center justify-center gap-3">
+          <span className="h-px w-12 bg-[#800000]" />
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+            Portfolio
+          </p>
+          <span className="h-px w-12 bg-[#800000]" />
+        </div>
+        <Reveal
+          as="h2"
+          className="mb-6 text-center text-3xl font-bold tracking-tight text-white md:text-4xl"
+        >
           Project Highlights
         </Reveal>
-        <p className="text-center text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed">
-          We bring bold ideas to life through standout projects crafted with creative brilliance and flawless execution. Each highlight reflects our passion for storytelling, our strategic approach, and our global entertainment expertise. From star-led brand campaigns to cinematic productions and unforgettable event experiences.
+        <p className="mx-auto mb-12 max-w-3xl text-center text-base leading-relaxed text-white/65">
+          We bring bold ideas to life through standout projects crafted with
+          creative brilliance and flawless execution. Each highlight reflects
+          our passion for storytelling and global entertainment expertise.
         </p>
 
-        <Stagger step={120} className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="relative overflow-hidden rounded-2xl group cursor-pointer hover-lift">
-            <img
-              src={project1}
-              alt="Concert event with dramatic stage lighting"
-              className="w-full h-[300px] object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-
-          <div className="relative overflow-hidden rounded-2xl group cursor-pointer hover-lift 
-          shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 animate-fade-in" 
-          style={{ animationDelay: '150ms' }} >
-            <img
-              src={project2}
-              alt="Elegant celebration with confetti"
-              className="w-full h-[300px] object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-
-          <div className="relative overflow-hidden rounded-2xl group cursor-pointer hover-lift 
-          shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 animate-fade-in" 
-          style={{ animationDelay: '300ms' }} >
-            <img
-              src={project3}
-              alt="Evening event with warm lighting"
-              className="w-full h-[300px] object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
+        <Stagger step={120} className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {[
+            { src: project1, alt: "Concert event with dramatic stage lighting" },
+            { src: project2, alt: "Elegant celebration with confetti" },
+            { src: project3, alt: "Evening event with warm lighting" },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="group relative cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/10"
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="h-[300px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
+            </div>
+          ))}
         </Stagger>
       </div>
-    </section>
+    </div>
   );
 };
 

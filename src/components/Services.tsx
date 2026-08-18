@@ -4,71 +4,82 @@ const services = [
   {
     icon: Package,
     title: "Product Branding",
-    description: "We craft experiences that turn first glances into lifelong loyalty — and elevate your brand globally.",
+    description:
+      "We craft experiences that turn first glances into lifelong loyalty — and elevate your brand globally.",
   },
   {
     icon: Users2,
     title: "Celebrity Management",
-    description: "We bring stars who embody your brand's essence — turning every appearance into powerful influence.",
+    description:
+      "We bring stars who embody your brand's essence — turning every appearance into powerful influence.",
   },
   {
     icon: Globe,
     title: "Digital Marketing",
-    description: "We turn digital presence into global influence — and measurable business growth.",
+    description:
+      "We turn digital presence into global influence — and measurable business growth.",
   },
   {
     icon: Film,
     title: "Film & AD Production",
-    description: "Where creativity meets cinematic excellence. From concept to screen — we deliver stories that inspire global audiences.",
+    description:
+      "Where creativity meets cinematic excellence. From concept to screen — we deliver stories that inspire global audiences.",
   },
   {
     icon: TrendingUp,
     title: "Film Promotion",
-    description: "From teasers to trending — your film gets the spotlight. Strategy + stardom + global reach.",
+    description:
+      "From teasers to trending — your film gets the spotlight. Strategy + stardom + global reach.",
   },
   {
     icon: Calendar,
     title: "Event Management",
-    description: "We curate unforgettable events with world-class execution. From concept to curtain call — every moment shines.",
+    description:
+      "We curate unforgettable events with world-class execution. From concept to curtain call — every moment shines.",
   },
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 bg-transparent w-full">
+    <div id="services" className="w-full py-20 sm:py-24 lg:py-28">
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center px-2 md:px-2 lg:px-0 mb-10">
-          <div className="relative flex text-left">
-            <h2 className="text-4xl md:text-5xl text-left font-bold text-foreground mb-4">
-            Services we deliver
-          </h2>
+        <div className="mb-12 grid grid-cols-1 items-end gap-6 lg:grid-cols-2">
+          <div>
+            <div className="mb-4 flex items-center gap-3">
+              <span className="h-px w-12 bg-[#800000]" />
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+                What we do
+              </p>
+            </div>
+            <h2 className="text-4xl font-bold tracking-tight text-white md:text-5xl">
+              Services we deliver
+            </h2>
           </div>
-
-          <div className="pr-2 md:pr-6 lg:pr-10">
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto whitespace-nowrap">
-            We elevate brands with star-powered influence, unforgettable experiences, and cinematic <br /> storytelling — delivering strategic, flawless execution that transforms brands into icons.
+          <p className="max-w-xl text-base leading-relaxed text-white/65 lg:justify-self-end">
+            We elevate brands with star-powered influence, unforgettable
+            experiences, and cinematic storytelling — delivering strategic,
+            flawless execution that transforms brands into icons.
           </p>
-          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-card border border-none rounded-2xl p-8 hover:border-primary 
-              transition-all group hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-2 animate-fade-in"
-            style={{ animationDelay: `${index * 100}ms` }} >
-              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 
-              group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+              className="group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[.035] p-8 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/70 hover:bg-[#800000]/10"
+              style={{ animationDelay: `${index * 80}ms` }}
+            >
+              <div className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-[#800000] transition-transform duration-500 group-hover:scale-x-100" />
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#800000]/30 bg-[#800000]/15 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#800000] group-hover:shadow-[0_0_30px_rgba(128,0,0,.35)]">
+                <service.icon className="h-7 w-7 text-[#800000] transition-colors duration-300 group-hover:text-white" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
-              <p className="text-muted-foreground">{service.description}</p>
+              <h3 className="mb-3 text-xl font-bold text-white">{service.title}</h3>
+              <p className="text-sm leading-relaxed text-white/65">{service.description}</p>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
