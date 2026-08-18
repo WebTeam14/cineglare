@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "@tanstack/react-router";
 
-import logo from "@/assets/logo/Cineglare.svg";
+import logo from "@/assets/logo/Cineglare-light.svg";
 
 const Footer = () => {
   const quickLinks = [
