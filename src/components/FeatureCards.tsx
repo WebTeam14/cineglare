@@ -57,7 +57,7 @@ const FeatureCards = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
-                className="group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[.035] p-8 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/70 hover:bg-[#800000]/10"
+                className="group relative overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-br from-white/[0.06] via-white/[0.03] to-black/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_20px_50px_-28px_rgba(0,0,0,0.85)] backdrop-blur-sm p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/70 hover:bg-[#800000]/10"
               >
                 <div className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-[#800000] transition-transform duration-500 group-hover:scale-x-100" />
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#800000]/30 bg-[#800000]/15 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#800000] group-hover:shadow-[0_0_30px_rgba(128,0,0,.35)]">
