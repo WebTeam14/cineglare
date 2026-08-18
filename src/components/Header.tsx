@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo/Cineglare.svg";
+import logo from "@/assets/logo/Cineglare-light.svg";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -77,7 +77,7 @@ const Header = () => {
           <img
             src={logo}
             alt="Cineglare"
-            className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03] md:h-11"
+            className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03] md:h-12"
           />
         </Link>
 
