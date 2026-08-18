@@ -1,12 +1,11 @@
 import { Button } from "@/components/ui/button";
-
-import { asset, logoAsset } from "@/assets/placeholder";
+import { Reveal, Stagger } from "@/components/motion/Reveal";
+import { asset } from "@/assets/placeholder";
 
 const insightsMain = asset("insights-main.jpg");
 const insightBranding = asset("insight-branding.jpg");
 const insightFilms = asset("insight-films.jpg");
 const insightDigital = asset("insight-digital.jpg");
-import { Reveal, Stagger } from "@/components/motion/Reveal";
 
 const insights = [
   {
