@@ -24,7 +24,7 @@ const insights = [
 
 const Impact = () => {
   return (
-    <section id="impact" className="py-20 bg-black">
+    <section id="impact" className="py-20 bg-transparent">
       <div className="container-custom">
         <Reveal
           as="h2"
@@ -33,9 +33,7 @@ const Impact = () => {
           Insights & Impact
         </Reveal>
 
-        {/* Equal-height two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6 lg:items-stretch">
-          {/* Left — large feature (matches full right stack height) */}
           <div className="relative group cursor-pointer overflow-hidden rounded-2xl min-h-[420px] lg:min-h-0 lg:h-full">
             <img
               src={insightsMain}
@@ -56,7 +54,6 @@ const Impact = () => {
             </div>
           </div>
 
-          {/* Right — three equal cards that fill the left column height */}
           <div className="flex min-h-[420px] flex-col gap-5 lg:min-h-0 lg:h-full lg:gap-6">
             {insights.map((insight, index) => (
               <div
