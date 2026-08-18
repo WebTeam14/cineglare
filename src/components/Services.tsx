@@ -66,7 +66,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[.035] p-8 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/70 hover:bg-[#800000]/10"
+              className="group relative overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-br from-white/[0.06] via-white/[0.03] to-black/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_20px_50px_-28px_rgba(0,0,0,0.85)] backdrop-blur-sm p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/70 hover:bg-[#800000]/10"
               style={{ animationDelay: `${index * 80}ms` }}
             >
               <div className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-[#800000] transition-transform duration-500 group-hover:scale-x-100" />
