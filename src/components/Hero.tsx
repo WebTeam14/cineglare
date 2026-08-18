@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { asset } from "@/assets/placeholder";
 
 const heroPoster = asset("hero-poster.jpg");
-const heroVideo = asset("HomeVid-2.mp4");
 
 const Hero = () => {
   const [entered, setEntered] = useState(false);
@@ -32,21 +31,6 @@ const Hero = () => {
           alt=""
           aria-hidden
           className="absolute inset-0 h-full w-full object-cover"
-        />
-        <video
-          src={heroVideo}
-          poster={heroPoster}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{
-            opacity: entered ? 1 : 0,
-            transform: entered ? "scale(1)" : "scale(1.06)",
-            transition:
-              "opacity 1600ms var(--ease-cinema), transform 2400ms var(--ease-cinema)",
-          }}
         />
         {/* Layered scrims keep the type legible and add depth */}
         <div className="absolute inset-0 bg-black/55" />
