@@ -67,7 +67,7 @@ const StatsCounter: React.FC<StatsCounterProps> = ({
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center justify-center bg-card text-foreground p-8 shadow-lg"
+      className="flex flex-col items-center justify-center bg-card text-foreground p-8 shadow-lg rounded-2xl"
     >
       <h2 className="text-6xl font-bold">
         {value}

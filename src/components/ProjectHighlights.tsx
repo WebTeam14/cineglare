@@ -18,7 +18,7 @@ const ProjectHighlights = () => {
         </p>
 
         <Stagger step={120} className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="relative overflow-hidden rounded-lg group cursor-pointer hover-lift">
+          <div className="relative overflow-hidden rounded-2xl group cursor-pointer hover-lift">
             <img
               src={project1}
               alt="Concert event with dramatic stage lighting"
@@ -27,7 +27,7 @@ const ProjectHighlights = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
-          <div className="relative overflow-hidden rounded-lg group cursor-pointer hover-lift 
+          <div className="relative overflow-hidden rounded-2xl group cursor-pointer hover-lift 
           shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 animate-fade-in" 
           style={{ animationDelay: '150ms' }} >
             <img
@@ -38,7 +38,7 @@ const ProjectHighlights = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
-          <div className="relative overflow-hidden rounded-lg group cursor-pointer hover-lift 
+          <div className="relative overflow-hidden rounded-2xl group cursor-pointer hover-lift 
           shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 animate-fade-in" 
           style={{ animationDelay: '300ms' }} >
             <img
