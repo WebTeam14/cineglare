@@ -17,7 +17,7 @@ const testimonials = [
 
 const Impact = () => {
   return (
-    <section className="py-20 bg-black/30">
+    <section className="py-20 bg-transparent">
       <div className="container-custom">
         <div className="row">
           <p className="text-md text-foreground font-bold text-red-600 mb-5">
@@ -59,7 +59,7 @@ const Impact = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-card border-none rounded-2xl p-8"
+                className="bg-card/80 border border-primary/10 rounded-2xl p-8 backdrop-blur-sm"
               >
                 <Quote className="w-10 h-10 text-gray-400 mb-6" />
 

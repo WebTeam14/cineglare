@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { asset, logoAsset } from "@/assets/placeholder";
 
 const aboutUsImage = asset("Cineglare Trans Logo.jpg");
-// import aboutImage from "@/assets/about-image.jpg";
 const highlights = [
   "Star Influence",
   "Global Reach",
@@ -19,9 +18,8 @@ const highlights = [
 
 const About = () => {
   return (
-    <section id="about" className="py-5 bg-black w-full">
+    <section id="about" className="py-16 bg-transparent w-full">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-2 px-6 md:px-12 lg:px-20">
-        {/* Image */}
         <div className="relative flex justify-center">
           <div className="relative rounded-2xl overflow-hidden w-full media-zoom hover-lift">
             <img
@@ -32,7 +30,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Content */}
         <div className="pr-6 md:pr-12 lg:pr-20">
           <p className="text-xl text-white text-muted-foreground mb-6 leading-relaxed">
             About Cineglare
