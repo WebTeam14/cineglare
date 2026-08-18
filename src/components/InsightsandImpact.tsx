@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Reveal, Stagger } from "@/components/motion/Reveal";
+import { Reveal } from "@/components/motion/Reveal";
 import { asset } from "@/assets/placeholder";
 
 const insightsMain = asset("insights-main.jpg");
@@ -26,50 +26,57 @@ const Impact = () => {
   return (
     <section id="impact" className="py-20 bg-black">
       <div className="container-custom">
-        <Reveal as="h2" className="text-3xl md:text-4xl font-bold text-foreground mb-12">
+        <Reveal
+          as="h2"
+          className="text-3xl md:text-4xl font-bold text-foreground mb-12"
+        >
           Insights & Impact
         </Reveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Left Side - Large Featured Insight */}
-          <div className="relative group cursor-pointer rounded-lg overflow-hidden h-[600px] hover-lift media-zoom">
+        {/* Equal-height two-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6 lg:items-stretch">
+          {/* Left — large feature (matches full right stack height) */}
+          <div className="relative group cursor-pointer overflow-hidden rounded-2xl min-h-[420px] lg:min-h-0 lg:h-full">
             <img
               src={insightsMain}
               alt="Event celebration with sparklers"
-              className="w-full h-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-            <div className="absolute bottom-0 left-0 right-0 p-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6 leading-tight">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10" />
+            <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+              <h3 className="mb-5 max-w-md text-2xl font-bold leading-tight text-white md:text-3xl">
                 Transforming Ideas into Memorable Event Experiences
               </h3>
-              <Button variant="default" className="bg-crimson hover:bg-crimson/90 text-white">
+              <Button
+                variant="default"
+                className="bg-crimson text-white hover:bg-crimson/90"
+              >
                 Learn more
               </Button>
             </div>
           </div>
 
-          {/* Right Side - Three Insight Cards */}
-          <Stagger step={120} className="flex flex-col gap-6">
+          {/* Right — three equal cards that fill the left column height */}
+          <div className="flex min-h-[420px] flex-col gap-5 lg:min-h-0 lg:h-full lg:gap-6">
             {insights.map((insight, index) => (
               <div
                 key={index}
-                className="relative group cursor-pointer rounded-lg overflow-hidden h-[192px] hover-lift media-zoom"
+                className="relative min-h-[120px] flex-1 overflow-hidden rounded-2xl group cursor-pointer"
               >
                 <img
                   src={insight.image}
                   alt={insight.title}
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-transparent group-hover:from-background/95 transition-all duration-300" />
-                <div className="absolute inset-0 flex items-center p-6">
-                  <h4 className="text-lg md:text-xl font-semibold text-foreground leading-tight">
+                <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20" />
+                <div className="absolute inset-0 flex items-center p-5 md:p-6">
+                  <h4 className="max-w-[90%] text-base font-semibold leading-snug text-white md:text-lg">
                     {insight.title}
                   </h4>
                 </div>
               </div>
             ))}
-          </Stagger>
+          </div>
         </div>
       </div>
     </section>
