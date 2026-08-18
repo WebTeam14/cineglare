@@ -20,14 +20,10 @@ const highlights = [
 const About = () => {
   return (
     <section id="about" className="py-5 bg-black w-full">
-      {/* <div className="container-custom"> */}
-      {/* <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16"> */}
-      {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center "> */}
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-2 px-6 md:px-12 lg:px-20">
         {/* Image */}
         <div className="relative flex justify-center">
-          {/* <div className="relative rounded-lg overflow-hidden max-w-[550px] w-full"> */}
-          <div className="relative rounded-lg overflow-hidden w-full media-zoom hover-lift">
+          <div className="relative rounded-2xl overflow-hidden w-full media-zoom hover-lift">
             <img
               src={aboutUsImage}
               alt="Cineglare team celebrating"
@@ -53,7 +49,6 @@ const About = () => {
             center stage.
           </p>
 
-          {/* Highlights Grid */}
           <Stagger step={70} className="grid grid-cols-2 gap-4 mb-8">
             {highlights.map((highlight, index) => (
               <div key={index} className="flex items-start space-x-2 hover:translate-x-2 transition-transform duration-300"
@@ -71,8 +66,7 @@ const About = () => {
               </Button>
             </div>
 
-            {/* Stats */}
-            <div className="bg-card border border-border bg-white p-6 inline-block 
+            <div className="bg-card border border-border bg-white rounded-2xl p-6 inline-block 
               hover:border-primary hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 animate-fade-in hover:scale-105"
               style={{ animationDelay: '800ms' }}>
               <div className="text-center">
@@ -87,7 +81,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      {/* </div> */}
     </section>
   );
 };
