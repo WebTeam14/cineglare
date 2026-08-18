@@ -4,15 +4,14 @@ import { Button } from "@/components/ui/button";
 // import logo from "@/assets/logo.jpeg";
 import { Link } from "@tanstack/react-router";
 import {
-
-import { asset, logoAsset } from "@/assets/placeholder";
-
-const logo = asset("logoMain.png");
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { asset } from "@/assets/placeholder";
+
+const logo = asset("logoMain.png");
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
