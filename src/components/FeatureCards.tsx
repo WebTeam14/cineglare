@@ -71,7 +71,7 @@ const features = [
 
 const FeatureCards = () => {
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-transparent">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => {
