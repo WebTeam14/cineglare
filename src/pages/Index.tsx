@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import FeatureCards from "@/components/FeatureCards";
@@ -12,89 +13,85 @@ import Different from "@/components/Different";
 import Slider from "@/components/Slider";
 import { Reveal } from "@/components/motion/Reveal";
 
-/** Thin crimson rule — separates sections without flooding the page with color. */
-function SectionDivider() {
+/**
+ * About-Us style section shell:
+ * solid premium surfaces + one soft maroon corner orb (not a full-page wash).
+ */
+function Section({
+  children,
+  tone = "black",
+  orb = "none",
+}: {
+  children: ReactNode;
+  tone?: "black" | "elevated" | "deep";
+  orb?: "none" | "top" | "left" | "right";
+}) {
+  const bg =
+    tone === "elevated"
+      ? "bg-[#070707]"
+      : tone === "deep"
+        ? "bg-[#080808]"
+        : "bg-black";
+
+  const orbClass =
+    orb === "top"
+      ? "absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-[#800000]/15 blur-[120px]"
+      : orb === "left"
+        ? "absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#800000]/18 blur-[120px]"
+        : orb === "right"
+          ? "absolute -right-32 top-0 h-96 w-96 rounded-full bg-[#800000]/14 blur-[110px]"
+          : "";
+
   return (
-    <div className="relative mx-auto w-full max-w-6xl px-6" aria-hidden>
-      <div
-        className="h-px w-full"
-        style={{
-          background:
-            "linear-gradient(90deg, transparent 0%, color-mix(in oklab, var(--primary) 45%, transparent) 50%, transparent 100%)",
-        }}
-      />
-    </div>
+    <section className={`relative overflow-hidden ${bg}`}>
+      {orb !== "none" && <div aria-hidden className={orbClass} />}
+      <Reveal variant="fade" duration={800}>
+        {children}
+      </Reveal>
+    </section>
   );
 }
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen overflow-x-hidden bg-black text-white">
       <Header />
-      <main className="relative overflow-hidden">
-        {/* Soft top accent only — does not wash the whole page */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-1/2 top-0 h-[28rem] w-[min(90vw,56rem)] -translate-x-1/2 -z-10"
-          style={{
-            background:
-              "radial-gradient(ellipse 70% 55% at 50% 0%, color-mix(in oklab, var(--primary) 14%, transparent), transparent 70%)",
-          }}
-        />
-
+      <main>
         <Hero />
 
-        <Reveal variant="fade" duration={800}>
+        <Section tone="elevated" orb="top">
           <FeatureCards />
-        </Reveal>
+        </Section>
 
-        <SectionDivider />
-
-        <Reveal variant="fade" duration={800}>
+        <Section tone="black" orb="right">
           <About />
-        </Reveal>
+        </Section>
 
-        <SectionDivider />
-
-        <Reveal variant="fade" duration={800}>
+        <Section tone="deep" orb="left">
           <Services />
-        </Reveal>
+        </Section>
 
-        <SectionDivider />
-
-        <Reveal variant="fade" duration={800}>
+        <Section tone="black">
           <CTA />
-        </Reveal>
+        </Section>
 
-        <SectionDivider />
-
-        <Reveal variant="fade" duration={800}>
+        <Section tone="elevated" orb="top">
           <Impact />
-        </Reveal>
+        </Section>
 
-        <SectionDivider />
-
-        <Reveal variant="fade" duration={800}>
+        <Section tone="black" orb="right">
           <ProjectHighlights />
-        </Reveal>
+        </Section>
 
-        <SectionDivider />
+        <Different />
 
-        <Reveal variant="fade" duration={800}>
-          <Different />
-        </Reveal>
-
-        <SectionDivider />
-
-        <Reveal variant="fade" duration={800}>
+        <Section tone="deep" orb="left">
           <InsightsandImpact />
-        </Reveal>
+        </Section>
 
-        <SectionDivider />
-
-        <Reveal variant="fade" duration={800}>
+        <Section tone="elevated" orb="top">
           <Slider />
-        </Reveal>
+        </Section>
       </main>
       <Footer />
     </div>
