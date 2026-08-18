@@ -4,8 +4,16 @@ import { Button } from "@/components/ui/button";
 import { asset } from "@/assets/placeholder";
 
 const heroPoster = asset("hero-poster.jpg");
-/** Cinematic stock trailer — publicly available HD sample (W3C / Blender Sintel) */
-const HERO_VIDEO = "https://media.w3.org/2010/05/sintel/trailer_hd.mp4";
+
+/**
+ * Prefer same-origin asset if present; otherwise public CDNs known to allow
+ * cross-origin playback (Google bucket often returns 403 in browsers).
+ */
+const HERO_SOURCES = [
+  "/videos/hero-bg.mp4",
+  "https://cdn.jsdelivr.net/gh/mediaelement/mediaelement-files/big_buck_bunny.mp4",
+  "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+];
 
 const Hero = () => {
   const [entered, setEntered] = useState(false);
@@ -21,24 +29,35 @@ const Hero = () => {
     const video = videoRef.current;
     if (!video) return;
 
-    const prefersReduced =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (prefersReduced) return;
 
-    if (prefersReduced) {
-      video.pause();
-      return;
-    }
-
-    const tryPlay = () => {
+    const markReady = () => {
+      setVideoReady(true);
       video.muted = true;
-      const p = video.play();
-      if (p) p.catch(() => {});
+      video.playsInline = true;
+      const playPromise = video.play();
+      if (playPromise) playPromise.catch(() => {});
     };
 
-    video.addEventListener("canplay", tryPlay);
-    tryPlay();
-    return () => video.removeEventListener("canplay", tryPlay);
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+
+    video.addEventListener("loadeddata", markReady);
+    video.addEventListener("canplay", markReady);
+    video.addEventListener("playing", () => setVideoReady(true));
+
+    video.load();
+    markReady();
+
+    return () => {
+      video.removeEventListener("loadeddata", markReady);
+      video.removeEventListener("canplay", markReady);
+    };
   }, []);
 
   const step = (index: number) => ({
@@ -58,25 +77,25 @@ const Hero = () => {
           src={heroPoster}
           alt=""
           aria-hidden
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
-            videoReady ? "opacity-0" : "opacity-100"
-          }`}
+          className="absolute inset-0 h-full w-full object-cover"
         />
+
         <video
           ref={videoRef}
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
             videoReady ? "opacity-100" : "opacity-0"
           }`}
-          src={HERO_VIDEO}
           poster={heroPoster}
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          onLoadedData={() => setVideoReady(true)}
-          onCanPlay={() => setVideoReady(true)}
-        />
+        >
+          {HERO_SOURCES.map((src) => (
+            <source key={src} src={src} type="video/mp4" />
+          ))}
+        </video>
 
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/25" />
