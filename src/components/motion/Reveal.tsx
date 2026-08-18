@@ -190,7 +190,7 @@ export function Parallax({ children, className, strength = 40 }: ParallaxProps) 
   );
 }
 
-/** Decorative ambient crimson gradients that bridge sections over black. */
+/** Subtle crimson ambient — sparse, not page-wide. */
 export function AmbientGradient({
   className,
   intensity = 1,
@@ -198,39 +198,16 @@ export function AmbientGradient({
   className?: string;
   intensity?: number;
 }) {
-  const a = Math.min(42, Math.round(28 * intensity));
-  const b = Math.min(32, Math.round(20 * intensity));
-  const c = Math.min(24, Math.round(14 * intensity));
+  const strength = Math.min(16, Math.round(12 * intensity));
   return (
     <div
       aria-hidden
       className={cn("pointer-events-none absolute inset-0 -z-10 overflow-hidden", className)}
     >
       <div
-        className="animate-ambient absolute -left-[15%] top-[-10%] h-[48rem] w-[48rem] rounded-full blur-3xl"
+        className="absolute left-1/2 top-0 h-[32rem] w-[40rem] -translate-x-1/2 rounded-full blur-3xl"
         style={{
-          background: `radial-gradient(circle, color-mix(in oklab, var(--primary) ${a}%, transparent), transparent 68%)`,
-        }}
-      />
-      <div
-        className="animate-ambient absolute -right-[18%] top-[35%] h-[42rem] w-[42rem] rounded-full blur-3xl"
-        style={{
-          animationDelay: "-7s",
-          background: `radial-gradient(circle, color-mix(in oklab, var(--primary) ${b}%, transparent), transparent 70%)`,
-        }}
-      />
-      <div
-        className="animate-ambient absolute left-[10%] bottom-[-15%] h-[36rem] w-[36rem] rounded-full blur-3xl"
-        style={{
-          animationDelay: "-12s",
-          background: `radial-gradient(circle, color-mix(in oklab, var(--primary) ${c}%, transparent), transparent 72%)`,
-        }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(180deg, transparent 0%, color-mix(in oklab, var(--primary) 6%, transparent) 30%, transparent 55%, color-mix(in oklab, var(--primary) 8%, transparent) 75%, transparent 100%)",
+          background: `radial-gradient(circle, color-mix(in oklab, var(--primary) ${strength}%, transparent), transparent 70%)`,
         }}
       />
     </div>
