@@ -2,12 +2,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-// import digitalMarketingHero from "@/assets/digital-marketing-hero.jpg";
-import digitalMarketingCenter from "@/assets/digital-marketing-center.jpg"
 
-import { asset, logoAsset } from "@/assets/placeholder";
+import { asset } from "@/assets/placeholder";
 
 const digitalMarketingImage = asset("digital-marketing-image.jpg");
+const digitalMarketingCenter = asset("digital-marketing-center.jpg");
 
 const DigitalMarketing = () => {
   const leftServices = [

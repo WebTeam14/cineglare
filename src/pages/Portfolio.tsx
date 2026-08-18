@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Play } from "lucide-react";
 
-import { asset, logoAsset } from "@/assets/placeholder";
+import { asset, portfolioVideo } from "@/assets/placeholder";
 
 const aboutHero = asset("Portfolio.mp4");
 const videoFiles = [
@@ -67,10 +67,8 @@ export default function Portfolio() {
           {/* Video Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {videoFiles.map((video, index) => {
-          const baseUrl = import.meta.env.BASE_URL;
-          // Encode the filename to handle spaces and special characters
-          const encodedVideo = encodeURIComponent(video);
-          const videoPath = `${baseUrl}VideoUpload/${encodedVideo}`;
+          // Stock video until real showreels are uploaded to /public/VideoUpload
+          const videoPath = portfolioVideo(video);
 
           return (
             <Card
