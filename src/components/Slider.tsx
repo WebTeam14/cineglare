@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-
-import { asset, logoAsset } from "@/assets/placeholder";
+import { logoAsset } from "@/assets/placeholder";
 
 const I1 = logoAsset("logos/I1.png");
 const I2 = logoAsset("logos/I2.png");
@@ -57,10 +56,14 @@ const logos = [
 
 const PartnerSlider = () => {
   return (
-    <section className="py-12 bg-gradient-to-r from-[#1a0000] via-black to-[#000000] text-white">
-      <h3 className="text-xl font-medium text-gray-300 text-center mb-6">
-        Our Optimistic Partner & Sponsor
-      </h3>
+    <section className="py-12 sm:py-16 bg-transparent text-white">
+      <div className="mb-6 flex items-center justify-center gap-3">
+        <span className="h-px w-10 bg-[#800000]" />
+        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/70">
+          Our Partners & Sponsors
+        </h3>
+        <span className="h-px w-10 bg-[#800000]" />
+      </div>
 
       <div className="overflow-hidden w-full">
         <motion.div
@@ -77,7 +80,7 @@ const PartnerSlider = () => {
               key={index}
               src={logo}
               alt={`Partner-${index}`}
-              className="h-14 sm:h-16 md:h-20 w-auto object-contain opacity-80 hover:opacity-100 transition"
+              className="h-14 sm:h-16 md:h-20 w-auto object-contain rounded-xl opacity-80 hover:opacity-100 transition"
             />
           ))}
         </motion.div>
