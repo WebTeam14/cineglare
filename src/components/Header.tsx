@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-// import logo from "@/assets/logo.jpeg";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,138 +9,202 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { asset } from "@/assets/placeholder";
+import { cn } from "@/lib/utils";
 
 const logo = asset("logoMain.png");
 
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/aboutus" },
+  { name: "Portfolio", path: "/portfolio" },
+  { name: "Contact", path: "#contact" },
+];
+
+const servicesLinks = [
+  { name: "Product Branding", path: "/services/product-branding" },
+  { name: "Celebrity Management", path: "/services/celebrity-management" },
+  { name: "Digital Marketing", path: "/services/digital-marketing" },
+  { name: "Film and AD Production", path: "/services/film-and-ad-production" },
+  { name: "Film Promotion", path: "/services/film-promotion" },
+  { name: "Event Management", path: "/services/event-management" },
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/aboutus" },
-    // { name: "Services", path: "/services" },
-    { name: "Portfolio", path: "/portfolio" },
-    { name: "Contact", path: "#contact" },
-  ];
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-  const servicesLinks = [
-    { name: "Product Branding", path: "/services/product-branding" },
-    { name: "Celebrity Management", path: "/services/celebrity-management" },
-    { name: "Digital Marketing", path: "/services/digital-marketing" },
-    { name: "Film and AD Production", path: "/services/film-and-ad-production" },
-    { name: "Film Promotion", path: "/services/film-promotion" },
-    { name: "Event Management", path: "/services/event-management" }
-    
-  ];
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  const isActive = (path: string) => {
+    if (path === "/") return pathname === "/";
+    if (path.startsWith("#")) return false;
+    return pathname === path || pathname.startsWith(path + "/");
+  };
+
+  const servicesActive = pathname.startsWith("/services");
+
+  const linkClass = (active: boolean) =>
+    cn(
+      "relative text-[13px] font-medium tracking-wide transition-colors duration-300",
+      active ? "text-white" : "text-white/65 hover:text-white",
+      "after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[#800000] after:transition-transform after:duration-300 hover:after:scale-x-100",
+      active && "after:scale-x-100",
+    );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <nav className="pr-20 pl-20 pt-5 pb-4">
-        <div className="flex items-center justify-between">
-          {/* Logo Section */}
-          <div className="flex items-center space-x-3">
-            <div className="flex items-center">
-              <img
-                src={logo}
-                alt="Cineglare Logo"
-                className="h-10 w-auto md:h-12 object-contain"
-              />
-            </div>
-          </div>
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+        scrolled
+          ? "border-b border-white/10 bg-black/80 shadow-[0_10px_40px_rgba(0,0,0,.45)] backdrop-blur-xl"
+          : "border-b border-transparent bg-gradient-to-b from-black/70 to-transparent backdrop-blur-md",
+      )}
+    >
+      <nav className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between px-5 md:h-[4.75rem] md:px-8 lg:px-10">
+        <Link to="/" className="group flex shrink-0 items-center gap-3">
+          <img
+            src={logo}
+            alt="Cineglare"
+            className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03] md:h-11"
+          />
+        </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-14">
-            {/* {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-foreground hover:text-primary transition-colors"
-              >
+        <div className="hidden items-center gap-9 lg:flex">
+          {navLinks.map((link) =>
+            link.path.startsWith("#") ? (
+              <a key={link.name} href={link.path} className={linkClass(false)}>
                 {link.name}
               </a>
-            ))} */}
-
-            {navLinks.map((link) =>
-              link.path.startsWith("#") ? (
-                // ✅ Still use <a> for same-page anchors
-                <a
-                  key={link.name}
-                  href={link.path}
-                  className="text-foreground hover:text-primary transition-colors"
-                >
-                  {link.name}
-                </a>
-              ) : (
-                // ✅ Use <Link> for React Router navigation
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className="text-foreground hover:text-primary transition-colors"
-                >
-                  {link.name}
-                </Link>
-              )
-            )}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors flex items-center gap-1">
-                Services <ChevronDown size={16} />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-card border-border z-50">
-                {servicesLinks.map((service) => (
-                  <DropdownMenuItem key={service.name} asChild>
-                    <Link to={service.path} className="cursor-pointer">
-                      {service.name}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <Button variant="default" size="sm">
-              Free Quote
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
-            {navLinks.map((link) => (
+            ) : (
               <Link
                 key={link.name}
                 to={link.path}
-                className="block text-foreground hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+                className={linkClass(isActive(link.path))}
               >
                 {link.name}
               </Link>
-            ))}
-            <div className="space-y-2">
-              <p className="text-foreground font-semibold">Services</p>
+            ),
+          )}
+
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className={cn(
+                linkClass(servicesActive),
+                "inline-flex items-center gap-1 outline-none",
+              )}
+            >
+              Services
+              <ChevronDown className="h-3.5 w-3.5 opacity-70" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="center"
+              className="min-w-[240px] rounded-2xl border border-white/10 bg-[#0c0c0c]/95 p-2 shadow-[0_20px_50px_rgba(0,0,0,.55)] backdrop-blur-xl"
+            >
               {servicesLinks.map((service) => (
-                <Link
+                <DropdownMenuItem
                   key={service.name}
-                  to={service.path}
-                  className="block pl-4 text-foreground hover:text-primary transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                  asChild
+                  className="cursor-pointer rounded-xl px-3 py-2.5 text-sm text-white/75 focus:bg-[#800000]/20 focus:text-white"
                 >
-                  {service.name}
-                </Link>
+                  <Link to={service.path}>{service.name}</Link>
+                </DropdownMenuItem>
               ))}
-            </div>
-            <Button variant="default" size="sm" className="w-full">
-              Free Quote
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <Button
+            asChild
+            size="sm"
+            className="hidden rounded-full bg-[#800000] px-5 text-[13px] font-semibold tracking-wide text-white shadow-[0_8px_24px_rgba(128,0,0,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] hover:shadow-[0_12px_32px_rgba(128,0,0,.45)] sm:inline-flex"
+          >
+            <a href="#contact">Free Quote</a>
+          </Button>
+
+          <button
+            type="button"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-colors hover:border-white/20 hover:bg-white/10 lg:hidden"
+            onClick={() => setIsMenuOpen((v) => !v)}
+          >
+            {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
+      </nav>
+
+      <div
+        className={cn(
+          "overflow-hidden border-t border-white/10 bg-black/95 backdrop-blur-xl transition-all duration-400 lg:hidden",
+          isMenuOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0 border-t-0",
+        )}
+      >
+        <div className="space-y-1 px-5 py-5">
+          {navLinks.map((link) =>
+            link.path.startsWith("#") ? (
+              <a
+                key={link.name}
+                href={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className="block rounded-xl px-4 py-3 text-sm font-medium text-white/75 transition-colors hover:bg-white/5 hover:text-white"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className={cn(
+                  "block rounded-xl px-4 py-3 text-sm font-medium transition-colors hover:bg-white/5",
+                  isActive(link.path)
+                    ? "bg-[#800000]/15 text-white"
+                    : "text-white/75 hover:text-white",
+                )}
+              >
+                {link.name}
+              </Link>
+            ),
+          )}
+
+          <div className="pt-2">
+            <p className="px-4 pb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#800000]">
+              Services
+            </p>
+            {servicesLinks.map((service) => (
+              <Link
+                key={service.name}
+                to={service.path}
+                onClick={() => setIsMenuOpen(false)}
+                className="block rounded-xl px-4 py-2.5 text-sm text-white/65 transition-colors hover:bg-white/5 hover:text-white"
+              >
+                {service.name}
+              </Link>
+            ))}
+          </div>
+
+          <div className="pt-3">
+            <Button
+              asChild
+              className="w-full rounded-full bg-[#800000] font-semibold hover:bg-[#970000]"
+            >
+              <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+                Free Quote
+              </a>
             </Button>
           </div>
-        )}
-      </nav>
+        </div>
+      </div>
     </header>
   );
 };
