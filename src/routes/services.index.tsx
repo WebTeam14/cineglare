@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import Services from "@/pages/Services";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Services — Branding, Film, Digital & Events | Cineglare" },
