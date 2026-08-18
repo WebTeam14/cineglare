@@ -1,8 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
-import aboutImage from "@/assets/about-image.jpg";
 import Footer from "@/components/Footer";
+
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const aboutImage = asset("about-image.jpg");
 
 const Services = () => {
   return (

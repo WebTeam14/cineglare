@@ -2,9 +2,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-import eventManagementImage from "@/assets/event-management-image.jpg";
-import eventManagementCenter from "@/assets/event-management-center.jpg";
 
+import { asset, logoAsset } from "@/assets/placeholder";
+
+const eventManagementImage = asset("event-management-image.jpg");
+const eventManagementCenter = asset("event-management-center.jpg");
 const EventManagement = () => {
   const leftServices = [
     "Corporate Events",
