@@ -38,7 +38,7 @@ function prettyLabel(path: string): string {
  */
 export function asset(path: string, label?: string): string {
   const h = hash(path);
-  const [c1, c2, accent] = PALETTE[h % PALETTE.length];
+  const [c1, c2, accent] = PALETTE[h % PALETTE.length]!;
   const text = label ?? prettyLabel(path);
   const angle = h % 60;
   const cx = 20 + (h % 60);
@@ -72,7 +72,7 @@ export function asset(path: string, label?: string): string {
 /** Square placeholder used for client / partner logo strips. */
 export function logoAsset(path: string): string {
   const h = hash(path);
-  const [, , accent] = PALETTE[h % PALETTE.length];
+  const [, , accent] = PALETTE[h % PALETTE.length]!;
   const label = prettyLabel(path);
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120">
   <rect width="240" height="120" rx="12" fill="#141416"/>

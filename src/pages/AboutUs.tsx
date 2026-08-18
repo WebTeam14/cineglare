@@ -39,7 +39,7 @@ const TypewriterWord = () => {
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    const currentWord = words[wordIndex];
+    const currentWord = words[wordIndex] ?? "";
 
     const timer = window.setTimeout(
       () => {
@@ -95,7 +95,7 @@ const AnimatedStat = ({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setStarted(true);
           observer.disconnect();
         }
