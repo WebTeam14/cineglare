@@ -1,24 +1,27 @@
-# Cineglare Showcase
+# Cineglare
 
-https://github.com/WebTeam14/cineglare-website.git is this repo accesable and visible
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/c7999752-42dd-4d57-ac0a-bfa5ecfc0218).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+Cinematic brand, film, and event experiences.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requires Node.js and npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+git clone https://github.com/WebTeam14/cineglare.git
+cd cineglare
+npm install
 npm run dev
 ```
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start local dev server |
+| `npm run build` | Production build |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+
+## Deploy
+
+Configured for **Vercel** via Nitro (`preset: "vercel"`). Push to `main` to deploy.
