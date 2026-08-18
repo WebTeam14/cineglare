@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import FeatureCards from "@/components/FeatureCards";
@@ -12,40 +13,74 @@ import Different from "@/components/Different";
 import Slider from "@/components/Slider";
 import { AmbientGradient, Reveal } from "@/components/motion/Reveal";
 
+/** Alternating red-on-black shells so sections flow instead of stacking as flat blocks. */
+function SectionShell({
+  children,
+  tone = "a",
+}: {
+  children: ReactNode;
+  tone?: "a" | "b" | "c";
+}) {
+  const toneClass =
+    tone === "a"
+      ? "section-flow-a"
+      : tone === "b"
+        ? "section-flow-b"
+        : "section-flow-c";
+  return (
+    <div className={`relative section-bridge ${toneClass}`}>
+      <Reveal variant="fade" duration={900}>
+        {children}
+      </Reveal>
+    </div>
+  );
+}
+
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
       <main className="relative overflow-hidden">
-        <AmbientGradient className="fixed" intensity={0.9} />
+        {/* Site-wide crimson atmospheric layer */}
+        <AmbientGradient className="fixed" intensity={1.15} />
+        <div
+          aria-hidden
+          className="pointer-events-none fixed inset-0 -z-10"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in oklab, var(--primary) 18%, transparent), transparent 60%), radial-gradient(ellipse 60% 40% at 100% 50%, color-mix(in oklab, var(--primary) 10%, transparent), transparent 55%), radial-gradient(ellipse 50% 35% at 0% 80%, color-mix(in oklab, var(--primary) 12%, transparent), transparent 50%)",
+          }}
+        />
+
         <Hero />
-        <Reveal variant="fade" duration={900}>
+
+        <SectionShell tone="a">
           <FeatureCards />
-        </Reveal>
-        <Reveal variant="fade" duration={900}>
+        </SectionShell>
+        <SectionShell tone="b">
           <About />
-        </Reveal>
-        <Reveal variant="fade" duration={900}>
+        </SectionShell>
+        <SectionShell tone="c">
           <Services />
-        </Reveal>
-        <Reveal variant="fade" duration={900}>
+        </SectionShell>
+        <SectionShell tone="a">
           <CTA />
-        </Reveal>
-        <Reveal variant="fade" duration={900}>
+        </SectionShell>
+        <SectionShell tone="b">
           <Impact />
-        </Reveal>
-        <Reveal variant="fade" duration={900}>
+        </SectionShell>
+        <SectionShell tone="c">
           <ProjectHighlights />
-        </Reveal>
-        <Reveal variant="fade" duration={900}>
+        </SectionShell>
+        <SectionShell tone="a">
           <Different />
-        </Reveal>
-        <Reveal variant="fade" duration={900}>
+        </SectionShell>
+        <SectionShell tone="b">
           <InsightsandImpact />
-        </Reveal>
-        <Reveal variant="fade" duration={900}>
+        </SectionShell>
+        <SectionShell tone="c">
           <Slider />
-        </Reveal>
+        </SectionShell>
       </main>
       <Footer />
     </div>
