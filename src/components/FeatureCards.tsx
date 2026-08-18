@@ -29,7 +29,7 @@
 //               className="bg-card border border-border rounded-lg p-8 hover:border-primary hover:shadow-lg 
 //               hover:shadow-primary/10 transition-all duration-300 group hover:-translate-y-2 animate-fade-in"
 //             style={{ animationDelay: `${index * 150}ms` }} >
-//               <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 
+//               <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 
 //               group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
 //                 <feature.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
 //               </div>
@@ -75,11 +75,9 @@ const FeatureCards = () => {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => {
-            // direction pattern: left → bottom → right
             const directions = ["left", "bottom", "right"];
             const direction = directions[index % 3];
 
-            // animation configuration
             const variants = {
               hidden: {
                 opacity: 0,
@@ -106,11 +104,11 @@ const FeatureCards = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
-                className="bg-card border border-none p-8 hover:border-primary hover:shadow-lg 
+                className="bg-card border border-none rounded-2xl p-8 hover:border-primary hover:shadow-lg 
                 hover:shadow-primary/10 transition-all duration-300 group hover:-translate-y-2"
               >
                 <div
-                  className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 
+                  className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 
                 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300"
                 >
                   <feature.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
@@ -131,4 +129,3 @@ const FeatureCards = () => {
 };
 
 export default FeatureCards;
-
