@@ -17,12 +17,6 @@ const highlights = [
   "Innovation First",
 ];
 
-const stats = [
-  { value: "17+", label: "Years of experience" },
-  { value: "500+", label: "Projects delivered" },
-  { value: "50+", label: "Brand partners" },
-];
-
 const About = () => {
   return (
     <section id="about" className="relative w-full overflow-hidden py-20 sm:py-24 lg:py-28">
@@ -89,7 +83,7 @@ const About = () => {
 
             <Stagger
               step={60}
-              className="mb-10 grid grid-cols-1 gap-3 sm:grid-cols-2"
+              className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2"
             >
               {highlights.map((highlight) => (
                 <div
@@ -110,21 +104,10 @@ const About = () => {
               ))}
             </Stagger>
 
-            <div className="mb-10 grid grid-cols-3 gap-4 border-y border-white/10 py-6">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-xs text-white/50 sm:text-sm">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-
             <Button
               asChild
               size="lg"
-              className="rounded-full bg-[#800000] px-7 font-semibold text-white shadow-[0_12px_32px_rgba(128,0,0,.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000]"
+              className="mt-2 rounded-full bg-[#800000] px-7 font-semibold text-white shadow-[0_12px_32px_rgba(128,0,0,.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000]"
             >
               <Link to="/aboutus" className="inline-flex items-center gap-2">
                 Learn more
