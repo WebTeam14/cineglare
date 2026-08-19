@@ -74,11 +74,13 @@ const Header = () => {
       />
       <nav className="relative mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-5 md:h-[5rem] md:px-8 lg:px-10">
         <Link to="/" className="group flex shrink-0 items-center gap-3">
-          <img
-            src={logo}
-            alt="Cineglare"
-            className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03] md:h-12"
-          />
+          <span className="inline-flex overflow-hidden rounded-2xl bg-white shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-transform duration-300 group-hover:scale-[1.03]">
+            <img
+              src={logo}
+              alt="Cineglare"
+              className="h-10 w-auto object-contain md:h-12"
+            />
+          </span>
         </Link>
 
         <div className="hidden items-center gap-9 lg:flex">
