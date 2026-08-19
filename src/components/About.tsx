@@ -106,12 +106,11 @@ const About = () => {
 
             <Button
               asChild
-              size="lg"
-              className="mt-2 rounded-full bg-[#800000] px-7 font-semibold text-white shadow-[0_12px_32px_rgba(128,0,0,.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000]"
+              className="mt-2 h-14 rounded-full bg-[#800000] px-9 text-base font-semibold text-white shadow-[0_14px_36px_rgba(128,0,0,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] hover:shadow-[0_18px_42px_rgba(128,0,0,.4)] sm:h-16 sm:px-10 sm:text-lg"
             >
-              <Link to="/aboutus" className="inline-flex items-center gap-2">
+              <Link to="/aboutus" className="inline-flex items-center gap-2.5">
                 Learn more
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
               </Link>
             </Button>
           </Reveal>
