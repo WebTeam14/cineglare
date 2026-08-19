@@ -72,11 +72,11 @@ const StatsCounter: React.FC<StatsCounterProps> = ({
         }`}
       >
         {value}
-        <span className="text-[#800000]">+</span>
+        <span className={dark ? "text-white/90" : "text-[#800000]"}>+</span>
       </p>
       <p
         className={`mt-2 text-sm font-medium ${
-          dark ? "text-white/55" : "text-neutral-600"
+          dark ? "text-white/70" : "text-neutral-600"
         }`}
       >
         {label}
