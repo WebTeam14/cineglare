@@ -27,22 +27,22 @@ const About = () => {
 
       <div className="container-custom relative">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <Reveal variant="left" duration={800} className="relative">
+          <Reveal variant="left" duration={800} className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-[420px]">
             <div className="relative">
               <div
                 aria-hidden
-                className="absolute -inset-3 rounded-[1.75rem] border border-[#800000]/20"
+                className="absolute -inset-2.5 rounded-[1.5rem] border border-[#800000]/20"
               />
-              <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 shadow-[0_30px_60px_-28px_rgba(0,0,0,0.7)]">
+              <div className="relative overflow-hidden rounded-[1.25rem] border border-white/10 shadow-[0_24px_48px_-24px_rgba(0,0,0,0.65)]">
                 <img
                   src={aboutUsImage}
                   alt="Cineglare creative team"
-                  className="aspect-[4/5] w-full object-cover sm:aspect-[5/6] lg:aspect-[4/5]"
+                  className="aspect-[5/6] w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               </div>
 
-              <div className="absolute -bottom-5 left-6 right-6 sm:left-auto sm:right-[-1rem] sm:bottom-8 sm:w-44">
+              <div className="absolute -bottom-4 left-4 right-4 sm:left-auto sm:right-[-0.75rem] sm:bottom-6 sm:w-36">
                 <div
                   className="rounded-2xl border border-[#800000]/15 px-5 py-4 text-center shadow-[0_16px_40px_-16px_rgba(0,0,0,0.5)]"
                   style={{
@@ -50,7 +50,7 @@ const About = () => {
                       "linear-gradient(145deg, #fff8f8 0%, #f7f0f0 50%, #f3e8e8 100%)",
                   }}
                 >
-                  <p className="text-4xl font-black tracking-tight text-[#800000]">17+</p>
+                  <p className="text-3xl font-black tracking-tight text-[#800000]">17+</p>
                   <p className="mt-1 text-xs font-medium uppercase tracking-wider text-neutral-600">
                     Years of excellence
                   </p>
