@@ -50,19 +50,22 @@ const Impact = () => {
 
         <div className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-3 lg:gap-6">
           <div
-            className="flex flex-col items-center justify-center rounded-[1.5rem] border border-[#800000]/15 p-10 text-center shadow-[0_20px_48px_-24px_rgba(0,0,0,0.55)]"
-            style={cardStyle}
+            className="flex flex-col items-center justify-center rounded-[1.5rem] border border-[#800000]/50 p-10 text-center shadow-[0_20px_48px_-16px_rgba(128,0,0,0.5)]"
+            style={{
+              background:
+                "linear-gradient(145deg, #a00000 0%, #800000 48%, #6a0000 100%)",
+            }}
           >
-            <p className="text-6xl font-black tracking-tight text-neutral-900 md:text-7xl">
+            <p className="text-6xl font-black tracking-tight text-white md:text-7xl">
               4.9
             </p>
             <div className="my-3 flex items-center justify-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-[#800000] text-[#800000]" />
+                <Star key={i} className="h-5 w-5 fill-white text-white" />
               ))}
             </div>
-            <p className="mb-5 text-sm text-neutral-500">(240+ Reviews)</p>
-            <h3 className="text-2xl font-bold leading-tight text-neutral-900">
+            <p className="mb-5 text-sm text-white/75">(240+ Reviews)</p>
+            <h3 className="text-2xl font-bold leading-tight text-white">
               Satisfied
               <br />
               Customer
