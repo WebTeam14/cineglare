@@ -6,10 +6,6 @@ interface StatsCounterProps {
   duration?: number;
 }
 
-/**
- * Lightweight counter — avoids react-countup / intersection-observer edge cases
- * that can throw in production after scroll into view.
- */
 const StatsCounter: React.FC<StatsCounterProps> = ({
   end,
   label,
@@ -38,7 +34,6 @@ const StatsCounter: React.FC<StatsCounterProps> = ({
       const ms = Math.max(0.4, duration) * 1000;
       const tick = (now: number) => {
         const t = Math.min(1, (now - start) / ms);
-        // ease-out
         const eased = 1 - Math.pow(1 - t, 3);
         setValue(Math.round(end * eased));
         if (t < 1) requestAnimationFrame(tick);
@@ -67,13 +62,13 @@ const StatsCounter: React.FC<StatsCounterProps> = ({
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center justify-center bg-card text-foreground p-8 shadow-lg rounded-2xl"
+      className="flex min-w-[160px] flex-col items-center justify-center px-10 py-10 sm:min-w-[180px] sm:px-12 sm:py-12"
     >
-      <h2 className="text-6xl font-bold">
+      <p className="text-5xl font-bold tracking-tight text-white sm:text-6xl">
         {value}
-        <span className="text-primary">+</span>
-      </h2>
-      <p className="text-muted-foreground mt-2 text-lg font-medium">{label}</p>
+        <span className="text-[#800000]">+</span>
+      </p>
+      <p className="mt-2 text-sm font-medium text-white/55">{label}</p>
     </div>
   );
 };
