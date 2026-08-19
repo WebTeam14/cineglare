@@ -72,13 +72,13 @@ const Header = () => {
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#800000]/70 to-transparent"
       />
-      <nav className="relative mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-5 md:h-[5rem] md:px-8 lg:px-10">
+      <nav className="relative mx-auto flex h-[5rem] max-w-7xl items-center justify-between px-5 md:h-[5.5rem] md:px-8 lg:px-10">
         <Link to="/" className="group flex shrink-0 items-center gap-3">
-          <span className="inline-flex items-center justify-center rounded-2xl bg-white px-2.5 py-1.5 shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-transform duration-300 group-hover:scale-[1.03]">
+          <span className="inline-flex items-center justify-center rounded-2xl bg-white px-3 py-2 shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-transform duration-300 group-hover:scale-[1.03]">
             <img
               src={logo}
               alt="Cineglare"
-              className="h-8 w-auto max-w-[160px] object-contain object-center md:h-9 md:max-w-[180px]"
+              className="h-10 w-auto max-w-[200px] object-contain object-center md:h-12 md:max-w-[240px]"
             />
           </span>
         </Link>
@@ -130,8 +130,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <Button
             asChild
-            size="sm"
-            className="hidden rounded-full bg-[#800000] px-5 text-[14px] font-semibold tracking-wide text-white shadow-[0_8px_24px_rgba(128,0,0,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] hover:shadow-[0_12px_32px_rgba(128,0,0,.45)] sm:inline-flex"
+            className="hidden h-12 rounded-full bg-[#800000] px-7 text-base font-semibold tracking-wide text-white shadow-[0_10px_28px_rgba(128,0,0,.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] hover:shadow-[0_14px_36px_rgba(128,0,0,.45)] sm:inline-flex md:h-13 md:px-8 md:text-[15px]"
           >
             <a href="#contact">Free Quote</a>
           </Button>
