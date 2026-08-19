@@ -94,16 +94,18 @@ const About = () => {
               {highlights.map((highlight) => (
                 <div
                   key={highlight}
-                  className="flex items-center gap-3 rounded-xl border border-[#800000]/12 px-3.5 py-2.5 shadow-[0_8px_24px_-16px_rgba(0,0,0,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/30 hover:shadow-[0_12px_28px_-14px_rgba(128,0,0,0.2)]"
+                  className="flex items-center gap-3 rounded-xl border border-[#800000]/20 px-3.5 py-2.5 shadow-[0_8px_24px_-16px_rgba(0,0,0,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/40 hover:shadow-[0_12px_28px_-14px_rgba(128,0,0,0.2)]"
                   style={{
                     background:
-                      "linear-gradient(145deg, #fff8f8 0%, #f7f0f0 50%, #f3e8e8 100%)",
+                      "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)",
                   }}
                 >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#800000]/12">
-                    <Check className="h-3.5 w-3.5 text-[#800000]" strokeWidth={3} />
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#800000]">
+                    <Check className="h-4 w-4 text-white" strokeWidth={2.75} />
                   </span>
-                  <span className="text-sm font-medium text-neutral-800">{highlight}</span>
+                  <span className="text-sm font-semibold tracking-wide text-neutral-900">
+                    {highlight}
+                  </span>
                 </div>
               ))}
             </Stagger>
