@@ -65,13 +65,13 @@ const Different = () => {
 
           <div className="flex flex-col gap-5 sm:flex-row sm:justify-center lg:justify-end">
             <div
-              className="overflow-hidden rounded-[1.5rem] border border-[#800000]/15 shadow-[0_20px_48px_-24px_rgba(0,0,0,0.55)]"
+              className="overflow-hidden rounded-[1.5rem] border border-[#800000]/50 shadow-[0_20px_48px_-16px_rgba(128,0,0,0.45)]"
               style={{
                 background:
-                  "linear-gradient(145deg, #ffffff 0%, #fff5f5 50%, #fceaea 100%)",
+                  "linear-gradient(145deg, #a00000 0%, #800000 48%, #6a0000 100%)",
               }}
             >
-              <StatsCounter end={132} label="Projects Completed" dark={false} />
+              <StatsCounter end={132} label="Projects Completed" dark={true} />
             </div>
             <div
               className="overflow-hidden rounded-[1.5rem] border border-[#800000]/15 shadow-[0_20px_48px_-24px_rgba(0,0,0,0.55)]"
