@@ -4,12 +4,14 @@ interface StatsCounterProps {
   end: number;
   label: string;
   duration?: number;
+  dark?: boolean;
 }
 
 const StatsCounter: React.FC<StatsCounterProps> = ({
   end,
   label,
   duration = 2,
+  dark = true,
 }) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const [value, setValue] = useState(0);
@@ -64,11 +66,21 @@ const StatsCounter: React.FC<StatsCounterProps> = ({
       ref={ref}
       className="flex min-w-[160px] flex-col items-center justify-center px-10 py-10 sm:min-w-[180px] sm:px-12 sm:py-12"
     >
-      <p className="text-5xl font-bold tracking-tight text-white sm:text-6xl">
+      <p
+        className={`text-5xl font-bold tracking-tight sm:text-6xl ${
+          dark ? "text-white" : "text-neutral-900"
+        }`}
+      >
         {value}
         <span className="text-[#800000]">+</span>
       </p>
-      <p className="mt-2 text-sm font-medium text-white/55">{label}</p>
+      <p
+        className={`mt-2 text-sm font-medium ${
+          dark ? "text-white/55" : "text-neutral-600"
+        }`}
+      >
+        {label}
+      </p>
     </div>
   );
 };

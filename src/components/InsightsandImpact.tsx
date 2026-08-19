@@ -11,7 +11,7 @@ const insightDigital = asset("insight-digital.jpg");
 const insights = [
   {
     image: insightBranding,
-    title: "How we craft Impactful Branding & Creative Strategy",
+    title: "How we craft impactful branding & creative strategy",
   },
   {
     image: insightFilms,
@@ -51,20 +51,23 @@ const Impact = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:items-stretch lg:gap-6">
-          <div className="group relative min-h-[380px] cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/10 shadow-[0_24px_50px_-28px_rgba(0,0,0,0.7)] lg:min-h-[480px]">
+          <div className="group relative min-h-[400px] cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/10 shadow-[0_24px_50px_-28px_rgba(0,0,0,0.7)] lg:min-h-[520px]">
             <img
               src={insightsMain}
               alt="Transforming ideas into memorable event experiences"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#800000]">
+                Featured
+              </p>
               <h3 className="mb-5 max-w-md text-2xl font-bold leading-tight text-white md:text-3xl">
                 Transforming Ideas into Memorable Event Experiences
               </h3>
               <Button
                 asChild
-                className="h-12 rounded-full bg-[#800000] px-6 font-semibold text-white shadow-[0_10px_28px_rgba(128,0,0,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000]"
+                className="h-12 rounded-full bg-[#800000] px-6 font-semibold text-white shadow-[0_10px_28px_rgba(128,0,0,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] sm:h-13 sm:px-7"
               >
                 <a href="#contact" className="inline-flex items-center gap-2">
                   Learn more
@@ -74,23 +77,23 @@ const Impact = () => {
             </div>
           </div>
 
-          <div className="flex min-h-[380px] flex-col gap-5 lg:min-h-0 lg:h-full lg:gap-5">
+          <div className="grid grid-cols-1 gap-5 sm:grid-rows-3 lg:h-full lg:min-h-[520px]">
             {insights.map((insight) => (
               <div
                 key={insight.title}
-                className="group relative min-h-[110px] flex-1 cursor-pointer overflow-hidden rounded-[1.25rem] border border-white/10"
+                className="group relative min-h-[130px] cursor-pointer overflow-hidden rounded-[1.25rem] border border-white/10 lg:min-h-0"
               >
                 <img
                   src={insight.image}
                   alt={insight.title}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/25" />
-                <div className="absolute inset-0 flex items-center justify-between gap-4 p-5 md:p-6">
-                  <h4 className="max-w-[85%] text-base font-semibold leading-snug text-white md:text-lg">
+                <div className="absolute inset-0 bg-gradient-to-r from-black/92 via-black/60 to-black/30" />
+                <div className="absolute inset-0 flex items-center justify-between gap-4 p-5 md:px-6">
+                  <h4 className="max-w-[88%] text-base font-semibold leading-snug text-white md:text-lg">
                     {insight.title}
                   </h4>
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-all duration-300 group-hover:border-[#800000]/50 group-hover:bg-[#800000]">
                     <ArrowRight className="h-4 w-4" />
                   </span>
                 </div>
