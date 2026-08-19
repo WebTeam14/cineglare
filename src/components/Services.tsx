@@ -41,9 +41,9 @@ const services = [
 
 const Services = () => {
   return (
-    <div id="services" className="w-full py-20 sm:py-24 lg:py-28">
+    <div id="services" className="w-full py-14 sm:py-16 lg:py-20">
       <div className="container-custom">
-        <div className="mb-12 grid grid-cols-1 items-end gap-6 lg:grid-cols-2">
+        <div className="mb-8 grid grid-cols-1 items-end gap-5 lg:grid-cols-2">
           <div>
             <div className="mb-4 flex items-center gap-3">
               <span className="h-px w-12 bg-[#800000]" />
