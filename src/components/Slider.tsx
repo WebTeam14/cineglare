@@ -1,89 +1,88 @@
 import { motion } from "framer-motion";
 import { logoAsset } from "@/assets/placeholder";
 
-const I1 = logoAsset("logos/I1.png");
-const I2 = logoAsset("logos/I2.png");
-const I3 = logoAsset("logos/I3.png");
-const I4 = logoAsset("logos/I4.png");
-const I5 = logoAsset("logos/I5.png");
-const I6 = logoAsset("logos/I6.png");
-const I7 = logoAsset("logos/I7.png");
-const I8 = logoAsset("logos/I8.png");
-const I9 = logoAsset("logos/I9.png");
-const I10 = logoAsset("logos/I10.png");
-const I11 = logoAsset("logos/I11.png");
-const I12 = logoAsset("logos/I12.png");
-const I13 = logoAsset("logos/I13.png");
-const I14 = logoAsset("logos/I14.png");
-const I15 = logoAsset("logos/I15.png");
-const I16 = logoAsset("logos/I16.png");
-const I17 = logoAsset("logos/I17.png");
-const I18 = logoAsset("logos/I18.png");
-const I19 = logoAsset("logos/I19.png");
-const I20 = logoAsset("logos/I20.png");
-const I21 = logoAsset("logos/I21.png");
-const I22 = logoAsset("logos/I22.png");
-const I23 = logoAsset("logos/I23.png");
-const I24 = logoAsset("logos/I24.png");
-const I25 = logoAsset("logos/I25.png");
-const I26 = logoAsset("logos/I26.png");
-const I27 = logoAsset("logos/I27.png");
-const I28 = logoAsset("logos/I28.png");
-const I29 = logoAsset("logos/I29.png");
-const I30 = logoAsset("logos/I30.png");
-const I31 = logoAsset("logos/I31.png");
-const I32 = logoAsset("logos/I32.png");
-const I33 = logoAsset("logos/I33.png");
-const I34 = logoAsset("logos/I34.png");
-const I35 = logoAsset("logos/I35.png");
-const I36 = logoAsset("logos/I36.png");
-const I37 = logoAsset("logos/I37.png");
-const I38 = logoAsset("logos/I38.png");
-const I39 = logoAsset("logos/I39.png");
-const I40 = logoAsset("logos/I40.png");
-const I41 = logoAsset("logos/I41.png");
-const I42 = logoAsset("logos/I42.png");
-const I43 = logoAsset("logos/I43.png");
-const I44 = logoAsset("logos/I44.png");
-const I45 = logoAsset("logos/I45.png");
-const logos = [
-  I1, I2, I3, I4, I5, I6, I7, I8, I9, I10,
-  I11, I12, I13, I14, I15, I16, I17, I18, I19, I20,
-  I21, I22, I23, I24, I25, I26, I27, I28, I29, I30,
-  I31, I32, I33, I34, I35, I36, I37, I38, I39, I40,
-  I41, I42, I43, I44, I45,
-];
+const logos = Array.from({ length: 45 }, (_, i) =>
+  logoAsset(`logos/I${i + 1}.png`),
+);
 
-const PartnerSlider = () => {
-  return (
-    <section className="py-12 sm:py-16 bg-transparent text-white">
-      <div className="mb-6 flex items-center justify-center gap-3">
-        <span className="h-px w-10 bg-[#800000]" />
-        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/70">
-          Our Partners & Sponsors
-        </h3>
-        <span className="h-px w-10 bg-[#800000]" />
-      </div>
-
-      <div className="overflow-hidden w-full">
-        <motion.div
-          className="flex items-center gap-10 min-w-max"
-          animate={{ x: ["0%", "-100%"] }}
-          transition={{
-            repeat: Infinity,
-            ease: "linear",
-            duration: 200,
+const MarqueeRow = ({
+  items,
+  reverse = false,
+  duration = 80,
+}: {
+  items: string[];
+  reverse?: boolean;
+  duration?: number;
+}) => (
+  <div className="relative overflow-hidden">
+    <motion.div
+      className="flex w-max items-center gap-5 sm:gap-6"
+      animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
+      transition={{
+        repeat: Infinity,
+        ease: "linear",
+        duration,
+      }}
+    >
+      {[...items, ...items].map((logo, index) => (
+        <div
+          key={`${reverse ? "b" : "a"}-${index}`}
+          className="group flex h-20 w-36 shrink-0 items-center justify-center rounded-2xl border border-[#800000]/12 px-4 py-3 shadow-[0_10px_28px_-18px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/30 hover:shadow-[0_14px_32px_-16px_rgba(128,0,0,0.2)] sm:h-24 sm:w-44"
+          style={{
+            background:
+              "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)",
           }}
         >
-          {[...logos, ...logos].map((logo, index) => (
-            <img
-              key={index}
-              src={logo}
-              alt={`Partner-${index}`}
-              className="h-14 sm:h-16 md:h-20 w-auto object-contain rounded-xl opacity-80 hover:opacity-100 transition"
-            />
-          ))}
-        </motion.div>
+          <img
+            src={logo}
+            alt=""
+            className="max-h-12 max-w-full object-contain opacity-90 transition duration-300 group-hover:opacity-100 sm:max-h-14"
+          />
+        </div>
+      ))}
+    </motion.div>
+  </div>
+);
+
+const PartnerSlider = () => {
+  const rowA = logos.slice(0, 23);
+  const rowB = logos.slice(23);
+
+  return (
+    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-0 h-40 w-[28rem] -translate-x-1/2 rounded-full bg-[#800000]/10 blur-[90px]"
+      />
+
+      <div className="container-custom relative mb-10 text-center sm:mb-12">
+        <div className="mb-4 flex items-center justify-center gap-3">
+          <span className="h-px w-10 bg-[#800000]" />
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+            Trusted network
+          </p>
+          <span className="h-px w-10 bg-[#800000]" />
+        </div>
+        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          Our Partners & Sponsors
+        </h2>
+        <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-white/55 sm:text-base">
+          Brands and creators who trust Cineglare to deliver cinematic impact.
+        </p>
+      </div>
+
+      <div className="relative space-y-5">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-black to-transparent sm:w-24"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-black to-transparent sm:w-24"
+        />
+
+        <MarqueeRow items={rowA} duration={70} />
+        <MarqueeRow items={rowB} reverse duration={85} />
       </div>
     </section>
   );
