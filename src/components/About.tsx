@@ -26,8 +26,8 @@ const About = () => {
       />
 
       <div className="container-custom relative">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,360px)_1fr] lg:gap-14 xl:grid-cols-[minmax(0,380px)_1fr] xl:gap-16">
-          <Reveal variant="left" duration={800} className="relative mx-auto w-full max-w-[320px] sm:max-w-[340px] lg:mx-0 lg:max-w-full">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,480px)_1fr] lg:gap-14 xl:grid-cols-[minmax(0,520px)_1fr] xl:gap-16">
+          <Reveal variant="left" duration={800} className="relative mx-auto w-full max-w-[400px] sm:max-w-[440px] lg:mx-0 lg:max-w-full">
             <div className="relative">
               <div
                 aria-hidden
@@ -37,12 +37,12 @@ const About = () => {
                 <img
                   src={aboutUsImage}
                   alt="Cineglare creative team"
-                  className="aspect-[4/5] h-auto max-h-[420px] w-full object-cover"
+                  className="aspect-[4/5] h-auto max-h-[520px] w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               </div>
 
-              <div className="absolute -bottom-3 left-3 right-3 sm:left-auto sm:right-[-0.5rem] sm:bottom-5 sm:w-32">
+              <div className="absolute -bottom-4 left-4 right-4 sm:left-auto sm:right-[-0.75rem] sm:bottom-6 sm:w-40">
                 <div
                   className="rounded-2xl border border-[#800000]/15 px-5 py-4 text-center shadow-[0_16px_40px_-16px_rgba(0,0,0,0.5)]"
                   style={{
@@ -50,7 +50,7 @@ const About = () => {
                       "linear-gradient(145deg, #fff8f8 0%, #f7f0f0 50%, #f3e8e8 100%)",
                   }}
                 >
-                  <p className="text-2xl font-black tracking-tight text-[#800000] sm:text-3xl">17+</p>
+                  <p className="text-3xl font-black tracking-tight text-[#800000]">17+</p>
                   <p className="mt-1 text-xs font-medium uppercase tracking-wider text-neutral-600">
                     Years of excellence
                   </p>
