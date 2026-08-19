@@ -7,7 +7,7 @@ const project3 = asset("project-3.jpg");
 
 const ProjectHighlights = () => {
   return (
-    <div id="portfolio" className="py-20 sm:py-24 lg:py-28">
+    <div id="portfolio" className="py-14 sm:py-16 lg:py-20">
       <div className="container-custom">
         <div className="mb-4 flex items-center justify-center gap-3">
           <span className="h-px w-12 bg-[#800000]" />
@@ -22,7 +22,7 @@ const ProjectHighlights = () => {
         >
           Project Highlights
         </Reveal>
-        <p className="mx-auto mb-12 max-w-3xl text-center text-base leading-relaxed text-white/65">
+        <p className="mx-auto mb-8 max-w-3xl text-center text-base leading-relaxed text-white/65">
           We bring bold ideas to life through standout projects crafted with
           creative brilliance and flawless execution. Each highlight reflects
           our passion for storytelling and global entertainment expertise.

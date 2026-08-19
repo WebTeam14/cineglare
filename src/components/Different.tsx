@@ -13,7 +13,7 @@ const points = [
 
 const Different = () => {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden py-14 sm:py-16 lg:py-20">
       <div className="absolute inset-0">
         <img
           src={differentiatorsBg}
@@ -30,7 +30,7 @@ const Different = () => {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <div>
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-12 bg-[#800000]" />
