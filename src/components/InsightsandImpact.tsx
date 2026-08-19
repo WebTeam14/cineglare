@@ -25,14 +25,14 @@ const insights = [
 
 const Impact = () => {
   return (
-    <section id="impact" className="relative overflow-hidden py-20 sm:py-24 lg:py-28">
+    <section id="impact" className="relative overflow-hidden py-14 sm:py-16 lg:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute -left-24 top-1/3 h-64 w-64 rounded-full bg-[#800000]/10 blur-[100px]"
       />
 
       <div className="container-custom relative">
-        <div className="mb-10 max-w-2xl sm:mb-12">
+        <div className="mb-8 max-w-2xl">
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-12 bg-[#800000]" />
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">

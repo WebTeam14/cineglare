@@ -21,7 +21,7 @@ const cardStyle = {
 
 const Impact = () => {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden py-14 sm:py-16 lg:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute right-0 top-1/4 h-72 w-72 rounded-full bg-[#800000]/12 blur-[110px]"
@@ -35,7 +35,7 @@ const Impact = () => {
           </p>
         </div>
 
-        <div className="mb-12 flex flex-col gap-5 md:mb-14 md:flex-row md:items-end md:justify-between md:gap-10">
+        <div className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between md:gap-8">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
             The Impact We
             <br />
