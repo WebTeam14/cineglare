@@ -66,15 +66,26 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-gradient-to-br from-white/[0.06] via-white/[0.03] to-black/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_20px_50px_-28px_rgba(0,0,0,0.85)] backdrop-blur-sm p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/70 hover:bg-[#800000]/10"
-              style={{ animationDelay: `${index * 80}ms` }}
+              className="group relative overflow-hidden rounded-[1.5rem] border border-[#800000]/15 p-8 shadow-[0_16px_40px_-24px_rgba(0,0,0,0.7)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/40 hover:shadow-[0_20px_48px_-20px_rgba(128,0,0,0.22)]"
+              style={{
+                animationDelay: `${index * 80}ms`,
+                background:
+                  "linear-gradient(160deg, #141010 0%, #0f0c0c 48%, #120e0e 100%)",
+              }}
             >
-              <div className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-[#800000] transition-transform duration-500 group-hover:scale-x-100" />
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#800000]/30 bg-[#800000]/15 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#800000] group-hover:shadow-[0_0_30px_rgba(128,0,0,.35)]">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-[#800000]/[0.09] blur-3xl transition-opacity duration-500 group-hover:bg-[#800000]/[0.14]"
+              />
+              <div className="relative mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#800000]/12 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#800000] group-hover:shadow-[0_8px_24px_rgba(128,0,0,.28)]">
                 <service.icon className="h-7 w-7 text-[#800000] transition-colors duration-300 group-hover:text-white" />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-white">{service.title}</h3>
-              <p className="text-sm leading-relaxed text-white/65">{service.description}</p>
+              <h3 className="relative mb-3 text-xl font-bold text-white">
+                {service.title}
+              </h3>
+              <p className="relative text-sm leading-relaxed text-white/65">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
