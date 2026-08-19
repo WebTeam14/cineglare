@@ -94,12 +94,16 @@ const About = () => {
               {highlights.map((highlight) => (
                 <div
                   key={highlight}
-                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-3.5 py-2.5 transition-colors duration-300 hover:border-[#800000]/40 hover:bg-[#800000]/10"
+                  className="flex items-center gap-3 rounded-xl border border-[#800000]/12 px-3.5 py-2.5 shadow-[0_8px_24px_-16px_rgba(0,0,0,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/30 hover:shadow-[0_12px_28px_-14px_rgba(128,0,0,0.2)]"
+                  style={{
+                    background:
+                      "linear-gradient(145deg, #fff8f8 0%, #f7f0f0 50%, #f3e8e8 100%)",
+                  }}
                 >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#800000]/15">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#800000]/12">
                     <Check className="h-3.5 w-3.5 text-[#800000]" strokeWidth={3} />
                   </span>
-                  <span className="text-sm font-medium text-white/90">{highlight}</span>
+                  <span className="text-sm font-medium text-neutral-800">{highlight}</span>
                 </div>
               ))}
             </Stagger>
