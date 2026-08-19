@@ -20,11 +20,13 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <div className="flex items-center">
-                <img
-                  src={logo}
-                  alt="Cineglare Logo"
-                  className="h-10 w-auto md:h-12 object-contain"
-                />
+                <span className="inline-flex overflow-hidden rounded-2xl bg-white">
+                  <img
+                    src={logo}
+                    alt="Cineglare Logo"
+                    className="h-10 w-auto object-contain md:h-12"
+                  />
+                </span>
               </div>
             </div>
             <p className="text-muted-foreground text-sm mb-4">
