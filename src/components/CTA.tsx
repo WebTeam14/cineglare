@@ -7,7 +7,7 @@ const ctaBackground = asset("cta-bg.jpg");
 
 const CTA = () => {
   return (
-    <section className="relative overflow-hidden py-24 sm:py-28 lg:py-32">
+    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
       <div className="absolute inset-0 z-0">
         <img
           src={ctaBackground}
@@ -39,7 +39,7 @@ const CTA = () => {
             <br className="hidden sm:block" /> Your Vision Real
           </h2>
 
-          <p className="mb-10 max-w-xl text-sm leading-relaxed text-white/65 sm:text-base">
+          <p className="mb-8 max-w-xl text-sm leading-relaxed text-white/65 sm:text-base">
             From concept to curtain call — star influence, cinematic storytelling,
             and flawless execution that turns bold ideas into iconic moments.
           </p>

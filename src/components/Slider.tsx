@@ -49,13 +49,13 @@ const PartnerSlider = () => {
   const rowB = logos.slice(23);
 
   return (
-    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
+    <section className="relative overflow-hidden py-12 sm:py-14 lg:py-16">
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-0 h-40 w-[28rem] -translate-x-1/2 rounded-full bg-[#800000]/10 blur-[90px]"
       />
 
-      <div className="container-custom relative mb-10 text-center sm:mb-12">
+      <div className="container-custom relative mb-8 text-center">
         <div className="mb-4 flex items-center justify-center gap-3">
           <span className="h-px w-10 bg-[#800000]" />
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
