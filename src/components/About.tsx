@@ -19,14 +19,14 @@ const highlights = [
 
 const About = () => {
   return (
-    <section id="about" className="relative w-full overflow-hidden py-20 sm:py-24 lg:py-28">
+    <section id="about" className="relative w-full overflow-hidden py-14 sm:py-16 lg:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute -left-32 top-1/4 h-80 w-80 rounded-full bg-[#800000]/10 blur-[100px]"
       />
 
       <div className="container-custom relative">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,480px)_1fr] lg:gap-14 xl:grid-cols-[minmax(0,520px)_1fr] xl:gap-16">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,480px)_1fr] lg:gap-12 xl:grid-cols-[minmax(0,520px)_1fr] xl:gap-14">
           <Reveal variant="left" duration={800} className="relative mx-auto w-full max-w-[400px] sm:max-w-[440px] lg:mx-0 lg:max-w-full">
             <div className="relative">
               <div
