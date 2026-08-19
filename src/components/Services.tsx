@@ -66,24 +66,24 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-[1.5rem] border border-[#800000]/15 p-8 shadow-[0_16px_40px_-24px_rgba(0,0,0,0.7)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/40 hover:shadow-[0_20px_48px_-20px_rgba(128,0,0,0.22)]"
+              className="group relative overflow-hidden rounded-[1.5rem] border border-[#800000]/12 p-8 shadow-[0_18px_40px_-24px_rgba(0,0,0,0.55)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/35 hover:shadow-[0_24px_50px_-20px_rgba(128,0,0,0.22)]"
               style={{
                 animationDelay: `${index * 80}ms`,
                 background:
-                  "linear-gradient(160deg, #141010 0%, #0f0c0c 48%, #120e0e 100%)",
+                  "linear-gradient(145deg, #fff8f8 0%, #f7f0f0 45%, #f3e8e8 100%)",
               }}
             >
               <div
                 aria-hidden
-                className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-[#800000]/[0.09] blur-3xl transition-opacity duration-500 group-hover:bg-[#800000]/[0.14]"
+                className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#800000]/[0.07] blur-2xl transition-opacity duration-500 group-hover:bg-[#800000]/[0.12]"
               />
-              <div className="relative mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#800000]/12 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#800000] group-hover:shadow-[0_8px_24px_rgba(128,0,0,.28)]">
+              <div className="relative mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#800000]/10 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#800000] group-hover:shadow-[0_8px_24px_rgba(128,0,0,.28)]">
                 <service.icon className="h-7 w-7 text-[#800000] transition-colors duration-300 group-hover:text-white" />
               </div>
-              <h3 className="relative mb-3 text-xl font-bold text-white">
+              <h3 className="relative mb-3 text-xl font-bold text-neutral-900">
                 {service.title}
               </h3>
-              <p className="relative text-sm leading-relaxed text-white/65">
+              <p className="relative text-sm leading-relaxed text-neutral-600">
                 {service.description}
               </p>
             </div>
