@@ -53,7 +53,7 @@ const Header = () => {
 
   const linkClass = (active: boolean) =>
     cn(
-      "relative text-[13px] font-medium tracking-wide transition-colors duration-300",
+      "relative text-[15px] font-medium tracking-wide transition-colors duration-300",
       active ? "text-white" : "text-white/65 hover:text-white",
       "after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[#800000] after:transition-transform after:duration-300 hover:after:scale-x-100",
       active && "after:scale-x-100",
@@ -131,7 +131,7 @@ const Header = () => {
           <Button
             asChild
             size="sm"
-            className="hidden rounded-full bg-[#800000] px-5 text-[13px] font-semibold tracking-wide text-white shadow-[0_8px_24px_rgba(128,0,0,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] hover:shadow-[0_12px_32px_rgba(128,0,0,.45)] sm:inline-flex"
+            className="hidden rounded-full bg-[#800000] px-5 text-[14px] font-semibold tracking-wide text-white shadow-[0_8px_24px_rgba(128,0,0,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] hover:shadow-[0_12px_32px_rgba(128,0,0,.45)] sm:inline-flex"
           >
             <a href="#contact">Free Quote</a>
           </Button>
