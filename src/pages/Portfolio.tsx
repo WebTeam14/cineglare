@@ -48,15 +48,16 @@ export default function Portfolio() {
             loop
             muted
             playsInline
-            className="absolute inset-0 h-full w-full object-cover opacity-70"
+            className="absolute inset-0 h-full w-full object-cover"
           />
 
-          {/* Cinematic scrims — match home / About Us */}
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,.92)_0%,rgba(0,0,0,.55)_48%,rgba(0,0,0,.2)_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(0,0,0,.9)_0%,transparent_45%,rgba(0,0,0,.25)_100%)]" />
+          {/* Light scrims — keep type readable without hiding the video (aligned with home Hero) */}
+          <div className="absolute inset-0 bg-black/25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/15" />
           <div
             aria-hidden
-            className="absolute -right-24 top-20 h-80 w-80 rounded-full bg-[#800000]/25 blur-[110px]"
+            className="absolute -right-24 top-20 h-80 w-80 rounded-full bg-[#800000]/18 blur-[110px]"
           />
           <div
             aria-hidden
