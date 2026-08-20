@@ -184,13 +184,13 @@ const AboutUs = () => {
         .about-grid { background-image: linear-gradient(rgba(128,0,0,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(128,0,0,.08) 1px, transparent 1px); background-size: 48px 48px; }
       `}</style>
       <main>
-        <section className="relative isolate min-h-[72svh] overflow-hidden surface-deep">
+        <section className="relative isolate min-h-[80svh] overflow-hidden surface-deep">
           <img src={aboutHero} alt="Cineglare team" className="absolute inset-0 h-full w-full object-cover object-center opacity-70" />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,6,6,.96)_0%,rgba(6,6,6,.78)_42%,rgba(6,6,6,.25)_100%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--cine-base)_0%,rgba(6,6,6,.55)_28%,transparent_55%,rgba(6,6,6,.35)_100%)]" />
           <div className="absolute -right-28 top-20 h-80 w-80 rounded-full bg-[#800000]/30 blur-[110px] about-pulse" />
           <div className="about-grid absolute inset-0 opacity-30 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
-          <div className="relative mx-auto flex min-h-[72svh] max-w-7xl items-end px-6 pb-10 pt-24 sm:px-8 md:pb-14 lg:px-12">
+          <div className="relative mx-auto flex min-h-[80svh] max-w-7xl items-end px-6 pb-12 pt-28 sm:px-8 md:pb-16 lg:px-12">
             <div className="max-w-4xl">
               <div className="about-reveal mb-5 flex items-center gap-3">
                 <span className="h-px w-12 bg-[#800000]" />
@@ -199,10 +199,10 @@ const AboutUs = () => {
               <h1 className="about-reveal text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl [animation-delay:120ms]">
                 About<br /><span className="text-[#800000]">Cineglare.</span>
               </h1>
-              <p className="about-reveal mt-5 max-w-2xl text-base leading-relaxed text-white/70 [animation-delay:220ms] md:text-lg">
+              <p className="about-reveal mt-6 max-w-2xl text-base leading-relaxed text-white/70 [animation-delay:220ms] md:text-lg">
                 A creative force where <TypewriterWord /> becomes meaningful brand stories, unforgettable events and experiences people remember.
               </p>
-              <div className="about-reveal mt-6 flex flex-wrap items-center gap-4 [animation-delay:320ms]">
+              <div className="about-reveal mt-8 flex flex-wrap items-center gap-4 [animation-delay:320ms]">
                 <a href="#story" className="group inline-flex items-center gap-3 rounded-full bg-[#800000] px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#970000]">
                   Discover Our Story <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-1" />
                 </a>
@@ -214,9 +214,9 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section id="story" className="relative overflow-hidden surface-raise py-12 text-white sm:py-14 lg:py-16">
+        <section id="story" className="relative overflow-hidden surface-raise py-14 text-white sm:py-16 lg:py-20">
           <div className="pointer-events-none absolute inset-0 surface-glow opacity-70" />
-          <div className="relative mx-auto grid max-w-7xl gap-8 px-6 sm:px-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-12 lg:px-12">
+          <div className="relative mx-auto grid max-w-7xl gap-10 px-6 sm:px-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-14 lg:px-12">
             <div>
               <div className="mb-5 flex items-center gap-3">
                 <span className="h-px w-12 bg-[#800000]" />
@@ -230,7 +230,7 @@ const AboutUs = () => {
                 <p className="max-w-xs text-sm leading-6 text-white/55">ISO 9001:2015 certified • Shield Global Group subsidiary</p>
               </div>
             </div>
-            <div className="space-y-4 text-base leading-8 text-white/65 sm:text-lg">
+            <div className="space-y-5 text-base leading-8 text-white/65 sm:text-lg">
               <p><strong className="font-bold text-white">Cineglare</strong> is an ISO 9001:2015 certified company, committed to delivering excellence through a robust Quality Management System. It is a proud subsidiary of Shield Global Group — a diversified conglomerate with a strong presence across Asia, Africa and Europe, operating actively in over 23 countries.</p>
               <p>As a dynamic brand and entertainment company, Cineglare specializes in advertising, film production, event management, and brand management & promotions — delivering creative excellence powered by global expertise and backed by Shield Global Group's international foundation.</p>
               <p>With a passionate team of creative strategists, marketers and event curators, Cineglare turns creativity into impactful experiences. From logo design and tagline creation to full-scale product launches, we help brands stand out with innovative storytelling and flawless execution.</p>
@@ -239,10 +239,10 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden surface-base py-12 sm:py-14 lg:py-16">
+        <section className="relative overflow-hidden surface-base py-14 sm:py-16 lg:py-20">
           <div className="absolute inset-0 about-grid opacity-20" />
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-            <div className="mx-auto mb-8 max-w-3xl text-center">
+            <div className="mx-auto mb-10 max-w-3xl text-center">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Purpose</span>
               <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Driven by a clear<span className="text-[#800000]"> purpose.</span></h2>
               <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/50 sm:text-lg">Everything we create is guided by a vision and mission to transform ideas into meaningful experiences.</p>
@@ -257,7 +257,7 @@ const AboutUs = () => {
                   className={item.accent ? "group relative overflow-hidden rounded-[2rem] border border-[#800000]/50 p-7 shadow-[0_20px_48px_-16px_rgba(128,0,0,0.45)] transition-all duration-500 hover:-translate-y-1 sm:p-10" : "group relative overflow-hidden rounded-[2rem] border border-[#800000]/15 p-7 shadow-[0_16px_40px_-20px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-1 hover:border-[#800000]/35 sm:p-10"}
                   style={{ background: item.accent ? "linear-gradient(145deg, #a00000 0%, #800000 48%, #6a0000 100%)" : "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)" }}
                 >
-                  <div className="mb-6 flex items-center justify-between">
+                  <div className="mb-8 flex items-center justify-between">
                     <span className={item.accent ? "flex h-12 w-12 items-center justify-center rounded-xl bg-white/15 text-sm font-bold text-white" : "flex h-12 w-12 items-center justify-center rounded-xl bg-[#800000] text-sm font-bold text-white"}>{item.number}</span>
                     <span className={item.accent ? "text-[10px] font-bold uppercase tracking-[.25em] text-white/70" : "text-[10px] font-bold uppercase tracking-[.25em] text-neutral-500"}>{item.label}</span>
                   </div>
@@ -271,9 +271,9 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden surface-raise py-12 sm:py-14 lg:py-16">
+        <section className="relative overflow-hidden surface-raise py-14 sm:py-16 lg:py-20">
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-            <div className="grid gap-8 lg:grid-cols-[1fr_.9fr] lg:items-end">
+            <div className="grid gap-10 lg:grid-cols-[1fr_.9fr] lg:items-end">
               <div>
                 <div className="mb-4 flex items-center gap-3">
                   <span className="h-px w-12 bg-[#800000]" />
@@ -282,7 +282,7 @@ const AboutUs = () => {
                 <h2 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
                   Creative minds.<span className="block text-[#800000]">One shared ambition.</span>
                 </h2>
-                <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
                   At the heart of Cineglare is a passionate team of innovators, creators and strategists who bring ideas to life across advertising, film production, event management and brand promotions.
                 </p>
               </div>
@@ -293,8 +293,8 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="mt-10 sm:mt-12">
-              <div className="mb-6 flex items-center gap-4">
+            <div className="mt-12 sm:mt-16">
+              <div className="mb-8 flex items-center gap-4">
                 <span className="h-px flex-1 bg-gradient-to-r from-transparent to-[#800000]" />
                 <h3 className="text-xl font-bold tracking-tight sm:text-2xl">Our Leadership</h3>
                 <span className="h-px flex-1 bg-gradient-to-l from-transparent to-[#800000]" />
@@ -325,8 +325,8 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="mt-10">
-              <div className="mb-6 text-center">
+            <div className="mt-12">
+              <div className="mb-8 text-center">
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Culture</span>
                 <h3 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">What drives us</h3>
               </div>
@@ -347,7 +347,7 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden surface-base py-12 text-white sm:py-14 lg:py-16">
+        <section className="relative overflow-hidden surface-base py-14 text-white sm:py-16 lg:py-20">
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="max-w-3xl">
               <div className="mb-4 flex items-center gap-3">
@@ -355,9 +355,9 @@ const AboutUs = () => {
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Built to Create</span>
               </div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">A structure designed<span className="block text-[#800000]">for impact.</span></h2>
-              <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">Our collaborative divisions bring strategy, creativity, production and execution together under one connected vision.</p>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">Our collaborative divisions bring strategy, creativity, production and execution together under one connected vision.</p>
             </div>
-            <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {departments.map((dept) => (
                 <article key={dept.number} className="group relative overflow-hidden rounded-[1.5rem] border border-black/10 bg-white p-7 shadow-[0_12px_32px_-18px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-2 hover:border-[#800000] hover:bg-[#800000] hover:shadow-[0_22px_48px_-16px_rgba(128,0,0,0.4)] sm:p-8">
                   <span className="text-xs font-semibold text-[#800000] transition-colors group-hover:text-white/80">{dept.number}</span>
@@ -383,16 +383,16 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden surface-raise py-12 sm:py-14 lg:py-16">
+        <section className="relative overflow-hidden surface-raise py-14 sm:py-16 lg:py-20">
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-            <div className="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-10">
+            <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center">
                 <div className="mb-4 flex items-center gap-3">
                   <span className="h-px w-12 bg-[#800000]" />
                   <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Principles</span>
                 </div>
                 <h2 className="max-w-xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Creativity with<span className="text-[#800000]"> character.</span></h2>
-                <div className="mt-8 space-y-6">
+                <div className="mt-10 space-y-7">
                   {[
                     { title: "INNOVATION", icon: Monitor, text: "Powered by AI and creativity, we craft smarter, faster and more impactful brand experiences by blending art, intelligence and technology." },
                     { title: "INTEGRITY", icon: Lightbulb, text: "Where creativity meets strategy to build powerful brands and unforgettable experiences driven by innovation and global expertise." },
@@ -408,7 +408,7 @@ const AboutUs = () => {
                   ))}
                 </div>
               </div>
-              <div className="relative min-h-[300px] overflow-hidden rounded-[1.5rem] lg:min-h-[420px]">
+              <div className="relative min-h-[340px] overflow-hidden rounded-[1.5rem] lg:min-h-[480px]">
                 <img src={teamworkStructure} alt="Team collaboration" className="absolute inset-0 h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--cine-base)_0%,rgba(6,6,6,.35)_35%,transparent_75%)]" />
                 <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-[#800000]/30 bg-[#0c0c0c] p-5 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.7)] sm:bottom-6 sm:left-6 sm:right-6">
@@ -425,17 +425,17 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden surface-base py-12 sm:py-14 lg:py-16">
+        <section className="relative overflow-hidden surface-base py-14 sm:py-16 lg:py-20">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(75%_60%_at_50%_50%,rgba(128,0,0,.22)_0%,rgba(128,0,0,.08)_45%,transparent_78%)]" />
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-            <div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+            <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
               <div>
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Giving Back</span>
                 <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Corporate Social<span className="block text-[#800000]">Responsibility.</span></h2>
               </div>
               <p className="max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">Through our CSR initiatives, we support community growth, sustainability and education in the creative arts — inspiring positive change through every project.</p>
             </div>
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {csrCards.map((card) => (
                 <article key={card.title} className="group relative overflow-hidden rounded-2xl border border-[#800000]/20 bg-[#0c0c0c]">
                   <div className="relative aspect-[4/5] overflow-hidden">
@@ -450,14 +450,14 @@ const AboutUs = () => {
                 </article>
               ))}
             </div>
-            <div className="mt-8 flex items-center justify-between border-t border-white/20 pt-6">
+            <div className="mt-10 flex items-center justify-between border-t border-white/20 pt-6">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Creating impact beyond business</span>
               <ArrowUpRight className="h-5 w-5 text-white/60" />
             </div>
           </div>
         </section>
 
-        <section className="relative overflow-hidden surface-base py-12 text-center sm:py-14 lg:py-16">
+        <section className="relative overflow-hidden surface-base py-14 text-center sm:py-16 lg:py-20">
           <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#800000]/20 blur-[120px]" />
           <div className="relative mx-auto max-w-4xl px-6">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">The next story starts here</span>
