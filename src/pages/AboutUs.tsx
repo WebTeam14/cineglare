@@ -553,66 +553,68 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden surface-raise">
-          <div className="grid lg:grid-cols-2">
-            <div className="flex flex-col justify-center px-6 py-14 sm:px-10 lg:px-16 xl:px-24 lg:py-20">
-              <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-12 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-                  Our Principles
-                </span>
+        <section className="relative overflow-hidden surface-raise py-14 sm:py-16 lg:py-20">
+          <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-12">
+              <div className="flex flex-col justify-center">
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="h-px w-12 bg-[#800000]" />
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+                    Our Principles
+                  </span>
+                </div>
+                <h2 className="max-w-xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                  Creativity with
+                  <span className="text-[#800000]"> character.</span>
+                </h2>
+                <div className="mt-10 space-y-9">
+                  {[
+                    {
+                      title: "INNOVATION",
+                      icon: Monitor,
+                      text: "Powered by AI and creativity, we craft smarter, faster and more impactful brand experiences by blending art, intelligence and technology.",
+                    },
+                    {
+                      title: "INTEGRITY",
+                      icon: Lightbulb,
+                      text: "Where creativity meets strategy to build powerful brands and unforgettable experiences driven by innovation and global expertise.",
+                    },
+                    {
+                      title: "PASSION",
+                      icon: Globe,
+                      text: "We pour heart, energy and imagination into every project — turning passion into powerful brand stories that inspire.",
+                    },
+                  ].map(({ title, icon: Icon, text }) => (
+                    <div key={title} className="group flex gap-5">
+                      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#800000] text-white transition-all duration-300 group-hover:scale-105">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold">{title}</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-white/45 sm:text-base">
+                          {text}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h2 className="max-w-xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Creativity with
-                <span className="text-[#800000]"> character.</span>
-              </h2>
-              <div className="mt-10 space-y-9">
-                {[
-                  {
-                    title: "INNOVATION",
-                    icon: Monitor,
-                    text: "Powered by AI and creativity, we craft smarter, faster and more impactful brand experiences by blending art, intelligence and technology.",
-                  },
-                  {
-                    title: "INTEGRITY",
-                    icon: Lightbulb,
-                    text: "Where creativity meets strategy to build powerful brands and unforgettable experiences driven by innovation and global expertise.",
-                  },
-                  {
-                    title: "PASSION",
-                    icon: Globe,
-                    text: "We pour heart, energy and imagination into every project — turning passion into powerful brand stories that inspire.",
-                  },
-                ].map(({ title, icon: Icon, text }) => (
-                  <div key={title} className="group flex gap-5">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#800000] text-white transition-all duration-300 group-hover:scale-105">
-                      <Icon className="h-6 w-6" />
+              <div className="relative min-h-[360px] overflow-hidden rounded-[1.5rem] lg:min-h-[520px]">
+                <img
+                  src={teamworkStructure}
+                  alt="Team collaboration"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--cine-base)_0%,rgba(6,6,6,.35)_35%,transparent_75%)]" />
+                <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/15 bg-[var(--cine-deep)]/55 p-5 backdrop-blur-md sm:bottom-6 sm:left-6 sm:right-6">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#800000]">
+                      <Play className="ml-0.5 h-4 w-4 fill-current" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold">{title}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-white/45 sm:text-base">
-                        {text}
-                      </p>
+                      <p className="text-sm font-bold">Art. Strategy. Execution.</p>
+                      <p className="text-xs text-white/45">One team, one vision.</p>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative min-h-[420px] lg:min-h-full">
-              <img
-                src={teamworkStructure}
-                alt="Team collaboration"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--cine-base)_0%,rgba(6,6,6,.35)_35%,transparent_75%)] lg:bg-[linear-gradient(to_right,var(--cine-raise)_0%,rgba(13,13,13,.45)_25%,transparent_65%)]" />
-              <div className="absolute bottom-7 left-7 right-7 rounded-2xl border border-white/15 bg-[var(--cine-deep)]/55 p-5 backdrop-blur-md sm:bottom-10 sm:left-10 sm:right-10">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#800000]">
-                    <Play className="ml-0.5 h-4 w-4 fill-current" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold">Art. Strategy. Execution.</p>
-                    <p className="text-xs text-white/45">One team, one vision.</p>
                   </div>
                 </div>
               </div>
