@@ -17,9 +17,15 @@ import { asset } from "@/assets/placeholder";
 
 const contactHero = asset("contact.jpg");
 
-/** Same soft white → blush gradient used on home FeatureCards / Services */
+/** Info cards: soft white with a light red hint (not pink) */
 const cardSurface = {
-  background: "linear-gradient(145deg, #fff8f8 0%, #f7f0f0 45%, #f3e8e8 100%)",
+  background: "linear-gradient(145deg, #ffffff 0%, #fafafa 55%, #f7f4f4 100%)",
+} as const;
+
+/** Form panel: mostly white, subtle red wash only at the corner */
+const formSurface = {
+  background:
+    "linear-gradient(160deg, #ffffff 0%, #ffffff 70%, #faf6f6 100%)",
 } as const;
 
 const contactDetails = [
@@ -92,7 +98,7 @@ export default function Contact() {
                 Contact
                 <span className="block text-[#800000]">Cineglare.</span>
               </h1>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">
                 Tell us about your brand, film, or event. We respond within one
                 business day — and we are ready to build something memorable.
               </p>
@@ -117,7 +123,7 @@ export default function Contact() {
 
           <div className="relative z-[1] mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
-              {/* Left — info cards (home-style white + red) */}
+              {/* Left — info */}
               <div>
                 <div className="mb-4 flex items-center gap-3">
                   <span className="h-px w-10 bg-[#800000]" />
@@ -129,7 +135,7 @@ export default function Contact() {
                   Let’s create
                   <span className="text-[#800000]"> together.</span>
                 </h2>
-                <p className="mt-4 max-w-md text-base leading-relaxed text-white/55">
+                <p className="mt-4 max-w-md text-base leading-relaxed text-white/70">
                   Whether you need a campaign, a production, or a full event
                   experience — share a few details and our team will follow up.
                 </p>
@@ -139,23 +145,25 @@ export default function Contact() {
                     ({ icon: Icon, label, value, href, hint }) => {
                       const inner = (
                         <>
-                          <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#800000]/10 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#800000] group-hover:shadow-[0_8px_24px_rgba(128,0,0,.28)]">
+                          <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#800000]/12 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#800000] group-hover:shadow-[0_8px_24px_rgba(128,0,0,.28)]">
                             <Icon className="h-5 w-5 text-[#800000] transition-colors duration-300 group-hover:text-white" />
                           </div>
                           <div className="relative min-w-0">
-                            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#800000]/70">
+                            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#800000]">
                               {label}
                             </p>
-                            <p className="mt-1 text-base font-semibold text-neutral-900">
+                            <p className="mt-1 text-base font-bold text-neutral-950">
                               {value}
                             </p>
-                            <p className="mt-0.5 text-sm text-neutral-600">{hint}</p>
+                            <p className="mt-0.5 text-sm font-medium text-neutral-700">
+                              {hint}
+                            </p>
                           </div>
                         </>
                       );
 
                       const className =
-                        "group relative flex items-start gap-4 overflow-hidden rounded-[1.5rem] border border-[#800000]/12 p-5 shadow-[0_18px_40px_-24px_rgba(0,0,0,0.55)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/35 hover:shadow-[0_24px_50px_-20px_rgba(128,0,0,0.22)]";
+                        "group relative flex items-start gap-4 overflow-hidden rounded-[1.5rem] border border-[#800000]/20 p-5 shadow-[0_18px_40px_-24px_rgba(0,0,0,0.55)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/45 hover:shadow-[0_24px_50px_-20px_rgba(128,0,0,0.22)]";
 
                       return href ? (
                         <a
@@ -164,10 +172,6 @@ export default function Contact() {
                           className={className}
                           style={cardSurface}
                         >
-                          <div
-                            aria-hidden
-                            className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[#800000]/[0.07] blur-2xl transition-opacity duration-500 group-hover:bg-[#800000]/[0.12]"
-                          />
                           {inner}
                         </a>
                       ) : (
@@ -176,10 +180,6 @@ export default function Contact() {
                           className={className}
                           style={cardSurface}
                         >
-                          <div
-                            aria-hidden
-                            className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[#800000]/[0.07] blur-2xl transition-opacity duration-500 group-hover:bg-[#800000]/[0.12]"
-                          />
                           {inner}
                         </div>
                       );
@@ -187,41 +187,32 @@ export default function Contact() {
                   )}
                 </div>
 
-                <div
-                  className="mt-8 flex items-center gap-3 overflow-hidden rounded-[1.5rem] border border-[#800000]/12 px-5 py-4 shadow-[0_18px_40px_-24px_rgba(0,0,0,0.55)]"
-                  style={cardSurface}
-                >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#800000]/10">
-                    <Clock className="h-5 w-5 text-[#800000]" />
+                {/* Response time — solid brand red */}
+                <div className="mt-8 flex items-center gap-3 overflow-hidden rounded-[1.5rem] border border-[#800000] bg-[#800000] px-5 py-4 shadow-[0_18px_40px_-20px_rgba(128,0,0,0.45)]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/15">
+                    <Clock className="h-5 w-5 text-white" />
                   </div>
-                  <p className="text-sm text-neutral-600">
-                    <span className="font-semibold text-neutral-900">
-                      Response time:
-                    </span>{" "}
+                  <p className="text-sm font-medium text-white/90">
+                    <span className="font-bold text-white">Response time:</span>{" "}
                     typically within 24 hours on business days.
                   </p>
                 </div>
               </div>
 
-              {/* Right — form (same white / soft red card language) */}
+              {/* Right — form: white with a hint of red */}
               <div
-                className="relative overflow-hidden rounded-[1.75rem] border border-[#800000]/12 p-6 shadow-[0_18px_40px_-24px_rgba(0,0,0,0.55)] sm:p-8 lg:p-10"
-                style={cardSurface}
+                className="relative overflow-hidden rounded-[1.75rem] border border-[#800000]/18 p-6 shadow-[0_18px_40px_-24px_rgba(0,0,0,0.55)] sm:p-8 lg:p-10"
+                style={formSurface}
               >
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-[#800000]/[0.07] blur-2xl"
-                />
-
                 {submitted ? (
                   <div className="relative flex min-h-[22rem] flex-col items-center justify-center text-center">
                     <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#800000] text-white shadow-[0_8px_24px_rgba(128,0,0,.3)]">
                       <CheckCircle2 className="h-8 w-8" />
                     </div>
-                    <h3 className="text-2xl font-bold tracking-tight text-neutral-900">
+                    <h3 className="text-2xl font-bold tracking-tight text-neutral-950">
                       Message sent
                     </h3>
-                    <p className="mt-3 max-w-sm text-sm leading-relaxed text-neutral-600">
+                    <p className="mt-3 max-w-sm text-sm leading-relaxed text-neutral-700">
                       Thanks for reaching out. Our team will get back to you
                       within one business day.
                     </p>
@@ -236,10 +227,10 @@ export default function Contact() {
                 ) : (
                   <div className="relative">
                     <div className="mb-8">
-                      <h3 className="text-xl font-bold tracking-tight text-neutral-900 sm:text-2xl">
+                      <h3 className="text-xl font-bold tracking-tight text-neutral-950 sm:text-2xl">
                         Send a message
                       </h3>
-                      <p className="mt-2 text-sm text-neutral-600">
+                      <p className="mt-2 text-sm font-medium text-neutral-700">
                         All fields are required unless noted.
                       </p>
                     </div>
@@ -249,7 +240,7 @@ export default function Contact() {
                         <div className="space-y-2">
                           <label
                             htmlFor="contact-name"
-                            className="text-xs font-semibold uppercase tracking-[0.14em] text-[#800000]/80"
+                            className="text-xs font-bold uppercase tracking-[0.14em] text-[#800000]"
                           >
                             Name
                           </label>
@@ -258,13 +249,13 @@ export default function Contact() {
                             name="name"
                             required
                             placeholder="Your full name"
-                            className="h-12 rounded-xl border-[#800000]/15 bg-white text-neutral-900 placeholder:text-neutral-400 focus-visible:border-[#800000] focus-visible:ring-[#800000]/40"
+                            className="h-12 rounded-xl border-neutral-300 bg-white text-neutral-950 placeholder:text-neutral-500 focus-visible:border-[#800000] focus-visible:ring-[#800000]/35"
                           />
                         </div>
                         <div className="space-y-2">
                           <label
                             htmlFor="contact-email"
-                            className="text-xs font-semibold uppercase tracking-[0.14em] text-[#800000]/80"
+                            className="text-xs font-bold uppercase tracking-[0.14em] text-[#800000]"
                           >
                             Email
                           </label>
@@ -274,7 +265,7 @@ export default function Contact() {
                             type="email"
                             required
                             placeholder="you@company.com"
-                            className="h-12 rounded-xl border-[#800000]/15 bg-white text-neutral-900 placeholder:text-neutral-400 focus-visible:border-[#800000] focus-visible:ring-[#800000]/40"
+                            className="h-12 rounded-xl border-neutral-300 bg-white text-neutral-950 placeholder:text-neutral-500 focus-visible:border-[#800000] focus-visible:ring-[#800000]/35"
                           />
                         </div>
                       </div>
@@ -283,10 +274,10 @@ export default function Contact() {
                         <div className="space-y-2">
                           <label
                             htmlFor="contact-phone"
-                            className="text-xs font-semibold uppercase tracking-[0.14em] text-[#800000]/80"
+                            className="text-xs font-bold uppercase tracking-[0.14em] text-[#800000]"
                           >
                             Phone{" "}
-                            <span className="font-normal normal-case tracking-normal text-neutral-400">
+                            <span className="font-medium normal-case tracking-normal text-neutral-500">
                               (optional)
                             </span>
                           </label>
@@ -295,13 +286,13 @@ export default function Contact() {
                             name="phone"
                             type="tel"
                             placeholder="+91 …"
-                            className="h-12 rounded-xl border-[#800000]/15 bg-white text-neutral-900 placeholder:text-neutral-400 focus-visible:border-[#800000] focus-visible:ring-[#800000]/40"
+                            className="h-12 rounded-xl border-neutral-300 bg-white text-neutral-950 placeholder:text-neutral-500 focus-visible:border-[#800000] focus-visible:ring-[#800000]/35"
                           />
                         </div>
                         <div className="space-y-2">
                           <label
                             htmlFor="contact-service"
-                            className="text-xs font-semibold uppercase tracking-[0.14em] text-[#800000]/80"
+                            className="text-xs font-bold uppercase tracking-[0.14em] text-[#800000]"
                           >
                             Interest
                           </label>
@@ -310,7 +301,7 @@ export default function Contact() {
                             name="service"
                             required
                             defaultValue=""
-                            className="flex h-12 w-full rounded-xl border border-[#800000]/15 bg-white px-3 text-sm text-neutral-900 outline-none focus-visible:border-[#800000] focus-visible:ring-2 focus-visible:ring-[#800000]/40"
+                            className="flex h-12 w-full rounded-xl border border-neutral-300 bg-white px-3 text-sm font-medium text-neutral-950 outline-none focus-visible:border-[#800000] focus-visible:ring-2 focus-visible:ring-[#800000]/35"
                           >
                             <option value="" disabled>
                               Select a service
@@ -333,7 +324,7 @@ export default function Contact() {
                       <div className="space-y-2">
                         <label
                           htmlFor="contact-subject"
-                          className="text-xs font-semibold uppercase tracking-[0.14em] text-[#800000]/80"
+                          className="text-xs font-bold uppercase tracking-[0.14em] text-[#800000]"
                         >
                           Subject
                         </label>
@@ -342,14 +333,14 @@ export default function Contact() {
                           name="subject"
                           required
                           placeholder="Brief project title"
-                          className="h-12 rounded-xl border-[#800000]/15 bg-white text-neutral-900 placeholder:text-neutral-400 focus-visible:border-[#800000] focus-visible:ring-[#800000]/40"
+                          className="h-12 rounded-xl border-neutral-300 bg-white text-neutral-950 placeholder:text-neutral-500 focus-visible:border-[#800000] focus-visible:ring-[#800000]/35"
                         />
                       </div>
 
                       <div className="space-y-2">
                         <label
                           htmlFor="contact-message"
-                          className="text-xs font-semibold uppercase tracking-[0.14em] text-[#800000]/80"
+                          className="text-xs font-bold uppercase tracking-[0.14em] text-[#800000]"
                         >
                           Message
                         </label>
@@ -359,7 +350,7 @@ export default function Contact() {
                           required
                           rows={5}
                           placeholder="Tell us about your goals, timeline, and any key details…"
-                          className="min-h-[140px] rounded-xl border-[#800000]/15 bg-white text-neutral-900 placeholder:text-neutral-400 focus-visible:border-[#800000] focus-visible:ring-[#800000]/40"
+                          className="min-h-[140px] rounded-xl border-neutral-300 bg-white text-neutral-950 placeholder:text-neutral-500 focus-visible:border-[#800000] focus-visible:ring-[#800000]/35"
                         />
                       </div>
 
