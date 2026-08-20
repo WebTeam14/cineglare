@@ -62,11 +62,13 @@ const AnimatedStat = ({
   suffix = "",
   label,
   icon: Icon,
+  accent = false,
 }: {
   value: number;
   suffix?: string;
   label: string;
   icon: React.ElementType;
+  accent?: boolean;
 }) => {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement | null>(null);
@@ -102,18 +104,48 @@ const AnimatedStat = ({
   return (
     <div
       ref={ref}
-      className="group relative overflow-hidden rounded-2xl border border-[#800000]/15 p-5 text-center shadow-[0_12px_32px_-16px_rgba(0,0,0,0.45)] transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/40 hover:shadow-[0_18px_40px_-14px_rgba(128,0,0,0.28)]"
+      className={
+        accent
+          ? "group relative overflow-hidden rounded-2xl border border-[#800000]/50 p-5 text-center shadow-[0_16px_40px_-14px_rgba(128,0,0,0.45)] transition-all duration-500 hover:-translate-y-2"
+          : "group relative overflow-hidden rounded-2xl border border-[#800000]/15 p-5 text-center shadow-[0_12px_32px_-16px_rgba(0,0,0,0.45)] transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/40 hover:shadow-[0_18px_40px_-14px_rgba(128,0,0,0.28)]"
+      }
       style={{
-        background: "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)",
+        background: accent
+          ? "linear-gradient(145deg, #a00000 0%, #800000 48%, #6a0000 100%)"
+          : "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)",
       }}
     >
-      <div className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-[#800000] transition-transform duration-500 group-hover:scale-x-100" />
-      <Icon className="mx-auto mb-4 h-6 w-6 text-[#800000] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6" />
-      <div className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
+      <div
+        className={
+          accent
+            ? "absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-white/50 transition-transform duration-500 group-hover:scale-x-100"
+            : "absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-[#800000] transition-transform duration-500 group-hover:scale-x-100"
+        }
+      />
+      <Icon
+        className={
+          accent
+            ? "mx-auto mb-4 h-6 w-6 text-white transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
+            : "mx-auto mb-4 h-6 w-6 text-[#800000] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
+        }
+      />
+      <div
+        className={
+          accent
+            ? "text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            : "text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl"
+        }
+      >
         {count}
         {suffix}
       </div>
-      <div className="mt-2 text-xs font-medium uppercase tracking-[0.16em] text-neutral-500">
+      <div
+        className={
+          accent
+            ? "mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/85"
+            : "mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-600"
+        }
+      >
         {label}
       </div>
     </div>
@@ -363,33 +395,72 @@ const AboutUs = () => {
                   label: "Our Direction",
                   title: "Vision",
                   text: "Make every brand a phenomenon and every event a masterpiece.",
+                  accent: false,
                 },
                 {
                   number: "02",
                   label: "What We Do",
                   title: "Mission",
                   text: "Crafting inspiring brand experiences that celebrate excellence.",
+                  accent: true,
                 },
               ].map((item) => (
                 <article
                   key={item.number}
-                  className="group relative overflow-hidden rounded-[2rem] border border-[#800000]/15 p-7 shadow-[0_16px_40px_-20px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-1 hover:border-[#800000]/35 sm:p-10"
+                  className={
+                    item.accent
+                      ? "group relative overflow-hidden rounded-[2rem] border border-[#800000]/50 p-7 shadow-[0_20px_48px_-16px_rgba(128,0,0,0.45)] transition-all duration-500 hover:-translate-y-1 sm:p-10"
+                      : "group relative overflow-hidden rounded-[2rem] border border-[#800000]/15 p-7 shadow-[0_16px_40px_-20px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-1 hover:border-[#800000]/35 sm:p-10"
+                  }
                   style={{
-                    background:
-                      "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)",
+                    background: item.accent
+                      ? "linear-gradient(145deg, #a00000 0%, #800000 48%, #6a0000 100%)"
+                      : "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)",
                   }}
                 >
                   <div className="mb-10 flex items-center justify-between">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#800000] text-sm font-bold text-white">
+                    <span
+                      className={
+                        item.accent
+                          ? "flex h-12 w-12 items-center justify-center rounded-xl bg-white/15 text-sm font-bold text-white"
+                          : "flex h-12 w-12 items-center justify-center rounded-xl bg-[#800000] text-sm font-bold text-white"
+                      }
+                    >
                       {item.number}
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-[.25em] text-neutral-400">
+                    <span
+                      className={
+                        item.accent
+                          ? "text-[10px] font-bold uppercase tracking-[.25em] text-white/70"
+                          : "text-[10px] font-bold uppercase tracking-[.25em] text-neutral-500"
+                      }
+                    >
                       {item.label}
                     </span>
                   </div>
-                  <h3 className="text-3xl font-bold text-neutral-900 sm:text-4xl">{item.title}</h3>
-                  <div className="mt-7 border-l-2 border-[#800000] pl-6">
-                    <p className="text-xl font-medium leading-8 text-neutral-600 sm:text-2xl">
+                  <h3
+                    className={
+                      item.accent
+                        ? "text-3xl font-bold text-white sm:text-4xl"
+                        : "text-3xl font-bold text-neutral-900 sm:text-4xl"
+                    }
+                  >
+                    {item.title}
+                  </h3>
+                  <div
+                    className={
+                      item.accent
+                        ? "mt-7 border-l-2 border-white/50 pl-6"
+                        : "mt-7 border-l-2 border-[#800000] pl-6"
+                    }
+                  >
+                    <p
+                      className={
+                        item.accent
+                          ? "text-xl font-medium leading-8 text-white/90 sm:text-2xl"
+                          : "text-xl font-medium leading-8 text-neutral-700 sm:text-2xl"
+                      }
+                    >
                       {item.text}
                     </p>
                   </div>
@@ -423,8 +494,8 @@ const AboutUs = () => {
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                {stats.map((stat) => (
-                  <AnimatedStat key={stat.label} {...stat} />
+                {stats.map((stat, index) => (
+                  <AnimatedStat key={stat.label} {...stat} accent={index === 1} />
                 ))}
               </div>
             </div>
@@ -540,7 +611,7 @@ const AboutUs = () => {
                   <h3 className="mt-2 border-b border-black/10 pb-4 text-xl font-bold text-neutral-900">
                     {dept.title}
                   </h3>
-                  <ul className="mt-5 space-y-2.5 text-sm text-neutral-600">
+                  <ul className="mt-5 space-y-2.5 text-sm font-medium text-neutral-700">
                     {dept.items.map((item) => (
                       <li key={item} className="flex gap-2">
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#800000]" />
@@ -552,7 +623,7 @@ const AboutUs = () => {
                     <h4 className="text-sm font-semibold text-neutral-800">
                       {dept.subTitle}
                     </h4>
-                    <ul className="mt-3 space-y-2 text-sm text-neutral-500">
+                    <ul className="mt-3 space-y-2 text-sm text-neutral-600">
                       {dept.subItems.map((item) => (
                         <li key={item}>{item}</li>
                       ))}
@@ -602,7 +673,7 @@ const AboutUs = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-bold">{title}</h3>
-                        <p className="mt-2 text-sm leading-relaxed text-white/45 sm:text-base">
+                        <p className="mt-2 text-sm leading-relaxed text-white/55 sm:text-base">
                           {text}
                         </p>
                       </div>
