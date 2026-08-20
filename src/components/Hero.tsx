@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "@tanstack/react-router";
 
 /**
  * Prefer same-origin asset if present; otherwise public CDNs known to allow
@@ -136,20 +137,20 @@ const Hero = () => {
               asChild
               className="h-14 rounded-full bg-[#800000] px-8 text-base font-semibold text-white shadow-[0_12px_35px_rgba(128,0,0,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] sm:h-16 sm:px-10 sm:text-lg"
             >
-              <a href="#contact" className="inline-flex items-center gap-2.5">
+              <Link to="/contact" className="inline-flex items-center gap-2.5">
                 Free Quote
                 <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
-              </a>
+              </Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="h-14 rounded-full border-white/25 bg-white/5 px-8 text-base font-semibold text-white backdrop-blur-sm hover:bg-white/10 hover:text-white sm:h-16 sm:px-10 sm:text-lg"
             >
-              <a href="#portfolio" className="inline-flex items-center gap-2.5">
+              <Link to="/portfolio" className="inline-flex items-center gap-2.5">
                 <Play className="h-5 w-5 fill-current sm:h-6 sm:w-6" />
                 View Work
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
