@@ -24,23 +24,18 @@ function Section({
 }) {
   const surface =
     tone === "elevated"
-      ? "bg-[#070707] border-y border-white/[0.04]"
+      ? "surface-raise"
       : tone === "deep"
-        ? "bg-[#050505] border-t border-white/[0.035]"
-        : "bg-black";
-
-  const sheen =
-    tone === "elevated" || tone === "deep"
-      ? "pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/[0.035] to-transparent"
-      : "";
+        ? "surface-deep"
+        : "surface-base";
 
   const orbClass =
     orb === "top"
-      ? "absolute left-1/2 top-0 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[#800000]/12 blur-[100px]"
+      ? "absolute left-1/2 top-0 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[#800000]/10 blur-[120px]"
       : orb === "left"
-        ? "absolute -left-24 top-16 h-[20rem] w-[20rem] rounded-full bg-[#800000]/10 blur-[100px]"
+        ? "absolute -left-24 top-16 h-[20rem] w-[20rem] rounded-full bg-[#800000]/[0.08] blur-[120px]"
         : orb === "right"
-          ? "absolute -right-20 top-8 h-[20rem] w-[20rem] rounded-full bg-[#800000]/10 blur-[100px]"
+          ? "absolute -right-20 top-8 h-[20rem] w-[20rem] rounded-full bg-[#800000]/[0.08] blur-[120px]"
           : "";
 
   return (
@@ -53,7 +48,6 @@ function Section({
             "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
         }}
       />
-      {sheen && <div aria-hidden className={sheen} />}
       {orb !== "none" && <div aria-hidden className={orbClass} />}
       <div className="relative z-[1]">
         <Reveal variant="fade" duration={800}>
@@ -66,7 +60,7 @@ function Section({
 
 const Index = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-black text-white">
+    <div className="min-h-screen overflow-x-hidden surface-base text-white">
       <Header />
       <main>
         <Hero />
