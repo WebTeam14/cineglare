@@ -304,41 +304,72 @@ const AboutUs = () => {
         </section>
 
         <section className="relative overflow-hidden bg-black py-14 sm:py-16 lg:py-20">
+          <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#800000]/20 blur-[120px]" />
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-            <div className="mb-8">
-              <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-12 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Visionaries at Work</span>
+            <div className="grid gap-12 lg:grid-cols-[1fr_.9fr] lg:items-end">
+              <div>
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="h-px w-12 bg-[#800000]" />
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Visionaries at Work</span>
+                </div>
+                <h2 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                  Creative minds.<span className="block text-[#800000]">One shared ambition.</span>
+                </h2>
+                <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
+                  At the heart of Cineglare is a passionate team of innovators, creators and strategists who bring ideas to life across advertising, film production, event management and brand promotions.
+                </p>
               </div>
-              <h2 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Numbers that reflect<span className="block text-[#800000]">our journey.</span>
-              </h2>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                {stats.map((stat) => (
+                  <AnimatedStat key={stat.label} {...stat} />
+                ))}
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-              {stats.map((stat) => (
-                <AnimatedStat key={stat.label} {...stat} />
-              ))}
-            </div>
-            <div className="mt-16">
-              <h3 className="text-xl font-bold tracking-tight sm:text-2xl">Our Leadership</h3>
-              <div className="mt-8 space-y-6">
+
+            <div className="mt-16 sm:mt-20">
+              <div className="mb-10 flex items-center gap-4">
+                <span className="h-px flex-1 bg-gradient-to-r from-transparent to-[#800000]" />
+                <h3 className="text-xl font-bold tracking-tight sm:text-2xl">Our Leadership</h3>
+                <span className="h-px flex-1 bg-gradient-to-l from-transparent to-[#800000]" />
+              </div>
+              <div className="mx-auto max-w-5xl space-y-5">
                 {[
-                  { initials: "CG", role: "Founder", name: "Creative Leadership", text: "Guiding Cineglare with a vision rooted in storytelling excellence, strategic clarity and global ambition." },
-                  { initials: "CL", role: "Creative Director", name: "Studio Direction", text: "Shaping campaigns, events and productions that balance artistic ambition with measurable brand impact." },
+                  {
+                    initials: "RV",
+                    role: "Founder & Managing Director",
+                    name: "Ram Vijay Singh",
+                    text: "With visionary leadership and creative foresight, he has built Cineglare into a powerhouse of innovation, crafting stories that resonate globally.",
+                  },
+                  {
+                    initials: "MK",
+                    role: "Operations Director",
+                    name: "Manish Kumar Singh",
+                    text: "The backbone of execution excellence at Cineglare, ensuring every project is delivered with precision and passion.",
+                  },
                 ].map((person, index) => (
-                  <div key={person.name} className="group grid gap-6 rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:border-[#800000]/40 md:grid-cols-[auto_1fr_auto] md:items-center md:p-8">
-                    <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-[#800000] bg-[#800000]/20 text-2xl font-bold shadow-[0_0_35px_rgba(128,0,0,.25)] transition-transform duration-500 group-hover:scale-105">{person.initials}</div>
-                    <div>
+                  <div
+                    key={person.name}
+                    className="group grid overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[.035] transition-all duration-500 hover:-translate-y-1 hover:border-[#800000]/70 hover:bg-[#800000]/[.05] md:grid-cols-[150px_1fr_90px]"
+                  >
+                    <div className="flex items-center justify-center border-b border-white/10 bg-[#800000]/10 p-7 md:border-b-0 md:border-r">
+                      <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-[#800000] bg-[#800000]/20 text-2xl font-bold shadow-[0_0_35px_rgba(128,0,0,.25)] transition-transform duration-500 group-hover:scale-105">
+                        {person.initials}
+                      </div>
+                    </div>
+                    <div className="p-7 sm:p-8">
                       <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">{person.role}</span>
-                      <h4 className="mt-2 text-xl font-bold sm:text-2xl">{person.name}</h4>
+                      <h4 className="mt-2 text-xl font-bold tracking-tight sm:text-2xl">{person.name}</h4>
                       <div className="mt-4 h-px w-10 bg-[#800000] transition-all duration-500 group-hover:w-20" />
                       <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/55 sm:text-base">{person.text}</p>
                     </div>
-                    <div className="hidden items-center justify-center text-5xl font-serif text-[#800000]/40 md:flex">{index === 0 ? "01" : "02"}</div>
+                    <div className="hidden items-center justify-center text-5xl font-serif text-[#800000]/40 md:flex">
+                      {index === 0 ? "01" : "02"}
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
+
             <div className="mt-16 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[.025] sm:mt-20">
               <div className="border-b border-white/10 p-7 text-center sm:p-9">
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Culture</span>
