@@ -17,6 +17,11 @@ import { asset } from "@/assets/placeholder";
 
 const contactHero = asset("contact.jpg");
 
+/** Same soft white → blush gradient used on home FeatureCards / Services */
+const cardSurface = {
+  background: "linear-gradient(145deg, #fff8f8 0%, #f7f0f0 45%, #f3e8e8 100%)",
+} as const;
+
 const contactDetails = [
   {
     icon: Phone,
@@ -48,7 +53,6 @@ export default function Contact() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSending(true);
-    // UI-only success state until a real endpoint is wired
     window.setTimeout(() => {
       setSending(false);
       setSubmitted(true);
@@ -73,7 +77,7 @@ export default function Contact() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/20" />
           <div
             aria-hidden
-            className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black to-transparent"
+            className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[var(--cine-base,#060606)] to-transparent"
           />
 
           <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 sm:px-8 md:pb-18 lg:px-12">
@@ -97,20 +101,23 @@ export default function Contact() {
         </section>
 
         {/* ---------------------- FORM + DETAILS ---------------------- */}
-        <section className="relative overflow-hidden bg-[#0a0a0a] py-16 sm:py-20 lg:py-28">
-          {/* Soft solid red gradient wash — no blur / glass */}
+        <section className="relative overflow-hidden surface-raise py-16 sm:py-20 lg:py-28">
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#800000]/20 via-transparent to-[#800000]/10"
+            className="pointer-events-none absolute inset-0 z-0 opacity-[0.04] mix-blend-overlay"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+            }}
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#800000]/15 to-transparent"
+            className="absolute left-1/2 top-0 h-[20rem] w-[20rem] -translate-x-1/2 rounded-full bg-[#800000]/10 blur-[120px]"
           />
 
           <div className="relative z-[1] mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
-              {/* Left — info */}
+              {/* Left — info cards (home-style white + red) */}
               <div>
                 <div className="mb-4 flex items-center gap-3">
                   <span className="h-px w-10 bg-[#800000]" />
@@ -132,33 +139,47 @@ export default function Contact() {
                     ({ icon: Icon, label, value, href, hint }) => {
                       const inner = (
                         <>
-                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#1a1a1a] text-[#800000] transition-colors duration-300 group-hover:bg-white group-hover:text-[#800000]">
-                            <Icon className="h-5 w-5" />
+                          <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#800000]/10 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#800000] group-hover:shadow-[0_8px_24px_rgba(128,0,0,.28)]">
+                            <Icon className="h-5 w-5 text-[#800000] transition-colors duration-300 group-hover:text-white" />
                           </div>
-                          <div className="min-w-0">
-                            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/45 transition-colors duration-300 group-hover:text-white/80">
+                          <div className="relative min-w-0">
+                            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#800000]/70">
                               {label}
                             </p>
-                            <p className="mt-1 text-base font-medium text-white transition-colors duration-300 group-hover:text-white">
+                            <p className="mt-1 text-base font-semibold text-neutral-900">
                               {value}
                             </p>
-                            <p className="mt-0.5 text-sm text-white/45 transition-colors duration-300 group-hover:text-white/75">
-                              {hint}
-                            </p>
+                            <p className="mt-0.5 text-sm text-neutral-600">{hint}</p>
                           </div>
                         </>
                       );
 
-                      // Solid card: dark surface → solid brand red on hover
                       const className =
-                        "group flex items-start gap-4 rounded-2xl border border-[#1f1f1f] bg-[#121212] p-5 transition-all duration-300 hover:border-[#800000] hover:bg-[#800000]";
+                        "group relative flex items-start gap-4 overflow-hidden rounded-[1.5rem] border border-[#800000]/12 p-5 shadow-[0_18px_40px_-24px_rgba(0,0,0,0.55)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/35 hover:shadow-[0_24px_50px_-20px_rgba(128,0,0,0.22)]";
 
                       return href ? (
-                        <a key={label} href={href} className={className}>
+                        <a
+                          key={label}
+                          href={href}
+                          className={className}
+                          style={cardSurface}
+                        >
+                          <div
+                            aria-hidden
+                            className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[#800000]/[0.07] blur-2xl transition-opacity duration-500 group-hover:bg-[#800000]/[0.12]"
+                          />
                           {inner}
                         </a>
                       ) : (
-                        <div key={label} className={className}>
+                        <div
+                          key={label}
+                          className={className}
+                          style={cardSurface}
+                        >
+                          <div
+                            aria-hidden
+                            className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-[#800000]/[0.07] blur-2xl transition-opacity duration-500 group-hover:bg-[#800000]/[0.12]"
+                          />
                           {inner}
                         </div>
                       );
@@ -166,36 +187,47 @@ export default function Contact() {
                   )}
                 </div>
 
-                <div className="mt-8 flex items-center gap-3 rounded-2xl border border-[#1f1f1f] bg-[#121212] px-5 py-4">
-                  <Clock className="h-5 w-5 shrink-0 text-[#800000]" />
-                  <p className="text-sm text-white/55">
-                    <span className="font-medium text-white/80">Response time:</span>{" "}
+                <div
+                  className="mt-8 flex items-center gap-3 overflow-hidden rounded-[1.5rem] border border-[#800000]/12 px-5 py-4 shadow-[0_18px_40px_-24px_rgba(0,0,0,0.55)]"
+                  style={cardSurface}
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#800000]/10">
+                    <Clock className="h-5 w-5 text-[#800000]" />
+                  </div>
+                  <p className="text-sm text-neutral-600">
+                    <span className="font-semibold text-neutral-900">
+                      Response time:
+                    </span>{" "}
                     typically within 24 hours on business days.
                   </p>
                 </div>
               </div>
 
-              {/* Right — form: solid panel with soft red gradient edge */}
-              <div className="rounded-[1.75rem] border border-[#1f1f1f] bg-[#121212] p-6 sm:p-8 lg:p-10">
+              {/* Right — form (same white / soft red card language) */}
+              <div
+                className="relative overflow-hidden rounded-[1.75rem] border border-[#800000]/12 p-6 shadow-[0_18px_40px_-24px_rgba(0,0,0,0.55)] sm:p-8 lg:p-10"
+                style={cardSurface}
+              >
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-br from-[#800000]/12 via-transparent to-transparent"
+                  className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-[#800000]/[0.07] blur-2xl"
                 />
+
                 {submitted ? (
                   <div className="relative flex min-h-[22rem] flex-col items-center justify-center text-center">
-                    <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#800000] text-white">
+                    <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#800000] text-white shadow-[0_8px_24px_rgba(128,0,0,.3)]">
                       <CheckCircle2 className="h-8 w-8" />
                     </div>
-                    <h3 className="text-2xl font-bold tracking-tight text-white">
+                    <h3 className="text-2xl font-bold tracking-tight text-neutral-900">
                       Message sent
                     </h3>
-                    <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/55">
+                    <p className="mt-3 max-w-sm text-sm leading-relaxed text-neutral-600">
                       Thanks for reaching out. Our team will get back to you
                       within one business day.
                     </p>
                     <Button
                       type="button"
-                      className="mt-8 rounded-full border-0 bg-[#1a1a1a] text-white hover:bg-[#800000] hover:text-white"
+                      className="mt-8 rounded-full bg-[#800000] text-white hover:bg-[#970000]"
                       onClick={() => setSubmitted(false)}
                     >
                       Send another message
@@ -204,10 +236,10 @@ export default function Contact() {
                 ) : (
                   <div className="relative">
                     <div className="mb-8">
-                      <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
+                      <h3 className="text-xl font-bold tracking-tight text-neutral-900 sm:text-2xl">
                         Send a message
                       </h3>
-                      <p className="mt-2 text-sm text-white/50">
+                      <p className="mt-2 text-sm text-neutral-600">
                         All fields are required unless noted.
                       </p>
                     </div>
@@ -217,7 +249,7 @@ export default function Contact() {
                         <div className="space-y-2">
                           <label
                             htmlFor="contact-name"
-                            className="text-xs font-semibold uppercase tracking-[0.14em] text-white/50"
+                            className="text-xs font-semibold uppercase tracking-[0.14em] text-[#800000]/80"
                           >
                             Name
                           </label>
@@ -226,13 +258,13 @@ export default function Contact() {
                             name="name"
                             required
                             placeholder="Your full name"
-                            className="h-12 rounded-xl border-[#2a2a2a] bg-[#0a0a0a] text-white placeholder:text-white/30 focus-visible:border-[#800000] focus-visible:ring-[#800000]"
+                            className="h-12 rounded-xl border-[#800000]/15 bg-white text-neutral-900 placeholder:text-neutral-400 focus-visible:border-[#800000] focus-visible:ring-[#800000]/40"
                           />
                         </div>
                         <div className="space-y-2">
                           <label
                             htmlFor="contact-email"
-                            className="text-xs font-semibold uppercase tracking-[0.14em] text-white/50"
+                            className="text-xs font-semibold uppercase tracking-[0.14em] text-[#800000]/80"
                           >
                             Email
                           </label>
@@ -242,7 +274,7 @@ export default function Contact() {
                             type="email"
                             required
                             placeholder="you@company.com"
-                            className="h-12 rounded-xl border-[#2a2a2a] bg-[#0a0a0a] text-white placeholder:text-white/30 focus-visible:border-[#800000] focus-visible:ring-[#800000]"
+                            className="h-12 rounded-xl border-[#800000]/15 bg-white text-neutral-900 placeholder:text-neutral-400 focus-visible:border-[#800000] focus-visible:ring-[#800000]/40"
                           />
                         </div>
                       </div>
@@ -251,10 +283,10 @@ export default function Contact() {
                         <div className="space-y-2">
                           <label
                             htmlFor="contact-phone"
-                            className="text-xs font-semibold uppercase tracking-[0.14em] text-white/50"
+                            className="text-xs font-semibold uppercase tracking-[0.14em] text-[#800000]/80"
                           >
                             Phone{" "}
-                            <span className="font-normal normal-case tracking-normal text-white/30">
+                            <span className="font-normal normal-case tracking-normal text-neutral-400">
                               (optional)
                             </span>
                           </label>
@@ -263,13 +295,13 @@ export default function Contact() {
                             name="phone"
                             type="tel"
                             placeholder="+91 …"
-                            className="h-12 rounded-xl border-[#2a2a2a] bg-[#0a0a0a] text-white placeholder:text-white/30 focus-visible:border-[#800000] focus-visible:ring-[#800000]"
+                            className="h-12 rounded-xl border-[#800000]/15 bg-white text-neutral-900 placeholder:text-neutral-400 focus-visible:border-[#800000] focus-visible:ring-[#800000]/40"
                           />
                         </div>
                         <div className="space-y-2">
                           <label
                             htmlFor="contact-service"
-                            className="text-xs font-semibold uppercase tracking-[0.14em] text-white/50"
+                            className="text-xs font-semibold uppercase tracking-[0.14em] text-[#800000]/80"
                           >
                             Interest
                           </label>
@@ -278,32 +310,22 @@ export default function Contact() {
                             name="service"
                             required
                             defaultValue=""
-                            className="flex h-12 w-full rounded-xl border border-[#2a2a2a] bg-[#0a0a0a] px-3 text-sm text-white outline-none focus-visible:border-[#800000] focus-visible:ring-2 focus-visible:ring-[#800000]"
+                            className="flex h-12 w-full rounded-xl border border-[#800000]/15 bg-white px-3 text-sm text-neutral-900 outline-none focus-visible:border-[#800000] focus-visible:ring-2 focus-visible:ring-[#800000]/40"
                           >
-                            <option value="" disabled className="bg-[#0a0a0a]">
+                            <option value="" disabled>
                               Select a service
                             </option>
-                            <option value="branding" className="bg-[#0a0a0a]">
-                              Product Branding
-                            </option>
-                            <option value="celebrity" className="bg-[#0a0a0a]">
+                            <option value="branding">Product Branding</option>
+                            <option value="celebrity">
                               Celebrity Management
                             </option>
-                            <option value="digital" className="bg-[#0a0a0a]">
-                              Digital Marketing
-                            </option>
-                            <option value="production" className="bg-[#0a0a0a]">
+                            <option value="digital">Digital Marketing</option>
+                            <option value="production">
                               Film & Ad Production
                             </option>
-                            <option value="promotion" className="bg-[#0a0a0a]">
-                              Film Promotion
-                            </option>
-                            <option value="events" className="bg-[#0a0a0a]">
-                              Event Management
-                            </option>
-                            <option value="other" className="bg-[#0a0a0a]">
-                              Something else
-                            </option>
+                            <option value="promotion">Film Promotion</option>
+                            <option value="events">Event Management</option>
+                            <option value="other">Something else</option>
                           </select>
                         </div>
                       </div>
@@ -311,7 +333,7 @@ export default function Contact() {
                       <div className="space-y-2">
                         <label
                           htmlFor="contact-subject"
-                          className="text-xs font-semibold uppercase tracking-[0.14em] text-white/50"
+                          className="text-xs font-semibold uppercase tracking-[0.14em] text-[#800000]/80"
                         >
                           Subject
                         </label>
@@ -320,14 +342,14 @@ export default function Contact() {
                           name="subject"
                           required
                           placeholder="Brief project title"
-                          className="h-12 rounded-xl border-[#2a2a2a] bg-[#0a0a0a] text-white placeholder:text-white/30 focus-visible:border-[#800000] focus-visible:ring-[#800000]"
+                          className="h-12 rounded-xl border-[#800000]/15 bg-white text-neutral-900 placeholder:text-neutral-400 focus-visible:border-[#800000] focus-visible:ring-[#800000]/40"
                         />
                       </div>
 
                       <div className="space-y-2">
                         <label
                           htmlFor="contact-message"
-                          className="text-xs font-semibold uppercase tracking-[0.14em] text-white/50"
+                          className="text-xs font-semibold uppercase tracking-[0.14em] text-[#800000]/80"
                         >
                           Message
                         </label>
@@ -337,14 +359,14 @@ export default function Contact() {
                           required
                           rows={5}
                           placeholder="Tell us about your goals, timeline, and any key details…"
-                          className="min-h-[140px] rounded-xl border-[#2a2a2a] bg-[#0a0a0a] text-white placeholder:text-white/30 focus-visible:border-[#800000] focus-visible:ring-[#800000]"
+                          className="min-h-[140px] rounded-xl border-[#800000]/15 bg-white text-neutral-900 placeholder:text-neutral-400 focus-visible:border-[#800000] focus-visible:ring-[#800000]/40"
                         />
                       </div>
 
                       <Button
                         type="submit"
                         disabled={sending}
-                        className="h-13 w-full rounded-full bg-[#800000] text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] disabled:opacity-70 sm:h-14"
+                        className="h-13 w-full rounded-full bg-[#800000] text-base font-semibold text-white shadow-[0_12px_32px_rgba(128,0,0,.3)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] disabled:opacity-70 sm:h-14"
                       >
                         {sending ? (
                           "Sending…"
@@ -364,10 +386,10 @@ export default function Contact() {
         </section>
 
         {/* ---------------------- BOTTOM CTA STRIP ---------------------- */}
-        <section className="relative overflow-hidden bg-[#0a0a0a] py-14 sm:py-16">
+        <section className="relative overflow-hidden bg-black py-14 sm:py-16">
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#800000]/25 via-[#800000]/08 to-transparent"
+            className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#800000]/15 blur-[100px]"
           />
           <div className="relative mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
