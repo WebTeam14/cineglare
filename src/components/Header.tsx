@@ -62,7 +62,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-black/95 backdrop-blur-xl transition-shadow duration-500",
+        "fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-[var(--cine-base)]/95 backdrop-blur-xl transition-shadow duration-500",
         scrolled
           ? "shadow-[0_12px_40px_rgba(0,0,0,.55)]"
           : "shadow-none",
@@ -148,7 +148,7 @@ const Header = () => {
 
       <div
         className={cn(
-          "overflow-hidden border-t border-white/10 bg-black/95 backdrop-blur-xl transition-all duration-400 lg:hidden",
+          "overflow-hidden border-t border-white/10 bg-[var(--cine-base)]/95 backdrop-blur-xl transition-all duration-400 lg:hidden",
           isMenuOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0 border-t-0",
         )}
       >

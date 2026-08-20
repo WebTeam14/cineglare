@@ -65,7 +65,7 @@
   --radius: 1rem;
 
   /* Client palette — near-black surfaces, crimson accent */
-  --background: oklch(0.16 0 0);
+  --background: oklch(0.06 0 0);
   --foreground: oklch(0.98 0 0);
   --card: oklch(0.2 0 0);
   --card-foreground: oklch(0.98 0 0);
@@ -86,7 +86,7 @@
   --ring: oklch(0.58 0.216 27.3);
 
   --crimson: oklch(0.58 0.216 27.3);
-  --surface: oklch(0.13 0 0);
+  --surface: oklch(0.09 0 0);
   --surface-elevated: oklch(0.22 0 0);
 
   --chart-1: oklch(0.58 0.216 27.3);
@@ -123,6 +123,10 @@
     overflow-x: hidden;
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+  }
+
+  html {
+    background-color: var(--color-background);
   }
 
   body {
@@ -382,4 +386,56 @@
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* ---------- Cinematic background system ----------
+ * Three controlled tones only:
+ *   --cine-base   : primary near-black canvas (html/body/page wrapper)
+ *   --cine-raise  : slightly lighter section tone
+ *   --cine-deep   : deepest tone used for anchoring bands (hero/footer edges)
+ * Raised/deep sections fade back to the base tone at their top and bottom
+ * edges, so neighbouring sections always meet on an identical colour and no
+ * hard seam, border line or light gap can appear between them.
+ */
+
+:root {
+  --cine-base: #060606;
+  --cine-raise: #0d0d0d;
+  --cine-deep: #030303;
+  --cine-accent-glow: rgba(128, 0, 0, 0.12);
+}
+
+@utility surface-base {
+  background-color: var(--cine-base);
+}
+
+@utility surface-raise {
+  background-color: var(--cine-base);
+  background-image: linear-gradient(
+    to bottom,
+    var(--cine-base) 0%,
+    var(--cine-raise) 22%,
+    var(--cine-raise) 78%,
+    var(--cine-base) 100%
+  );
+}
+
+@utility surface-deep {
+  background-color: var(--cine-base);
+  background-image: linear-gradient(
+    to bottom,
+    var(--cine-base) 0%,
+    var(--cine-deep) 24%,
+    var(--cine-deep) 76%,
+    var(--cine-base) 100%
+  );
+}
+
+/* Soft atmospheric accent used sparingly on a few sections */
+@utility surface-glow {
+  background-image: radial-gradient(
+    60% 55% at 50% 0%,
+    var(--cine-accent-glow) 0%,
+    transparent 70%
+  );
 }

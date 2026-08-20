@@ -67,7 +67,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-black"
+      className="relative flex min-h-[100svh] items-center overflow-hidden surface-base"
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -90,6 +90,10 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/25" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+        <div
+          aria-hidden
+          className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[var(--cine-base)] to-transparent"
+        />
         <div
           aria-hidden
           className="absolute -right-24 top-24 h-80 w-80 rounded-full bg-[#800000]/18 blur-[110px]"

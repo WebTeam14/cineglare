@@ -30,8 +30,12 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="relative overflow-hidden border-t border-white/[0.08] bg-[#080808]"
+      className="relative overflow-hidden surface-raise"
     >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[var(--cine-base)] to-transparent"
+      />
       <div
         aria-hidden
         className="pointer-events-none absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-[#800000]/12 blur-[100px]"
