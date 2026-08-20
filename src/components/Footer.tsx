@@ -8,7 +8,7 @@ const quickLinks = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/aboutus" },
   { name: "Portfolio", path: "/portfolio" },
-  { name: "Contact", path: "#contact" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const agencyLinks = [
@@ -28,10 +28,7 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer
-      id="contact"
-      className="relative overflow-hidden surface-raise"
-    >
+    <footer className="relative overflow-hidden surface-raise">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[var(--cine-base)] to-transparent"
@@ -82,21 +79,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  {link.path.startsWith("#") ? (
-                    <a
-                      href={link.path}
-                      className="text-sm text-white/65 transition-colors duration-300 hover:text-white"
-                    >
-                      {link.name}
-                    </a>
-                  ) : (
-                    <Link
-                      to={link.path}
-                      className="text-sm text-white/65 transition-colors duration-300 hover:text-white"
-                    >
-                      {link.name}
-                    </Link>
-                  )}
+                  <Link
+                    to={link.path}
+                    className="text-sm text-white/65 transition-colors duration-300 hover:text-white"
+                  >
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
