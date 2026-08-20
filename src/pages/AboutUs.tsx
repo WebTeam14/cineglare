@@ -116,30 +116,10 @@ const AboutUs = () => {
     { number: "03", title: "AD Film Production", items: ["Line Producer", "Art Director", "Production Team", "Talent & Styling Unit", "Technical & Post-Production", "Creative & Client Support", "Logistics & Operations"], subTitle: "Events & Entertainment", subItems: ["Client Relations Manager", "Operations Lead", "Celebrity Management Team"] },
   ];
   const csrCards = [
-    {
-      src: csrCommunity,
-      title: "Community Growth",
-      number: "01",
-      description: "Supporting local communities through creative workshops, outreach and opportunity.",
-    },
-    {
-      src: csrPeople,
-      title: "Investing in People",
-      number: "02",
-      description: "Mentorship and skill-building programs that open doors in media and entertainment.",
-    },
-    {
-      src: csrGreen,
-      title: "Go Green",
-      number: "03",
-      description: "Greener productions and sustainable practices across events and campaigns.",
-    },
-    {
-      src: csrWomen,
-      title: "Empowering Women",
-      number: "04",
-      description: "Championing women creators and leaders across the creative industry.",
-    },
+    { src: csrCommunity, title: "Community Growth", number: "01" },
+    { src: csrPeople, title: "Investing in People", number: "02" },
+    { src: csrGreen, title: "Go Green", number: "03" },
+    { src: csrWomen, title: "Empowering Women", number: "04" },
   ];
 
   return (
@@ -314,22 +294,22 @@ const AboutUs = () => {
               {csrCards.map((card) => (
                 <article
                   key={card.title}
-                  className="group flex flex-col overflow-hidden rounded-[1.5rem] border border-[#800000]/15 shadow-[0_20px_48px_-24px_rgba(0,0,0,0.65)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/40 hover:shadow-[0_24px_52px_-20px_rgba(128,0,0,0.25)]"
+                  className="group relative overflow-hidden rounded-[1.5rem] border border-[#800000]/15 shadow-[0_20px_48px_-24px_rgba(0,0,0,0.65)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/40 hover:shadow-[0_24px_52px_-20px_rgba(128,0,0,0.25)]"
                 >
                   <div className="relative aspect-[4/5] overflow-hidden">
-                    <img src={card.src} alt={card.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90" />
-                    <span className="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#800000] text-xs font-bold text-white shadow-[0_8px_24px_rgba(128,0,0,.4)]">{card.number}</span>
+                    <img
+                      src={card.src}
+                      alt={card.title}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent opacity-90" />
+                    <span className="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#800000] text-xs font-bold text-white shadow-[0_8px_24px_rgba(128,0,0,.4)]">
+                      {card.number}
+                    </span>
                     <div className="absolute inset-x-0 bottom-0 p-5">
                       <h3 className="text-lg font-bold tracking-tight text-white sm:text-xl">{card.title}</h3>
+                      <div className="mt-3 h-1 w-8 rounded-full bg-[#800000] transition-all duration-500 group-hover:w-14" />
                     </div>
-                  </div>
-                  <div
-                    className="flex flex-1 flex-col border-t border-[#800000]/10 px-5 py-4"
-                    style={{ background: "linear-gradient(145deg, #ffffff 0%, #fff5f5 50%, #fceaea 100%)" }}
-                  >
-                    <p className="text-sm leading-relaxed text-neutral-600">{card.description}</p>
-                    <div className="mt-4 h-1 w-8 rounded-full bg-[#800000] transition-all duration-500 group-hover:w-14" />
                   </div>
                 </article>
               ))}
