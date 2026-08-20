@@ -15,7 +15,7 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/aboutus" },
   { name: "Portfolio", path: "/portfolio" },
-  { name: "Contact", path: "#contact" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const servicesLinks = [
@@ -45,7 +45,6 @@ const Header = () => {
 
   const isActive = (path: string) => {
     if (path === "/") return pathname === "/";
-    if (path.startsWith("#")) return false;
     return pathname === path || pathname.startsWith(path + "/");
   };
 
@@ -84,21 +83,15 @@ const Header = () => {
         </Link>
 
         <div className="hidden items-center gap-9 lg:flex">
-          {navLinks.map((link) =>
-            link.path.startsWith("#") ? (
-              <a key={link.name} href={link.path} className={linkClass(false)}>
-                {link.name}
-              </a>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={linkClass(isActive(link.path))}
-              >
-                {link.name}
-              </Link>
-            ),
-          )}
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className={linkClass(isActive(link.path))}
+            >
+              {link.name}
+            </Link>
+          ))}
 
           <DropdownMenu>
             <DropdownMenuTrigger
@@ -132,7 +125,7 @@ const Header = () => {
             asChild
             className="hidden h-12 rounded-full bg-[#800000] px-7 text-base font-semibold tracking-wide text-white shadow-[0_10px_28px_rgba(128,0,0,.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] hover:shadow-[0_14px_36px_rgba(128,0,0,.45)] sm:inline-flex md:h-13 md:px-8 md:text-[15px]"
           >
-            <a href="#contact">Free Quote</a>
+            <Link to="/contact">Free Quote</Link>
           </Button>
 
           <button
@@ -153,32 +146,21 @@ const Header = () => {
         )}
       >
         <div className="space-y-1 px-5 py-5">
-          {navLinks.map((link) =>
-            link.path.startsWith("#") ? (
-              <a
-                key={link.name}
-                href={link.path}
-                onClick={() => setIsMenuOpen(false)}
-                className="block rounded-xl px-4 py-3 text-sm font-medium text-white/75 transition-colors hover:bg-white/5 hover:text-white"
-              >
-                {link.name}
-              </a>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.path}
-                onClick={() => setIsMenuOpen(false)}
-                className={cn(
-                  "block rounded-xl px-4 py-3 text-sm font-medium transition-colors hover:bg-white/5",
-                  isActive(link.path)
-                    ? "bg-[#800000]/15 text-white"
-                    : "text-white/75 hover:text-white",
-                )}
-              >
-                {link.name}
-              </Link>
-            ),
-          )}
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              onClick={() => setIsMenuOpen(false)}
+              className={cn(
+                "block rounded-xl px-4 py-3 text-sm font-medium transition-colors hover:bg-white/5",
+                isActive(link.path)
+                  ? "bg-[#800000]/15 text-white"
+                  : "text-white/75 hover:text-white",
+              )}
+            >
+              {link.name}
+            </Link>
+          ))}
 
           <div className="pt-2">
             <p className="px-4 pb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#800000]">
@@ -201,9 +183,9 @@ const Header = () => {
               asChild
               className="w-full rounded-full bg-[#800000] font-semibold hover:bg-[#970000]"
             >
-              <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                 Free Quote
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
