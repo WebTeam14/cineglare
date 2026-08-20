@@ -102,15 +102,18 @@ const AnimatedStat = ({
   return (
     <div
       ref={ref}
-      className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-center backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/70 hover:bg-[#800000]/10"
+      className="group relative overflow-hidden rounded-2xl border border-[#800000]/15 p-5 text-center shadow-[0_12px_32px_-16px_rgba(0,0,0,0.45)] transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/40 hover:shadow-[0_18px_40px_-14px_rgba(128,0,0,0.28)]"
+      style={{
+        background: "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)",
+      }}
     >
       <div className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-[#800000] transition-transform duration-500 group-hover:scale-x-100" />
       <Icon className="mx-auto mb-4 h-6 w-6 text-[#800000] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6" />
-      <div className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+      <div className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
         {count}
         {suffix}
       </div>
-      <div className="mt-2 text-xs font-medium uppercase tracking-[0.16em] text-white/55">
+      <div className="mt-2 text-xs font-medium uppercase tracking-[0.16em] text-neutral-500">
         {label}
       </div>
     </div>
@@ -370,19 +373,23 @@ const AboutUs = () => {
               ].map((item) => (
                 <article
                   key={item.number}
-                  className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[.035] p-7 sm:p-10"
+                  className="group relative overflow-hidden rounded-[2rem] border border-[#800000]/15 p-7 shadow-[0_16px_40px_-20px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-1 hover:border-[#800000]/35 sm:p-10"
+                  style={{
+                    background:
+                      "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)",
+                  }}
                 >
                   <div className="mb-10 flex items-center justify-between">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#800000] text-sm font-bold">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#800000] text-sm font-bold text-white">
                       {item.number}
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-[.25em] text-white/40">
+                    <span className="text-[10px] font-bold uppercase tracking-[.25em] text-neutral-400">
                       {item.label}
                     </span>
                   </div>
-                  <h3 className="text-3xl font-bold sm:text-4xl">{item.title}</h3>
+                  <h3 className="text-3xl font-bold text-neutral-900 sm:text-4xl">{item.title}</h3>
                   <div className="mt-7 border-l-2 border-[#800000] pl-6">
-                    <p className="text-xl font-medium leading-8 text-white/75 sm:text-2xl">
+                    <p className="text-xl font-medium leading-8 text-neutral-600 sm:text-2xl">
                       {item.text}
                     </p>
                   </div>
@@ -446,7 +453,7 @@ const AboutUs = () => {
                 ].map((person, index) => (
                   <div
                     key={person.name}
-                    className="group grid overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[.035] md:grid-cols-[150px_1fr_90px]"
+                    className="group grid overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0c0c0c] md:grid-cols-[150px_1fr_90px] transition-all duration-500 hover:border-[#800000]/50"
                   >
                     <div className="flex items-center justify-center border-b border-white/10 bg-[#800000]/10 p-7 md:border-b-0 md:border-r">
                       <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-[#800000] bg-[#800000]/20 text-2xl font-bold">
@@ -472,7 +479,7 @@ const AboutUs = () => {
                 ))}
               </div>
             </div>
-            <div className="mt-16 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[.025]">
+            <div className="mt-16 overflow-hidden rounded-[2rem] border border-white/10 bg-[#0c0c0c]">
               <div className="border-b border-white/10 p-7 text-center sm:p-9">
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
                   Our Culture
@@ -521,27 +528,31 @@ const AboutUs = () => {
               {departments.map((dept) => (
                 <article
                   key={dept.number}
-                  className="group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[.035] p-7 text-white transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/60 hover:bg-[#800000]/25 sm:p-8"
+                  className="group relative overflow-hidden rounded-[1.5rem] border border-[#800000]/15 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/40 hover:shadow-[0_20px_48px_-18px_rgba(128,0,0,0.25)] sm:p-8"
+                  style={{
+                    background:
+                      "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)",
+                  }}
                 >
-                  <span className="text-xs font-semibold text-[#800000] group-hover:text-white/70">
+                  <span className="text-xs font-semibold text-[#800000]">
                     {dept.number}
                   </span>
-                  <h3 className="mt-2 border-b border-white/10 pb-4 text-xl font-bold">
+                  <h3 className="mt-2 border-b border-black/10 pb-4 text-xl font-bold text-neutral-900">
                     {dept.title}
                   </h3>
-                  <ul className="mt-5 space-y-2.5 text-sm text-white/65">
+                  <ul className="mt-5 space-y-2.5 text-sm text-neutral-600">
                     {dept.items.map((item) => (
                       <li key={item} className="flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#800000] group-hover:bg-white" />
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#800000]" />
                         {item}
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-6 border-t border-white/10 pt-5">
-                    <h4 className="text-sm font-semibold text-white/80">
+                  <div className="mt-6 border-t border-black/10 pt-5">
+                    <h4 className="text-sm font-semibold text-neutral-800">
                       {dept.subTitle}
                     </h4>
-                    <ul className="mt-3 space-y-2 text-sm text-white/50">
+                    <ul className="mt-3 space-y-2 text-sm text-neutral-500">
                       {dept.subItems.map((item) => (
                         <li key={item}>{item}</li>
                       ))}
@@ -606,7 +617,7 @@ const AboutUs = () => {
                   className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--cine-base)_0%,rgba(6,6,6,.35)_35%,transparent_75%)]" />
-                <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/15 bg-[var(--cine-deep)]/55 p-5 backdrop-blur-md sm:bottom-6 sm:left-6 sm:right-6">
+                <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-[#800000]/30 bg-[#0c0c0c] p-5 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.7)] sm:bottom-6 sm:left-6 sm:right-6">
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#800000]">
                       <Play className="ml-0.5 h-4 w-4 fill-current" />
@@ -645,7 +656,7 @@ const AboutUs = () => {
               {csrCards.map((card) => (
                 <article
                   key={card.title}
-                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[.035]"
+                  className="group relative overflow-hidden rounded-2xl border border-[#800000]/20 bg-[#0c0c0c]"
                 >
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <img
