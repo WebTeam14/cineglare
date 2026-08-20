@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/Reveal";
+import { Link } from "@tanstack/react-router";
 import { asset } from "@/assets/placeholder";
 
 const ctaBackground = asset("cta-bg.jpg");
@@ -48,10 +49,10 @@ const CTA = () => {
             asChild
             className="h-14 rounded-full bg-[#800000] px-9 text-base font-semibold text-white shadow-[0_14px_36px_rgba(128,0,0,.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] hover:shadow-[0_18px_42px_rgba(128,0,0,.45)] sm:h-16 sm:px-10 sm:text-lg"
           >
-            <a href="#contact" className="inline-flex items-center gap-2.5">
+            <Link to="/contact" className="inline-flex items-center gap-2.5">
               Let’s Talk
               <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
-            </a>
+            </Link>
           </Button>
         </div>
       </Reveal>
