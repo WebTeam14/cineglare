@@ -271,11 +271,7 @@ const AboutUs = () => {
       `}</style>
       <main>
         <section className="relative isolate min-h-[88svh] overflow-hidden surface-deep">
-          <img
-            src={aboutHero}
-            alt="Cineglare team"
-            className="absolute inset-0 h-full w-full object-cover object-center opacity-70"
-          />
+          <img src={aboutHero} alt="Cineglare team" className="absolute inset-0 h-full w-full object-cover object-center opacity-70" />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,6,6,.96)_0%,rgba(6,6,6,.78)_42%,rgba(6,6,6,.25)_100%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--cine-base)_0%,rgba(6,6,6,.55)_28%,transparent_55%,rgba(6,6,6,.35)_100%)]" />
           <div className="absolute -right-28 top-20 h-80 w-80 rounded-full bg-[#800000]/30 blur-[110px] about-pulse" />
@@ -284,89 +280,56 @@ const AboutUs = () => {
             <div className="max-w-4xl">
               <div className="about-reveal mb-7 flex items-center gap-3">
                 <span className="h-px w-12 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-                  Who We Are
-                </span>
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Who We Are</span>
               </div>
               <h1 className="about-reveal text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl [animation-delay:120ms]">
-                About
-                <br />
-                <span className="text-[#800000]">Cineglare.</span>
+                About<br /><span className="text-[#800000]">Cineglare.</span>
               </h1>
               <p className="about-reveal mt-8 max-w-2xl text-base leading-relaxed text-white/70 [animation-delay:220ms] md:text-lg">
-                A creative force where <TypewriterWord /> becomes meaningful
-                brand stories, unforgettable events and experiences people
-                remember.
+                A creative force where <TypewriterWord /> becomes meaningful brand stories, unforgettable events and experiences people remember.
               </p>
               <div className="about-reveal mt-9 flex flex-wrap items-center gap-4 [animation-delay:320ms]">
-                <a
-                  href="#story"
-                  className="group inline-flex items-center gap-3 rounded-full bg-[#800000] px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#970000]"
-                >
-                  Discover Our Story{" "}
-                  <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-1" />
+                <a href="#story" className="group inline-flex items-center gap-3 rounded-full bg-[#800000] px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#970000]">
+                  Discover Our Story <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-1" />
                 </a>
                 <div className="flex items-center gap-2 text-sm text-white/55">
-                  <span className="h-2 w-2 rounded-full bg-[#800000]" />
-                  Creative. Strategic. Global.
+                  <span className="h-2 w-2 rounded-full bg-[#800000]" />Creative. Strategic. Global.
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section
-          id="story"
-          className="relative overflow-hidden surface-raise py-20 text-white sm:py-24 lg:py-32"
-        >
+        <section id="story" className="relative overflow-hidden surface-raise py-20 text-white sm:py-24 lg:py-32">
           <div className="pointer-events-none absolute inset-0 surface-glow opacity-70" />
           <div className="relative mx-auto grid max-w-7xl gap-12 px-6 sm:px-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-20 lg:px-12">
             <div>
               <div className="mb-5 flex items-center gap-3">
                 <span className="h-px w-12 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-                  Our Story
-                </span>
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Story</span>
               </div>
               <h2 className="max-w-md text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Ideas that
-                <span className="block text-[#800000]">move people.</span>
+                Ideas that<span className="block text-[#800000]">move people.</span>
               </h2>
               <div className="mt-8 flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#800000] text-white">
                   <Sparkles className="h-5 w-5" />
                 </div>
-                <p className="max-w-xs text-sm leading-6 text-white/55">
-                  ISO 9001:2015 certified • Shield Global Group subsidiary
-                </p>
+                <p className="max-w-xs text-sm leading-6 text-white/55">ISO 9001:2015 certified • Shield Global Group subsidiary</p>
               </div>
             </div>
             <div className="space-y-6 text-base leading-8 text-white/65 sm:text-lg">
               <p>
-                <strong className="font-bold text-white">Cineglare</strong> is
-                an ISO 9001:2015 certified company, committed to delivering
-                excellence through a robust Quality Management System. It is a
-                proud subsidiary of Shield Global Group — a diversified
-                conglomerate with a strong presence across Asia, Africa and
-                Europe, operating actively in over 23 countries.
+                <strong className="font-bold text-white">Cineglare</strong> is an ISO 9001:2015 certified company, committed to delivering excellence through a robust Quality Management System. It is a proud subsidiary of Shield Global Group — a diversified conglomerate with a strong presence across Asia, Africa and Europe, operating actively in over 23 countries.
               </p>
               <p>
-                As a dynamic brand and entertainment company, Cineglare
-                specializes in advertising, film production, event management,
-                and brand management & promotions — delivering creative
-                excellence powered by global expertise and backed by Shield
-                Global Group's international foundation.
+                As a dynamic brand and entertainment company, Cineglare specializes in advertising, film production, event management, and brand management & promotions — delivering creative excellence powered by global expertise and backed by Shield Global Group's international foundation.
               </p>
               <p>
-                With a passionate team of creative strategists, marketers and
-                event curators, Cineglare turns creativity into impactful
-                experiences. From logo design and tagline creation to full-scale
-                product launches, we help brands stand out with innovative
-                storytelling and flawless execution.
+                With a passionate team of creative strategists, marketers and event curators, Cineglare turns creativity into impactful experiences. From logo design and tagline creation to full-scale product launches, we help brands stand out with innovative storytelling and flawless execution.
               </p>
               <div className="border-l-4 border-[#800000] pl-6 pt-2 text-xl font-bold leading-8 text-white sm:text-2xl">
-                “From strategy to execution, we turn ambitious ideas into
-                experiences that people remember.”
+                “From strategy to execution, we turn ambitious ideas into experiences that people remember.”
               </div>
             </div>
           </div>
@@ -376,34 +339,18 @@ const AboutUs = () => {
           <div className="absolute inset-0 about-grid opacity-20" />
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="mx-auto mb-12 max-w-3xl text-center">
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-                Our Purpose
-              </span>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Purpose</span>
               <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Driven by a clear
-                <span className="text-[#800000]"> purpose.</span>
+                Driven by a clear<span className="text-[#800000]"> purpose.</span>
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/50 sm:text-lg">
-                Everything we create is guided by a vision and mission to
-                transform ideas into meaningful experiences.
+                Everything we create is guided by a vision and mission to transform ideas into meaningful experiences.
               </p>
             </div>
             <div className="grid gap-6 lg:grid-cols-2">
               {[
-                {
-                  number: "01",
-                  label: "Our Direction",
-                  title: "Vision",
-                  text: "Make every brand a phenomenon and every event a masterpiece.",
-                  accent: false,
-                },
-                {
-                  number: "02",
-                  label: "What We Do",
-                  title: "Mission",
-                  text: "Crafting inspiring brand experiences that celebrate excellence.",
-                  accent: true,
-                },
+                { number: "01", label: "Our Direction", title: "Vision", text: "Make every brand a phenomenon and every event a masterpiece.", accent: false },
+                { number: "02", label: "What We Do", title: "Mission", text: "Crafting inspiring brand experiences that celebrate excellence.", accent: true },
               ].map((item) => (
                 <article
                   key={item.number}
@@ -419,50 +366,16 @@ const AboutUs = () => {
                   }}
                 >
                   <div className="mb-10 flex items-center justify-between">
-                    <span
-                      className={
-                        item.accent
-                          ? "flex h-12 w-12 items-center justify-center rounded-xl bg-white/15 text-sm font-bold text-white"
-                          : "flex h-12 w-12 items-center justify-center rounded-xl bg-[#800000] text-sm font-bold text-white"
-                      }
-                    >
+                    <span className={item.accent ? "flex h-12 w-12 items-center justify-center rounded-xl bg-white/15 text-sm font-bold text-white" : "flex h-12 w-12 items-center justify-center rounded-xl bg-[#800000] text-sm font-bold text-white"}>
                       {item.number}
                     </span>
-                    <span
-                      className={
-                        item.accent
-                          ? "text-[10px] font-bold uppercase tracking-[.25em] text-white/70"
-                          : "text-[10px] font-bold uppercase tracking-[.25em] text-neutral-500"
-                      }
-                    >
+                    <span className={item.accent ? "text-[10px] font-bold uppercase tracking-[.25em] text-white/70" : "text-[10px] font-bold uppercase tracking-[.25em] text-neutral-500"}>
                       {item.label}
                     </span>
                   </div>
-                  <h3
-                    className={
-                      item.accent
-                        ? "text-3xl font-bold text-white sm:text-4xl"
-                        : "text-3xl font-bold text-neutral-900 sm:text-4xl"
-                    }
-                  >
-                    {item.title}
-                  </h3>
-                  <div
-                    className={
-                      item.accent
-                        ? "mt-7 border-l-2 border-white/50 pl-6"
-                        : "mt-7 border-l-2 border-[#800000] pl-6"
-                    }
-                  >
-                    <p
-                      className={
-                        item.accent
-                          ? "text-xl font-medium leading-8 text-white/90 sm:text-2xl"
-                          : "text-xl font-medium leading-8 text-neutral-700 sm:text-2xl"
-                      }
-                    >
-                      {item.text}
-                    </p>
+                  <h3 className={item.accent ? "text-3xl font-bold text-white sm:text-4xl" : "text-3xl font-bold text-neutral-900 sm:text-4xl"}>{item.title}</h3>
+                  <div className={item.accent ? "mt-7 border-l-2 border-white/50 pl-6" : "mt-7 border-l-2 border-[#800000] pl-6"}>
+                    <p className={item.accent ? "text-xl font-medium leading-8 text-white/90 sm:text-2xl" : "text-xl font-medium leading-8 text-neutral-700 sm:text-2xl"}>{item.text}</p>
                   </div>
                 </article>
               ))}
@@ -476,21 +389,13 @@ const AboutUs = () => {
               <div>
                 <div className="mb-4 flex items-center gap-3">
                   <span className="h-px w-12 bg-[#800000]" />
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-                    Visionaries at Work
-                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Visionaries at Work</span>
                 </div>
                 <h2 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                  Creative minds.
-                  <span className="block text-[#800000]">
-                    One shared ambition.
-                  </span>
+                  Creative minds.<span className="block text-[#800000]">One shared ambition.</span>
                 </h2>
                 <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
-                  At the heart of Cineglare is a passionate team of innovators,
-                  creators and strategists who bring ideas to life across
-                  advertising, film production, event management and brand
-                  promotions.
+                  At the heart of Cineglare is a passionate team of innovators, creators and strategists who bring ideas to life across advertising, film production, event management and brand promotions.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
@@ -502,74 +407,40 @@ const AboutUs = () => {
             <div className="mt-16 sm:mt-20">
               <div className="mb-10 flex items-center gap-4">
                 <span className="h-px flex-1 bg-gradient-to-r from-transparent to-[#800000]" />
-                <h3 className="text-xl font-bold tracking-tight sm:text-2xl">
-                  Our Leadership
-                </h3>
+                <h3 className="text-xl font-bold tracking-tight sm:text-2xl">Our Leadership</h3>
                 <span className="h-px flex-1 bg-gradient-to-l from-transparent to-[#800000]" />
               </div>
               <div className="mx-auto max-w-5xl space-y-5">
                 {[
-                  {
-                    initials: "RV",
-                    role: "Founder & Managing Director",
-                    name: "Ram Vijay Singh",
-                    text: "With visionary leadership and creative foresight, he has built Cineglare into a powerhouse of innovation, crafting stories that resonate globally.",
-                  },
-                  {
-                    initials: "MK",
-                    role: "Operations Director",
-                    name: "Manish Kumar Singh",
-                    text: "The backbone of execution excellence at Cineglare, ensuring every project is delivered with precision and passion.",
-                  },
+                  { initials: "RV", role: "Founder & Managing Director", name: "Ram Vijay Singh", text: "With visionary leadership and creative foresight, he has built Cineglare into a powerhouse of innovation, crafting stories that resonate globally." },
+                  { initials: "MK", role: "Operations Director", name: "Manish Kumar Singh", text: "The backbone of execution excellence at Cineglare, ensuring every project is delivered with precision and passion." },
                 ].map((person, index) => (
-                  <div
-                    key={person.name}
-                    className="group grid overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0c0c0c] md:grid-cols-[150px_1fr_90px] transition-all duration-500 hover:border-[#800000]/50"
-                  >
+                  <div key={person.name} className="group grid overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0c0c0c] md:grid-cols-[150px_1fr_90px] transition-all duration-500 hover:border-[#800000]/50">
                     <div className="flex items-center justify-center border-b border-white/10 bg-[#800000]/10 p-7 md:border-b-0 md:border-r">
-                      <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-[#800000] bg-[#800000]/20 text-2xl font-bold">
-                        {person.initials}
-                      </div>
+                      <div className="flex h-24 w-24 items-center justify-center rounded-full border-2 border-[#800000] bg-[#800000]/20 text-2xl font-bold">{person.initials}</div>
                     </div>
                     <div className="p-7 sm:p-8">
-                      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-                        {person.role}
-                      </span>
-                      <h4 className="mt-2 text-xl font-bold tracking-tight sm:text-2xl">
-                        {person.name}
-                      </h4>
+                      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">{person.role}</span>
+                      <h4 className="mt-2 text-xl font-bold tracking-tight sm:text-2xl">{person.name}</h4>
                       <div className="mt-4 h-px w-10 bg-[#800000]" />
-                      <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/55 sm:text-base">
-                        {person.text}
-                      </p>
+                      <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/55 sm:text-base">{person.text}</p>
                     </div>
-                    <div className="hidden items-center justify-center text-5xl font-serif text-[#800000]/40 md:flex">
-                      {index === 0 ? "01" : "02"}
-                    </div>
+                    <div className="hidden items-center justify-center text-5xl font-serif text-[#800000]/40 md:flex">{index === 0 ? "01" : "02"}</div>
                   </div>
                 ))}
               </div>
             </div>
             <div className="mt-16 overflow-hidden rounded-[2rem] border border-white/10 bg-[#0c0c0c]">
               <div className="border-b border-white/10 p-7 text-center sm:p-9">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-                  Our Culture
-                </span>
-                <h3 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-                  What drives us
-                </h3>
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Culture</span>
+                <h3 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">What drives us</h3>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-5">
                 {values.map(({ title, description, icon: Icon }) => (
-                  <div
-                    key={title}
-                    className="group border-b border-white/10 p-6 text-center sm:border-r lg:border-b-0"
-                  >
+                  <div key={title} className="group border-b border-white/10 p-6 text-center sm:border-r lg:border-b-0">
                     <Icon className="mx-auto h-7 w-7 text-[#800000]" />
                     <h4 className="mt-4 font-bold">{title}</h4>
-                    <p className="mt-2 text-sm leading-relaxed text-white/50">
-                      {description}
-                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-white/50">{description}</p>
                   </div>
                 ))}
               </div>
@@ -582,50 +453,36 @@ const AboutUs = () => {
             <div className="max-w-3xl">
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-px w-12 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-                  Built to Create
-                </span>
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Built to Create</span>
               </div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                A structure designed
-                <span className="block text-[#800000]">for impact.</span>
+                A structure designed<span className="block text-[#800000]">for impact.</span>
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">
-                Our collaborative divisions bring strategy, creativity,
-                production and execution together under one connected vision.
+                Our collaborative divisions bring strategy, creativity, production and execution together under one connected vision.
               </p>
             </div>
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {departments.map((dept) => (
                 <article
                   key={dept.number}
-                  className="group relative overflow-hidden rounded-[1.5rem] border border-[#800000]/15 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/40 hover:shadow-[0_20px_48px_-18px_rgba(128,0,0,0.25)] sm:p-8"
-                  style={{
-                    background:
-                      "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)",
-                  }}
+                  className="group relative overflow-hidden rounded-[1.5rem] border border-black/10 bg-white p-7 shadow-[0_12px_32px_-18px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-2 hover:border-[#800000] hover:bg-[#800000] hover:shadow-[0_22px_48px_-16px_rgba(128,0,0,0.4)] sm:p-8"
                 >
-                  <span className="text-xs font-semibold text-[#800000]">
-                    {dept.number}
-                  </span>
-                  <h3 className="mt-2 border-b border-black/10 pb-4 text-xl font-bold text-neutral-900">
-                    {dept.title}
-                  </h3>
-                  <ul className="mt-5 space-y-2.5 text-sm font-medium text-neutral-700">
+                  <span className="text-xs font-semibold text-[#800000] transition-colors group-hover:text-white/80">{dept.number}</span>
+                  <h3 className="mt-2 border-b border-black/10 pb-4 text-xl font-bold text-neutral-900 transition-colors group-hover:border-white/20 group-hover:text-white">{dept.title}</h3>
+                  <ul className="mt-5 space-y-2.5 text-sm font-semibold text-neutral-800">
                     {dept.items.map((item) => (
-                      <li key={item} className="flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#800000]" />
+                      <li key={item} className="flex gap-2 transition-colors group-hover:text-white">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#800000] transition-colors group-hover:bg-white" />
                         {item}
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-6 border-t border-black/10 pt-5">
-                    <h4 className="text-sm font-semibold text-neutral-800">
-                      {dept.subTitle}
-                    </h4>
-                    <ul className="mt-3 space-y-2 text-sm text-neutral-600">
+                  <div className="mt-6 border-t border-black/10 pt-5 transition-colors group-hover:border-white/20">
+                    <h4 className="text-sm font-bold text-neutral-900 transition-colors group-hover:text-white">{dept.subTitle}</h4>
+                    <ul className="mt-3 space-y-2 text-sm font-medium text-neutral-700">
                       {dept.subItems.map((item) => (
-                        <li key={item}>{item}</li>
+                        <li key={item} className="transition-colors group-hover:text-white/90">{item}</li>
                       ))}
                     </ul>
                   </div>
@@ -641,31 +498,16 @@ const AboutUs = () => {
               <div className="flex flex-col justify-center">
                 <div className="mb-4 flex items-center gap-3">
                   <span className="h-px w-12 bg-[#800000]" />
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-                    Our Principles
-                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Principles</span>
                 </div>
                 <h2 className="max-w-xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                  Creativity with
-                  <span className="text-[#800000]"> character.</span>
+                  Creativity with<span className="text-[#800000]"> character.</span>
                 </h2>
                 <div className="mt-10 space-y-9">
                   {[
-                    {
-                      title: "INNOVATION",
-                      icon: Monitor,
-                      text: "Powered by AI and creativity, we craft smarter, faster and more impactful brand experiences by blending art, intelligence and technology.",
-                    },
-                    {
-                      title: "INTEGRITY",
-                      icon: Lightbulb,
-                      text: "Where creativity meets strategy to build powerful brands and unforgettable experiences driven by innovation and global expertise.",
-                    },
-                    {
-                      title: "PASSION",
-                      icon: Globe,
-                      text: "We pour heart, energy and imagination into every project — turning passion into powerful brand stories that inspire.",
-                    },
+                    { title: "INNOVATION", icon: Monitor, text: "Powered by AI and creativity, we craft smarter, faster and more impactful brand experiences by blending art, intelligence and technology." },
+                    { title: "INTEGRITY", icon: Lightbulb, text: "Where creativity meets strategy to build powerful brands and unforgettable experiences driven by innovation and global expertise." },
+                    { title: "PASSION", icon: Globe, text: "We pour heart, energy and imagination into every project — turning passion into powerful brand stories that inspire." },
                   ].map(({ title, icon: Icon, text }) => (
                     <div key={title} className="group flex gap-5">
                       <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#800000] text-white transition-all duration-300 group-hover:scale-105">
@@ -673,20 +515,14 @@ const AboutUs = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-bold">{title}</h3>
-                        <p className="mt-2 text-sm leading-relaxed text-white/55 sm:text-base">
-                          {text}
-                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-white/55 sm:text-base">{text}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
               <div className="relative min-h-[360px] overflow-hidden rounded-[1.5rem] lg:min-h-[520px]">
-                <img
-                  src={teamworkStructure}
-                  alt="Team collaboration"
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
+                <img src={teamworkStructure} alt="Team collaboration" className="absolute inset-0 h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--cine-base)_0%,rgba(6,6,6,.35)_35%,transparent_75%)]" />
                 <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-[#800000]/30 bg-[#0c0c0c] p-5 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.7)] sm:bottom-6 sm:left-6 sm:right-6">
                   <div className="flex items-center gap-3">
@@ -709,40 +545,24 @@ const AboutUs = () => {
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
-                  Giving Back
-                </span>
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Giving Back</span>
                 <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                  Corporate Social
-                  <span className="block text-[#800000]">Responsibility.</span>
+                  Corporate Social<span className="block text-[#800000]">Responsibility.</span>
                 </h2>
               </div>
               <p className="max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
-                Through our CSR initiatives, we support community growth,
-                sustainability and education in the creative arts — inspiring
-                positive change through every project.
+                Through our CSR initiatives, we support community growth, sustainability and education in the creative arts — inspiring positive change through every project.
               </p>
             </div>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {csrCards.map((card) => (
-                <article
-                  key={card.title}
-                  className="group relative overflow-hidden rounded-2xl border border-[#800000]/20 bg-[#0c0c0c]"
-                >
+                <article key={card.title} className="group relative overflow-hidden rounded-2xl border border-[#800000]/20 bg-[#0c0c0c]">
                   <div className="relative aspect-[4/5] overflow-hidden">
-                    <img
-                      src={card.src}
-                      alt={card.title}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
+                    <img src={card.src} alt={card.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--cine-base)_0%,rgba(6,6,6,.45)_35%,transparent_80%)] opacity-95" />
-                    <span className="absolute left-5 top-5 text-xs font-semibold text-white/55">
-                      {card.number}
-                    </span>
+                    <span className="absolute left-5 top-5 text-xs font-semibold text-white/55">{card.number}</span>
                     <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <h3 className="text-xl font-bold text-white">
-                        {card.title}
-                      </h3>
+                      <h3 className="text-xl font-bold text-white">{card.title}</h3>
                       <div className="mt-3 h-1 w-8 rounded-full bg-white/80 transition-all duration-500 group-hover:w-16" />
                     </div>
                   </div>
@@ -750,9 +570,7 @@ const AboutUs = () => {
               ))}
             </div>
             <div className="mt-12 flex items-center justify-between border-t border-white/20 pt-6">
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                Creating impact beyond business
-              </span>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Creating impact beyond business</span>
               <ArrowUpRight className="h-5 w-5 text-white/60" />
             </div>
           </div>
@@ -761,12 +579,9 @@ const AboutUs = () => {
         <section className="relative overflow-hidden surface-base py-14 text-center sm:py-16 lg:py-20">
           <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#800000]/20 blur-[120px]" />
           <div className="relative mx-auto max-w-4xl px-6">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-              The next story starts here
-            </span>
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">The next story starts here</span>
             <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              Let's create something
-              <span className="block text-[#800000]">worth remembering.</span>
+              Let's create something<span className="block text-[#800000]">worth remembering.</span>
             </h2>
           </div>
         </section>
