@@ -245,56 +245,58 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#080808]">
+        <section className="relative overflow-hidden bg-[#080808] py-16 sm:py-20 lg:py-24">
           <div aria-hidden className="pointer-events-none absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-[#800000]/18 blur-[110px]" />
-          <div className="grid lg:grid-cols-2">
-            <div className="relative flex flex-col justify-center px-6 py-16 sm:px-10 lg:px-14 xl:px-20 lg:py-24">
-              <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-12 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Principles</span>
-              </div>
-              <h2 className="max-w-xl text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
-                Creativity with<span className="text-[#800000]"> character.</span>
-              </h2>
-              <p className="mt-5 max-w-md text-sm leading-relaxed text-white/55 sm:text-base">
-                Three values that guide every campaign, film and experience we create.
-              </p>
-              <div className="mt-10 space-y-4">
-                {[
-                  { title: "INNOVATION", icon: Monitor, text: "Powered by AI and creativity, we craft smarter, faster and more impactful brand experiences by blending art, intelligence and technology." },
-                  { title: "INTEGRITY", icon: ShieldCheck, text: "Where creativity meets strategy to build powerful brands and unforgettable experiences driven by innovation and global expertise." },
-                  { title: "PASSION", icon: Globe, text: "We pour heart, energy and imagination into every project — turning passion into powerful brand stories that inspire." },
-                ].map(({ title, icon: Icon, text }, index) => (
-                  <div
-                    key={title}
-                    className="group flex gap-4 rounded-2xl border border-[#800000]/12 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/35 hover:shadow-[0_16px_40px_-20px_rgba(128,0,0,0.35)] sm:gap-5 sm:p-5"
-                    style={{ background: "linear-gradient(145deg, #ffffff 0%, #fff5f5 48%, #fceaea 100%)" }}
-                  >
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#800000] text-white shadow-[0_8px_24px_rgba(128,0,0,.3)] transition-transform duration-300 group-hover:scale-105 sm:h-14 sm:w-14">
-                      <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-3">
-                        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#800000]/70">0{index + 1}</span>
-                        <h3 className="text-base font-bold tracking-tight text-neutral-900 sm:text-lg">{title}</h3>
+          <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-12">
+              <div className="flex flex-col justify-center">
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="h-px w-12 bg-[#800000]" />
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Principles</span>
+                </div>
+                <h2 className="max-w-xl text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+                  Creativity with<span className="text-[#800000]"> character.</span>
+                </h2>
+                <p className="mt-5 max-w-md text-sm leading-relaxed text-white/55 sm:text-base">
+                  Three values that guide every campaign, film and experience we create.
+                </p>
+                <div className="mt-10 space-y-4">
+                  {[
+                    { title: "INNOVATION", icon: Monitor, text: "Powered by AI and creativity, we craft smarter, faster and more impactful brand experiences by blending art, intelligence and technology." },
+                    { title: "INTEGRITY", icon: ShieldCheck, text: "Where creativity meets strategy to build powerful brands and unforgettable experiences driven by innovation and global expertise." },
+                    { title: "PASSION", icon: Globe, text: "We pour heart, energy and imagination into every project — turning passion into powerful brand stories that inspire." },
+                  ].map(({ title, icon: Icon, text }, index) => (
+                    <div
+                      key={title}
+                      className="group flex gap-4 rounded-2xl border border-[#800000]/12 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/35 hover:shadow-[0_16px_40px_-20px_rgba(128,0,0,0.35)] sm:gap-5 sm:p-5"
+                      style={{ background: "linear-gradient(145deg, #ffffff 0%, #fff5f5 48%, #fceaea 100%)" }}
+                    >
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#800000] text-white shadow-[0_8px_24px_rgba(128,0,0,.3)] transition-transform duration-300 group-hover:scale-105 sm:h-14 sm:w-14">
+                        <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
                       </div>
-                      <p className="mt-1.5 text-sm leading-relaxed text-neutral-600">{text}</p>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-3">
+                          <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#800000]/70">0{index + 1}</span>
+                          <h3 className="text-base font-bold tracking-tight text-neutral-900 sm:text-lg">{title}</h3>
+                        </div>
+                        <p className="mt-1.5 text-sm leading-relaxed text-neutral-600">{text}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="relative min-h-[380px] lg:min-h-full">
-              <img src={teamworkStructure} alt="Team collaboration" className="absolute inset-0 h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent lg:bg-gradient-to-r lg:from-[#080808]/70 lg:via-transparent lg:to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-[#800000]/30 bg-[#0c0c0c] p-5 shadow-[0_20px_48px_-16px_rgba(0,0,0,0.7)] sm:bottom-8 sm:left-8 sm:right-8 sm:p-6">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#800000] shadow-[0_8px_24px_rgba(128,0,0,.45)]">
-                    <Play className="ml-0.5 h-5 w-5 fill-current text-white" />
-                  </div>
-                  <div>
-                    <p className="text-base font-bold tracking-tight text-white">Art. Strategy. Execution.</p>
-                    <p className="mt-0.5 text-sm text-white/50">One team, one vision.</p>
+              <div className="relative min-h-[360px] overflow-hidden rounded-[1.5rem] lg:min-h-full">
+                <img src={teamworkStructure} alt="Team collaboration" className="absolute inset-0 h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-[#800000]/30 bg-[#0c0c0c] p-4 shadow-[0_20px_48px_-16px_rgba(0,0,0,0.7)] sm:bottom-6 sm:left-6 sm:right-6 sm:p-5">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#800000] shadow-[0_8px_24px_rgba(128,0,0,.45)]">
+                      <Play className="ml-0.5 h-4 w-4 fill-current text-white" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold tracking-tight text-white sm:text-base">Art. Strategy. Execution.</p>
+                      <p className="mt-0.5 text-xs text-white/50 sm:text-sm">One team, one vision.</p>
+                    </div>
                   </div>
                 </div>
               </div>
