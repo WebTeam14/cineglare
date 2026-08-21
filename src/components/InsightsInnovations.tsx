@@ -29,6 +29,10 @@ const insightPosts = [
   },
 ];
 
+const whiteRedTint = {
+  background: "linear-gradient(145deg, #fff8f8 0%, #f7f0f0 45%, #f3e8e8 100%)",
+} as const;
+
 const InsightsInnovations = ({
   sectionTwoTitle,
   sectionThreeTitle,
@@ -61,7 +65,6 @@ const InsightsInnovations = ({
                   <div className="text-[10px] uppercase tracking-wider">Sep</div>
                 </div>
               </div>
-              {/* Description — solid brand red, no gradient */}
               <div className="flex flex-1 flex-col bg-[#800000] p-5 sm:p-6">
                 <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-white/80">
                   <span className="inline-flex items-center gap-2">
@@ -86,12 +89,13 @@ const InsightsInnovations = ({
               </div>
             </article>
 
-            {/* Side list */}
+            {/* Side cards — white + soft red tint; solid brand red on hover */}
             <div className="flex h-full flex-col gap-4">
               {insightPosts.map((post) => (
                 <article
                   key={post.title}
-                  className="group flex min-h-0 flex-1 cursor-pointer items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-3 transition-all duration-300 hover:border-[#800000]/40 hover:bg-[#800000]/10 sm:p-4"
+                  className="group flex min-h-0 flex-1 cursor-pointer items-center gap-4 overflow-hidden rounded-2xl border border-[#800000]/15 p-3 shadow-[0_12px_32px_-16px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000] hover:bg-[#800000] hover:shadow-[0_16px_40px_-12px_rgba(128,0,0,0.4)] sm:p-4"
+                  style={whiteRedTint}
                 >
                   <div className="h-full min-h-[5.5rem] w-28 shrink-0 overflow-hidden rounded-xl sm:w-32">
                     <img
@@ -101,7 +105,7 @@ const InsightsInnovations = ({
                     />
                   </div>
                   <div className="flex min-w-0 flex-1 items-center py-1">
-                    <h4 className="text-sm font-semibold leading-snug text-white/85 transition-colors group-hover:text-white sm:text-base">
+                    <h4 className="text-sm font-semibold leading-snug text-neutral-950 transition-colors duration-300 group-hover:text-white sm:text-base">
                       {post.title}
                     </h4>
                   </div>
