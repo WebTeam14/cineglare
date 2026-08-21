@@ -133,56 +133,50 @@ export default function Portfolio() {
                   <button
                     key={index}
                     type="button"
-                    className="group relative overflow-hidden rounded-2xl border border-[#800000]/15 text-left shadow-[0_12px_32px_-18px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-2 hover:border-[#800000]/40 hover:shadow-[0_18px_40px_-14px_rgba(128,0,0,0.25)]"
-                    style={{
-                      background:
-                        "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)",
-                    }}
+                    className="group relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-[#0c0c0c] text-left shadow-[0_16px_40px_-20px_rgba(0,0,0,0.7)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/50 hover:shadow-[0_22px_48px_-16px_rgba(128,0,0,0.35)]"
                     onClick={() => {
                       setActiveVideo(videoPath);
                       setOpen(true);
                     }}
                   >
-                    <div className="relative h-52 overflow-hidden bg-black sm:h-56">
-                      <video
-                        src={videoPath}
-                        muted
-                        playsInline
-                        preload="metadata"
-                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        onLoadedMetadata={(e) => {
-                          const el = e.currentTarget;
-                          if (el.duration && el.readyState >= 2) {
-                            const seekTime = Math.min(1, el.duration * 0.1);
-                            el.currentTime = seekTime;
-                            el.pause();
-                          }
-                        }}
-                        onCanPlay={(e) => {
-                          const el = e.currentTarget;
-                          if (el.readyState >= 2 && el.currentTime === 0) {
-                            const seekTime = Math.min(
-                              1,
-                              el.duration * 0.1 || 1,
-                            );
-                            el.currentTime = seekTime;
-                            el.pause();
-                          }
-                        }}
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#800000] text-white shadow-[0_12px_35px_rgba(128,0,0,.4)] transition-transform duration-300 group-hover:scale-110">
-                          <Play className="ml-0.5 h-6 w-6 fill-current" />
-                        </span>
-                      </div>
-                      <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/80 to-transparent" />
+                    <video
+                      src={videoPath}
+                      muted
+                      playsInline
+                      preload="metadata"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      onLoadedMetadata={(e) => {
+                        const el = e.currentTarget;
+                        if (el.duration && el.readyState >= 2) {
+                          const seekTime = Math.min(1, el.duration * 0.1);
+                          el.currentTime = seekTime;
+                          el.pause();
+                        }
+                      }}
+                      onCanPlay={(e) => {
+                        const el = e.currentTarget;
+                        if (el.readyState >= 2 && el.currentTime === 0) {
+                          const seekTime = Math.min(
+                            1,
+                            el.duration * 0.1 || 1,
+                          );
+                          el.currentTime = seekTime;
+                          el.pause();
+                        }
+                      }}
+                    />
+                    {/* Always-visible play cue */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#800000] text-white shadow-[0_12px_32px_rgba(128,0,0,.45)] transition-transform duration-300 group-hover:scale-110 sm:h-14 sm:w-14">
+                        <Play className="ml-0.5 h-5 w-5 fill-current sm:h-6 sm:w-6" />
+                      </span>
                     </div>
-
-                    <div className="p-5">
-                      <h3 className="truncate text-base font-semibold tracking-tight text-neutral-900">
+                    {/* Bottom title strip */}
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/85 to-transparent px-4 pb-4 pt-14">
+                      <h3 className="truncate text-sm font-semibold tracking-tight text-white sm:text-base">
                         {title}
                       </h3>
-                      <p className="mt-1 text-xs font-medium uppercase tracking-[0.14em] text-[#800000]/70">
+                      <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#800000]">
                         Event highlight
                       </p>
                     </div>
