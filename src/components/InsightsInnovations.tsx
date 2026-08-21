@@ -1,125 +1,143 @@
-import { Calendar, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
-import { asset, logoAsset } from "@/assets/placeholder";
+import { Calendar, MessageCircle, ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { asset } from "@/assets/placeholder";
 
 const blogFeatured = asset("blog-featured.jpg");
 const blog1 = asset("blog-1.jpg");
 const blog2 = asset("blog-2.jpg");
 const blog3 = asset("blog-3.jpg");
 const ctaBackground = asset("cta-bg.jpg");
+
 interface InsightsInnovationsProps {
-    sectionTwoTitle: string;
-    sectionThreeTitle: string;
+  sectionTwoTitle: string;
+  sectionThreeTitle: string;
 }
 
 const insightPosts = [
   {
-    title: "Smart Targeting, Measurable Growth - ROI that speaks For Itself",
+    title: "Smart Targeting, Measurable Growth — ROI that speaks for itself",
     image: blog1,
   },
   {
-    title: "We Create Buzz - Making Your Brand The Talk of the Timeline",
+    title: "We Create Buzz — Making your brand the talk of the timeline",
     image: blog2,
   },
   {
-    title: "Content with a Soul: Creating Meaningful Brand Connections",
+    title: "Content with a Soul: Creating meaningful brand connections",
     image: blog3,
   },
 ];
 
-const InsightsInnovations = ({ sectionTwoTitle, sectionThreeTitle }: InsightsInnovationsProps) => {
+const InsightsInnovations = ({
+  sectionTwoTitle,
+  sectionThreeTitle,
+}: InsightsInnovationsProps) => {
   return (
     <>
-    <section className="py-20 bg-background">
-      <div className="container-custom">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
-          {sectionTwoTitle}
-        </h2>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Featured Post */}
-          <div className="relative group">
-            <div className="relative overflow-hidden rounded-lg">
-              <img
-                src={blogFeatured}
-                alt="Beyond the Inbox: The Power of Personalized Email Marketing"
-                className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute top-4 left-4 bg-primary px-4 py-2 rounded">
-                <div className="text-primary-foreground font-bold text-lg">02</div>
-                <div className="text-primary-foreground text-xs">Sep</div>
-              </div>
-            </div>
-            <div className="mt-6">
-              <div className="flex items-center gap-4 text-muted-foreground text-sm mb-3">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4" />
-                  <span>September 2, 2024</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MessageCircle className="w-4 h-4" />
-                  <span>0</span>
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Beyond the Inbox: The Power of Personalized Email Marketing
-              </h3>
-              <Button variant="default" size="sm">
-                Learn more
-              </Button>
-            </div>
+      <section className="relative overflow-hidden surface-base py-14 sm:py-16 lg:py-20">
+        <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          <div className="mb-10 flex items-center gap-3">
+            <span className="h-px w-10 bg-[#800000]" />
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+              From the studio
+            </span>
           </div>
+          <h2 className="mb-12 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            {sectionTwoTitle}
+          </h2>
 
-          {/* Side Posts */}
-          <div className="space-y-6">
-            {insightPosts.map((post, index) => (
-              <div
-                key={index}
-                className="flex gap-4 group cursor-pointer hover:bg-card/50 p-4 rounded-lg transition-colors"
-              >
-                <div className="flex-shrink-0 w-32 h-24 overflow-hidden rounded-lg">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="flex-1">
-                  <h4 className="text-foreground font-semibold leading-tight group-hover:text-primary transition-colors">
-                    {post.title}
-                  </h4>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <div className="group relative">
+              <div className="relative overflow-hidden rounded-2xl border border-white/10">
+                <img
+                  src={blogFeatured}
+                  alt="Beyond the Inbox: The Power of Personalized Email Marketing"
+                  className="h-[360px] w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-[400px]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute left-4 top-4 rounded-xl bg-[#800000] px-3.5 py-2 text-center text-white">
+                  <div className="text-lg font-bold leading-none">02</div>
+                  <div className="text-[10px] uppercase tracking-wider">Sep</div>
                 </div>
               </div>
-            ))}
+              <div className="mt-5">
+                <div className="mb-3 flex items-center gap-4 text-sm text-white/45">
+                  <span className="inline-flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    September 2, 2024
+                  </span>
+                  <span className="inline-flex items-center gap-2">
+                    <MessageCircle className="h-4 w-4" />
+                    0
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-white sm:text-2xl">
+                  Beyond the Inbox: The Power of Personalized Email Marketing
+                </h3>
+                <button
+                  type="button"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#800000] transition-colors hover:text-[#a00000]"
+                >
+                  Learn more
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-center space-y-3">
+              {insightPosts.map((post) => (
+                <div
+                  key={post.title}
+                  className="group flex cursor-pointer gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-3 transition-all duration-300 hover:border-[#800000]/40 hover:bg-[#800000]/10"
+                >
+                  <div className="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex flex-1 items-center">
+                    <h4 className="text-sm font-semibold leading-snug text-white/85 transition-colors group-hover:text-white sm:text-base">
+                      {post.title}
+                    </h4>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section className="relative py-32 overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${ctaBackground})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-black/75" />
-      </div>
+      <section className="relative overflow-hidden py-20 sm:py-24">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${ctaBackground})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="absolute inset-0 bg-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
+        </div>
 
-      {/* Content */}
-      <div className="container-custom relative z-10 text-center">
-        <h2 className="text-3xl md:text-5xl font-bold text-foreground bg-none mb-6 rounded-full">
-          {sectionThreeTitle}
-        </h2>
-        <Button variant="default" size="lg" className="px-8">
-          Let's Talk!
-        </Button>
-      </div>
-    </section>
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+            Ready when you are
+          </span>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+            {sectionThreeTitle}
+          </h2>
+          <Link
+            to="/contact"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#800000] px-8 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000]"
+          >
+            Let's Talk
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
     </>
   );
 };
