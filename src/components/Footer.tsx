@@ -1,4 +1,15 @@
-import { Facebook, Instagram, Linkedin, Youtube, ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
+  Mail,
+  MapPin,
+  Phone,
+  Clock,
+  ExternalLink,
+  Send,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "@tanstack/react-router";
@@ -9,6 +20,8 @@ const quickLinks = [
   { name: "About Us", path: "/aboutus" },
   { name: "Portfolio", path: "/portfolio" },
   { name: "Contact", path: "/contact" },
+  { name: "Privacy Policy", path: "#" },
+  { name: "Terms & Conditions", path: "#" },
 ];
 
 const agencyLinks = [
@@ -25,6 +38,15 @@ const socials = [
   { icon: Linkedin, label: "LinkedIn", href: "#" },
   { icon: Youtube, label: "YouTube", href: "#" },
 ];
+
+const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+  <div className="mb-5">
+    <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-white">
+      {children}
+    </h3>
+    <span className="mt-2 block h-0.5 w-8 rounded-full bg-[#800000]" />
+  </div>
+);
 
 const Footer = () => {
   return (
@@ -43,9 +65,9 @@ const Footer = () => {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 pt-14 pb-8 sm:px-8 lg:px-12 lg:pt-16">
-        {/* Top brand + newsletter row */}
-        <div className="mb-12 flex flex-col gap-10 border-b border-white/[0.08] pb-12 lg:mb-14 lg:flex-row lg:items-end lg:justify-between lg:gap-16 lg:pb-14">
-          <div className="max-w-md">
+        <div className="mb-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:mb-14 lg:grid-cols-4 lg:gap-12">
+          {/* Brand */}
+          <div>
             <Link to="/" className="mb-5 inline-flex">
               <span className="inline-flex items-center justify-center rounded-2xl bg-white px-3 py-2 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.4)]">
                 <img
@@ -55,17 +77,24 @@ const Footer = () => {
                 />
               </span>
             </Link>
-            <p className="text-sm leading-relaxed text-white/55 sm:text-[15px] sm:leading-7">
+            <p className="mb-5 max-w-xs text-sm leading-relaxed text-white/55">
               Where brand shines brighter and entertainment goes bigger. Your
               spotlight experience starts here.
             </p>
-            <div className="mt-6 flex items-center gap-2.5">
+            <div className="mb-5 rounded-xl border border-[#800000]/25 bg-[#800000]/[0.08] p-4">
+              <p className="text-sm leading-relaxed text-white/75">
+                <span className="font-semibold text-white">Our Mission: </span>
+                Crafting vision into reality through powerful brand stories and
+                unforgettable experiences.
+              </p>
+            </div>
+            <div className="flex items-center gap-2.5">
               {socials.map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/50 hover:bg-[#800000] hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/50 hover:bg-[#800000] hover:text-white"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -73,97 +102,112 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-full max-w-md lg:max-w-sm">
-            <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-              Newsletter
-            </h3>
-            <p className="mb-4 text-sm leading-relaxed text-white/50">
-              Subscribe for inspiration, ideas, and news.
-            </p>
+          {/* Quick Links */}
+          <div>
+            <SectionTitle>Quick Links</SectionTitle>
+            <ul className="space-y-2.5">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="group inline-flex items-center gap-2 text-sm text-white/60 transition-colors duration-300 hover:text-white"
+                  >
+                    <span className="text-[#800000] opacity-70 transition-opacity group-hover:opacity-100">
+                      ›
+                    </span>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <SectionTitle>Our Services</SectionTitle>
+            <ul className="space-y-2.5">
+              {agencyLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="group inline-flex items-center gap-2 text-sm text-white/60 transition-colors duration-300 hover:text-white"
+                  >
+                    <span className="text-[#800000] opacity-70 transition-opacity group-hover:opacity-100">
+                      ›
+                    </span>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Get in Touch + Newsletter */}
+          <div>
+            <SectionTitle>Get in Touch</SectionTitle>
+            <ul className="mb-8 space-y-3.5 text-sm text-white/65">
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#800000]" />
+                <span className="leading-relaxed">
+                  3rd Floor, Business Plaza, Mumbai, India
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#800000]" />
+                <a
+                  href="tel:+919876543210"
+                  className="transition-colors hover:text-white"
+                >
+                  +91 98765 43210
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#800000]" />
+                <a
+                  href="mailto:hello@cineglare.com"
+                  className="transition-colors hover:text-white"
+                >
+                  hello@cineglare.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#800000]" />
+                <span>Mon – Sat: 9:00 AM – 6:00 PM IST</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <ExternalLink className="mt-0.5 h-4 w-4 shrink-0 text-[#800000]" />
+                <a
+                  href="https://maps.google.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-white"
+                >
+                  View on Google Maps
+                </a>
+              </li>
+            </ul>
+
+            <SectionTitle>Newsletter</SectionTitle>
             <form
-              className="flex flex-col gap-2.5 sm:flex-row"
+              className="flex overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]"
               onSubmit={(e) => e.preventDefault()}
             >
               <Input
                 type="email"
-                placeholder="Your email"
-                className="h-11 flex-1 rounded-full border-white/10 bg-white/[0.05] text-white placeholder:text-white/35 focus-visible:ring-[#800000]/50"
+                placeholder="Your email address"
+                className="h-11 flex-1 border-0 bg-transparent text-sm text-white placeholder:text-white/35 focus-visible:ring-0 focus-visible:ring-offset-0"
               />
               <Button
                 type="submit"
-                className="h-11 shrink-0 rounded-full bg-[#800000] px-5 font-semibold text-white hover:bg-[#970000]"
+                className="h-11 shrink-0 rounded-none rounded-r-lg bg-[#800000] px-4 font-semibold text-white hover:bg-[#970000]"
               >
+                <Send className="mr-1.5 h-4 w-4" />
                 Subscribe
-                <ArrowRight className="ml-1.5 h-4 w-4" />
               </Button>
             </form>
           </div>
         </div>
 
-        {/* Link columns */}
-        <div className="mb-12 grid grid-cols-2 gap-8 sm:gap-10 md:grid-cols-3 lg:mb-14 lg:gap-12">
-          <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-              Quick Links
-            </h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-white/60 transition-colors duration-300 hover:text-white"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-              Our Services
-            </h3>
-            <ul className="space-y-3">
-              {agencyLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-sm text-white/60 transition-colors duration-300 hover:text-white"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="col-span-2 md:col-span-1">
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-              Get in Touch
-            </h3>
-            <ul className="space-y-3.5 text-sm text-white/60">
-              <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#800000]" />
-                <a href="mailto:info@cineglare.com" className="transition-colors hover:text-white">
-                  info@cineglare.com
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#800000]" />
-                <a href="tel:+910000000000" className="transition-colors hover:text-white">
-                  +91 00000 00000
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#800000]" />
-                <span>India · Global Presence</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.08] pt-6 sm:flex-row">
           <p className="text-center text-xs text-white/40 sm:text-left sm:text-sm">
             © {new Date().getFullYear()} CineGlare — Crafting Vision into Reality.
