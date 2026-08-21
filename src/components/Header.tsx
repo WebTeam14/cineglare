@@ -98,7 +98,6 @@ const Header = () => {
           </span>
         </Link>
 
-        {/* Desktop: Home · About · Services · Portfolio · Contact */}
         <div className="hidden items-center gap-8 lg:flex">
           <Link to="/" className={linkClass(isActive("/"))}>
             Home
@@ -107,7 +106,6 @@ const Header = () => {
             About Us
           </Link>
 
-          {/* Hover to open — not click */}
           <div
             className="relative"
             onMouseEnter={openServices}
@@ -127,7 +125,6 @@ const Header = () => {
                   )}
                   aria-expanded={servicesOpen}
                   onClick={(e) => {
-                    // Prefer hover; allow click only as fallback (keyboard / touch hybrid)
                     e.preventDefault();
                     setServicesOpen((v) => !v);
                   }}
@@ -155,16 +152,17 @@ const Header = () => {
                     <DropdownMenuItem
                       key={service.name}
                       asChild
-                      className="cursor-pointer rounded-xl p-0 focus:bg-transparent"
+                      className={cn(
+                        "cursor-pointer rounded-xl p-0 text-white/75 outline-none",
+                        /* Radix highlights with data-highlighted on hover/focus */
+                        "focus:bg-[#800000] focus:text-white",
+                        "data-[highlighted]:bg-[#800000] data-[highlighted]:text-white",
+                        active && "bg-[#800000] text-white",
+                      )}
                     >
                       <Link
                         to={service.path}
-                        className={cn(
-                          "block rounded-xl px-3.5 py-2.5 text-sm font-medium transition-colors duration-200",
-                          active
-                            ? "bg-[#800000] text-white"
-                            : "text-white/75 hover:bg-[#800000] hover:text-white",
-                        )}
+                        className="block w-full rounded-xl px-3.5 py-2.5 text-sm font-medium text-inherit transition-colors duration-150"
                       >
                         {service.name}
                       </Link>
@@ -203,7 +201,6 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Mobile — still tap to expand list (no hover) */}
       <div
         className={cn(
           "overflow-hidden border-t border-white/10 bg-[var(--cine-base)]/95 backdrop-blur-xl transition-all duration-300 lg:hidden",
