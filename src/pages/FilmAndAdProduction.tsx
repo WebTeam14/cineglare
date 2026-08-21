@@ -2,12 +2,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
+import { asset } from "@/assets/placeholder";
 
-import { asset, logoAsset } from "@/assets/placeholder";
-
-const filAndAdproductionImage = asset("film-and-ad-production-image.jpg");
+const filmAndAdProductionImage = asset("film-and-ad-production-image.jpg");
 const filmAdProductionCenter = asset("film-and-ad-production-center.jpg");
-// import digitalMarketingHero from "@/assets/digital-marketing-hero.jpg";
+
 const FilmAndAdProduction = () => {
   const leftServices = [
     "Concept & Script Development",
@@ -22,28 +21,26 @@ const FilmAndAdProduction = () => {
     "Music, Voiceover & Sound Design",
     "Brand Films & TV Commercials",
     "Digital & Social Media Ads",
-    "Behind-the-scenes & Promo Shoots",
+    "Behind-the-Scenes & Promo Shoots",
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-hidden surface-base text-white">
       <Header />
-      
       <ServiceHero
-        firstBgImage={filAndAdproductionImage}
-        title="Film and Ad Production"
-        tagline="Turning Concepts into Cinematic Reality"
-        description="From concepts to screen, we handle every stage - combining cinematic excellence with marketing insight, that inspire, 
-        influence and build brand emotion."
+        firstBgImage={filmAndAdProductionImage}
+        title="Film & Ad Production"
+        tagline="Turning concepts into cinematic reality"
+        description="From concept to screen — cinematic excellence with marketing insight that inspires, influences and builds brand emotion."
         leftServices={leftServices}
         rightServices={rightServices}
         centerImage={filmAdProductionCenter}
-        imageAlt="Digital marketing visualization"
+        imageAlt="Film and ad production"
       />
-
-      {/* Insights & Innovations Section */}
-      <InsightsInnovations sectionTwoTitle="Insights & Innovations" sectionThreeTitle="Partner With Us to Make Your Vision Real" />
-
+      <InsightsInnovations
+        sectionTwoTitle="Insights & Innovations"
+        sectionThreeTitle="Partner with us to make your vision real"
+      />
       <Footer />
     </div>
   );
