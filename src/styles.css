@@ -178,6 +178,104 @@
   }
 }
 
+/* ---------- Layout utilities ---------- */
+
+@utility container-custom {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+}
+
+/* Consistent vertical rhythm: ~56-80px mobile, 72-100px tablet, 96-140px desktop */
+@utility section-y {
+  padding-block: clamp(3.5rem, 8vw, 8.5rem);
+}
+
+@utility section-y-sm {
+  padding-block: clamp(2.75rem, 5.5vw, 5.5rem);
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--primary),
+    color-mix(in oklab, var(--primary) 55%, white)
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+@utility font-cinematic {
+  font-family: var(--font-cinematic);
+}
+
+@utility heading-xl {
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+@utility heading-lg {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+@utility measure {
+  max-width: 42rem;
+}
+
+/* Soft ambient red glow used behind premium cards / hero accents */
+@utility ambient-glow {
+  background: radial-gradient(
+    circle at 50% 0%,
+    color-mix(in oklab, var(--primary) 18%, transparent),
+    transparent 65%
+  );
+}
+
+/* Section edge bridge — soft vertical fade so raised/deep sections meet base */
+@utility section-bridge {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4rem;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &::before {
+    top: 0;
+    background: linear-gradient(to bottom, var(--cine-base), transparent);
+  }
+
+  &::after {
+    bottom: 0;
+    background: linear-gradient(to top, var(--cine-base), transparent);
+  }
+}
+
+@utility surface-soft {
+  background-color: color-mix(in oklab, var(--surface) 80%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+@utility card-premium {
+  background: linear-gradient(
+    145deg,
+    color-mix(in oklab, var(--surface-elevated) 92%, white),
+    var(--surface-elevated)
+  );
+  border: 1px solid color-mix(in oklab, white 8%, transparent);
+  box-shadow: var(--shadow-elevated);
+}
+
 @utility hover-lift {
   transition:
     transform 0.4s var(--ease-cinema),
