@@ -300,24 +300,24 @@ const AboutUs = () => {
                 <span className="h-px flex-1 bg-gradient-to-l from-transparent to-[#800000]" />
               </div>
               <div className="mx-auto max-w-3xl">
-                <figure className="relative overflow-hidden rounded-[1.75rem] border border-[#800000]/20 bg-gradient-to-br from-white via-[#fff8f8] to-[#fceaea] px-8 py-10 shadow-[0_18px_48px_-20px_rgba(0,0,0,0.55)] sm:px-12 sm:py-12">
+                <figure className="relative overflow-hidden rounded-[1.75rem] border border-[#800000]/12 bg-gradient-to-br from-white via-[#fffbfb] to-[#fff5f5] px-8 py-10 shadow-[0_18px_48px_-20px_rgba(0,0,0,0.55)] sm:px-12 sm:py-12">
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute left-5 top-3 select-none font-serif text-[6.5rem] leading-none text-[#800000]/25 sm:left-8 sm:top-2 sm:text-[8rem]"
+                    className="pointer-events-none absolute left-5 top-3 select-none font-serif text-[6.5rem] leading-none text-[#800000] sm:left-8 sm:top-2 sm:text-[8rem]"
                   >
                     “
                   </span>
                   <blockquote className="relative z-10">
-                    <p className="text-center text-lg font-medium leading-[1.7] tracking-normal text-neutral-800 sm:text-xl sm:leading-[1.75] md:text-2xl md:leading-[1.65]">
+                    <p className="text-center text-lg font-semibold leading-[1.7] tracking-normal text-neutral-900 sm:text-xl sm:leading-[1.75] md:text-2xl md:leading-[1.65]">
                       With visionary leadership and creative foresight, he has built Cineglare into a powerhouse of innovation, crafting stories that resonate globally.
                     </p>
                   </blockquote>
                   <figcaption className="relative z-10 mt-8 flex items-center justify-center gap-3">
-                    <span className="h-px w-8 bg-[#800000]/40" />
+                    <span className="h-px w-8 bg-[#800000]/50" />
                     <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#800000]">
                       Founder & Managing Director
                     </span>
-                    <span className="h-px w-8 bg-[#800000]/40" />
+                    <span className="h-px w-8 bg-[#800000]/50" />
                   </figcaption>
                 </figure>
               </div>
