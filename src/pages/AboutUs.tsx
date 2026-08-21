@@ -273,8 +273,8 @@ const AboutUs = () => {
 
         <section className="relative overflow-hidden surface-raise py-14 sm:py-16 lg:py-20">
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-            <div className="grid gap-10 lg:grid-cols-[1fr_.9fr] lg:items-end">
-              <div>
+            <div className="grid items-start gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+              <div className="flex flex-col justify-start">
                 <div className="mb-4 flex items-center gap-3">
                   <span className="h-px w-12 bg-[#800000]" />
                   <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Visionaries at Work</span>
@@ -282,11 +282,11 @@ const AboutUs = () => {
                 <h2 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
                   Creative minds.<span className="block text-[#800000]">One shared ambition.</span>
                 </h2>
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
+                <p className="mt-5 max-w-xl text-base leading-relaxed text-white/55 sm:text-lg">
                   At the heart of Cineglare is a passionate team of innovators, creators and strategists who bring ideas to life across advertising, film production, event management and brand promotions.
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:pt-1">
                 {stats.map((stat, index) => (
                   <AnimatedStat key={stat.label} {...stat} accent={index === 1} />
                 ))}
