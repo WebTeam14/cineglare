@@ -299,23 +299,25 @@ const AboutUs = () => {
                 <h3 className="text-xl font-bold tracking-tight sm:text-2xl">Our Leadership</h3>
                 <span className="h-px flex-1 bg-gradient-to-l from-transparent to-[#800000]" />
               </div>
-              <div className="mx-auto max-w-3xl px-2 text-center">
-                <blockquote className="relative">
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute -left-2 -top-6 select-none font-serif text-7xl leading-none text-[#800000]/80 sm:-left-4 sm:-top-8 sm:text-8xl"
-                  >
-                    “
-                  </span>
-                  <p className="relative px-4 text-lg font-medium leading-relaxed text-white sm:px-8 sm:text-xl sm:leading-8 md:text-2xl">
-                    With visionary leadership and creative foresight, he has built Cineglare into a powerhouse of innovation, crafting stories that resonate globally.
+              <div className="mx-auto max-w-3xl px-2">
+                <blockquote className="relative text-center">
+                  <p className="text-lg font-medium leading-relaxed text-white sm:text-xl sm:leading-8 md:text-2xl">
+                    <span
+                      aria-hidden
+                      className="mr-1 align-[-0.35em] font-serif text-5xl leading-none text-[#800000] sm:mr-2 sm:text-6xl md:text-7xl"
+                    >
+                      “
+                    </span>
+                    With visionary leadership and creative foresight, he has built
+                    Cineglare into a powerhouse of innovation, crafting stories
+                    that resonate globally.
+                    <span
+                      aria-hidden
+                      className="ml-1 align-[-0.35em] font-serif text-5xl leading-none text-[#800000] sm:ml-2 sm:text-6xl md:text-7xl"
+                    >
+                      ”
+                    </span>
                   </p>
-                  <span
-                    aria-hidden
-                    className="pointer-events-none mt-2 inline-block select-none font-serif text-5xl leading-none text-[#800000]/80 sm:text-6xl"
-                  >
-                    ”
-                  </span>
                 </blockquote>
               </div>
             </div>
