@@ -1,5 +1,6 @@
 import { Calendar, MessageCircle, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
 import { asset } from "@/assets/placeholder";
 
 const blogFeatured = asset("blog-featured.jpg");
@@ -46,9 +47,7 @@ const InsightsInnovations = ({
             {sectionTwoTitle}
           </h2>
 
-          {/* Equal-height two-column layout */}
           <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2 lg:gap-8">
-            {/* Featured — fills column height */}
             <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
               <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden">
                 <img
@@ -86,7 +85,6 @@ const InsightsInnovations = ({
               </div>
             </article>
 
-            {/* Side list — same total height, equal card distribution */}
             <div className="flex h-full flex-col gap-4">
               {insightPosts.map((post) => (
                 <article
@@ -112,33 +110,54 @@ const InsightsInnovations = ({
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-20 sm:py-24">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${ctaBackground})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="absolute inset-0 bg-black/80" />
+      {/* CTA — matched to homepage CTA.tsx */}
+      <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={ctaBackground}
+            alt=""
+            aria-hidden
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/70" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
+          <div
+            aria-hidden
+            className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#800000]/25 blur-[100px]"
+          />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-            Ready when you are
-          </span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
-            {sectionThreeTitle}
-          </h2>
-          <Link
-            to="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#800000] px-8 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000]"
-          >
-            Let's Talk
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+        <div className="container-custom relative z-10">
+          <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
+            <div className="mb-5 flex items-center gap-3">
+              <span className="h-px w-10 bg-[#800000]" />
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+                Let’s collaborate
+              </p>
+              <span className="h-px w-10 bg-[#800000]" />
+            </div>
+
+            <h2 className="mb-5 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
+              {sectionThreeTitle}
+            </h2>
+
+            <p className="mb-8 max-w-xl text-sm leading-relaxed text-white/65 sm:text-base">
+              From concept to curtain call — star influence, cinematic
+              storytelling, and flawless execution that turns bold ideas into
+              iconic moments.
+            </p>
+
+            <Button
+              asChild
+              className="h-14 rounded-full bg-[#800000] px-9 text-base font-semibold text-white shadow-[0_14px_36px_rgba(128,0,0,.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] hover:shadow-[0_18px_42px_rgba(128,0,0,.45)] sm:h-16 sm:px-10 sm:text-lg"
+            >
+              <Link to="/contact" className="inline-flex items-center gap-2.5">
+                Let’s Talk
+                <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </>
