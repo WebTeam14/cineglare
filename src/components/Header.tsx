@@ -2,16 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useRouterState } from "@tanstack/react-router";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo/Cineglare.svg";
 
-/** Home → About → Services → Portfolio → Contact */
 const servicesLinks = [
   { name: "Product Branding", path: "/services/product-branding" },
   { name: "Celebrity Management", path: "/services/celebrity-management" },
@@ -54,9 +47,9 @@ const Header = () => {
     setServicesOpen(true);
   };
 
-  const scheduleCloseServices = () => {
+  const closeServices = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    closeTimer.current = setTimeout(() => setServicesOpen(false), 120);
+    closeTimer.current = setTimeout(() => setServicesOpen(false), 150);
   };
 
   const isActive = (path: string) => {
@@ -98,6 +91,7 @@ const Header = () => {
           </span>
         </Link>
 
+        {/* Desktop nav */}
         <div className="hidden items-center gap-8 lg:flex">
           <Link to="/" className={linkClass(isActive("/"))}>
             Home
@@ -106,71 +100,60 @@ const Header = () => {
             About Us
           </Link>
 
+          {/* Services — hover menu (no portal) */}
           <div
             className="relative"
             onMouseEnter={openServices}
-            onMouseLeave={scheduleCloseServices}
+            onMouseLeave={closeServices}
           >
-            <DropdownMenu
-              open={servicesOpen}
-              onOpenChange={setServicesOpen}
-              modal={false}
+            <button
+              type="button"
+              className={cn(
+                linkClass(servicesActive || servicesOpen),
+                "inline-flex items-center gap-1.5 outline-none",
+              )}
+              aria-expanded={servicesOpen}
+              aria-haspopup="true"
+              onClick={() => setServicesOpen((v) => !v)}
             >
-              <DropdownMenuTrigger asChild>
-                <button
-                  type="button"
-                  className={cn(
-                    linkClass(servicesActive || servicesOpen),
-                    "inline-flex items-center gap-1.5 outline-none",
-                  )}
-                  aria-expanded={servicesOpen}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setServicesOpen((v) => !v);
-                  }}
-                >
-                  Services
-                  <ChevronDown
-                    className={cn(
-                      "h-3.5 w-3.5 opacity-70 transition-transform duration-300",
-                      servicesOpen && "rotate-180",
-                    )}
-                  />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="center"
-                sideOffset={12}
-                onCloseAutoFocus={(e) => e.preventDefault()}
-                onMouseEnter={openServices}
-                onMouseLeave={scheduleCloseServices}
-                className="min-w-[260px] rounded-2xl border border-white/10 bg-[#0c0c0c] p-2 shadow-[0_20px_50px_rgba(0,0,0,.6)]"
-              >
+              Services
+              <ChevronDown
+                className={cn(
+                  "h-3.5 w-3.5 opacity-70 transition-transform duration-300",
+                  servicesOpen && "rotate-180",
+                )}
+              />
+            </button>
+
+            {/* Bridge gap so mouse can move from trigger → panel without closing */}
+            <div
+              className={cn(
+                "absolute left-1/2 top-full z-50 w-[280px] -translate-x-1/2 pt-3 transition-all duration-200",
+                servicesOpen
+                  ? "pointer-events-auto visible opacity-100"
+                  : "pointer-events-none invisible opacity-0",
+              )}
+            >
+              <div className="rounded-2xl border border-white/10 bg-[#0c0c0c] p-2 shadow-[0_20px_50px_rgba(0,0,0,.65)]">
                 {servicesLinks.map((service) => {
                   const active = isActive(service.path);
                   return (
-                    <DropdownMenuItem
+                    <Link
                       key={service.name}
-                      asChild
+                      to={service.path}
                       className={cn(
-                        "cursor-pointer rounded-xl p-0 text-white/75 outline-none",
-                        /* Radix highlights with data-highlighted on hover/focus */
-                        "focus:bg-[#800000] focus:text-white",
-                        "data-[highlighted]:bg-[#800000] data-[highlighted]:text-white",
-                        active && "bg-[#800000] text-white",
+                        "block rounded-xl px-3.5 py-2.5 text-sm font-medium transition-colors duration-150",
+                        active
+                          ? "bg-[#800000] text-white"
+                          : "text-white/75 hover:bg-[#800000] hover:text-white",
                       )}
                     >
-                      <Link
-                        to={service.path}
-                        className="block w-full rounded-xl px-3.5 py-2.5 text-sm font-medium text-inherit transition-colors duration-150"
-                      >
-                        {service.name}
-                      </Link>
-                    </DropdownMenuItem>
+                      {service.name}
+                    </Link>
                   );
                 })}
-              </DropdownMenuContent>
-            </DropdownMenu>
+              </div>
+            </div>
           </div>
 
           <Link to="/portfolio" className={linkClass(isActive("/portfolio"))}>
@@ -201,6 +184,7 @@ const Header = () => {
         </div>
       </nav>
 
+      {/* Mobile */}
       <div
         className={cn(
           "overflow-hidden border-t border-white/10 bg-[var(--cine-base)]/95 backdrop-blur-xl transition-all duration-300 lg:hidden",
