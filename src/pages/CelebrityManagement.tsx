@@ -2,12 +2,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-
-import { asset, logoAsset } from "@/assets/placeholder";
+import { asset } from "@/assets/placeholder";
 
 const celebrityManagementImage = asset("celebrity-management-image.jpg");
 const celebrityManagementCenter = asset("celebrity-management-center.jpg");
-// import digitalMarketingHero from "@/assets/digital-marketing-hero.jpg";
+
 const CelebrityManagement = () => {
   const leftServices = [
     "Celebrity Endorsements",
@@ -26,24 +25,22 @@ const CelebrityManagement = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-hidden surface-base text-white">
       <Header />
-      
       <ServiceHero
         firstBgImage={celebrityManagementImage}
         title="Celebrity Management"
-        tagline="Where Star Power Meets Strategy"
-        description="We strategically position talent across media platforms, endorsements, events and campaigns - aligining perfectly with
-         the brand's vision and audiences."
+        tagline="Where star power meets strategy"
+        description="We strategically position talent across media platforms, endorsements, events and campaigns — aligned with your brand's vision and audiences."
         leftServices={leftServices}
         rightServices={rightServices}
         centerImage={celebrityManagementCenter}
-        imageAlt="Digital marketing visualization"
+        imageAlt="Celebrity management"
       />
-
-      {/* Insights & Innovations Section */}
-      <InsightsInnovations sectionTwoTitle="The Glare Blog" sectionThreeTitle="Partner With Us to Make Your Vision Real" />
-
+      <InsightsInnovations
+        sectionTwoTitle="The Glare Blog"
+        sectionThreeTitle="Partner with us to make your vision real"
+      />
       <Footer />
     </div>
   );
