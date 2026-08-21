@@ -2,11 +2,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-
-import { asset, logoAsset } from "@/assets/placeholder";
+import { asset } from "@/assets/placeholder";
 
 const filmPromotionImage = asset("fil-promotion-image.jpg");
 const filmPromotionCenter = asset("film-promotion-center.jpg");
+
 const FilmPromotion = () => {
   const leftServices = [
     "Strategic Promotion Planning",
@@ -25,24 +25,22 @@ const FilmPromotion = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-hidden surface-base text-white">
       <Header />
-      
       <ServiceHero
         firstBgImage={filmPromotionImage}
         title="Film Promotion"
-        tagline="Promotions that Move Hearts and Fill Theatres"
-        description="Through a mix of creative storytelling, digital innovation and event excellence, we ensure your film stands out - 
-        on screen and beyond."
+        tagline="Promotions that move hearts and fill theatres"
+        description="Creative storytelling, digital innovation and event excellence — so your film stands out on screen and beyond."
         leftServices={leftServices}
         rightServices={rightServices}
         centerImage={filmPromotionCenter}
-        imageAlt="Digital marketing visualization"
+        imageAlt="Film promotion"
       />
-
-      {/* Insights & Innovations Section */}
-      <InsightsInnovations sectionTwoTitle="Insights & Innovations" sectionThreeTitle="Partner With Us to Make Your Vision Real" />
-
+      <InsightsInnovations
+        sectionTwoTitle="Insights & Innovations"
+        sectionThreeTitle="Partner with us to make your vision real"
+      />
       <Footer />
     </div>
   );
