@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-
 import { asset } from "@/assets/placeholder";
 
 const digitalMarketingImage = asset("digital-marketing-image.jpg");
@@ -10,39 +9,38 @@ const digitalMarketingCenter = asset("digital-marketing-center.jpg");
 
 const DigitalMarketing = () => {
   const leftServices = [
-    "SEO - brand rise above the noise",
-    "Social Media Marketing - Storytelling in Motion",
-    "Content Marketing - Crafted to Connect.",
-    "Email Marketing - Personalised campaigns",
+    "SEO — rise above the noise",
+    "Social Media Marketing — storytelling in motion",
+    "Content Marketing — crafted to connect",
+    "Email Marketing — personalised campaigns",
     "PPC Campaigns",
   ];
 
   const rightServices = [
-    "Influencer Marketing - Star Power Amplified",
-    "Affiliate Marketing - Performance That Grows",
+    "Influencer Marketing — star power amplified",
+    "Affiliate Marketing — performance that grows",
     "Mobile Marketing",
-    "Video Marketing - Visual Stories That Sell",
-    "Online PR - Reputation in the Spotlight.",
+    "Video Marketing — visual stories that sell",
+    "Online PR — reputation in the spotlight",
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-hidden surface-base text-white">
       <Header />
-      
       <ServiceHero
         firstBgImage={digitalMarketingImage}
         title="Digital Marketing"
-        tagline="Digital Brilliance with a Global Pulse"
-        description="From creative storytelling to data driven strategies, we focus on brand identity, driving visibility, blending innovation and insight to make every click count."
+        tagline="Digital brilliance with a global pulse"
+        description="From creative storytelling to data-driven strategies — brand identity, visibility and insight so every click counts."
         leftServices={leftServices}
         rightServices={rightServices}
         centerImage={digitalMarketingCenter}
-        imageAlt="Digital marketing visualization"
+        imageAlt="Digital marketing"
       />
-
-      {/* Insights & Innovations Section */}
-      <InsightsInnovations sectionTwoTitle="Insights & Innovations" sectionThreeTitle="Partner With Us to Make Your Vision Real"/>
-
+      <InsightsInnovations
+        sectionTwoTitle="Insights & Innovations"
+        sectionThreeTitle="Partner with us to make your vision real"
+      />
       <Footer />
     </div>
   );
