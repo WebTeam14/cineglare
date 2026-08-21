@@ -29,6 +29,7 @@ const insightPosts = [
   },
 ];
 
+/** Same soft white surface as About Us structure cards */
 const whiteCard = {
   background: "linear-gradient(145deg, #ffffff 0%, #fafafa 55%, #f7f4f4 100%)",
 } as const;
@@ -52,22 +53,25 @@ const InsightsInnovations = ({
           </h2>
 
           <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2 lg:gap-8">
-            {/* Left — solid brand red */}
-            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#800000] bg-[#800000] shadow-[0_18px_40px_-16px_rgba(128,0,0,0.5)]">
+            {/* Featured — white, solid red on hover (like About structure cards) */}
+            <article
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#800000]/12 shadow-[0_18px_40px_-24px_rgba(0,0,0,0.45)] transition-all duration-500 hover:-translate-y-1 hover:border-[#800000] hover:bg-[#800000] hover:shadow-[0_24px_50px_-20px_rgba(128,0,0,0.35)]"
+              style={whiteCard}
+            >
               <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden">
                 <img
                   src={blogFeatured}
                   alt="Beyond the Inbox: The Power of Personalized Email Marketing"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#800000]/80 via-transparent to-transparent" />
-                <div className="absolute left-4 top-4 rounded-xl bg-white px-3.5 py-2 text-center text-[#800000]">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <div className="absolute left-4 top-4 rounded-xl bg-[#800000] px-3.5 py-2 text-center text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#800000]">
                   <div className="text-lg font-bold leading-none">02</div>
                   <div className="text-[10px] uppercase tracking-wider">Sep</div>
                 </div>
               </div>
               <div className="flex flex-1 flex-col p-5 sm:p-6">
-                <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-white/75">
+                <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-neutral-500 transition-colors duration-300 group-hover:text-white/75">
                   <span className="inline-flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
                     September 2, 2024
@@ -77,12 +81,12 @@ const InsightsInnovations = ({
                     0
                   </span>
                 </div>
-                <h3 className="text-xl font-bold leading-snug text-white sm:text-2xl">
+                <h3 className="text-xl font-bold leading-snug text-neutral-950 transition-colors duration-300 group-hover:text-white sm:text-2xl">
                   Beyond the Inbox: The Power of Personalized Email Marketing
                 </h3>
                 <button
                   type="button"
-                  className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-[#800000] transition-colors duration-300 group-hover:text-white"
                 >
                   Learn more
                   <ArrowRight className="h-4 w-4" />
@@ -90,12 +94,12 @@ const InsightsInnovations = ({
               </div>
             </article>
 
-            {/* Right — white cards, solid red on hover */}
+            {/* Side cards — same white → solid red hover */}
             <div className="flex h-full flex-col gap-4">
               {insightPosts.map((post) => (
                 <article
                   key={post.title}
-                  className="group flex min-h-0 flex-1 cursor-pointer items-center gap-4 overflow-hidden rounded-2xl border border-[#800000]/15 p-3 shadow-[0_12px_32px_-16px_rgba(0,0,0,0.4)] transition-all duration-300 hover:border-[#800000] hover:bg-[#800000] hover:shadow-[0_16px_40px_-12px_rgba(128,0,0,0.5)] sm:p-4"
+                  className="group flex min-h-0 flex-1 cursor-pointer items-center gap-4 overflow-hidden rounded-2xl border border-[#800000]/12 p-3 shadow-[0_12px_32px_-16px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-0.5 hover:border-[#800000] hover:bg-[#800000] hover:shadow-[0_16px_40px_-12px_rgba(128,0,0,0.4)] sm:p-4"
                   style={whiteCard}
                 >
                   <div className="h-full min-h-[5.5rem] w-28 shrink-0 overflow-hidden rounded-xl sm:w-32">
@@ -106,7 +110,7 @@ const InsightsInnovations = ({
                     />
                   </div>
                   <div className="flex min-w-0 flex-1 items-center py-1">
-                    <h4 className="text-sm font-semibold leading-snug text-neutral-950 transition-colors group-hover:text-white sm:text-base">
+                    <h4 className="text-sm font-semibold leading-snug text-neutral-950 transition-colors duration-300 group-hover:text-white sm:text-base">
                       {post.title}
                     </h4>
                   </div>
