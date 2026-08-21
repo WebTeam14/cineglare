@@ -66,24 +66,16 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-[1.5rem] border border-[#800000]/12 p-8 shadow-[0_18px_40px_-24px_rgba(0,0,0,0.55)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/35 hover:shadow-[0_24px_50px_-20px_rgba(128,0,0,0.22)]"
-              style={{
-                animationDelay: `${index * 80}ms`,
-                background:
-                  "linear-gradient(145deg, #fff8f8 0%, #f7f0f0 45%, #f3e8e8 100%)",
-              }}
+              className="group relative overflow-hidden rounded-[1.5rem] border border-[#800000]/12 bg-white p-8 shadow-[0_12px_32px_-18px_rgba(0,0,0,0.45)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000] hover:bg-[#800000] hover:shadow-[0_22px_48px_-16px_rgba(128,0,0,0.4)]"
+              style={{ animationDelay: `${index * 80}ms` }}
             >
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#800000]/[0.07] blur-2xl transition-opacity duration-500 group-hover:bg-[#800000]/[0.12]"
-              />
-              <div className="relative mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#800000]/10 transition-all duration-300 group-hover:scale-105 group-hover:bg-[#800000] group-hover:shadow-[0_8px_24px_rgba(128,0,0,.28)]">
+              <div className="relative mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#800000]/10 transition-all duration-300 group-hover:bg-white/15">
                 <service.icon className="h-7 w-7 text-[#800000] transition-colors duration-300 group-hover:text-white" />
               </div>
-              <h3 className="relative mb-3 text-xl font-bold text-neutral-900">
+              <h3 className="relative mb-3 text-xl font-bold text-neutral-900 transition-colors duration-300 group-hover:text-white">
                 {service.title}
               </h3>
-              <p className="relative text-sm leading-relaxed text-neutral-600">
+              <p className="relative text-sm leading-relaxed text-neutral-600 transition-colors duration-300 group-hover:text-white/85">
                 {service.description}
               </p>
             </div>
