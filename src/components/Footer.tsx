@@ -50,11 +50,7 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-hidden border-t border-white/[0.06] bg-[#0a0a0a]">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#800000]/50 to-transparent"
-      />
+    <footer className="relative overflow-hidden bg-[#0a0a0a]">
       <div
         aria-hidden
         className="pointer-events-none absolute -left-32 bottom-0 h-72 w-72 rounded-full bg-[#800000]/10 blur-[120px]"
