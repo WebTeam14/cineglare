@@ -1,397 +1,169 @@
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Link } from "@tanstack/react-router";
+import {
+  Package,
+  Users2,
+  Globe,
+  Film,
+  TrendingUp,
+  Calendar,
+  ArrowRight,
+} from "lucide-react";
+import { asset } from "@/assets/placeholder";
 
-import { asset, logoAsset } from "@/assets/placeholder";
+const heroImage = asset("about-image.jpg");
 
-const aboutImage = asset("about-image.jpg");
+const services = [
+  {
+    icon: Package,
+    title: "Product Branding",
+    tagline: "We don't just name brands — we create legacies",
+    description:
+      "Build brands that inspire trust, spark emotion and drive engagement with a distinctive voice and lasting impact.",
+    path: "/services/product-branding",
+  },
+  {
+    icon: Users2,
+    title: "Celebrity Management",
+    tagline: "Where star power meets strategy",
+    description:
+      "Position talent across media, endorsements, events and campaigns — aligned with your brand vision and audience.",
+    path: "/services/celebrity-management",
+  },
+  {
+    icon: Globe,
+    title: "Digital Marketing",
+    tagline: "Digital brilliance with a global pulse",
+    description:
+      "Creative storytelling meets data-driven strategy — visibility, identity and performance in every click.",
+    path: "/services/digital-marketing",
+  },
+  {
+    icon: Film,
+    title: "Film & Ad Production",
+    tagline: "Turning concepts into cinematic reality",
+    description:
+      "From concept to screen — cinematic excellence with marketing insight that inspires and builds brand emotion.",
+    path: "/services/film-and-ad-production",
+  },
+  {
+    icon: TrendingUp,
+    title: "Film Promotion",
+    tagline: "Promotions that move hearts and fill theatres",
+    description:
+      "Creative storytelling, digital innovation and event excellence so your film stands out — on screen and beyond.",
+    path: "/services/film-promotion",
+  },
+  {
+    icon: Calendar,
+    title: "Event Management",
+    tagline: "Turning moments into milestones",
+    description:
+      "From red carpets to corporate stages — strategic planning, innovative design and flawless execution.",
+    path: "/services/event-management",
+  },
+];
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-hidden surface-base text-white">
       <Header />
 
-      {/* Services Sections */}
-      {/* Event Management */}
-      <section className="py-20 px-6 mt-5" style={{ background: 'var(--service-bg)' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="flex-1">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-4xl font-bold text-white-900">Event Management</h2>
-                <Button className="bg-black text-white hover:bg-gray-800 rounded-full px-8 whitespace-nowrap">
-                  Turning Moments into Milestone
-                </Button>
-              </div>
-              <p className="text-gray-700 mb-8 leading-relaxed">
-                From Red Carpets to Corporate Stages, we create moments blending strategic planning, innovative design and flawless execution to transform vision into reality
-              </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <ul className="space-y-3 text-white-800">
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Corporate Events</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Brand & Promotional Events</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Entertainment Events</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Social & Cultural Events</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Builders' Expo / Roadshow</span>
-                  </li>
-                </ul>
-                <ul className="space-y-3 text-white-800">
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Wedding & Private Events</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Exhibitions & Trade Fairs</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Sports Events</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Charity & Fundraising Events</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Virtual & Hybrid Events</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="lg:w-80 flex justify-center items-center mt-10">
-              <div className="w-64 h-64 bg-gray-300/50 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                <img
-                src={aboutImage}
-                alt="Cineglare team celebrating"
-                className="w-full h-auto object-cover"
-              />
-                {/* <div className="text-6xl text-white-400">👤</div> */}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <main>
+        <section className="relative isolate flex min-h-[55vh] items-end overflow-hidden bg-black md:min-h-[62svh]">
+          <img
+            src={heroImage}
+            alt=""
+            aria-hidden
+            className="absolute inset-0 h-full w-full object-cover opacity-60"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--cine-base,#060606)] via-transparent to-black/30" />
 
-      {/* Film & AD Production */}
-      <section className="py-20 px-6" style={{ background: 'var(--service-bg)' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="flex-1">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-4xl font-bold text-white-900">Film & AD Production</h2>
-                <Button className="bg-black text-white hover:bg-gray-800 rounded-full px-8 whitespace-nowrap">
-                  Turning Concepts into Cinematic Reality
-                </Button>
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 sm:px-8 md:pb-16 lg:px-12">
+            <div className="max-w-3xl">
+              <div className="mb-5 flex items-center gap-3">
+                <span className="h-px w-12 bg-[#800000]" />
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+                  What we do
+                </span>
               </div>
-              <p className="text-gray-700 mb-8 leading-relaxed">
-                From concept to screen, we handle every stage - combining cinematic excellence with marketing insight, that inspire, influence and build brand emotion.
+              <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                Services
+                <span className="block text-[#800000]">we deliver.</span>
+              </h1>
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
+                Star-powered influence, unforgettable experiences and cinematic
+                storytelling — strategy and execution that turns brands into
+                icons.
               </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <ul className="space-y-3 text-white-800">
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Concept & Script Development</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Casting & Talent Management</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Location Scouting & Set Design</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Pre-Production Planning</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Filming & Direction</span>
-                  </li>
-                </ul>
-                <ul className="space-y-3 text-white-800">
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Post-Production Excellence.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Music, Voiceover & Sound Design</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Brand Films & TV Commercials</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Digital & Social Media Ads</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Behind-the-Scenes & Promo Shoots</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="lg:w-80 flex justify-center items-center mt-10">
-              <div className="w-64 h-64 bg-gray-300/50 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                <img
-                src={aboutImage}
-                alt="Cineglare team celebrating"
-                className="w-full h-auto object-cover"
-              />
-              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Digital Marketing */}
-      <section className="py-20 px-6" style={{ background: 'var(--service-bg)' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="flex-1">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-4xl font-bold text-white-900">Digital Marketing</h2>
-                <Button className="bg-black text-white hover:bg-gray-800 rounded-full px-8 whitespace-nowrap">
-                  Digital Brilliance with a Global Pulse
-                </Button>
-              </div>
-              <p className="text-gray-700 mb-8 leading-relaxed">
-                From creative storytelling to data driven strategies, we focus on brand identity, driving visibility, blending innovation and insight to make every click count.
-              </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <ul className="space-y-3 text-white-800">
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>SEO – brand rise above the noise</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Social Media Marketing – Storytelling in Motion</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Content Marketing – Crafted to Connect.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Email Marketing – Personalised campaigns</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>PPC Campaigns</span>
-                  </li>
-                </ul>
-                <ul className="space-y-3 text-white-800">
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Influencer Marketing – Star Power Amplified</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Affiliate Marketing – Performance That Grows</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Mobile Marketing</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Video Marketing – Visual Stories That Sell</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Online PR – Reputation in the Spotlight.</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="lg:w-80 flex justify-center items-center mt-10">
-              <div className="w-64 h-64 bg-gray-300/50 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                <img
-                src={aboutImage}
-                alt="Cineglare team celebrating"
-                className="w-full h-auto object-cover"
-              />
-                {/* <div className="text-6xl text-gray-400">👤</div> */}
-              </div>
+        <section className="relative overflow-hidden surface-raise py-14 sm:py-16 lg:py-20">
+          <div
+            aria-hidden
+            className="absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-[#800000]/10 blur-[100px]"
+          />
+          <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {services.map((service) => {
+                const Icon = service.icon;
+                return (
+                  <Link
+                    key={service.path}
+                    to={service.path}
+                    className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/50 hover:bg-[#800000]/10 sm:p-8"
+                  >
+                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#800000]/15 text-[#800000] transition-all duration-300 group-hover:bg-[#800000] group-hover:text-white group-hover:shadow-[0_8px_24px_rgba(128,0,0,.35)]">
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    <h2 className="text-xl font-bold tracking-tight text-white">
+                      {service.title}
+                    </h2>
+                    <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#800000]">
+                      {service.tagline}
+                    </p>
+                    <p className="mt-4 flex-1 text-sm leading-relaxed text-white/55">
+                      {service.description}
+                    </p>
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition-colors group-hover:text-white">
+                      Explore
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Celebrity Management */}
-      <section className="py-20 px-6" style={{ background: 'var(--service-bg)' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="flex-1">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-4xl font-bold text-white-900">Celebrity Management</h2>
-                <Button className="bg-black text-white hover:bg-gray-800 rounded-full px-8 whitespace-nowrap">
-                  "Where Star Power Meets Strategy"
-                </Button>
-              </div>
-              <p className="text-gray-700 mb-8 leading-relaxed">
-                We strategically position talent across media platforms, endorsements, events and campaigns - aligning perfectly with a brand's vision and audiences.
-              </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <ul className="space-y-3 text-white-800">
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Celebrity Endorsements</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Brand Collaborations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Event Appearances</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Film & Ad Casting</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Digital & Social Media Management</span>
-                  </li>
-                </ul>
-                <ul className="space-y-3 text-white-800">
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>PR & Media Relations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Talent Scheduling & Logistics</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Personal Branding & Image Consulting</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Crisis & Reputation Management</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Global Representation</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="lg:w-80 flex justify-center items-center mt-10">
-              <div className="w-64 h-64 bg-gray-300/50 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                <img
-                src={aboutImage}
-                alt="Cineglare team celebrating"
-                className="w-full h-auto object-cover"
-              />
-                {/* <div className="text-6xl text-gray-400">👤</div> */}
-              </div>
-            </div>
+        <section className="relative overflow-hidden surface-base py-14 text-center sm:py-16">
+          <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#800000]/15 blur-[100px]" />
+          <div className="relative mx-auto max-w-3xl px-6">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+              Next step
+            </span>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Not sure where to start?
+            </h2>
+            <p className="mx-auto mt-4 max-w-lg text-white/60">
+              Tell us about your brand or project — we'll recommend the
+              right mix of services.
+            </p>
+            <Link
+              to="/contact"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#800000] px-8 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000]"
+            >
+              Get a free quote
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      {/* Product Branding */}
-      <section className="py-20 px-6" style={{ background: 'var(--service-bg)' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="flex-1">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-4xl font-bold text-white-900">Product Branding</h2>
-                <Button className="bg-black text-white hover:bg-gray-800 rounded-full px-8 whitespace-nowrap">
-                  We don't just name brands - we create legacies
-                </Button>
-              </div>
-              <p className="text-gray-700 mb-8 leading-relaxed">
-                We specialize in building brands that inspire trust, sparks emotions and drive engagement through innovative product branding to give your product a distinctive voice and lasting impact.
-              </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-bold text-primary mb-3 text-lg">Brand Strategy and designing</h3>
-                  <ul className="space-y-3 text-white-800">
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Brand Naming & Tagline</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Brand Strategy & Competitive Positioning</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Brand Story & Messaging Guideline</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Logo Design & Visual Identity System</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Packaging Design & Retail Presentation</span>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-bold text-primary mb-3 text-lg">Brand Marketing</h3>
-                  <ul className="space-y-3 text-white-800">
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Digital Branding (Website/Social/E-Com)</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Marketing Campaign Concept</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>AD Production – TV, Radio and Print</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Product Launch Promotion & Media Integration</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span>Influencer & Celebrity Collaboration Planning</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="lg:w-80 flex justify-center items-center mt-10">
-              <div className="w-64 h-64 bg-gray-300/50 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                <img
-                src={aboutImage}
-                alt="Cineglare team celebrating"
-                className="w-full h-auto object-cover"
-              />
-                {/* <div className="text-6xl text-gray-400">👤</div> */}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <Footer />
     </div>
   );
