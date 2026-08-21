@@ -310,6 +310,12 @@ const AboutUs = () => {
                   <blockquote className="relative z-10">
                     <p className="text-center text-lg font-semibold leading-[1.7] tracking-normal text-neutral-900 sm:text-xl sm:leading-[1.75] md:text-2xl md:leading-[1.65]">
                       With visionary leadership and creative foresight, he has built Cineglare into a powerhouse of innovation, crafting stories that resonate globally.
+                      <span
+                        aria-hidden
+                        className="ml-1 inline-block translate-y-1 font-serif text-4xl leading-none text-[#800000] sm:text-5xl"
+                      >
+                        ”
+                      </span>
                     </p>
                   </blockquote>
                   <figcaption className="relative z-10 mt-8 flex items-center justify-center gap-3">
