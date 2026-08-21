@@ -94,12 +94,12 @@ const ServiceHero = ({
             {allServices.map((item) => (
               <div
                 key={item}
-                className="group flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 transition-all duration-300 hover:border-[#800000]/50 hover:bg-[#800000]/15"
+                className="group flex items-start gap-3 rounded-2xl border border-black/5 bg-white px-4 py-4 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/30 hover:shadow-[0_12px_28px_-10px_rgba(128,0,0,0.25)]"
               >
-                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#800000]/20 text-[#800000] transition-colors group-hover:bg-[#800000] group-hover:text-white">
+                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#800000] text-white">
                   <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
                 </span>
-                <p className="text-sm font-medium leading-snug text-white/80 group-hover:text-white sm:text-[15px]">
+                <p className="text-sm font-medium leading-snug text-neutral-900 sm:text-[15px]">
                   {item}
                 </p>
               </div>
@@ -115,7 +115,7 @@ const ServiceHero = ({
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center justify-center rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold text-white/70 transition-colors hover:border-white/30 hover:text-white"
+              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white px-7 py-3.5 text-sm font-semibold text-neutral-900 transition-all duration-300 hover:-translate-y-0.5 hover:bg-neutral-100"
             >
               All services
             </Link>
