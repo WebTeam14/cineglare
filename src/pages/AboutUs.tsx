@@ -111,7 +111,7 @@ const AnimatedStat = ({
       }
       style={{
         background: accent
-          ? "linear-gradient(145deg, #a00000 0%, #800000 48%, #6a0000 100%)"
+          ? "#800000"
           : "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)",
       }}
     >
@@ -255,7 +255,7 @@ const AboutUs = () => {
                 <article
                   key={item.number}
                   className={item.accent ? "group relative overflow-hidden rounded-[2rem] border border-[#800000]/50 p-7 shadow-[0_20px_48px_-16px_rgba(128,0,0,0.45)] transition-all duration-500 hover:-translate-y-1 sm:p-10" : "group relative overflow-hidden rounded-[2rem] border border-[#800000]/15 p-7 shadow-[0_16px_40px_-20px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-1 hover:border-[#800000]/35 sm:p-10"}
-                  style={{ background: item.accent ? "linear-gradient(145deg, #a00000 0%, #800000 48%, #6a0000 100%)" : "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)" }}
+                  style={{ background: item.accent ? "#800000" : "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)" }}
                 >
                   <div className="mb-8 flex items-center justify-between">
                     <span className={item.accent ? "flex h-12 w-12 items-center justify-center rounded-xl bg-white/15 text-sm font-bold text-white" : "flex h-12 w-12 items-center justify-center rounded-xl bg-[#800000] text-sm font-bold text-white"}>{item.number}</span>
@@ -307,7 +307,7 @@ const AboutUs = () => {
                   <article
                     key={person.name}
                     className={person.accent ? "group relative overflow-hidden rounded-[1.5rem] border border-[#800000]/50 p-7 shadow-[0_20px_48px_-16px_rgba(128,0,0,0.4)] transition-all duration-500 hover:-translate-y-1 sm:p-8" : "group relative overflow-hidden rounded-[1.5rem] border border-[#800000]/15 p-7 shadow-[0_14px_36px_-18px_rgba(0,0,0,0.45)] transition-all duration-500 hover:-translate-y-1 hover:border-[#800000]/35 sm:p-8"}
-                    style={{ background: person.accent ? "linear-gradient(145deg, #a00000 0%, #800000 48%, #6a0000 100%)" : "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)" }}
+                    style={{ background: person.accent ? "#800000" : "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)" }}
                   >
                     <div className="flex items-start gap-5">
                       <div className={person.accent ? "flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border-2 border-white/30 bg-white/15 text-xl font-bold text-white" : "flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border-2 border-[#800000] bg-[#800000]/10 text-xl font-bold text-[#800000]"}>
@@ -335,7 +335,7 @@ const AboutUs = () => {
                   <article
                     key={title}
                     className={index === 0 ? "group rounded-2xl border border-[#800000]/50 p-5 text-center shadow-[0_16px_40px_-16px_rgba(128,0,0,0.4)] transition-all duration-300 hover:-translate-y-1" : "group rounded-2xl border border-[#800000]/15 p-5 text-center shadow-[0_12px_32px_-18px_rgba(0,0,0,0.4)] transition-all duration-300 hover:-translate-y-1 hover:border-[#800000]/35"}
-                    style={{ background: index === 0 ? "linear-gradient(145deg, #a00000 0%, #800000 48%, #6a0000 100%)" : "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)" }}
+                    style={{ background: index === 0 ? "#800000" : "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)" }}
                   >
                     <Icon className={index === 0 ? "mx-auto h-7 w-7 text-white" : "mx-auto h-7 w-7 text-[#800000]"} />
                     <h4 className={index === 0 ? "mt-4 font-bold text-white" : "mt-4 font-bold text-neutral-900"}>{title}</h4>
