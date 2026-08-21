@@ -29,11 +29,6 @@ const insightPosts = [
   },
 ];
 
-/** White with soft red tint — same language as home / Built to Create cards */
-const whiteRedTint = {
-  background: "linear-gradient(145deg, #fff8f8 0%, #f7f0f0 45%, #f3e8e8 100%)",
-} as const;
-
 const InsightsInnovations = ({
   sectionTwoTitle,
   sectionThreeTitle,
@@ -53,22 +48,22 @@ const InsightsInnovations = ({
           </h2>
 
           <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2 lg:gap-8">
-            {/* LEFT — solid brand red, no gradient, no hover color swap */}
-            <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#800000] bg-[#800000] shadow-[0_18px_40px_-16px_rgba(128,0,0,0.45)]">
+            {/* Featured — original dark card */}
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
               <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden">
                 <img
                   src={blogFeatured}
                   alt="Beyond the Inbox: The Power of Personalized Email Marketing"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#800000] via-[#800000]/20 to-transparent" />
-                <div className="absolute left-4 top-4 rounded-xl bg-white px-3.5 py-2 text-center text-[#800000]">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute left-4 top-4 rounded-xl bg-[#800000] px-3.5 py-2 text-center text-white">
                   <div className="text-lg font-bold leading-none">02</div>
                   <div className="text-[10px] uppercase tracking-wider">Sep</div>
                 </div>
               </div>
-              <div className="flex flex-1 flex-col bg-[#800000] p-5 sm:p-6">
-                <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-white/80">
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-white/45">
                   <span className="inline-flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
                     September 2, 2024
@@ -83,7 +78,7 @@ const InsightsInnovations = ({
                 </h3>
                 <button
                   type="button"
-                  className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-[#800000] transition-colors hover:text-[#a00000]"
                 >
                   Learn more
                   <ArrowRight className="h-4 w-4" />
@@ -91,13 +86,12 @@ const InsightsInnovations = ({
               </div>
             </article>
 
-            {/* RIGHT — white + soft red gradient; solid red on hover only */}
+            {/* Side list — original dark cards */}
             <div className="flex h-full flex-col gap-4">
               {insightPosts.map((post) => (
                 <article
                   key={post.title}
-                  className="group flex min-h-0 flex-1 cursor-pointer items-center gap-4 overflow-hidden rounded-2xl border border-[#800000]/15 p-3 shadow-[0_12px_32px_-16px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-0.5 hover:border-[#800000] hover:bg-[#800000] hover:shadow-[0_16px_40px_-12px_rgba(128,0,0,0.4)] sm:p-4"
-                  style={whiteRedTint}
+                  className="group flex min-h-0 flex-1 cursor-pointer items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-3 transition-all duration-300 hover:border-[#800000]/40 hover:bg-[#800000]/10 sm:p-4"
                 >
                   <div className="h-full min-h-[5.5rem] w-28 shrink-0 overflow-hidden rounded-xl sm:w-32">
                     <img
@@ -107,7 +101,7 @@ const InsightsInnovations = ({
                     />
                   </div>
                   <div className="flex min-w-0 flex-1 items-center py-1">
-                    <h4 className="text-sm font-semibold leading-snug text-neutral-950 transition-colors duration-300 group-hover:text-white sm:text-base">
+                    <h4 className="text-sm font-semibold leading-snug text-white/85 transition-colors group-hover:text-white sm:text-base">
                       {post.title}
                     </h4>
                   </div>
@@ -118,6 +112,7 @@ const InsightsInnovations = ({
         </div>
       </section>
 
+      {/* CTA — matched to homepage */}
       <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
         <div className="absolute inset-0 z-0">
           <img
