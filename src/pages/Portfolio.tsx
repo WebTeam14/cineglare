@@ -5,44 +5,56 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Play } from "lucide-react";
 import { asset, portfolioVideo } from "@/assets/placeholder";
 
-const portfolioHero = asset("portfoliohero.png");
-
+const aboutHero = asset("Portfolio.mp4");
 const videoFiles = [
-  "00 PorscheGolf 2025Day1HighlightReel.mp4",
-  "Customer Testimonials.mp4",
-  "Day 1 Story.mp4",
-  "Day2.mp4",
-  "Day3.mp4",
-  "Porsche Highlight Video.mp4",
+  "00 PorscheGolf_2025Day1HighlightReel.MP4",
+  "Customer Testimonials.MP4",
+  "Day 1 Story.MP4",
+  "Day 2 HL.mp4",
+  "Day2 Match HL Reel.mp4",
+  "Glauka.mp4",
+  "Golf Day - 2 Reel.mp4",
+  "HP Elevate - 2025.mp4",
+  "Match Day 3.mp4",
+  "Match Day 4 HL.mp4",
+  "Mayur patil Reel.mp4",
+  "Porsche - Golf Day 2 Story.MP4",
+  "Porsche - Horizontal.mp4",
+  "Shankar Mahadevan.mp4",
+  "WESTSIDE.mp4",
 ];
 
-const formatTitle = (filename: string) =>
-  filename
-    .replace(/\.mp4$/i, "")
-    .replace(/[_-]+/g, " ")
-    .trim();
+function formatTitle(filename: string) {
+  return filename
+    .replace(/\.(mp4|MP4)$/i, "")
+    .replace(/_/g, " ")
+    .replace(/-/g, " ");
+}
 
-const Portfolio = () => {
+export default function Portfolio() {
   const [open, setOpen] = useState(false);
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen overflow-x-hidden surface-base text-white">
+    <div className="min-h-screen overflow-x-hidden bg-black text-white">
       <Header />
-      <main>
-        {/* Hero */}
-        <section className="relative isolate min-h-[55svh] overflow-hidden surface-deep sm:min-h-[60svh]">
+
+      <main className="overflow-hidden">
+        {/* ---------------------- HERO SECTION ---------------------- */}
+        <section className="relative isolate flex min-h-[70vh] items-end overflow-hidden bg-black md:min-h-[88svh]">
           <video
-            src={portfolioHero}
+            src={aboutHero}
             autoPlay
-            muted
             loop
+            muted
             playsInline
-            className="absolute inset-0 h-full w-full object-cover object-center opacity-60"
+            className="absolute inset-0 h-full w-full object-cover"
           />
+
           {/* Light scrims — keep type readable without hiding the video (aligned with home Hero) */}
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,6,6,.92)_0%,rgba(6,6,6,.55)_45%,rgba(6,6,6,.25)_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--cine-base)_0%,rgba(6,6,6,.4)_30%,transparent_55%,rgba(6,6,6,.25)_100%)]" />
+          <div className="absolute inset-0 bg-black/25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/15" />
           <div
             aria-hidden
             className="absolute -right-24 top-20 h-80 w-80 rounded-full bg-[#800000]/18 blur-[110px]"
@@ -51,35 +63,49 @@ const Portfolio = () => {
             aria-hidden
             className="absolute bottom-0 left-1/4 h-64 w-64 rounded-full bg-[#800000]/12 blur-[100px]"
           />
+          <div
+            aria-hidden
+            className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[var(--cine-base,#060606)] to-transparent"
+          />
 
-          <div className="relative mx-auto flex min-h-[55svh] max-w-7xl items-end px-6 pb-12 pt-28 sm:min-h-[60svh] sm:px-8 md:pb-16 lg:px-12">
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 sm:px-8 md:pb-20 lg:px-12">
             <div className="max-w-3xl">
-              <div className="mb-5 flex items-center gap-3">
+              <div className="mb-6 flex items-center gap-3">
                 <span className="h-px w-12 bg-[#800000]" />
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-                  Our Work
+                  Selected Work
                 </span>
               </div>
               <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                Portfolio
-                <span className="block text-[#800000]">in motion.</span>
+                Events
+                <span className="block text-[#800000]">worth watching.</span>
               </h1>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
-                A selection of campaigns, events and productions that turned brand
-                visions into memorable experiences.
+                Highlights from brand films, live productions and unforgettable
+                experiences we have brought to life.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Showreel grid */}
-        <section className="relative overflow-hidden surface-raise py-14 sm:py-16 lg:py-20">
+        {/* ---------------------- PORTFOLIO VIDEOS SECTION ---------------------- */}
+        <section className="relative overflow-hidden surface-raise py-16 sm:py-20 lg:py-28">
+          {/* Soft grain + ambient orb (home-page Section pattern) */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 z-0 opacity-[0.04] mix-blend-overlay"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+            }}
+          />
           <div
             aria-hidden
             className="absolute left-1/2 top-0 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[#800000]/10 blur-[120px]"
           />
-          <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-            <div className="mx-auto mb-12 max-w-3xl text-center">
+
+          <div className="relative z-[1] mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+            <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
               <div className="mb-4 flex items-center justify-center gap-3">
                 <span className="h-px w-10 bg-[#800000]" />
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
@@ -87,8 +113,9 @@ const Portfolio = () => {
                 </span>
                 <span className="h-px w-10 bg-[#800000]" />
               </div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-                Watch <span className="text-[#800000]">Highlights.</span>
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+                Watch
+                <span className="text-[#800000]"> Highlights.</span>
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
                 Moments from our events, campaigns and productions — crafted to
@@ -116,7 +143,7 @@ const Portfolio = () => {
                       setOpen(true);
                     }}
                   >
-                    <div className="relative h-52 overflow-hidden bg-neutral-900 sm:h-56">
+                    <div className="relative h-52 overflow-hidden bg-black sm:h-56">
                       <video
                         src={videoPath}
                         muted
@@ -143,11 +170,12 @@ const Portfolio = () => {
                           }
                         }}
                       />
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                         <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#800000] text-white shadow-[0_12px_35px_rgba(128,0,0,.4)] transition-transform duration-300 group-hover:scale-110">
                           <Play className="ml-0.5 h-6 w-6 fill-current" />
                         </span>
                       </div>
+                      <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/80 to-transparent" />
                     </div>
 
                     <div className="p-5">
@@ -175,21 +203,27 @@ const Portfolio = () => {
             <DialogContent className="max-w-4xl w-[calc(100%-2rem)] gap-0 overflow-hidden border-white/10 bg-black p-0">
               <DialogTitle className="sr-only">Video Player</DialogTitle>
               {activeVideo && (
-                <video
-                  key={activeVideo}
-                  src={activeVideo}
-                  controls
-                  autoPlay
-                  className="aspect-video w-full bg-black"
-                />
+                <div
+                  className="relative w-full bg-black"
+                  style={{ aspectRatio: "16/9", minHeight: "400px" }}
+                >
+                  <video
+                    key={activeVideo}
+                    src={activeVideo}
+                    controls
+                    autoPlay
+                    playsInline
+                    className="absolute inset-0 h-full w-full"
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
               )}
             </DialogContent>
           </Dialog>
         </section>
       </main>
+
       <Footer />
     </div>
   );
-};
-
-export default Portfolio;
+}
