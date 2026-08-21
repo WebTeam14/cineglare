@@ -299,21 +299,19 @@ const AboutUs = () => {
                 <h3 className="text-xl font-bold tracking-tight sm:text-2xl">Our Leadership</h3>
                 <span className="h-px flex-1 bg-gradient-to-l from-transparent to-[#800000]" />
               </div>
-              <div className="mx-auto max-w-3xl px-2">
-                <blockquote className="relative text-center">
-                  <p className="text-lg font-medium leading-relaxed text-white sm:text-xl sm:leading-8 md:text-2xl">
+              <div className="mx-auto max-w-2xl px-4 sm:px-6">
+                <blockquote className="relative border-l-4 border-[#800000] pl-6 sm:pl-8">
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -left-1 -top-8 select-none font-serif text-[5.5rem] leading-none text-[#800000] sm:-top-10 sm:text-[7rem]"
+                  >
+                    “
+                  </span>
+                  <p className="pt-6 text-lg font-normal leading-[1.75] tracking-wide text-white/90 sm:pt-8 sm:text-xl sm:leading-[1.8] md:text-[1.35rem]">
+                    With visionary leadership and creative foresight, he has built Cineglare into a powerhouse of innovation, crafting stories that resonate globally.
                     <span
                       aria-hidden
-                      className="mr-1 align-[-0.35em] font-serif text-5xl leading-none text-[#800000] sm:mr-2 sm:text-6xl md:text-7xl"
-                    >
-                      “
-                    </span>
-                    With visionary leadership and creative foresight, he has built
-                    Cineglare into a powerhouse of innovation, crafting stories
-                    that resonate globally.
-                    <span
-                      aria-hidden
-                      className="ml-1 align-[-0.35em] font-serif text-5xl leading-none text-[#800000] sm:ml-2 sm:text-6xl md:text-7xl"
+                      className="ml-1 inline-block translate-y-1 font-serif text-4xl leading-none text-[#800000] sm:text-5xl"
                     >
                       ”
                     </span>
