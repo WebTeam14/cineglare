@@ -115,21 +115,21 @@ const Services = () => {
                   <Link
                     key={service.path}
                     to={service.path}
-                    className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/50 hover:bg-[#800000]/10 sm:p-8"
+                    className="group relative flex flex-col overflow-hidden rounded-[1.5rem] border border-[#800000]/12 bg-white p-7 shadow-[0_12px_32px_-18px_rgba(0,0,0,0.45)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000] hover:bg-[#800000] hover:shadow-[0_22px_48px_-16px_rgba(128,0,0,0.4)] sm:p-8"
                   >
-                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#800000]/15 text-[#800000] transition-all duration-300 group-hover:bg-[#800000] group-hover:text-white group-hover:shadow-[0_8px_24px_rgba(128,0,0,.35)]">
+                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#800000]/10 text-[#800000] transition-all duration-300 group-hover:bg-white/15 group-hover:text-white">
                       <Icon className="h-7 w-7" />
                     </div>
-                    <h2 className="text-xl font-bold tracking-tight text-white">
+                    <h2 className="text-xl font-bold tracking-tight text-neutral-900 transition-colors duration-300 group-hover:text-white">
                       {service.title}
                     </h2>
-                    <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#800000]">
+                    <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#800000] transition-colors duration-300 group-hover:text-white/85">
                       {service.tagline}
                     </p>
-                    <p className="mt-4 flex-1 text-sm leading-relaxed text-white/55">
+                    <p className="mt-4 flex-1 text-sm leading-relaxed text-neutral-600 transition-colors duration-300 group-hover:text-white/85">
                       {service.description}
                     </p>
-                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition-colors group-hover:text-white">
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#800000] transition-colors duration-300 group-hover:text-white">
                       Explore
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
