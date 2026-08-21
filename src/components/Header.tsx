@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useRouterState } from "@tanstack/react-router";
@@ -12,13 +12,6 @@ import { cn } from "@/lib/utils";
 import logo from "@/assets/logo/Cineglare.svg";
 
 /** Home → About → Services → Portfolio → Contact */
-const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "About Us", path: "/aboutus" },
-  { name: "Portfolio", path: "/portfolio" },
-  { name: "Contact", path: "/contact" },
-];
-
 const servicesLinks = [
   { name: "Product Branding", path: "/services/product-branding" },
   { name: "Celebrity Management", path: "/services/celebrity-management" },
@@ -32,6 +25,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
@@ -45,6 +39,25 @@ const Header = () => {
     setIsMenuOpen(false);
     setServicesOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimer.current) clearTimeout(closeTimer.current);
+    };
+  }, []);
+
+  const openServices = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+    setServicesOpen(true);
+  };
+
+  const scheduleCloseServices = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setServicesOpen(false), 120);
+  };
 
   const isActive = (path: string) => {
     if (path === "/") return pathname === "/";
@@ -94,50 +107,73 @@ const Header = () => {
             About Us
           </Link>
 
-          <DropdownMenu open={servicesOpen} onOpenChange={setServicesOpen}>
-            <DropdownMenuTrigger
-              className={cn(
-                linkClass(servicesActive),
-                "inline-flex items-center gap-1.5 outline-none data-[state=open]:text-white",
-              )}
+          {/* Hover to open — not click */}
+          <div
+            className="relative"
+            onMouseEnter={openServices}
+            onMouseLeave={scheduleCloseServices}
+          >
+            <DropdownMenu
+              open={servicesOpen}
+              onOpenChange={setServicesOpen}
+              modal={false}
             >
-              Services
-              <ChevronDown
-                className={cn(
-                  "h-3.5 w-3.5 opacity-70 transition-transform duration-300",
-                  servicesOpen && "rotate-180",
-                )}
-              />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent
-              align="center"
-              sideOffset={14}
-              className="min-w-[260px] rounded-2xl border border-white/10 bg-[#0c0c0c] p-2 shadow-[0_20px_50px_rgba(0,0,0,.6)]"
-            >
-              {servicesLinks.map((service) => {
-                const active = isActive(service.path);
-                return (
-                  <DropdownMenuItem
-                    key={service.name}
-                    asChild
-                    className="cursor-pointer rounded-xl p-0 focus:bg-transparent"
-                  >
-                    <Link
-                      to={service.path}
-                      className={cn(
-                        "block rounded-xl px-3.5 py-2.5 text-sm font-medium transition-colors duration-200",
-                        active
-                          ? "bg-[#800000] text-white"
-                          : "text-white/75 hover:bg-[#800000] hover:text-white",
-                      )}
+              <DropdownMenuTrigger asChild>
+                <button
+                  type="button"
+                  className={cn(
+                    linkClass(servicesActive || servicesOpen),
+                    "inline-flex items-center gap-1.5 outline-none",
+                  )}
+                  aria-expanded={servicesOpen}
+                  onClick={(e) => {
+                    // Prefer hover; allow click only as fallback (keyboard / touch hybrid)
+                    e.preventDefault();
+                    setServicesOpen((v) => !v);
+                  }}
+                >
+                  Services
+                  <ChevronDown
+                    className={cn(
+                      "h-3.5 w-3.5 opacity-70 transition-transform duration-300",
+                      servicesOpen && "rotate-180",
+                    )}
+                  />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align="center"
+                sideOffset={12}
+                onCloseAutoFocus={(e) => e.preventDefault()}
+                onMouseEnter={openServices}
+                onMouseLeave={scheduleCloseServices}
+                className="min-w-[260px] rounded-2xl border border-white/10 bg-[#0c0c0c] p-2 shadow-[0_20px_50px_rgba(0,0,0,.6)]"
+              >
+                {servicesLinks.map((service) => {
+                  const active = isActive(service.path);
+                  return (
+                    <DropdownMenuItem
+                      key={service.name}
+                      asChild
+                      className="cursor-pointer rounded-xl p-0 focus:bg-transparent"
                     >
-                      {service.name}
-                    </Link>
-                  </DropdownMenuItem>
-                );
-              })}
-            </DropdownMenuContent>
-          </DropdownMenu>
+                      <Link
+                        to={service.path}
+                        className={cn(
+                          "block rounded-xl px-3.5 py-2.5 text-sm font-medium transition-colors duration-200",
+                          active
+                            ? "bg-[#800000] text-white"
+                            : "text-white/75 hover:bg-[#800000] hover:text-white",
+                        )}
+                      >
+                        {service.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  );
+                })}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
 
           <Link to="/portfolio" className={linkClass(isActive("/portfolio"))}>
             Portfolio
@@ -167,7 +203,7 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Mobile */}
+      {/* Mobile — still tap to expand list (no hover) */}
       <div
         className={cn(
           "overflow-hidden border-t border-white/10 bg-[var(--cine-base)]/95 backdrop-blur-xl transition-all duration-300 lg:hidden",
