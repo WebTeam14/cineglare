@@ -50,7 +50,12 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-hidden bg-[#0a0a0a]">
+    <footer className="relative overflow-hidden surface-base text-white">
+      {/* Soft blend from previous section into footer */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[var(--cine-base)] to-transparent"
+      />
       <div
         aria-hidden
         className="pointer-events-none absolute -left-32 bottom-0 h-72 w-72 rounded-full bg-[#800000]/10 blur-[120px]"
@@ -60,7 +65,7 @@ const Footer = () => {
         className="pointer-events-none absolute -right-24 top-1/4 h-64 w-64 rounded-full bg-[#800000]/[0.07] blur-[100px]"
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 pt-14 pb-8 sm:px-8 lg:px-12 lg:pt-16">
+      <div className="relative mx-auto max-w-7xl px-6 pt-16 pb-8 sm:px-8 lg:px-12 lg:pt-20">
         <div className="mb-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:mb-14 lg:grid-cols-4 lg:gap-12">
           {/* Brand */}
           <div>
@@ -204,7 +209,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.08] pt-6 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-6 sm:flex-row">
           <p className="text-center text-xs text-white/40 sm:text-left sm:text-sm">
             © {new Date().getFullYear()} CineGlare — Crafting Vision into Reality.
             All rights reserved.
