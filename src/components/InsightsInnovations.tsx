@@ -48,22 +48,22 @@ const InsightsInnovations = ({
           </h2>
 
           <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2 lg:gap-8">
-            {/* Featured — original dark card */}
-            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
+            {/* Featured */}
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10">
               <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden">
                 <img
                   src={blogFeatured}
                   alt="Beyond the Inbox: The Power of Personalized Email Marketing"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute left-4 top-4 rounded-xl bg-[#800000] px-3.5 py-2 text-center text-white">
                   <div className="text-lg font-bold leading-none">02</div>
                   <div className="text-[10px] uppercase tracking-wider">Sep</div>
                 </div>
               </div>
-              <div className="flex flex-1 flex-col p-5 sm:p-6">
-                <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-white/45">
+              {/* Description — solid brand red, no gradient */}
+              <div className="flex flex-1 flex-col bg-[#800000] p-5 sm:p-6">
+                <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-white/80">
                   <span className="inline-flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
                     September 2, 2024
@@ -78,7 +78,7 @@ const InsightsInnovations = ({
                 </h3>
                 <button
                   type="button"
-                  className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-[#800000] transition-colors hover:text-[#a00000]"
+                  className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                 >
                   Learn more
                   <ArrowRight className="h-4 w-4" />
@@ -86,7 +86,7 @@ const InsightsInnovations = ({
               </div>
             </article>
 
-            {/* Side list — original dark cards */}
+            {/* Side list */}
             <div className="flex h-full flex-col gap-4">
               {insightPosts.map((post) => (
                 <article
@@ -112,7 +112,6 @@ const InsightsInnovations = ({
         </div>
       </section>
 
-      {/* CTA — matched to homepage */}
       <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
         <div className="absolute inset-0 z-0">
           <img
