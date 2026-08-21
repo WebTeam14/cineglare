@@ -299,12 +299,24 @@ const AboutUs = () => {
                 <h3 className="text-xl font-bold tracking-tight sm:text-2xl">Our Leadership</h3>
                 <span className="h-px flex-1 bg-gradient-to-l from-transparent to-[#800000]" />
               </div>
-              <div className="mx-auto max-w-3xl">
-                <article className="rounded-[1.5rem] border border-[#800000]/50 bg-[#800000] p-8 shadow-[0_20px_48px_-16px_rgba(128,0,0,0.4)] sm:p-10">
-                  <p className="text-center text-lg font-medium leading-relaxed text-white sm:text-xl sm:leading-8">
+              <div className="mx-auto max-w-3xl px-2 text-center">
+                <blockquote className="relative">
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -left-2 -top-6 select-none font-serif text-7xl leading-none text-[#800000]/80 sm:-left-4 sm:-top-8 sm:text-8xl"
+                  >
+                    “
+                  </span>
+                  <p className="relative px-4 text-lg font-medium leading-relaxed text-white sm:px-8 sm:text-xl sm:leading-8 md:text-2xl">
                     With visionary leadership and creative foresight, he has built Cineglare into a powerhouse of innovation, crafting stories that resonate globally.
                   </p>
-                </article>
+                  <span
+                    aria-hidden
+                    className="pointer-events-none mt-2 inline-block select-none font-serif text-5xl leading-none text-[#800000]/80 sm:text-6xl"
+                  >
+                    ”
+                  </span>
+                </blockquote>
               </div>
             </div>
 
