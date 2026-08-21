@@ -57,7 +57,7 @@ const Header = () => {
     return pathname === path || pathname.startsWith(path + "/");
   };
 
-  const servicesActive = pathname.startsWith("/services");
+  const servicesActive = pathname === "/services" || pathname.startsWith("/services/");
 
   const linkClass = (active: boolean) =>
     cn(
@@ -100,21 +100,20 @@ const Header = () => {
             About Us
           </Link>
 
-          {/* Services — hover menu (no portal) */}
+          {/* Services — link to hub + hover dropdown */}
           <div
             className="relative"
             onMouseEnter={openServices}
             onMouseLeave={closeServices}
           >
-            <button
-              type="button"
+            <Link
+              to="/services"
               className={cn(
                 linkClass(servicesActive || servicesOpen),
                 "inline-flex items-center gap-1.5 outline-none",
               )}
               aria-expanded={servicesOpen}
               aria-haspopup="true"
-              onClick={() => setServicesOpen((v) => !v)}
             >
               Services
               <ChevronDown
@@ -123,9 +122,8 @@ const Header = () => {
                   servicesOpen && "rotate-180",
                 )}
               />
-            </button>
+            </Link>
 
-            {/* Bridge gap so mouse can move from trigger → panel without closing */}
             <div
               className={cn(
                 "absolute left-1/2 top-full z-50 w-[280px] -translate-x-1/2 pt-3 transition-all duration-200",
@@ -135,6 +133,17 @@ const Header = () => {
               )}
             >
               <div className="rounded-2xl border border-white/10 bg-[#0c0c0c] p-2 shadow-[0_20px_50px_rgba(0,0,0,.65)]">
+                <Link
+                  to="/services"
+                  className={cn(
+                    "mb-1 block rounded-xl px-3.5 py-2.5 text-sm font-semibold transition-colors duration-150",
+                    pathname === "/services" || pathname === "/services/"
+                      ? "bg-[#800000] text-white"
+                      : "text-white/90 hover:bg-[#800000] hover:text-white",
+                  )}
+                >
+                  All Services
+                </Link>
                 {servicesLinks.map((service) => {
                   const active = isActive(service.path);
                   return (
@@ -220,9 +229,18 @@ const Header = () => {
           </Link>
 
           <div className="pt-2">
-            <p className="px-4 pb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#800000]">
-              Services
-            </p>
+            <Link
+              to="/services"
+              onClick={() => setIsMenuOpen(false)}
+              className={cn(
+                "block rounded-xl px-4 py-3 text-sm font-semibold transition-colors",
+                pathname === "/services" || pathname === "/services/"
+                  ? "bg-[#800000] text-white"
+                  : "text-white hover:bg-[#800000]/15",
+              )}
+            >
+              All Services
+            </Link>
             {servicesLinks.map((service) => (
               <Link
                 key={service.name}
