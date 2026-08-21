@@ -2,12 +2,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-
-import { asset, logoAsset } from "@/assets/placeholder";
+import { asset } from "@/assets/placeholder";
 
 const productBrandingImage = asset("product-branding-image.jpg");
 const productBrandingCenter = asset("product-branding-center.jpg");
-// import servicesCenterOne from "@/assets/services-center-1.png";
+
 const ProductBranding = () => {
   const leftServices = [
     "Brand Naming & Tagline",
@@ -18,32 +17,30 @@ const ProductBranding = () => {
   ];
 
   const rightServices = [
-    "Digital Branding(Website/Social/E-com)",
+    "Digital Branding (Website / Social / E-com)",
     "Marketing Campaign Concept",
-    "AD Production - TV, Radio and Print",
+    "AD Production — TV, Radio and Print",
     "Product Launch Promotion & Media Integration",
     "Influencer & Celebrity Collaboration Planning",
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-hidden surface-base text-white">
       <Header />
-      
       <ServiceHero
         firstBgImage={productBrandingImage}
         title="Product Branding"
-        tagline="We don't just name brands - we create legacies"
-        description="We specialize in building brands that inspire trust, sparks emotions and drive engagement through innovative product branding
-         to give your product a distinctive voice and Identity."
+        tagline="We don't just name brands — we create legacies"
+        description="We specialize in building brands that inspire trust, spark emotion and drive engagement — giving your product a distinctive voice and lasting identity."
         leftServices={leftServices}
         rightServices={rightServices}
         centerImage={productBrandingCenter}
-        imageAlt="Digital marketing visualization"
+        imageAlt="Product branding"
       />
-
-      {/* Insights & Innovations Section */}
-      <InsightsInnovations sectionTwoTitle="Insights & Innovations" sectionThreeTitle="Lets make your brand shine brighter"/>
-
+      <InsightsInnovations
+        sectionTwoTitle="Insights & Innovations"
+        sectionThreeTitle="Let's make your brand shine brighter"
+      />
       <Footer />
     </div>
   );
