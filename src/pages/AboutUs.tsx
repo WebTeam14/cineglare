@@ -299,29 +299,12 @@ const AboutUs = () => {
                 <h3 className="text-xl font-bold tracking-tight sm:text-2xl">Our Leadership</h3>
                 <span className="h-px flex-1 bg-gradient-to-l from-transparent to-[#800000]" />
               </div>
-              <div className="grid gap-5 md:grid-cols-2">
-                {[
-                  { initials: "RV", role: "Founder & Managing Director", name: "Ram Vijay Singh", text: "With visionary leadership and creative foresight, he has built Cineglare into a powerhouse of innovation, crafting stories that resonate globally.", accent: true },
-                  { initials: "MK", role: "Operations Director", name: "Manish Kumar Singh", text: "The backbone of execution excellence at Cineglare, ensuring every project is delivered with precision and passion.", accent: false },
-                ].map((person) => (
-                  <article
-                    key={person.name}
-                    className={person.accent ? "group relative overflow-hidden rounded-[1.5rem] border border-[#800000]/50 p-7 shadow-[0_20px_48px_-16px_rgba(128,0,0,0.4)] transition-all duration-500 hover:-translate-y-1 sm:p-8" : "group relative overflow-hidden rounded-[1.5rem] border border-[#800000]/15 p-7 shadow-[0_14px_36px_-18px_rgba(0,0,0,0.45)] transition-all duration-500 hover:-translate-y-1 hover:border-[#800000]/35 sm:p-8"}
-                    style={{ background: person.accent ? "#800000" : "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)" }}
-                  >
-                    <div className="flex items-start gap-5">
-                      <div className={person.accent ? "flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border-2 border-white/30 bg-white/15 text-xl font-bold text-white" : "flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border-2 border-[#800000] bg-[#800000]/10 text-xl font-bold text-[#800000]"}>
-                        {person.initials}
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <span className={person.accent ? "text-xs font-semibold uppercase tracking-[0.2em] text-white/75" : "text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]"}>{person.role}</span>
-                        <h4 className={person.accent ? "mt-1.5 text-xl font-bold tracking-tight text-white sm:text-2xl" : "mt-1.5 text-xl font-bold tracking-tight text-neutral-900 sm:text-2xl"}>{person.name}</h4>
-                        <div className={person.accent ? "mt-3 h-px w-10 bg-white/50" : "mt-3 h-px w-10 bg-[#800000]"} />
-                        <p className={person.accent ? "mt-3 text-sm leading-relaxed text-white/90 sm:text-base" : "mt-3 text-sm leading-relaxed text-neutral-700 sm:text-base"}>{person.text}</p>
-                      </div>
-                    </div>
-                  </article>
-                ))}
+              <div className="mx-auto max-w-3xl">
+                <article className="rounded-[1.5rem] border border-[#800000]/50 bg-[#800000] p-8 shadow-[0_20px_48px_-16px_rgba(128,0,0,0.4)] sm:p-10">
+                  <p className="text-center text-lg font-medium leading-relaxed text-white sm:text-xl sm:leading-8">
+                    With visionary leadership and creative foresight, he has built Cineglare into a powerhouse of innovation, crafting stories that resonate globally.
+                  </p>
+                </article>
               </div>
             </div>
 
