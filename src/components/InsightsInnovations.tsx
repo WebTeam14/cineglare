@@ -36,32 +36,34 @@ const InsightsInnovations = ({
     <>
       <section className="relative overflow-hidden surface-base py-14 sm:py-16 lg:py-20">
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="mb-10 flex items-center gap-3">
+          <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-10 bg-[#800000]" />
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
               From the studio
             </span>
           </div>
-          <h2 className="mb-12 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mb-10 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {sectionTwoTitle}
           </h2>
 
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <div className="group relative">
-              <div className="relative overflow-hidden rounded-2xl border border-white/10">
+          {/* Equal-height two-column layout */}
+          <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2 lg:gap-8">
+            {/* Featured — fills column height */}
+            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
+              <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden">
                 <img
                   src={blogFeatured}
                   alt="Beyond the Inbox: The Power of Personalized Email Marketing"
-                  className="h-[360px] w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-[400px]"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute left-4 top-4 rounded-xl bg-[#800000] px-3.5 py-2 text-center text-white">
                   <div className="text-lg font-bold leading-none">02</div>
                   <div className="text-[10px] uppercase tracking-wider">Sep</div>
                 </div>
               </div>
-              <div className="mt-5">
-                <div className="mb-3 flex items-center gap-4 text-sm text-white/45">
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-white/45">
                   <span className="inline-flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
                     September 2, 2024
@@ -71,38 +73,39 @@ const InsightsInnovations = ({
                     0
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-white sm:text-2xl">
+                <h3 className="text-xl font-bold leading-snug text-white sm:text-2xl">
                   Beyond the Inbox: The Power of Personalized Email Marketing
                 </h3>
                 <button
                   type="button"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#800000] transition-colors hover:text-[#a00000]"
+                  className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-[#800000] transition-colors hover:text-[#a00000]"
                 >
                   Learn more
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
-            </div>
+            </article>
 
-            <div className="flex flex-col justify-center space-y-3">
+            {/* Side list — same total height, equal card distribution */}
+            <div className="flex h-full flex-col gap-4">
               {insightPosts.map((post) => (
-                <div
+                <article
                   key={post.title}
-                  className="group flex cursor-pointer gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-3 transition-all duration-300 hover:border-[#800000]/40 hover:bg-[#800000]/10"
+                  className="group flex min-h-0 flex-1 cursor-pointer items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-3 transition-all duration-300 hover:border-[#800000]/45 hover:bg-[#800000]/10 sm:p-4"
                 >
-                  <div className="h-24 w-32 shrink-0 overflow-hidden rounded-xl">
+                  <div className="h-full min-h-[5.5rem] w-28 shrink-0 overflow-hidden rounded-xl sm:w-32">
                     <img
                       src={post.image}
                       alt={post.title}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="flex flex-1 items-center">
+                  <div className="flex min-w-0 flex-1 items-center py-1">
                     <h4 className="text-sm font-semibold leading-snug text-white/85 transition-colors group-hover:text-white sm:text-base">
                       {post.title}
                     </h4>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
