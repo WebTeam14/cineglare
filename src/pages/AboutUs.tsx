@@ -441,7 +441,7 @@ const AboutUs = () => {
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <img src={card.src} alt={card.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--cine-base)_0%,rgba(6,6,6,.45)_35%,transparent_80%)] opacity-95" />
-                    <span className="absolute left-5 top-5 text-xs font-semibold text-white/55">{card.number}</span>
+                    <span className="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#800000] text-xs font-bold text-white shadow-[0_8px_20px_rgba(0,0,0,0.45)] sm:left-5 sm:top-5">{card.number}</span>
                     <div className="absolute bottom-0 left-0 right-0 p-5">
                       <h3 className="text-xl font-bold text-white">{card.title}</h3>
                       <div className="mt-3 h-1 w-8 rounded-full bg-white/80 transition-all duration-500 group-hover:w-16" />
