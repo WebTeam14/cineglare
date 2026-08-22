@@ -38,11 +38,10 @@ const MarqueeRow = ({
           key={`${reverse ? "b" : "a"}-${index}`}
           className="group flex h-20 w-36 shrink-0 items-center justify-center rounded-2xl border border-[#800000]/12 bg-white px-4 py-3 shadow-[0_10px_28px_-18px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/30 hover:shadow-[0_14px_32px_-16px_rgba(128,0,0,0.2)] sm:h-24 sm:w-44"
         >
-          {/* multiply: pure black in the PNG becomes transparent on white card */}
           <img
             src={logo}
             alt="Partner logo"
-            className="max-h-12 max-w-full object-contain mix-blend-multiply opacity-95 transition duration-300 group-hover:opacity-100 sm:max-h-14"
+            className="max-h-12 max-w-full object-contain opacity-95 transition duration-300 group-hover:opacity-100 sm:max-h-14"
           />
         </div>
       ))}
