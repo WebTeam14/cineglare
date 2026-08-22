@@ -1,9 +1,18 @@
 import { motion } from "framer-motion";
-import { logoAsset } from "@/assets/placeholder";
 
-const logos = Array.from({ length: 45 }, (_, i) =>
-  logoAsset(`logos/I${i + 1}.png`),
-);
+/** Load all partner logos (I1.png … I45.png) and sort by number */
+const partnerModules = import.meta.glob("@/assets/partners/I*.png", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+
+const logos = Object.entries(partnerModules)
+  .sort(([a], [b]) => {
+    const na = Number(a.match(/I(\d+)\.png$/i)?.[1] ?? 0);
+    const nb = Number(b.match(/I(\d+)\.png$/i)?.[1] ?? 0);
+    return na - nb;
+  })
+  .map(([, src]) => src);
 
 const MarqueeRow = ({
   items,
@@ -35,7 +44,7 @@ const MarqueeRow = ({
         >
           <img
             src={logo}
-            alt=""
+            alt="Partner logo"
             className="max-h-12 max-w-full object-contain opacity-90 transition duration-300 group-hover:opacity-100 sm:max-h-14"
           />
         </div>
@@ -45,8 +54,9 @@ const MarqueeRow = ({
 );
 
 const PartnerSlider = () => {
-  const rowA = logos.slice(0, 23);
-  const rowB = logos.slice(23);
+  const mid = Math.ceil(logos.length / 2);
+  const rowA = logos.slice(0, mid);
+  const rowB = logos.slice(mid);
 
   return (
     <section className="relative overflow-hidden py-12 sm:py-14 lg:py-16">
