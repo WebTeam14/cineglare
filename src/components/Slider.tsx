@@ -1,9 +1,18 @@
 import { motion } from "framer-motion";
-import { logoAsset } from "@/assets/placeholder";
 
-const logos = Array.from({ length: 45 }, (_, i) =>
-  logoAsset(`logos/I${i + 1}.png`),
-);
+/** Load all partner logos (I1.png … I45.png) and sort by number */
+const partnerModules = import.meta.glob("@/assets/partners/I*.png", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+
+const logos = Object.entries(partnerModules)
+  .sort(([a], [b]) => {
+    const na = Number(a.match(/I(\d+)\.png$/i)?.[1] ?? 0);
+    const nb = Number(b.match(/I(\d+)\.png$/i)?.[1] ?? 0);
+    return na - nb;
+  })
+  .map(([, src]) => src);
 
 const MarqueeRow = ({
   items,
@@ -27,16 +36,13 @@ const MarqueeRow = ({
       {[...items, ...items].map((logo, index) => (
         <div
           key={`${reverse ? "b" : "a"}-${index}`}
-          className="group flex h-20 w-36 shrink-0 items-center justify-center rounded-2xl border border-[#800000]/12 px-4 py-3 shadow-[0_10px_28px_-18px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/30 hover:shadow-[0_14px_32px_-16px_rgba(128,0,0,0.2)] sm:h-24 sm:w-44"
-          style={{
-            background:
-              "linear-gradient(145deg, #ffffff 0%, #fff5f5 55%, #fceaea 100%)",
-          }}
+          className="group flex h-20 w-36 shrink-0 items-center justify-center rounded-2xl border border-[#800000]/12 bg-white px-4 py-3 shadow-[0_10px_28px_-18px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/30 hover:shadow-[0_14px_32px_-16px_rgba(128,0,0,0.2)] sm:h-24 sm:w-44"
         >
+          {/* multiply: pure black in the PNG becomes transparent on white card */}
           <img
             src={logo}
-            alt=""
-            className="max-h-12 max-w-full object-contain opacity-90 transition duration-300 group-hover:opacity-100 sm:max-h-14"
+            alt="Partner logo"
+            className="max-h-12 max-w-full object-contain mix-blend-multiply opacity-95 transition duration-300 group-hover:opacity-100 sm:max-h-14"
           />
         </div>
       ))}
@@ -45,8 +51,9 @@ const MarqueeRow = ({
 );
 
 const PartnerSlider = () => {
-  const rowA = logos.slice(0, 23);
-  const rowB = logos.slice(23);
+  const mid = Math.ceil(logos.length / 2);
+  const rowA = logos.slice(0, mid);
+  const rowB = logos.slice(mid);
 
   return (
     <section className="relative overflow-hidden py-12 sm:py-14 lg:py-16">
