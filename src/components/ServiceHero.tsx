@@ -34,9 +34,9 @@ const ServiceHero = ({
           aria-hidden
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--cine-base,#060606)] via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--cine-base,#060606)] via-black/15 to-transparent" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 sm:px-8 md:pb-16 lg:px-12">
           <div className="max-w-3xl">
@@ -66,10 +66,10 @@ const ServiceHero = ({
           className="absolute right-0 top-0 h-72 w-72 rounded-full bg-[#800000]/10 blur-[100px]"
         />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="mb-10 grid gap-8 lg:grid-cols-[1fr_0.85fr] lg:items-end">
+          <div className="mb-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
               <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-10 bg-[#800000]" />
+                <span className="h-px w-12 bg-[#800000]" />
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
                   What's included
                 </span>
