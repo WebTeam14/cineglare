@@ -52,9 +52,9 @@ export default function Portfolio() {
           />
 
           {/* Light scrims — keep type readable without hiding the video (aligned with home Hero) */}
-          <div className="absolute inset-0 bg-black/25" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/15" />
+          <div className="absolute inset-0 bg-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
           <div
             aria-hidden
             className="absolute -right-24 top-20 h-80 w-80 rounded-full bg-[#800000]/18 blur-[110px]"

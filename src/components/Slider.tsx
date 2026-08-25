@@ -36,12 +36,16 @@ const MarqueeRow = ({
       {[...items, ...items].map((logo, index) => (
         <div
           key={`${reverse ? "b" : "a"}-${index}`}
-          className="group flex h-20 w-36 shrink-0 items-center justify-center rounded-2xl border border-[#800000]/12 bg-white px-4 py-3 shadow-[0_10px_28px_-18px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/30 hover:shadow-[0_14px_32px_-16px_rgba(128,0,0,0.2)] sm:h-24 sm:w-44"
+          className="group relative flex h-20 w-36 shrink-0 items-center justify-center overflow-hidden rounded-2xl sm:h-24 sm:w-44"
         >
           <img
             src={logo}
             alt="Partner logo"
-            className="max-h-12 max-w-full object-contain opacity-95 transition duration-300 group-hover:opacity-100 sm:max-h-14"
+            className="relative z-0 h-full w-full rounded-2xl object-contain opacity-95 transition duration-300 group-hover:scale-[1.03] group-hover:opacity-100"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-4 -top-4 z-10 h-16 w-16 rounded-full bg-[#800000]/25 blur-xl"
           />
         </div>
       ))}

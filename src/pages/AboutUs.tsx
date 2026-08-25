@@ -185,9 +185,9 @@ const AboutUs = () => {
       `}</style>
       <main>
         <section className="relative isolate min-h-[80svh] overflow-hidden surface-deep">
-          <img src={aboutHero} alt="Cineglare team" className="absolute inset-0 h-full w-full object-cover object-center opacity-70" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,6,6,.96)_0%,rgba(6,6,6,.78)_42%,rgba(6,6,6,.25)_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--cine-base)_0%,rgba(6,6,6,.55)_28%,transparent_55%,rgba(6,6,6,.35)_100%)]" />
+          <img src={aboutHero} alt="Cineglare team" className="absolute inset-0 h-full w-full object-cover object-center opacity-85" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,6,6,.55)_0%,rgba(6,6,6,.35)_42%,rgba(6,6,6,.12)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(0deg,var(--cine-base)_0%,rgba(6,6,6,.30)_28%,transparent_55%,rgba(6,6,6,.15)_100%)]" />
           <div className="absolute -right-28 top-20 h-80 w-80 rounded-full bg-[#800000]/30 blur-[110px] about-pulse" />
           <div className="about-grid absolute inset-0 opacity-30 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
           <div className="relative mx-auto flex min-h-[80svh] max-w-7xl items-end px-6 pb-12 pt-28 sm:px-8 md:pb-16 lg:px-12">
@@ -321,7 +321,7 @@ const AboutUs = () => {
                   <figcaption className="relative z-10 mt-8 flex items-center justify-center gap-3">
                     <span className="h-px w-8 bg-[#800000]/50" />
                     <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#800000]">
-                      Founder & Managing Director
+                      Founder &amp; Managing Director
                     </span>
                     <span className="h-px w-8 bg-[#800000]/50" />
                   </figcaption>

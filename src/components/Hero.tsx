@@ -88,9 +88,9 @@ const Hero = () => {
         </video>
 
         {/* Light scrims — keep type readable without hiding the video */}
-        <div className="absolute inset-0 bg-black/25" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
         <div
           aria-hidden
           className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[var(--cine-base)] to-transparent"
