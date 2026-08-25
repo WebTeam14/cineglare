@@ -25,7 +25,7 @@ const MarqueeRow = ({
 }) => (
   <div className="relative overflow-hidden">
     <motion.div
-      className="flex w-max items-center gap-6 sm:gap-8"
+      className="flex w-max items-center gap-5 sm:gap-6"
       animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
       transition={{
         repeat: Infinity,
@@ -36,12 +36,12 @@ const MarqueeRow = ({
       {[...items, ...items].map((logo, index) => (
         <div
           key={`${reverse ? "b" : "a"}-${index}`}
-          className="group flex h-28 w-48 shrink-0 items-center justify-center rounded-2xl border border-[#800000]/12 bg-white px-5 py-4 shadow-[0_10px_28px_-18px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/30 hover:shadow-[0_14px_32px_-16px_rgba(128,0,0,0.2)] sm:h-32 sm:w-56"
+          className="group flex h-20 w-36 shrink-0 items-center justify-center rounded-2xl border border-[#800000]/12 bg-white px-3 py-2 shadow-[0_10px_28px_-18px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/30 hover:shadow-[0_14px_32px_-16px_rgba(128,0,0,0.2)] sm:h-24 sm:w-44"
         >
           <img
             src={logo}
             alt="Partner logo"
-            className="max-h-[4.5rem] max-w-full object-contain opacity-95 transition duration-300 group-hover:opacity-100 sm:max-h-20"
+            className="max-h-14 w-auto max-w-[90%] object-contain opacity-95 transition duration-300 group-hover:opacity-100 sm:max-h-16"
           />
         </div>
       ))}
