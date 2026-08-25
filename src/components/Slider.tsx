@@ -45,7 +45,7 @@ const MarqueeRow = ({
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 z-10 rounded-2xl bg-[radial-gradient(ellipse_at_top_right,rgba(128,0,0,0.28)_0%,transparent_55%)]"
+            className="pointer-events-none absolute -right-4 -top-4 z-10 h-16 w-16 rounded-full bg-[#800000]/25 blur-xl"
           />
         </div>
       ))}
