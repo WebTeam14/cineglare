@@ -76,10 +76,11 @@ const Services = () => {
             src={heroImage}
             alt=""
             aria-hidden
-            className="absolute inset-0 h-full w-full object-cover opacity-60"
+            className="absolute inset-0 h-full w-full object-cover opacity-80"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--cine-base,#060606)] via-transparent to-black/30" />
+          <div className="absolute inset-0 bg-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--cine-base,#060606)] via-transparent to-black/10" />
 
           <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 sm:px-8 md:pb-16 lg:px-12">
             <div className="max-w-3xl">
