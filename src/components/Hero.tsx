@@ -3,15 +3,10 @@ import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 
-/**
- * Prefer same-origin asset if present; otherwise public CDNs known to allow
- * cross-origin playback (Google bucket often returns 403 in browsers).
- */
-const HERO_SOURCES = [
-  "/videos/hero-bg.mp4",
-  "https://cdn.jsdelivr.net/gh/mediaelement/mediaelement-files/big_buck_bunny.mp4",
-  "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-];
+import heroVideo from "@/assets/videos/HeroVd.mp4";
+
+
+const HERO_SOURCES = [heroVideo];
 
 const Hero = () => {
   const [entered, setEntered] = useState(false);
