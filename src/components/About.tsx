@@ -31,10 +31,14 @@ const About = () => {
                 aria-hidden
                 className="absolute -inset-2.5 rounded-[1.5rem] border border-[#800000]/20"
               />
-              <div className="relative overflow-hidden rounded-[1.25rem] border border-white/10 shadow-[0_24px_48px_-24px_rgba(0,0,0,0.65)]">
+              <div className="relative overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/5 shadow-[0_24px_48px_-24px_rgba(0,0,0,0.65)]">
                 <img
                   src={aboutUsImage}
                   alt="Cineglare creative team"
+                  loading="lazy"
+                  decoding="async"
+                  width={1000}
+                  height={562}
                   className="aspect-[4/5] h-auto max-h-[520px] w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />

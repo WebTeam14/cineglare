@@ -34,11 +34,15 @@ const ProjectHighlights = () => {
           ].map((item, i) => (
             <div
               key={i}
-              className="group relative cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/10"
+              className="group relative cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5"
             >
               <img
                 src={item.src}
                 alt={item.alt}
+                loading="lazy"
+                decoding="async"
+                width={1200}
+                height={800}
                 className="h-[300px] w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
