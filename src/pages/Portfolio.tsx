@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -31,6 +31,91 @@ function formatTitle(filename: string) {
     .replace(/-/g, " ");
 }
 
+/** Load video src only when card enters viewport (avoids 15 parallel downloads). */
+function PortfolioCard({
+  videoPath,
+  title,
+  onOpen,
+}: {
+  videoPath: string;
+  title: string;
+  onOpen: () => void;
+}) {
+  const cardRef = useRef<HTMLButtonElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setShouldLoad(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px", threshold: 0.01 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoad) return;
+    const video = videoRef.current;
+    if (!video) return;
+
+    const seekPoster = () => {
+      if (video.duration && Number.isFinite(video.duration)) {
+        video.currentTime = Math.min(1, video.duration * 0.1);
+        video.pause();
+      }
+    };
+
+    video.addEventListener("loadeddata", seekPoster);
+    return () => video.removeEventListener("loadeddata", seekPoster);
+  }, [shouldLoad]);
+
+  return (
+    <button
+      ref={cardRef}
+      type="button"
+      className="group relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-[#0c0c0c] text-left shadow-[0_16px_40px_-20px_rgba(0,0,0,0.7)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/50 hover:shadow-[0_22px_48px_-16px_rgba(128,0,0,0.35)]"
+      onClick={onOpen}
+    >
+      {shouldLoad ? (
+        <video
+          ref={videoRef}
+          src={videoPath}
+          muted
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
+      )}
+
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#800000] text-white shadow-[0_12px_32px_rgba(128,0,0,.45)] transition-transform duration-300 group-hover:scale-110 sm:h-14 sm:w-14">
+          <Play className="ml-0.5 h-5 w-5 fill-current sm:h-6 sm:w-6" />
+        </span>
+      </div>
+
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/85 to-transparent px-4 pb-4 pt-14">
+        <h3 className="truncate text-sm font-semibold tracking-tight text-white sm:text-base">
+          {title}
+        </h3>
+        <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#800000]">
+          Event highlight
+        </p>
+      </div>
+    </button>
+  );
+}
+
 export default function Portfolio() {
   const [open, setOpen] = useState(false);
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
@@ -40,7 +125,6 @@ export default function Portfolio() {
       <Header />
 
       <main className="overflow-hidden">
-        {/* ---------------------- HERO SECTION ---------------------- */}
         <section className="relative isolate flex min-h-[70vh] items-end overflow-hidden bg-black md:min-h-[88svh]">
           <video
             src={aboutHero}
@@ -48,10 +132,10 @@ export default function Portfolio() {
             loop
             muted
             playsInline
+            preload="metadata"
             className="absolute inset-0 h-full w-full object-cover"
           />
 
-          {/* Light scrims — keep type readable without hiding the video (aligned with home Hero) */}
           <div className="absolute inset-0 bg-black/10" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/20 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
@@ -88,9 +172,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* ---------------------- PORTFOLIO VIDEOS SECTION ---------------------- */}
         <section className="relative overflow-hidden surface-raise py-16 sm:py-20 lg:py-28">
-          {/* Soft grain + ambient orb (home-page Section pattern) */}
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 z-0 opacity-[0.04] mix-blend-overlay"
@@ -123,70 +205,26 @@ export default function Portfolio() {
               </p>
             </div>
 
-            {/* Video Grid */}
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {videoFiles.map((video, index) => {
                 const videoPath = portfolioVideo(video);
                 const title = formatTitle(video);
 
                 return (
-                  <button
+                  <PortfolioCard
                     key={index}
-                    type="button"
-                    className="group relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-[#0c0c0c] text-left shadow-[0_16px_40px_-20px_rgba(0,0,0,0.7)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/50 hover:shadow-[0_22px_48px_-16px_rgba(128,0,0,0.35)]"
-                    onClick={() => {
+                    videoPath={videoPath}
+                    title={title}
+                    onOpen={() => {
                       setActiveVideo(videoPath);
                       setOpen(true);
                     }}
-                  >
-                    <video
-                      src={videoPath}
-                      muted
-                      playsInline
-                      preload="metadata"
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onLoadedMetadata={(e) => {
-                        const el = e.currentTarget;
-                        if (el.duration && el.readyState >= 2) {
-                          const seekTime = Math.min(1, el.duration * 0.1);
-                          el.currentTime = seekTime;
-                          el.pause();
-                        }
-                      }}
-                      onCanPlay={(e) => {
-                        const el = e.currentTarget;
-                        if (el.readyState >= 2 && el.currentTime === 0) {
-                          const seekTime = Math.min(
-                            1,
-                            el.duration * 0.1 || 1,
-                          );
-                          el.currentTime = seekTime;
-                          el.pause();
-                        }
-                      }}
-                    />
-                    {/* Always-visible play cue */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#800000] text-white shadow-[0_12px_32px_rgba(128,0,0,.45)] transition-transform duration-300 group-hover:scale-110 sm:h-14 sm:w-14">
-                        <Play className="ml-0.5 h-5 w-5 fill-current sm:h-6 sm:w-6" />
-                      </span>
-                    </div>
-                    {/* Bottom title strip */}
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/85 to-transparent px-4 pb-4 pt-14">
-                      <h3 className="truncate text-sm font-semibold tracking-tight text-white sm:text-base">
-                        {title}
-                      </h3>
-                      <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#800000]">
-                        Event highlight
-                      </p>
-                    </div>
-                  </button>
+                  />
                 );
               })}
             </div>
           </div>
 
-          {/* Modal */}
           <Dialog
             open={open}
             onOpenChange={(isOpen) => {
@@ -207,6 +245,7 @@ export default function Portfolio() {
                     controls
                     autoPlay
                     playsInline
+                    preload="auto"
                     className="absolute inset-0 h-full w-full"
                     style={{ objectFit: "contain" }}
                   />
