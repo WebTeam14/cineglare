@@ -2,9 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
-
 import heroVideo from "@/assets/videos/HeroVd.mp4";
-
 
 const HERO_SOURCES = [heroVideo];
 
@@ -82,10 +80,10 @@ const Hero = () => {
           ))}
         </video>
 
-        {/* Light scrims — keep type readable without hiding the video */}
-        <div className="absolute inset-0 bg-black/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+        {/* Darker scrims for readable text over bright video */}
+        <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/35" />
         <div
           aria-hidden
           className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[var(--cine-base)] to-transparent"
@@ -103,23 +101,23 @@ const Hero = () => {
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-6 pb-24 pt-32 md:px-10 lg:px-12">
         <div className="max-w-3xl">
           <div className="mb-6 flex items-center gap-3" style={step(0)}>
-            <span className="h-px w-10 bg-[#800000]" />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#800000] sm:text-xs">
+            <span className="h-px w-10 bg-[#ff6b6b]" />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#ff6b6b] sm:text-xs drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
               Crafting vision into reality
             </p>
           </div>
 
           <h1
-            className="mb-6 text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+            className="mb-6 text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-[0_2px_24px_rgba(0,0,0,0.85)]"
             style={step(1)}
           >
             Experience Events
             <br />
-            <span className="text-white/90">Like Never Before.</span>
+            <span className="text-white">Like Never Before.</span>
           </h1>
 
           <p
-            className="mb-10 max-w-xl text-sm leading-relaxed text-white/70 md:text-base"
+            className="mb-10 max-w-xl text-sm leading-relaxed text-white/90 md:text-base drop-shadow-[0_1px_12px_rgba(0,0,0,0.75)]"
             style={step(2)}
           >
             We are a team of creative thinkers, strategists, and innovators —
@@ -159,7 +157,7 @@ const Hero = () => {
           transition: "opacity 900ms var(--ease-cinema) 1100ms",
         }}
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">
+        <span className="text-[10px] uppercase tracking-[0.2em] text-white/50">
           Scroll
         </span>
         <span className="block h-10 w-px bg-gradient-to-b from-[#800000] to-transparent" />
