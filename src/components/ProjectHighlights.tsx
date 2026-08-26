@@ -1,7 +1,7 @@
 import { Reveal, Stagger } from "@/components/motion/Reveal";
-import project1 from "@/assets/images/H-Prj1.png";
-import project2 from "@/assets/images/H-Prjt2.jpg";
-import project3 from "@/assets/images/H-Prjt3.png";
+import project1 from "@/assets/images/H-Prj1.jpg";
+import project2 from "@/assets/images/H-Prjt2.png";
+import project3 from "@/assets/images/H-Prjt3.jpg";
 
 const ProjectHighlights = () => {
   return (
