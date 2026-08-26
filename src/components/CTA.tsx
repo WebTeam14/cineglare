@@ -2,9 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/Reveal";
 import { Link } from "@tanstack/react-router";
-import { asset } from "@/assets/placeholder";
-
-const ctaBackground = asset("cta-bg.jpg");
+import ctaBackground from "@/assets/images/cta-bg.jpg";
 
 const CTA = () => {
   return (
