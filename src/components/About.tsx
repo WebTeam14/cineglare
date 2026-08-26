@@ -2,9 +2,7 @@ import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { Reveal, Stagger } from "@/components/motion/Reveal";
-import { asset } from "@/assets/placeholder";
-
-const aboutUsImage = asset("Cineglare Trans Logo.jpg");
+import aboutUsImage from "@/assets/images/H-Abt.jpg";
 
 const highlights = [
   "Star Influence",

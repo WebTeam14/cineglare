@@ -1,9 +1,7 @@
-import { asset } from "@/assets/placeholder";
 import { Reveal, Stagger } from "@/components/motion/Reveal";
-
-const project1 = asset("project-1.jpg");
-const project2 = asset("project-2.jpg");
-const project3 = asset("project-3.jpg");
+import project1 from "@/assets/images/H-Prj1.png";
+import project2 from "@/assets/images/H-Prjt2.jpg";
+import project3 from "@/assets/images/H-Prjt3.png";
 
 const ProjectHighlights = () => {
   return (

@@ -1,12 +1,10 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/Reveal";
-import { asset } from "@/assets/placeholder";
-
-const insightsMain = asset("insights-main.jpg");
-const insightBranding = asset("insight-branding.jpg");
-const insightFilms = asset("insight-films.jpg");
-const insightDigital = asset("insight-digital.jpg");
+import insightsMain from "@/assets/images/H-Showcase1.jpg";
+import insightBranding from "@/assets/images/insight-branding.jpg";
+import insightFilms from "@/assets/images/insight-films.jpg";
+import insightDigital from "@/assets/images/insight-digital.jpg";
 
 const insights = [
   {
