@@ -49,10 +49,14 @@ const Impact = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:items-stretch lg:gap-6">
-          <div className="group relative min-h-[400px] cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/10 shadow-[0_24px_50px_-28px_rgba(0,0,0,0.7)] lg:min-h-[520px]">
+          <div className="group relative min-h-[400px] cursor-pointer overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5 shadow-[0_24px_50px_-28px_rgba(0,0,0,0.7)] lg:min-h-[520px]">
             <img
               src={insightsMain}
               alt="Transforming ideas into memorable event experiences"
+              loading="lazy"
+              decoding="async"
+              width={1050}
+              height={1400}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
@@ -79,11 +83,15 @@ const Impact = () => {
             {insights.map((insight) => (
               <div
                 key={insight.title}
-                className="group relative min-h-[130px] cursor-pointer overflow-hidden rounded-[1.25rem] border border-white/10 lg:min-h-0"
+                className="group relative min-h-[130px] cursor-pointer overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/5 lg:min-h-0"
               >
                 <img
                   src={insight.image}
                   alt={insight.title}
+                  loading="lazy"
+                  decoding="async"
+                  width={1000}
+                  height={666}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/92 via-black/60 to-black/30" />
