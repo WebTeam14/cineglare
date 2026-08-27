@@ -2,7 +2,7 @@ import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { Reveal, Stagger } from "@/components/motion/Reveal";
-import aboutUsImage from "@/assets/images/H-Abt.jpg";
+import aboutUsImage from "@/assets/images/H-Abt.avif";
 
 const highlights = [
   "Star Influence",
