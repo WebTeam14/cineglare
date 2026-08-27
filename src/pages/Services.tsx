@@ -13,8 +13,6 @@ import {
 
 import ServicesHeroImage from "@/assets/images/AllService.avif";
 
-
-
 const services = [
   {
     icon: Package,
@@ -72,16 +70,16 @@ const Services = () => {
       <Header />
 
       <main>
-        <section className="relative isolate flex min-h-[55vh] items-end overflow-hidden bg-black md:min-h-[62svh]">
+        <section className="relative isolate flex min-h-[68vh] items-end overflow-hidden bg-black md:min-h-[78svh]">
           <img
             src={ServicesHeroImage}
             alt=""
             aria-hidden
-            className="absolute inset-0 h-full w-full object-cover opacity-80"
+            className="absolute inset-0 h-full w-full scale-[1.02] object-cover object-center opacity-90"
           />
-          <div className="absolute inset-0 bg-black/10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/20 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--cine-base,#060606)] via-transparent to-black/10" />
+          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--cine-base,#060606)] via-black/20 to-black/10" />
 
           <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 sm:px-8 md:pb-16 lg:px-12">
             <div className="max-w-3xl">

@@ -10,6 +10,8 @@ interface ServiceHeroProps {
   rightServices: string[];
   centerImage: string;
   imageAlt: string;
+  /** Optional focal point for hero image, e.g. "center top" or "50% 30%" */
+  imagePosition?: string;
 }
 
 const ServiceHero = ({
@@ -21,22 +23,24 @@ const ServiceHero = ({
   rightServices,
   centerImage,
   imageAlt,
+  imagePosition = "center",
 }: ServiceHeroProps) => {
   const allServices = [...leftServices, ...rightServices];
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative isolate flex min-h-[55vh] items-end overflow-hidden bg-black md:min-h-[62svh]">
+      {/* Hero — taller so landscape photos crop less aggressively */}
+      <section className="relative isolate flex min-h-[68vh] items-end overflow-hidden bg-black md:min-h-[78svh]">
         <img
           src={firstBgImage}
           alt=""
           aria-hidden
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full scale-[1.02] object-cover"
+          style={{ objectPosition: imagePosition }}
         />
-        <div className="absolute inset-0 bg-black/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--cine-base,#060606)] via-black/15 to-transparent" />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--cine-base,#060606)] via-black/20 to-black/10" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 sm:px-8 md:pb-16 lg:px-12">
           <div className="max-w-3xl">
@@ -117,13 +121,13 @@ const ServiceHero = ({
               </div>
             </div>
 
-            {/* Featured image — sticky on desktop, full-width on mobile */}
+            {/* Featured image — landscape-friendly aspect on desktop */}
             <div className="order-first lg:order-none lg:sticky lg:top-28">
               <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.5)]">
                 <img
                   src={centerImage}
                   alt={imageAlt}
-                  className="aspect-[4/5] w-full object-cover sm:aspect-[16/10] lg:aspect-[4/5]"
+                  className="aspect-[16/11] w-full object-cover object-center lg:aspect-[4/5]"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>
