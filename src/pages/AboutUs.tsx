@@ -17,14 +17,12 @@ import {
   ShieldCheck,
   Play,
 } from "lucide-react";
-import { asset } from "@/assets/placeholder";
-
-const aboutHero = asset("AboutHero.png");
-const teamworkStructure = asset("teamwork.jpg");
-const csrCommunity = asset("communitygrowth.jpg");
-const csrPeople = asset("growth.jfif");
-const csrGreen = asset("growth1.jfif");
-const csrWomen = asset("women.jfif");
+import aboutHero from "@/assets/images/AbtHero.png";
+import teamworkStructure from "@/assets/images/TeamCollab.jpg";
+import csrCommunity from "@/assets/images/communityGrowth.png";
+import csrPeople from "@/assets/images/InvestingPeople.avif";
+import csrGreen from "@/assets/images/GoGreen.avif";
+import csrWomen from "@/assets/images/empowerwomen.avif";
 
 const TypewriterWord = () => {
   const words = ["Cineglare", "Stories", "Experiences", "Impact"];
