@@ -35,19 +35,19 @@ const InsightsInnovations = ({
 }: InsightsInnovationsProps) => {
   return (
     <>
-      <section className="relative overflow-hidden surface-base py-14 sm:py-16 lg:py-20">
+      <section className="relative overflow-hidden surface-base py-10 sm:py-12 lg:py-14">
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="mb-4 flex items-center gap-3">
+          <div className="mb-3 flex items-center gap-3">
             <span className="h-px w-10 bg-[#800000]" />
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
               From the studio
             </span>
           </div>
-          <h2 className="mb-10 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {sectionTwoTitle}
           </h2>
 
-          <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2 lg:gap-8">
+          <div className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-2 lg:gap-6">
             {/* Featured */}
             <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10">
               <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden">
@@ -77,7 +77,7 @@ const InsightsInnovations = ({
                 </h3>
                 <button
                   type="button"
-                  className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                 >
                   Learn more
                   <ArrowRight className="h-4 w-4" />
@@ -85,8 +85,8 @@ const InsightsInnovations = ({
               </div>
             </article>
 
-            {/* Side cards — same hover as Built to Create */}
-            <div className="flex h-full flex-col gap-4">
+            {/* Side cards */}
+            <div className="flex h-full flex-col gap-3">
               {insightPosts.map((post) => (
                 <article
                   key={post.title}
@@ -111,7 +111,7 @@ const InsightsInnovations = ({
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden py-12 sm:py-14 lg:py-16">
         <div className="absolute inset-0 z-0">
           <img
             src={ctaBackground}
@@ -130,7 +130,7 @@ const InsightsInnovations = ({
 
         <div className="container-custom relative z-10">
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-            <div className="mb-5 flex items-center gap-3">
+            <div className="mb-4 flex items-center gap-3">
               <span className="h-px w-10 bg-[#800000]" />
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
                 Let’s collaborate
@@ -138,11 +138,11 @@ const InsightsInnovations = ({
               <span className="h-px w-10 bg-[#800000]" />
             </div>
 
-            <h2 className="mb-5 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
               {sectionThreeTitle}
             </h2>
 
-            <p className="mb-8 max-w-xl text-sm leading-relaxed text-white/65 sm:text-base">
+            <p className="mb-6 max-w-xl text-sm leading-relaxed text-white/65 sm:text-base">
               From concept to curtain call — star influence, cinematic
               storytelling, and flawless execution that turns bold ideas into
               iconic moments.
