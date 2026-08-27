@@ -10,9 +10,10 @@ import {
   Calendar,
   ArrowRight,
 } from "lucide-react";
-import { asset } from "@/assets/placeholder";
 
-const heroImage = asset("about-image.jpg");
+import ServicesHeroImage from "@/assets/images/AllService.avif";
+
+
 
 const services = [
   {
@@ -73,7 +74,7 @@ const Services = () => {
       <main>
         <section className="relative isolate flex min-h-[55vh] items-end overflow-hidden bg-black md:min-h-[62svh]">
           <img
-            src={heroImage}
+            src={ServicesHeroImage}
             alt=""
             aria-hidden
             className="absolute inset-0 h-full w-full object-cover opacity-80"
