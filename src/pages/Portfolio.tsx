@@ -3,9 +3,23 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Play } from "lucide-react";
-import { asset, portfolioVideo } from "@/assets/placeholder";
+import portfolioHeroImage from "@/assets/images/Portfolio hero.avif";
+import portfolioHeroVideo from "@/assets/videos/HeroVd.mp4";
 
-const aboutHero = asset("Portfolio.mp4");
+/** Portfolio highlight reels from src/assets/Portfolio (Vite URL imports). */
+const portfolioVideoModules = import.meta.glob("@/assets/Portfolio/*.{mp4,MP4}", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
+
+function resolvePortfolioVideo(filename: string): string {
+  const match = Object.entries(portfolioVideoModules).find(([path]) =>
+    path.endsWith(`/${filename}`) || path.endsWith(`\\${filename}`),
+  );
+  return match?.[1] ?? "";
+}
+
 const videoFiles = [
   "00 PorscheGolf_2025Day1HighlightReel.MP4",
   "Customer Testimonials.MP4",
@@ -85,7 +99,7 @@ function PortfolioCard({
       className="group relative aspect-[16/10] overflow-hidden rounded-2xl border border-white/10 bg-[#0c0c0c] text-left shadow-[0_16px_40px_-20px_rgba(0,0,0,0.7)] transition-all duration-500 hover:-translate-y-1.5 hover:border-[#800000]/50 hover:shadow-[0_22px_48px_-16px_rgba(128,0,0,0.35)]"
       onClick={onOpen}
     >
-      {shouldLoad ? (
+      {shouldLoad && videoPath ? (
         <video
           ref={videoRef}
           src={videoPath}
@@ -126,13 +140,21 @@ export default function Portfolio() {
 
       <main className="overflow-hidden">
         <section className="relative isolate flex min-h-[70vh] items-end overflow-hidden bg-black md:min-h-[88svh]">
+          {/* Fallback poster while video loads */}
+          <img
+            src={portfolioHeroImage}
+            alt=""
+            aria-hidden
+            className="absolute inset-0 h-full w-full object-cover"
+          />
           <video
-            src={aboutHero}
+            src={portfolioHeroVideo}
             autoPlay
             loop
             muted
             playsInline
             preload="metadata"
+            poster={portfolioHeroImage}
             className="absolute inset-0 h-full w-full object-cover"
           />
 
@@ -207,7 +229,7 @@ export default function Portfolio() {
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {videoFiles.map((video, index) => {
-                const videoPath = portfolioVideo(video);
+                const videoPath = resolvePortfolioVideo(video);
                 const title = formatTitle(video);
 
                 return (
@@ -216,6 +238,7 @@ export default function Portfolio() {
                     videoPath={videoPath}
                     title={title}
                     onOpen={() => {
+                      if (!videoPath) return;
                       setActiveVideo(videoPath);
                       setOpen(true);
                     }}
