@@ -13,9 +13,7 @@ import {
   Send,
   CheckCircle2,
 } from "lucide-react";
-import { asset } from "@/assets/placeholder";
-
-const contactHero = asset("contact.jpg");
+import contactHero from "@/assets/images/ContactUs.avif";
 
 /** Info cards: soft white with a light red hint (not pink) */
 const cardSurface = {

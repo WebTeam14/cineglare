@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Play } from "lucide-react";
-import portfolioHeroImage from "@/assets/images/Portfolio hero.avif";
+// import portfolioHeroImage from "@/assets/images/Portfolio hero.avif";
 import portfolioHeroVideo from "@/assets/videos/PortfolioVD.mp4";
 
 /** Portfolio highlight reels from src/assets/Portfolio (Vite URL imports). */
@@ -141,12 +141,12 @@ export default function Portfolio() {
       <main className="overflow-hidden">
         <section className="relative isolate flex min-h-[70vh] items-end overflow-hidden bg-black md:min-h-[88svh]">
           {/* Fallback poster while video loads */}
-          <img
+          {/* <img
             src={portfolioHeroImage}
             alt=""
             aria-hidden
             className="absolute inset-0 h-full w-full object-cover"
-          />
+          /> */}
           <video
             src={portfolioHeroVideo}
             autoPlay
@@ -154,7 +154,6 @@ export default function Portfolio() {
             muted
             playsInline
             preload="metadata"
-            poster={portfolioHeroImage}
             className="absolute inset-0 h-full w-full object-cover"
           />
 
