@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Play } from "lucide-react";
 import portfolioHeroImage from "@/assets/images/Portfolio hero.avif";
-import portfolioHeroVideo from "@/assets/videos/HeroVd.mp4";
+import portfolioHeroVideo from "@/assets/videos/PortfolioVD.mp4";
 
 /** Portfolio highlight reels from src/assets/Portfolio (Vite URL imports). */
 const portfolioVideoModules = import.meta.glob("@/assets/Portfolio/*.{mp4,MP4}", {
