@@ -2,10 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-import { asset } from "@/assets/placeholder";
-
-const filmPromotionImage = asset("fil-promotion-image.jpg");
-const filmPromotionCenter = asset("film-promotion-center.jpg");
+import filmPromotionImage from "@/assets/images/MoviePromotionHero.avif";
+import filmPromotionCenter from "@/assets/images/MoviePromotion.avif";
 
 const FilmPromotion = () => {
   const leftServices = [

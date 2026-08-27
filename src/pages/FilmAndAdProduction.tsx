@@ -2,10 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-import { asset } from "@/assets/placeholder";
-
-const filmAndAdProductionImage = asset("film-and-ad-production-image.jpg");
-const filmAdProductionCenter = asset("film-and-ad-production-center.jpg");
+import filmAndAdProductionImage from "@/assets/images/Film&AddHero.jpg";
+import filmAdProductionCenter from "@/assets/images/Film&Ad.jpg";
 
 const FilmAndAdProduction = () => {
   const leftServices = [
@@ -30,8 +28,8 @@ const FilmAndAdProduction = () => {
       <ServiceHero
         firstBgImage={filmAndAdProductionImage}
         title="Film & Ad Production"
-        tagline="Turning concepts into cinematic reality"
-        description="From concept to screen — cinematic excellence with marketing insight that inspires, influences and builds brand emotion."
+        tagline="Stories that stick. Frames that sell."
+        description="From concept to final cut — high-impact films and ads that capture attention, build emotion and drive results."
         leftServices={leftServices}
         rightServices={rightServices}
         centerImage={filmAdProductionCenter}

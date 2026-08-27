@@ -2,10 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-import { asset } from "@/assets/placeholder";
-
-const celebrityManagementImage = asset("celebrity-management-image.jpg");
-const celebrityManagementCenter = asset("celebrity-management-center.jpg");
+import celebrityManagementImage from "@/assets/images/CelebrityMangeHero.avif";
+import celebrityManagementCenter from "@/assets/images/celeb.avif";
 
 const CelebrityManagement = () => {
   const leftServices = [
