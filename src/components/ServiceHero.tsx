@@ -66,46 +66,53 @@ const ServiceHero = ({
           className="absolute right-0 top-0 h-72 w-72 rounded-full bg-[#800000]/10 blur-[100px]"
         />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="mb-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div>
-              <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-12 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
-                  What's included
-                </span>
-              </div>
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                Capabilities that
-                <span className="text-[#800000]"> deliver.</span>
-              </h2>
+          {/* Header */}
+          <div className="mb-10 max-w-2xl">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="h-px w-12 bg-[#800000]" />
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+                What's included
+              </span>
             </div>
-            <div className="hidden justify-end lg:flex">
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,.4)]">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Capabilities that
+              <span className="text-[#800000]"> deliver.</span>
+            </h2>
+          </div>
+
+          {/* Two-column: services + image */}
+          <div className="grid items-start gap-8 lg:grid-cols-[1fr_minmax(280px,380px)] lg:gap-12">
+            {/* Service cards — 2 columns so rows stay even with 10 items */}
+            <div className="grid gap-3 sm:grid-cols-2">
+              {allServices.map((item) => (
+                <div
+                  key={item}
+                  className="group flex items-start gap-3 rounded-2xl border border-white/10 bg-white px-4 py-4 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/40 hover:shadow-[0_12px_28px_-10px_rgba(128,0,0,0.25)]"
+                >
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#800000] text-white">
+                    <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
+                  </span>
+                  <p className="text-sm font-medium leading-snug text-neutral-900 sm:text-[15px]">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Featured image — sticky on desktop, full-width on mobile */}
+            <div className="order-first lg:order-none lg:sticky lg:top-28">
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.5)]">
                 <img
                   src={centerImage}
                   alt={imageAlt}
-                  className="h-40 w-56 object-cover"
+                  className="aspect-[4/5] w-full object-cover sm:aspect-[16/10] lg:aspect-[4/5]"
                 />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>
             </div>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {allServices.map((item) => (
-              <div
-                key={item}
-                className="group flex items-start gap-3 rounded-2xl border border-black/5 bg-white px-4 py-4 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/30 hover:shadow-[0_12px_28px_-10px_rgba(128,0,0,0.25)]"
-              >
-                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#800000] text-white">
-                  <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
-                </span>
-                <p className="text-sm font-medium leading-snug text-neutral-900 sm:text-[15px]">
-                  {item}
-                </p>
-              </div>
-            ))}
-          </div>
-
+          {/* CTAs */}
           <div className="mt-12 flex flex-wrap items-center gap-4">
             <Link
               to="/contact"
