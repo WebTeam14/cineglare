@@ -82,21 +82,39 @@ const ServiceHero = ({
 
           {/* Two-column: services + image */}
           <div className="grid items-start gap-6 lg:grid-cols-[1fr_minmax(260px,340px)] lg:gap-10">
-            {/* Service cards — 2 columns so rows stay even with 10 items */}
-            <div className="grid gap-2.5 sm:grid-cols-2">
-              {allServices.map((item) => (
-                <div
-                  key={item}
-                  className="group flex items-start gap-3 rounded-2xl border border-white/10 bg-white px-4 py-3.5 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/40 hover:shadow-[0_12px_28px_-10px_rgba(128,0,0,0.25)]"
+            {/* Left column: cards + CTAs aligned together */}
+            <div className="flex flex-col">
+              <div className="grid gap-2.5 sm:grid-cols-2">
+                {allServices.map((item) => (
+                  <div
+                    key={item}
+                    className="group flex items-start gap-3 rounded-2xl border border-white/10 bg-white px-4 py-3.5 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/40 hover:shadow-[0_12px_28px_-10px_rgba(128,0,0,0.25)]"
+                  >
+                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#800000] text-white">
+                      <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
+                    </span>
+                    <p className="text-sm font-medium leading-snug text-neutral-900 sm:text-[15px]">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTAs — aligned with the cards column */}
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-[#800000] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000]"
                 >
-                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#800000] text-white">
-                    <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
-                  </span>
-                  <p className="text-sm font-medium leading-snug text-neutral-900 sm:text-[15px]">
-                    {item}
-                  </p>
-                </div>
-              ))}
+                  Start a project
+                </Link>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white px-7 py-3.5 text-sm font-semibold text-neutral-900 transition-all duration-300 hover:-translate-y-0.5 hover:bg-neutral-100"
+                >
+                  All services
+                </Link>
+              </div>
             </div>
 
             {/* Featured image — sticky on desktop, full-width on mobile */}
@@ -110,22 +128,6 @@ const ServiceHero = ({
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>
             </div>
-          </div>
-
-          {/* CTAs */}
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#800000] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000]"
-            >
-              Start a project
-            </Link>
-            <Link
-              to="/services"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white px-7 py-3.5 text-sm font-semibold text-neutral-900 transition-all duration-300 hover:-translate-y-0.5 hover:bg-neutral-100"
-            >
-              All services
-            </Link>
           </div>
         </div>
       </section>
