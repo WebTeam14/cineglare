@@ -2,12 +2,12 @@ import { Calendar, MessageCircle, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { asset } from "@/assets/placeholder";
+import ctaBackground from "@/assets/images/cta-bg.jpg";
 
 const blogFeatured = asset("blog-featured.jpg");
 const blog1 = asset("blog-1.jpg");
 const blog2 = asset("blog-2.jpg");
 const blog3 = asset("blog-3.jpg");
-const ctaBackground = asset("cta-bg.jpg");
 
 interface InsightsInnovationsProps {
   sectionTwoTitle: string;
