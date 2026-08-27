@@ -2,10 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-import { asset } from "@/assets/placeholder";
-
-const productBrandingImage = asset("product-branding-image.jpg");
-const productBrandingCenter = asset("product-branding-center.jpg");
+import productBrandingImage from "@/assets/images/ProductbrandingHero.avif";
+import productBrandingCenter from "@/assets/images/PrdtBrBox.avif";
 
 const ProductBranding = () => {
   const leftServices = [

@@ -2,10 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import InsightsInnovations from "@/components/InsightsInnovations";
 import ServiceHero from "@/components/ServiceHero";
-import { asset } from "@/assets/placeholder";
-
-const eventManagementImage = asset("event-management-image.jpg");
-const eventManagementCenter = asset("event-management-center.jpg");
+import eventManagementImage from "@/assets/images/eventManagementHero.jpg";
+import eventManagementCenter from "@/assets/images/eventManagement.avif";
 
 const EventManagement = () => {
   const leftServices = [
