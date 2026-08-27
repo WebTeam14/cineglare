@@ -1,13 +1,11 @@
 import { Calendar, MessageCircle, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { asset } from "@/assets/placeholder";
 import ctaBackground from "@/assets/images/cta-bg.jpg";
-
-const blogFeatured = asset("blog-featured.jpg");
-const blog1 = asset("blog-1.jpg");
-const blog2 = asset("blog-2.jpg");
-const blog3 = asset("blog-3.jpg");
+import blogFeatured from "@/assets/images/H-Showcase1.jpg";
+import blog1 from "@/assets/images/insight-digital.jpg";
+import blog2 from "@/assets/images/insight-branding.jpg";
+import blog3 from "@/assets/images/insight-films.jpg";
 
 interface InsightsInnovationsProps {
   sectionTwoTitle: string;
@@ -85,7 +83,7 @@ const InsightsInnovations = ({
               </div>
             </article>
 
-            {/* Side cards — same hover as Built to Create */}
+            {/* Side cards */}
             <div className="flex h-full flex-col gap-4">
               {insightPosts.map((post) => (
                 <article
