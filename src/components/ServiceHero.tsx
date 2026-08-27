@@ -27,7 +27,7 @@ const ServiceHero = ({
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate flex min-h-[42vh] items-end overflow-hidden bg-black md:min-h-[48svh]">
+      <section className="relative isolate flex min-h-[55vh] items-end overflow-hidden bg-black md:min-h-[62svh]">
         <img
           src={firstBgImage}
           alt=""
@@ -38,9 +38,9 @@ const ServiceHero = ({
         <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/20 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--cine-base,#060606)] via-black/15 to-transparent" />
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-10 pt-24 sm:px-8 md:pb-12 lg:px-12">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 sm:px-8 md:pb-16 lg:px-12">
           <div className="max-w-3xl">
-            <div className="mb-3 flex items-center gap-3">
+            <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-12 bg-[#800000]" />
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
                 Our services
@@ -49,10 +49,10 @@ const ServiceHero = ({
             <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl">
               {title}
             </h1>
-            <p className="mt-4 inline-flex rounded-full border border-[#800000]/40 bg-[#800000]/15 px-5 py-2 text-sm font-semibold text-white sm:text-base">
+            <p className="mt-5 inline-flex rounded-full border border-[#800000]/40 bg-[#800000]/15 px-5 py-2 text-sm font-semibold text-white sm:text-base">
               {tagline}
             </p>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
               {description}
             </p>
           </div>
@@ -60,15 +60,15 @@ const ServiceHero = ({
       </section>
 
       {/* Offerings */}
-      <section className="relative overflow-hidden surface-raise py-10 sm:py-12 lg:py-14">
+      <section className="relative overflow-hidden surface-raise py-14 sm:py-16 lg:py-20">
         <div
           aria-hidden
           className="absolute right-0 top-0 h-72 w-72 rounded-full bg-[#800000]/10 blur-[100px]"
         />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           {/* Header */}
-          <div className="mb-6 max-w-2xl">
-            <div className="mb-3 flex items-center gap-3">
+          <div className="mb-10 max-w-2xl">
+            <div className="mb-4 flex items-center gap-3">
               <span className="h-px w-12 bg-[#800000]" />
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
                 What's included
@@ -81,14 +81,14 @@ const ServiceHero = ({
           </div>
 
           {/* Two-column: services + image */}
-          <div className="grid items-start gap-6 lg:grid-cols-[1fr_minmax(260px,340px)] lg:gap-10">
+          <div className="grid items-start gap-8 lg:grid-cols-[1fr_minmax(280px,380px)] lg:gap-12">
             {/* Left column: cards + CTAs aligned together */}
             <div className="flex flex-col">
-              <div className="grid gap-2.5 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2">
                 {allServices.map((item) => (
                   <div
                     key={item}
-                    className="group flex items-start gap-3 rounded-2xl border border-white/10 bg-white px-4 py-3.5 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/40 hover:shadow-[0_12px_28px_-10px_rgba(128,0,0,0.25)]"
+                    className="group flex items-start gap-3 rounded-2xl border border-white/10 bg-white px-4 py-4 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#800000]/40 hover:shadow-[0_12px_28px_-10px_rgba(128,0,0,0.25)]"
                   >
                     <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#800000] text-white">
                       <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
@@ -101,7 +101,7 @@ const ServiceHero = ({
               </div>
 
               {/* CTAs — aligned with the cards column */}
-              <div className="mt-6 flex flex-wrap items-center gap-3">
+              <div className="mt-12 flex flex-wrap items-center gap-4">
                 <Link
                   to="/contact"
                   className="inline-flex items-center justify-center rounded-full bg-[#800000] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000]"
@@ -118,7 +118,7 @@ const ServiceHero = ({
             </div>
 
             {/* Featured image — sticky on desktop, full-width on mobile */}
-            <div className="order-first lg:order-none lg:sticky lg:top-24">
+            <div className="order-first lg:order-none lg:sticky lg:top-28">
               <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.5)]">
                 <img
                   src={centerImage}
