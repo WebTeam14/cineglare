@@ -182,6 +182,7 @@ const AboutUs = () => {
         .about-grid { background-image: linear-gradient(rgba(128,0,0,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(128,0,0,.08) 1px, transparent 1px); background-size: 48px 48px; }
       `}</style>
       <main>
+        {/* Hero */}
         <section className="relative isolate min-h-[80svh] overflow-hidden surface-deep">
           <img src={aboutHero} alt="Cineglare team" className="absolute inset-0 h-full w-full object-cover object-center opacity-85" />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(6,6,6,.55)_0%,rgba(6,6,6,.35)_42%,rgba(6,6,6,.12)_100%)]" />
@@ -212,6 +213,7 @@ const AboutUs = () => {
           </div>
         </section>
 
+        {/* Our Story */}
         <section id="story" className="relative overflow-hidden surface-raise py-14 text-white sm:py-16 lg:py-20">
           <div className="pointer-events-none absolute inset-0 surface-glow opacity-70" />
           <div className="relative mx-auto grid max-w-7xl gap-10 px-6 sm:px-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-14 lg:px-12">
@@ -237,7 +239,8 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden surface-base pt-6 pb-14 sm:pt-8 sm:pb-16 lg:pt-10 lg:pb-20">
+        {/* Our Purpose */}
+        <section className="relative overflow-hidden surface-base py-14 sm:py-16 lg:py-20">
           <div className="absolute inset-0 about-grid opacity-20" />
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="mx-auto mb-10 max-w-3xl text-center">
@@ -269,6 +272,7 @@ const AboutUs = () => {
           </div>
         </section>
 
+        {/* Visionaries at Work */}
         <section className="relative overflow-hidden surface-raise py-14 sm:py-16 lg:py-20">
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="grid items-start gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
@@ -349,6 +353,7 @@ const AboutUs = () => {
           </div>
         </section>
 
+        {/* Built to Create */}
         <section className="relative overflow-hidden surface-base py-14 text-white sm:py-16 lg:py-20">
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="max-w-3xl">
@@ -385,6 +390,7 @@ const AboutUs = () => {
           </div>
         </section>
 
+        {/* Our Principles */}
         <section className="relative overflow-hidden surface-raise py-14 sm:py-16 lg:py-20">
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-12">
@@ -427,6 +433,7 @@ const AboutUs = () => {
           </div>
         </section>
 
+        {/* CSR */}
         <section className="relative overflow-hidden surface-base py-14 sm:py-16 lg:py-20">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(75%_60%_at_50%_50%,rgba(128,0,0,.22)_0%,rgba(128,0,0,.08)_45%,transparent_78%)]" />
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
@@ -459,6 +466,7 @@ const AboutUs = () => {
           </div>
         </section>
 
+        {/* Final CTA */}
         <section className="relative overflow-hidden surface-base py-14 text-center sm:py-16 lg:py-20">
           <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#800000]/20 blur-[120px]" />
           <div className="relative mx-auto max-w-4xl px-6">
