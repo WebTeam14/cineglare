@@ -70,7 +70,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-[var(--cine-base)]/95 backdrop-blur-xl transition-shadow duration-500",
+        "fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-[var(--cine-base)]/60 backdrop-blur-xl transition-shadow duration-500",
         scrolled
           ? "shadow-[0_12px_40px_rgba(0,0,0,.55)]"
           : "shadow-none",
@@ -85,7 +85,7 @@ const Header = () => {
           <img
             src={logo}
             alt="Cineglare"
-            className="h-12 w-auto max-w-[220px] object-contain object-center transition-transform duration-300 group-hover:scale-[1.03] md:h-14 md:max-w-[260px]"
+            className="h-16 w-auto max-w-[260px] object-contain object-center transition-transform duration-300 group-hover:scale-[1.03] md:h-18 md:max-w-[300px]"
           />
         </Link>
 
@@ -195,7 +195,7 @@ const Header = () => {
       {/* Mobile */}
       <div
         className={cn(
-          "overflow-hidden border-t border-white/10 bg-[var(--cine-base)]/95 backdrop-blur-xl transition-all duration-300 lg:hidden",
+          "overflow-hidden border-t border-white/10 bg-[var(--cine-base)]/80 backdrop-blur-xl transition-all duration-300 lg:hidden",
           isMenuOpen
             ? "max-h-[min(80vh,560px)] opacity-100"
             : "max-h-0 opacity-0 border-t-0",

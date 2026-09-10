@@ -45,8 +45,8 @@ const ServiceHero = ({
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 sm:px-8 md:pb-16 lg:px-12">
           <div className="max-w-3xl">
             <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-12 bg-[#800000]" />
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+              <span className="h-[2px] w-12 bg-[#800000]" />
+              <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
                 Our services
               </span>
             </div>
@@ -73,8 +73,8 @@ const ServiceHero = ({
           {/* Header */}
           <div className="mb-10 max-w-2xl">
             <div className="mb-4 flex items-center gap-3">
-              <span className="h-px w-12 bg-[#800000]" />
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+              <span className="h-[2px] w-12 bg-[#800000]" />
+              <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
                 What's included
               </span>
             </div>

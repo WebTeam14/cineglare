@@ -28,8 +28,8 @@ const FeatureCards = () => {
       <div className="container-custom">
         <div className="mb-8 max-w-3xl">
           <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-12 bg-[#800000]" />
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+            <span className="h-[2px] w-12 bg-[#800000]" />
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
               Why Cineglare
             </p>
           </div>

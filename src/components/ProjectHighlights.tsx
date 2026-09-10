@@ -8,11 +8,11 @@ const ProjectHighlights = () => {
     <div id="portfolio" className="py-14 sm:py-16 lg:py-20">
       <div className="container-custom">
         <div className="mb-4 flex items-center justify-center gap-3">
-          <span className="h-px w-12 bg-[#800000]" />
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+          <span className="h-[2px] w-12 bg-[#800000]" />
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
             Portfolio
           </p>
-          <span className="h-px w-12 bg-[#800000]" />
+          <span className="h-[2px] w-12 bg-[#800000]" />
         </div>
         <Reveal
           as="h2"

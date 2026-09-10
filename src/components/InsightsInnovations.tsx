@@ -36,8 +36,8 @@ const InsightsInnovations = ({
       <section className="relative overflow-hidden surface-base py-14 sm:py-16 lg:py-20">
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-10 bg-[#800000]" />
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+            <span className="h-[2px] w-10 bg-[#800000]" />
+            <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
               From the studio
             </span>
           </div>
@@ -129,11 +129,11 @@ const InsightsInnovations = ({
         <div className="container-custom relative z-10">
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
             <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#800000]" />
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+              <span className="h-[2px] w-10 bg-[#800000]" />
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
                 Let’s collaborate
               </p>
-              <span className="h-px w-10 bg-[#800000]" />
+              <span className="h-[2px] w-10 bg-[#800000]" />
             </div>
 
             <h2 className="mb-5 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">

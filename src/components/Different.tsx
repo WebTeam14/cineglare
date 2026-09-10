@@ -33,8 +33,8 @@ const Different = () => {
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <div>
             <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-12 bg-[#800000]" />
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+              <span className="h-[2px] w-12 bg-[#800000]" />
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
                 Our edge
               </p>
             </div>

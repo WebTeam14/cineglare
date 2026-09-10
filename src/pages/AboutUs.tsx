@@ -191,8 +191,8 @@ const AboutUs = () => {
           <div className="relative mx-auto flex min-h-[80svh] max-w-7xl items-end px-6 pb-12 pt-28 sm:px-8 md:pb-16 lg:px-12">
             <div className="max-w-4xl">
               <div className="about-reveal mb-5 flex items-center gap-3">
-                <span className="h-px w-12 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Who We Are</span>
+                <span className="h-[2px] w-12 bg-[#800000]" />
+                <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">Who We Are</span>
               </div>
               <h1 className="about-reveal text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl [animation-delay:120ms]">
                 About<br /><span className="text-[#800000]">Cineglare.</span>
@@ -217,8 +217,8 @@ const AboutUs = () => {
           <div className="relative mx-auto grid max-w-7xl gap-10 px-6 sm:px-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-14 lg:px-12">
             <div>
               <div className="mb-5 flex items-center gap-3">
-                <span className="h-px w-12 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Story</span>
+                <span className="h-[2px] w-12 bg-[#800000]" />
+                <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">Our Story</span>
               </div>
               <h2 className="max-w-md text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
                 Ideas that<span className="block text-[#800000]">move people.</span>
@@ -241,7 +241,7 @@ const AboutUs = () => {
           <div className="absolute inset-0 about-grid opacity-20" />
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="mx-auto mb-10 max-w-3xl text-center">
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Purpose</span>
+              <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">Our Purpose</span>
               <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Driven by a clear<span className="text-[#800000]"> purpose.</span></h2>
               <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/50 sm:text-lg">Everything we create is guided by a vision and mission to transform ideas into meaningful experiences.</p>
             </div>
@@ -274,8 +274,8 @@ const AboutUs = () => {
             <div className="grid items-start gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
               <div className="flex flex-col justify-start">
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="h-px w-12 bg-[#800000]" />
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Visionaries at Work</span>
+                  <span className="h-[2px] w-12 bg-[#800000]" />
+                  <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">Visionaries at Work</span>
                 </div>
                 <h2 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
                   Creative minds.<span className="block text-[#800000]">One shared ambition.</span>
@@ -318,7 +318,7 @@ const AboutUs = () => {
                   </blockquote>
                   <figcaption className="relative z-10 mt-8 flex items-center justify-center gap-3">
                     <span className="h-px w-8 bg-[#800000]/50" />
-                    <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#800000]">
+                    <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
                       Founder &amp; Managing Director
                     </span>
                     <span className="h-px w-8 bg-[#800000]/50" />
@@ -329,7 +329,7 @@ const AboutUs = () => {
 
             <div className="mt-12">
               <div className="mb-8 text-center">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Culture</span>
+                <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">Our Culture</span>
                 <h3 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">What drives us</h3>
               </div>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -353,8 +353,8 @@ const AboutUs = () => {
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="max-w-3xl">
               <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-12 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Built to Create</span>
+                <span className="h-[2px] w-12 bg-[#800000]" />
+                <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">Built to Create</span>
               </div>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">A structure designed<span className="block text-[#800000]">for impact.</span></h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/60 sm:text-lg">Our collaborative divisions bring strategy, creativity, production and execution together under one connected vision.</p>
@@ -390,8 +390,8 @@ const AboutUs = () => {
             <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center">
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="h-px w-12 bg-[#800000]" />
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">Our Principles</span>
+                  <span className="h-[2px] w-12 bg-[#800000]" />
+                  <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">Our Principles</span>
                 </div>
                 <h2 className="max-w-xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Creativity with<span className="text-[#800000]"> character.</span></h2>
                 <div className="mt-10 space-y-7">
@@ -462,7 +462,7 @@ const AboutUs = () => {
         <section className="relative overflow-hidden surface-base py-14 text-center sm:py-16 lg:py-20">
           <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#800000]/20 blur-[120px]" />
           <div className="relative mx-auto max-w-4xl px-6">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">The next story starts here</span>
+            <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">The next story starts here</span>
             <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Let's create something<span className="block text-[#800000]">worth remembering.</span></h2>
           </div>
         </section>

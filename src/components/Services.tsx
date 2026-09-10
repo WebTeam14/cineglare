@@ -46,8 +46,8 @@ const Services = () => {
         <div className="mb-8 grid grid-cols-1 items-end gap-5 lg:grid-cols-2">
           <div>
             <div className="mb-4 flex items-center gap-3">
-              <span className="h-px w-12 bg-[#800000]" />
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+              <span className="h-[2px] w-12 bg-[#800000]" />
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
                 What we do
               </p>
             </div>

@@ -87,8 +87,8 @@ export default function Contact() {
           <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 sm:px-8 md:pb-18 lg:px-12">
             <div className="max-w-3xl">
               <div className="mb-6 flex items-center gap-3">
-                <span className="h-px w-12 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+                <span className="h-[2px] w-12 bg-[#800000]" />
+                <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
                   Start a conversation
                 </span>
               </div>
@@ -124,8 +124,8 @@ export default function Contact() {
               {/* Left — info */}
               <div>
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="h-px w-10 bg-[#800000]" />
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+                  <span className="h-[2px] w-10 bg-[#800000]" />
+                  <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
                     Reach us
                   </span>
                 </div>
@@ -381,7 +381,7 @@ export default function Contact() {
             className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#800000]/15 blur-[100px]"
           />
           <div className="relative mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+            <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
               Prefer a quick call?
             </span>
             <h2 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
