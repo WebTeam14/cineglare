@@ -150,9 +150,9 @@ const AboutUs = () => {
     {
       number: "02",
       title: "Corporate & Global Affairs",
-      items: ["International Business Head / Associate", "UAE", "Qatar", "KSA", "UK", "Canada"],
+      items: ["UAE", "Qatar", "KSA", "UK", "Canada"],
       subTitle: "Corporate Communications Lead",
-      subItems: ["HR & Talent Manager", "Admin & Legal - Indian Affairs", "Admin & Legal - International Affairs", "Visa & Logistic Team", "AI & R&D Division"],
+      subItems: ["Admin & Legal - Indian Affairs", "Admin & Legal - International Affairs", "Visa & Logistic Team", "AI & R&D Division"],
     },
     {
       number: "03",
@@ -228,7 +228,7 @@ const AboutUs = () => {
                 <p className="max-w-xs text-sm leading-6 text-white/55">ISO 9001:2015 certified • Shield Global Group subsidiary</p>
               </div>
             </div>
-            <div className="space-y-5 text-base leading-8 text-white/65 sm:text-lg">
+            <div className="space-y-3 text-base leading-[1.65] text-white/65 sm:text-lg">
               <p><strong className="font-bold text-white">Cineglare</strong> is an ISO 9001:2015 certified company, committed to delivering excellence through a robust Quality Management System. It is a proud subsidiary of Shield Global Group — a diversified conglomerate with a strong presence across Asia, Africa and Europe, operating actively in over 23 countries.</p>
               <p>As a dynamic brand and entertainment company, Cineglare specializes in advertising, film production, event management, and brand management & promotions — delivering creative excellence powered by global expertise and backed by Shield Global Group's international foundation.</p>
               <p>With a passionate team of creative strategists, marketers and event curators, Cineglare turns creativity into impactful experiences. From logo design and tagline creation to full-scale product launches, we help brands stand out with innovative storytelling and flawless execution.</p>
@@ -237,7 +237,7 @@ const AboutUs = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden surface-base py-14 sm:py-16 lg:py-20">
+        <section className="relative overflow-hidden surface-base pt-6 pb-14 sm:pt-8 sm:pb-16 lg:pt-10 lg:pb-20">
           <div className="absolute inset-0 about-grid opacity-20" />
           <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="mx-auto mb-10 max-w-3xl text-center">
@@ -245,7 +245,7 @@ const AboutUs = () => {
               <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Driven by a clear<span className="text-[#800000]"> purpose.</span></h2>
               <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/50 sm:text-lg">Everything we create is guided by a vision and mission to transform ideas into meaningful experiences.</p>
             </div>
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="mx-auto grid max-w-4xl gap-6 lg:grid-cols-2">
               {[
                 { number: "01", label: "Our Direction", title: "Vision", text: "Make every brand a phenomenon and every event a masterpiece.", accent: false },
                 { number: "02", label: "What We Do", title: "Mission", text: "Crafting inspiring brand experiences that celebrate excellence.", accent: true },
