@@ -67,11 +67,11 @@ const PartnerSlider = () => {
 
       <div className="container-custom relative mb-8 text-center">
         <div className="mb-4 flex items-center justify-center gap-3">
-          <span className="h-px w-10 bg-[#800000]" />
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+          <span className="h-[2px] w-10 bg-[#800000]" />
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
             Trusted network
           </p>
-          <span className="h-px w-10 bg-[#800000]" />
+          <span className="h-[2px] w-10 bg-[#800000]" />
         </div>
         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           Our Partners & Sponsors

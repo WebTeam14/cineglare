@@ -122,7 +122,7 @@ function PortfolioCard({
         <h3 className="truncate text-sm font-semibold tracking-tight text-white sm:text-base">
           {title}
         </h3>
-        <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#800000]">
+        <p className="mt-1 text-xs font-bold uppercase tracking-[0.16em] text-[#800000]">
           Event highlight
         </p>
       </div>
@@ -176,8 +176,8 @@ export default function Portfolio() {
           <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 sm:px-8 md:pb-20 lg:px-12">
             <div className="max-w-3xl">
               <div className="mb-6 flex items-center gap-3">
-                <span className="h-px w-12 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+                <span className="h-[2px] w-12 bg-[#800000]" />
+                <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
                   Selected Work
                 </span>
               </div>
@@ -210,11 +210,11 @@ export default function Portfolio() {
           <div className="relative z-[1] mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
             <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
               <div className="mb-4 flex items-center justify-center gap-3">
-                <span className="h-px w-10 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+                <span className="h-[2px] w-10 bg-[#800000]" />
+                <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
                   Showreel
                 </span>
-                <span className="h-px w-10 bg-[#800000]" />
+                <span className="h-[2px] w-10 bg-[#800000]" />
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
                 Watch

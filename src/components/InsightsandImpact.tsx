@@ -32,8 +32,8 @@ const Impact = () => {
       <div className="container-custom relative">
         <div className="mb-8 max-w-2xl">
           <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-12 bg-[#800000]" />
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+            <span className="h-[2px] w-12 bg-[#800000]" />
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
               From the studio
             </p>
           </div>
@@ -61,7 +61,7 @@ const Impact = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#800000]">
+              <p className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
                 Featured
               </p>
               <h3 className="mb-5 max-w-md text-2xl font-bold leading-tight text-white md:text-3xl">

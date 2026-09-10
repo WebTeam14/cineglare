@@ -84,8 +84,8 @@ const Services = () => {
           <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 pt-28 sm:px-8 md:pb-16 lg:px-12">
             <div className="max-w-3xl">
               <div className="mb-5 flex items-center gap-3">
-                <span className="h-px w-12 bg-[#800000]" />
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+                <span className="h-[2px] w-12 bg-[#800000]" />
+                <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
                   What we do
                 </span>
               </div>
@@ -123,7 +123,7 @@ const Services = () => {
                     <h2 className="text-xl font-bold tracking-tight text-neutral-900 transition-colors duration-300 group-hover:text-white">
                       {service.title}
                     </h2>
-                    <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#800000] transition-colors duration-300 group-hover:text-white/85">
+                    <p className="mt-2 text-sm font-bold uppercase tracking-[0.14em] text-[#800000] transition-colors duration-300 group-hover:text-white/85">
                       {service.tagline}
                     </p>
                     <p className="mt-4 flex-1 text-sm leading-relaxed text-neutral-600 transition-colors duration-300 group-hover:text-white/85">
@@ -143,7 +143,7 @@ const Services = () => {
         <section className="relative overflow-hidden surface-base py-14 text-center sm:py-16">
           <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#800000]/15 blur-[100px]" />
           <div className="relative mx-auto max-w-3xl px-6">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+            <span className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
               Next step
             </span>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">

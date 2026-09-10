@@ -26,11 +26,11 @@ const CTA = () => {
       <Reveal className="container-custom relative z-10" duration={900}>
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-10 bg-[#800000]" />
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#800000]">
+            <span className="h-[2px] w-10 bg-[#800000]" />
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#800000]">
               Let’s collaborate
             </p>
-            <span className="h-px w-10 bg-[#800000]" />
+            <span className="h-[2px] w-10 bg-[#800000]" />
           </div>
 
           <h2 className="mb-5 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">

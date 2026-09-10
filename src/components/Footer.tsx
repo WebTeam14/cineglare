@@ -20,8 +20,8 @@ const quickLinks = [
   { name: "About Us", path: "/aboutus" },
   { name: "Portfolio", path: "/portfolio" },
   { name: "Contact", path: "/contact" },
-  { name: "Privacy Policy", path: "#" },
-  { name: "Terms & Conditions", path: "#" },
+  // { name: "Privacy Policy", path: "#" },
+  // { name: "Terms & Conditions", path: "#" },
 ];
 
 const agencyLinks = [
@@ -73,20 +73,33 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="Cineglare"
-                className="h-10 w-auto max-w-[180px] object-contain md:h-11 md:max-w-[200px]"
+                className="h-16 w-auto max-w-[220px] object-contain md:h-[4.5rem] md:max-w-[260px]"
               />
             </Link>
             <p className="mb-5 max-w-xs text-sm leading-relaxed text-white/55">
               Where brand shines brighter and entertainment goes bigger. Your
               spotlight experience starts here.
             </p>
-            <div className="mb-5 rounded-xl border border-[#800000]/25 bg-[#800000]/[0.08] p-4">
-              <p className="text-sm leading-relaxed text-white/75">
-                <span className="font-semibold text-white">Our Mission: </span>
-                Crafting vision into reality through powerful brand stories and
-                unforgettable experiences.
-              </p>
-            </div>
+
+            <SectionTitle>Newsletter</SectionTitle>
+            <form
+              className="mb-5 flex overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <Input
+                type="email"
+                placeholder="Your email address"
+                className="h-11 flex-1 border-0 bg-transparent text-sm text-white placeholder:text-white/35 focus-visible:ring-0 focus-visible:ring-offset-0"
+              />
+              <Button
+                type="submit"
+                className="h-11 shrink-0 rounded-none rounded-r-lg bg-[#800000] px-4 font-semibold text-white hover:bg-[#970000]"
+              >
+                <Send className="mr-1.5 h-4 w-4" />
+                Subscribe
+              </Button>
+            </form>
+
             <div className="flex items-center gap-2.5">
               {socials.map(({ icon: Icon, label, href }) => (
                 <a
@@ -141,10 +154,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Get in Touch + Newsletter */}
+          {/* Get in Touch */}
           <div>
             <SectionTitle>Get in Touch</SectionTitle>
-            <ul className="mb-8 space-y-3.5 text-sm text-white/65">
+            <ul className="space-y-3.5 text-sm text-white/65">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#800000]" />
                 <span className="leading-relaxed">
@@ -185,25 +198,6 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-
-            <SectionTitle>Newsletter</SectionTitle>
-            <form
-              className="flex overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <Input
-                type="email"
-                placeholder="Your email address"
-                className="h-11 flex-1 border-0 bg-transparent text-sm text-white placeholder:text-white/35 focus-visible:ring-0 focus-visible:ring-offset-0"
-              />
-              <Button
-                type="submit"
-                className="h-11 shrink-0 rounded-none rounded-r-lg bg-[#800000] px-4 font-semibold text-white hover:bg-[#970000]"
-              >
-                <Send className="mr-1.5 h-4 w-4" />
-                Subscribe
-              </Button>
-            </form>
           </div>
         </div>
 

@@ -102,7 +102,7 @@ const Hero = () => {
         <div className="max-w-3xl">
           <div className="mb-6 flex items-center gap-3" style={step(0)}>
             <span className="h-px w-10 bg-[#ff6b6b]" />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#ff6b6b] sm:text-xs drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#ff6b6b] sm:text-xs drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
               Crafting vision into reality
             </p>
           </div>
