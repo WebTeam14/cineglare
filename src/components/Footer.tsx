@@ -70,13 +70,11 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <Link to="/" className="mb-5 inline-flex">
-              <span className="inline-flex items-center justify-center rounded-2xl bg-white px-3 py-2 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.4)]">
-                <img
-                  src={logo}
-                  alt="Cineglare"
-                  className="h-8 w-auto max-w-[160px] object-contain md:h-9 md:max-w-[180px]"
-                />
-              </span>
+              <img
+                src={logo}
+                alt="Cineglare"
+                className="h-10 w-auto max-w-[180px] object-contain md:h-11 md:max-w-[200px]"
+              />
             </Link>
             <p className="mb-5 max-w-xs text-sm leading-relaxed text-white/55">
               Where brand shines brighter and entertainment goes bigger. Your

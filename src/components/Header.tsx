@@ -82,101 +82,100 @@ const Header = () => {
       />
       <nav className="relative mx-auto flex h-[5rem] max-w-7xl items-center justify-between px-5 md:h-[5.5rem] md:px-8 lg:px-10">
         <Link to="/" className="group flex shrink-0 items-center gap-3">
-          <span className="inline-flex items-center justify-center rounded-2xl bg-white px-3 py-2 shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-transform duration-300 group-hover:scale-[1.03]">
-            <img
-              src={logo}
-              alt="Cineglare"
-              className="h-10 w-auto max-w-[200px] object-contain object-center md:h-12 md:max-w-[240px]"
-            />
-          </span>
+          <img
+            src={logo}
+            alt="Cineglare"
+            className="h-12 w-auto max-w-[220px] object-contain object-center transition-transform duration-300 group-hover:scale-[1.03] md:h-14 md:max-w-[260px]"
+          />
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden items-center gap-8 lg:flex">
-          <Link to="/" className={linkClass(isActive("/"))}>
-            Home
-          </Link>
-          <Link to="/aboutus" className={linkClass(isActive("/aboutus"))}>
-            About Us
-          </Link>
-
-          {/* Services — link to hub + hover dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={openServices}
-            onMouseLeave={closeServices}
-          >
-            <Link
-              to="/services"
-              className={cn(
-                linkClass(servicesActive || servicesOpen),
-                "inline-flex items-center gap-1.5 outline-none",
-              )}
-              aria-expanded={servicesOpen}
-              aria-haspopup="true"
-            >
-              Services
-              <ChevronDown
-                className={cn(
-                  "h-3.5 w-3.5 opacity-70 transition-transform duration-300",
-                  servicesOpen && "rotate-180",
-                )}
-              />
+        {/* Right cluster: nav links + CTA + mobile toggle */}
+        <div className="ml-auto flex items-center gap-6 lg:gap-8">
+          {/* Desktop nav links */}
+          <div className="hidden items-center gap-7 lg:flex xl:gap-8">
+            <Link to="/" className={linkClass(isActive("/"))}>
+              Home
+            </Link>
+            <Link to="/aboutus" className={linkClass(isActive("/aboutus"))}>
+              About Us
             </Link>
 
+            {/* Services — link to hub + hover dropdown */}
             <div
-              className={cn(
-                "absolute left-1/2 top-full z-50 w-[280px] -translate-x-1/2 pt-3 transition-all duration-200",
-                servicesOpen
-                  ? "pointer-events-auto visible opacity-100"
-                  : "pointer-events-none invisible opacity-0",
-              )}
+              className="relative"
+              onMouseEnter={openServices}
+              onMouseLeave={closeServices}
             >
-              <div className="rounded-2xl border border-white/10 bg-[#0c0c0c] p-2 shadow-[0_20px_50px_rgba(0,0,0,.65)]">
-                <Link
-                  to="/services"
+              <Link
+                to="/services"
+                className={cn(
+                  linkClass(servicesActive || servicesOpen),
+                  "inline-flex items-center gap-1.5 outline-none",
+                )}
+                aria-expanded={servicesOpen}
+                aria-haspopup="true"
+              >
+                Services
+                <ChevronDown
                   className={cn(
-                    "mb-1 block rounded-xl px-3.5 py-2.5 text-sm font-semibold transition-colors duration-150",
-                    pathname === "/services" || pathname === "/services/"
-                      ? "bg-[#800000] text-white"
-                      : "text-white/90 hover:bg-[#800000] hover:text-white",
+                    "h-3.5 w-3.5 opacity-70 transition-transform duration-300",
+                    servicesOpen && "rotate-180",
                   )}
-                >
-                  All Services
-                </Link>
-                {servicesLinks.map((service) => {
-                  const active = isActive(service.path);
-                  return (
-                    <Link
-                      key={service.name}
-                      to={service.path}
-                      className={cn(
-                        "block rounded-xl px-3.5 py-2.5 text-sm font-medium transition-colors duration-150",
-                        active
-                          ? "bg-[#800000] text-white"
-                          : "text-white/75 hover:bg-[#800000] hover:text-white",
-                      )}
-                    >
-                      {service.name}
-                    </Link>
-                  );
-                })}
+                />
+              </Link>
+
+              <div
+                className={cn(
+                  "absolute left-1/2 top-full z-50 w-[280px] -translate-x-1/2 pt-3 transition-all duration-200",
+                  servicesOpen
+                    ? "pointer-events-auto visible opacity-100"
+                    : "pointer-events-none invisible opacity-0",
+                )}
+              >
+                <div className="rounded-2xl border border-white/10 bg-[#0c0c0c] p-2 shadow-[0_20px_50px_rgba(0,0,0,.65)]">
+                  <Link
+                    to="/services"
+                    className={cn(
+                      "mb-1 block rounded-xl px-3.5 py-2.5 text-sm font-semibold transition-colors duration-150",
+                      pathname === "/services" || pathname === "/services/"
+                        ? "bg-[#800000] text-white"
+                        : "text-white/90 hover:bg-[#800000] hover:text-white",
+                    )}
+                  >
+                    All Services
+                  </Link>
+                  {servicesLinks.map((service) => {
+                    const active = isActive(service.path);
+                    return (
+                      <Link
+                        key={service.name}
+                        to={service.path}
+                        className={cn(
+                          "block rounded-xl px-3.5 py-2.5 text-sm font-medium transition-colors duration-150",
+                          active
+                            ? "bg-[#800000] text-white"
+                            : "text-white/75 hover:bg-[#800000] hover:text-white",
+                        )}
+                      >
+                        {service.name}
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
             </div>
+
+            <Link to="/portfolio" className={linkClass(isActive("/portfolio"))}>
+              Portfolio
+            </Link>
+            <Link to="/contact" className={linkClass(isActive("/contact"))}>
+              Contact
+            </Link>
           </div>
 
-          <Link to="/portfolio" className={linkClass(isActive("/portfolio"))}>
-            Portfolio
-          </Link>
-          <Link to="/contact" className={linkClass(isActive("/contact"))}>
-            Contact
-          </Link>
-        </div>
-
-        <div className="flex items-center gap-3">
           <Button
             asChild
-            className="hidden h-12 rounded-full bg-[#800000] px-7 text-base font-semibold tracking-wide text-white shadow-[0_10px_28px_rgba(128,0,0,.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] hover:shadow-[0_14px_36px_rgba(128,0,0,.45)] sm:inline-flex md:h-13 md:px-8 md:text-[15px]"
+            className="hidden h-11 rounded-full bg-[#800000] px-6 text-[15px] font-semibold tracking-wide text-white shadow-[0_10px_28px_rgba(128,0,0,.4)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] hover:shadow-[0_14px_36px_rgba(128,0,0,.45)] sm:inline-flex md:h-12 md:px-7"
           >
             <Link to="/contact">Free Quote</Link>
           </Button>
