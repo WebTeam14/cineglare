@@ -69,11 +69,11 @@ const Footer = () => {
         <div className="mb-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:mb-14 lg:grid-cols-4 lg:gap-12">
           {/* Brand */}
           <div>
-            <Link to="/" className="mb-5 inline-flex">
+            <Link to="/" className="mb-2 inline-flex leading-none">
               <img
                 src={logo}
                 alt="Cineglare"
-                className="h-16 w-auto max-w-[220px] object-contain md:h-[4.5rem] md:max-w-[260px]"
+                className="h-12 w-auto max-w-[200px] object-contain object-left object-top md:h-14 md:max-w-[240px]"
               />
             </Link>
             <p className="mb-5 max-w-xs text-sm leading-relaxed text-white/55">
