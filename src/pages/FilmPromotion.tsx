@@ -36,9 +36,15 @@ const FilmPromotion = () => {
         imageAlt="Film promotion"
       />
       <InsightsInnovations
-        sectionTwoTitle="Insights & Innovations"
-        sectionThreeTitle="Partner with us to make your vision real"
-      />
+      sectionTwoTitle="Insights & Innovations"
+      sectionThreeTitle="Partner With Us to Make Your Vision Real"
+      featuredTitle="From ink to impressions - we paint the city with your story"
+      insightPosts={[
+        { title: "Your Story, Our Spotlight - Turning Media Moments Into Milestones." },
+        { title: "Strategic Stories, Seamless Coverage -We Bridge Brands And Broadcasts With Brilliance" },
+        { title: "Creating Buzz Before The Blockbuster - As Big Story Deserves Grand Reveal." },
+      ]}
+    />
       <Footer />
     </div>
   );

@@ -36,9 +36,15 @@ const EventManagement = () => {
         imageAlt="Event management"
       />
       <InsightsInnovations
-        sectionTwoTitle="Unforgettable Experiences"
-        sectionThreeTitle="Partner with us to make your vision real"
-      />
+      sectionTwoTitle="Unforgettable Experiences"
+      sectionThreeTitle="Partner With Us to Make Your Vision Real"
+      featuredTitle="The Power of Exhibitions & Trade Fairs - Where Brands Come Alive"
+      insightPosts={[
+        { title: "Where Culture Meets Creativity: The Gulf's Event Success Formula" },
+        { title: "Cineglare Turns Corporate Look Captivating - Reflecting Your Brand's Brilliance" },
+        { title: "Lights, Music, Magic - We Unleash Fun And Ignite Crowds." },
+      ]}
+    />
       <Footer />
     </div>
   );

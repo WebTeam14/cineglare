@@ -36,9 +36,15 @@ const DigitalMarketing = () => {
         imageAlt="Digital marketing"
       />
       <InsightsInnovations
-        sectionTwoTitle="Insights & Innovations"
-        sectionThreeTitle="Partner with us to make your vision real"
-      />
+      sectionTwoTitle="Insights & Innovations"
+      sectionThreeTitle="Partner With Us to Make Your Vision Real"
+      featuredTitle="Beyond the Inbox: The Power of Personalized Email Marketing"
+      insightPosts={[
+        { title: "Smart Targeting, Measurable Growth - ROI that speaks For Itself" },
+        { title: "We Create Buzz - Making Your Brand The Talk of the Timeline" },
+        { title: "Content with a Soul: Creating Meaningful Brand Connections" },
+      ]}
+    />
       <Footer />
     </div>
   );
