@@ -36,9 +36,15 @@ const FilmAndAdProduction = () => {
         imageAlt="Film and ad production"
       />
       <InsightsInnovations
-        sectionTwoTitle="Insights & Innovations"
-        sectionThreeTitle="Partner with us to make your vision real"
-      />
+      sectionTwoTitle="Insights & Innovations"
+      sectionThreeTitle="Partner With Us to Make Your Vision Real"
+      featuredTitle="Every Frame Needs a Face - From Script to Screen, we find the Perfect Fit."
+      insightPosts={[
+        { title: "Crafting Vision Frame By Frame - From Polished To Perfection." },
+        { title: "Your Dream, Our Canvas - From Hidden Gems to Iconic Frames" },
+        { title: "From Rehearsal to Recognition - We Don't Just Shoot, We Showcase" },
+      ]}
+    />
       <Footer />
     </div>
   );

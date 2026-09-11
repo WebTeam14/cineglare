@@ -36,9 +36,15 @@ const CelebrityManagement = () => {
         imageAlt="Celebrity management"
       />
       <InsightsInnovations
-        sectionTwoTitle="The Glare Blog"
-        sectionThreeTitle="Partner with us to make your vision real"
-      />
+      sectionTwoTitle="The Glare Blog"
+      sectionThreeTitle="Partner With Us to Make Your Vision Real"
+      featuredTitle="Reputation Under Fire: The Art of Managing a Brand Crisis"
+      insightPosts={[
+        { title: "Cineglare level up Your Look - turning Impressions into Impact." },
+        { title: "The Power of Influence: How Celebrity Endorsements Build Brands" },
+        { title: "Expanding Horizons- Your Gateway to Worldwide Recognition." },
+      ]}
+    />
       <Footer />
     </div>
   );

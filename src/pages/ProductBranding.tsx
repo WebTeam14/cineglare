@@ -37,7 +37,13 @@ const ProductBranding = () => {
       />
       <InsightsInnovations
         sectionTwoTitle="Insights & Innovations"
-        sectionThreeTitle="Let's make your brand shine brighter"
+        sectionThreeTitle="Lets make your brand shine brighter"
+        featuredTitle="Cineglare turns brand stories into smart ROI — where creativity meets conversion"
+        insightPosts={[
+          { title: "Unboxing Emotions: How Smart Packaging Drives Brand Love" },
+          { title: "From Identity to Influence — turning imagination into insignia" },
+          { title: "From red carpet to reels, from hashtag to headlines- we make your brand shine" },
+        ]}
       />
       <Footer />
     </div>

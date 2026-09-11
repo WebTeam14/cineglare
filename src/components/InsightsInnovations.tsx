@@ -7,30 +7,28 @@ import blog1 from "@/assets/images/insight-digital.jpg";
 import blog2 from "@/assets/images/insight-branding.jpg";
 import blog3 from "@/assets/images/insight-films.jpg";
 
+export interface InsightPost {
+  title: string;
+  image?: string;
+}
+
 interface InsightsInnovationsProps {
   sectionTwoTitle: string;
   sectionThreeTitle: string;
+  featuredTitle: string;
+  featuredImage?: string;
+  insightPosts: InsightPost[];
 }
-
-const insightPosts = [
-  {
-    title: "Smart Targeting, Measurable Growth — ROI that speaks for itself",
-    image: blog1,
-  },
-  {
-    title: "We Create Buzz — Making your brand the talk of the timeline",
-    image: blog2,
-  },
-  {
-    title: "Content with a Soul: Creating meaningful brand connections",
-    image: blog3,
-  },
-];
 
 const InsightsInnovations = ({
   sectionTwoTitle,
   sectionThreeTitle,
+  featuredTitle,
+  featuredImage = blogFeatured,
+  insightPosts,
 }: InsightsInnovationsProps) => {
+  const defaultImages = [blog1, blog2, blog3];
+
   return (
     <>
       <section className="relative overflow-hidden surface-base py-14 sm:py-16 lg:py-20">
@@ -50,8 +48,8 @@ const InsightsInnovations = ({
             <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10">
               <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden">
                 <img
-                  src={blogFeatured}
-                  alt="Beyond the Inbox: The Power of Personalized Email Marketing"
+                  src={featuredImage}
+                  alt={featuredTitle}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute left-4 top-4 rounded-xl bg-[#800000] px-3.5 py-2 text-center text-white">
@@ -59,8 +57,8 @@ const InsightsInnovations = ({
                   <div className="text-[10px] uppercase tracking-wider">Sep</div>
                 </div>
               </div>
-              <div className="flex flex-1 flex-col bg-[#800000] p-5 sm:p-6">
-                <div className="mb-3 flex flex-wrap items-center gap-4 text-sm text-white/80">
+              <div className="flex flex-1 flex-col bg-black/40 p-5 sm:p-6">
+                <div className="mb-3 flex items-center gap-4 text-xs text-white/55">
                   <span className="inline-flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
                     September 2, 2024
@@ -71,7 +69,7 @@ const InsightsInnovations = ({
                   </span>
                 </div>
                 <h3 className="text-xl font-bold leading-snug text-white sm:text-2xl">
-                  Beyond the Inbox: The Power of Personalized Email Marketing
+                  {featuredTitle}
                 </h3>
                 <button
                   type="button"
@@ -85,14 +83,14 @@ const InsightsInnovations = ({
 
             {/* Side cards */}
             <div className="flex h-full flex-col gap-4">
-              {insightPosts.map((post) => (
+              {insightPosts.map((post, index) => (
                 <article
                   key={post.title}
                   className="group flex min-h-0 flex-1 cursor-pointer items-center gap-4 overflow-hidden rounded-2xl border border-black/10 bg-white p-3 shadow-[0_12px_32px_-18px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-1 hover:border-[#800000] hover:bg-[#800000] hover:shadow-[0_22px_48px_-16px_rgba(128,0,0,0.4)] sm:p-4"
                 >
                   <div className="h-full min-h-[5.5rem] w-28 shrink-0 overflow-hidden rounded-xl sm:w-32">
                     <img
-                      src={post.image}
+                      src={post.image || defaultImages[index % defaultImages.length]}
                       alt={post.title}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
