@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Play } from "lucide-react";
+import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import heroVideo from "@/assets/videos/HeroVd.mp4";
@@ -61,7 +61,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] items-center overflow-hidden surface-base"
+      className="relative flex min-h-[100svh] items-end overflow-hidden surface-base"
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -80,35 +80,37 @@ const Hero = () => {
           ))}
         </video>
 
-        {/* Darker scrims for readable text over bright video */}
-        <div className="absolute inset-0 bg-black/45" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/35" />
+        {/* Lighter overlays so video stays more visible */}
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/15 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
         <div
           aria-hidden
-          className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[var(--cine-base)] to-transparent"
+          className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[var(--cine-base)] to-transparent"
         />
         <div
           aria-hidden
-          className="absolute -right-24 top-24 h-80 w-80 rounded-full bg-[#800000]/18 blur-[110px]"
+          className="absolute -right-24 top-24 h-80 w-80 rounded-full bg-[#800000]/12 blur-[110px]"
         />
         <div
           aria-hidden
-          className="absolute bottom-0 left-1/4 h-64 w-64 rounded-full bg-[#800000]/12 blur-[100px]"
+          className="absolute bottom-0 left-1/4 h-64 w-64 rounded-full bg-[#800000]/10 blur-[100px]"
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-6 pb-24 pt-32 md:px-10 lg:px-12">
+      {/* Content lower on the screen */}
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-6 pb-10 pt-64 md:px-10 md:pb-14 lg:px-12 lg:pb-16">
         <div className="max-w-3xl">
-          <div className="mb-6 flex items-center gap-3" style={step(0)}>
+          <div className="mb-5 flex items-center gap-3" style={step(0)}>
             <span className="h-px w-10 bg-[#ff6b6b]" />
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#ff6b6b] sm:text-xs drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff6b6b] sm:text-[11px] drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
               Crafting vision into reality
             </p>
           </div>
 
+          {/* Slightly smaller headline */}
           <h1
-            className="mb-6 text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-[0_2px_24px_rgba(0,0,0,0.85)]"
+            className="mb-5 text-3xl font-bold leading-[1.08] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-[0_2px_24px_rgba(0,0,0,0.85)]"
             style={step(1)}
           >
             Experience Events
@@ -117,31 +119,20 @@ const Hero = () => {
           </h1>
 
           <p
-            className="mb-10 max-w-xl text-sm leading-relaxed text-white/90 md:text-base drop-shadow-[0_1px_12px_rgba(0,0,0,0.75)]"
+            className="mb-8 max-w-lg text-sm leading-relaxed text-white/85 md:text-[15px] drop-shadow-[0_1px_12px_rgba(0,0,0,0.75)]"
             style={step(2)}
           >
-            We are a team of creative thinkers, strategists, and innovators —
-            delivering impactful and unforgettable experiences across brands,
-            film, and live events.
+            Creating unforgettable experiences across brands, film, and live events.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 sm:gap-5" style={step(3)}>
+          <div className="flex flex-wrap items-center gap-4" style={step(3)}>
+            {/* View Work in red */}
             <Button
               asChild
-              className="h-14 rounded-full bg-[#800000] px-8 text-base font-semibold text-white shadow-[0_12px_35px_rgba(128,0,0,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] sm:h-16 sm:px-10 sm:text-lg"
-            >
-              <Link to="/contact" className="inline-flex items-center gap-2.5">
-                Free Quote
-                <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="h-14 rounded-full border-white/25 bg-white/5 px-8 text-base font-semibold text-white backdrop-blur-sm hover:bg-white/10 hover:text-white sm:h-16 sm:px-10 sm:text-lg"
+              className="h-12 rounded-full bg-[#800000] px-7 text-sm font-semibold text-white shadow-[0_12px_32px_rgba(128,0,0,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] sm:h-14 sm:px-9 sm:text-base"
             >
               <Link to="/portfolio" className="inline-flex items-center gap-2.5">
-                <Play className="h-5 w-5 fill-current sm:h-6 sm:w-6" />
+                <Play className="h-4 w-4 fill-current sm:h-5 sm:w-5" />
                 View Work
               </Link>
             </Button>
@@ -151,7 +142,7 @@ const Hero = () => {
 
       <div
         aria-hidden
-        className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
+        className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
         style={{
           opacity: entered ? 1 : 0,
           transition: "opacity 900ms var(--ease-cinema) 1100ms",
