@@ -134,6 +134,15 @@ const Hero = () => {
                 View Work
               </Link>
             </Button>
+            <Button
+              asChild
+              className="h-12 rounded-full bg-white px-7 text-sm font-semibold text-[#1a1a1a] shadow-[0_12px_32px_rgba(0,0,0,.25)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90 sm:h-14 sm:px-9 sm:text-base"
+            >
+              <Link to="/portfolio" className="inline-flex items-center gap-2.5">
+                <Play className="h-4 w-4 fill-current sm:h-5 sm:w-5" />
+                Show Reel
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
