@@ -61,7 +61,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden surface-base"
+      className="relative flex min-h-[100svh] items-center overflow-hidden surface-base"
     >
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -80,10 +80,10 @@ const Hero = () => {
           ))}
         </video>
 
-        {/* Balanced overlays for centered content */}
-        <div className="absolute inset-0 bg-black/25" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/20 to-black/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
+        {/* Overlays */}
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/15 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
         <div
           aria-hidden
           className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[var(--cine-base)] to-transparent"
@@ -98,15 +98,14 @@ const Hero = () => {
         />
       </div>
 
-      {/* Centered content */}
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-6 py-20 text-center md:px-10 lg:px-12">
-        <div className="flex max-w-3xl flex-col items-center">
-          <div className="mb-5 flex items-center justify-center gap-3" style={step(0)}>
+      {/* Content vertically centered, left-aligned */}
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-6 py-20 md:px-10 lg:px-12">
+        <div className="max-w-3xl">
+          <div className="mb-5 flex items-center gap-3" style={step(0)}>
             <span className="h-px w-10 bg-[#ff6b6b]" />
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff6b6b] sm:text-[11px] drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
               Crafting vision into reality
             </p>
-            <span className="h-px w-10 bg-[#ff6b6b]" />
           </div>
 
           <h1
@@ -125,7 +124,7 @@ const Hero = () => {
             Creating unforgettable experiences across brands, film, and live events.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4" style={step(3)}>
+          <div className="flex flex-wrap items-center gap-4" style={step(3)}>
             <Button
               asChild
               className="h-12 rounded-full bg-[#800000] px-7 text-sm font-semibold text-white shadow-[0_12px_32px_rgba(128,0,0,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000] sm:h-14 sm:px-9 sm:text-base"
