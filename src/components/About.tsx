@@ -52,7 +52,7 @@ const About = () => {
                       "linear-gradient(145deg, #fff8f8 0%, #f7f0f0 50%, #f3e8e8 100%)",
                   }}
                 >
-                  <p className="text-3xl font-black tracking-tight text-[#800000]">17+</p>
+                  <p className="text-3xl font-black tracking-tight text-[#800000]">10+</p>
                   <p className="mt-1 text-xs font-medium uppercase tracking-wider text-neutral-600">
                     Years of excellence
                   </p>
