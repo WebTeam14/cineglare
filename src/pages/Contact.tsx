@@ -30,8 +30,8 @@ const contactDetails = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 98765 43210",
-    href: "tel:+919876543210",
+    value: "+91 8100292112",
+    href: "tel:+918100292112",
     hint: "Mon–Sat, 10am – 7pm IST",
   },
   {
