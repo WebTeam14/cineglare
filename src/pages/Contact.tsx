@@ -392,7 +392,7 @@ export default function Contact() {
               href="tel:+919876543210"
               className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-[#800000] px-8 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#970000]"
             >
-              Call +91 98765 43210
+              Call +91 8100292112
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
